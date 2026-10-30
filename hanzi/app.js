@@ -802,7 +802,7 @@
     const box = $('preview');
     box.innerHTML = '';
     if (!items.length) {
-      box.innerHTML = '<div class="empty">左邊輸入要練習的字，按「產生工作紙」。</div>';
+      box.innerHTML = '<div class="empty">輸入要練習的字，再按「產生工作紙」。</div>';
       return;
     }
     const it = items[previewIdx];
@@ -966,7 +966,7 @@
     $('go').addEventListener('click', generate);
     $('clear').addEventListener('click', () => {
       $('chars').value = '';
-      $('preview').innerHTML = '<div class="empty">左邊輸入要練習的字，按「產生工作紙」。</div>';
+      $('preview').innerHTML = '<div class="empty">輸入要練習的字，再按「產生工作紙」。</div>';
       clearStatus();
       const dl = $('dl'); if (dl) dl.hidden = true;
     });
