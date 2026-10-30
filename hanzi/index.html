@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中文字工作紙生成器 · tyhcch1234</title>
+<meta name="description" content="輸入默書字詞，一鍵產生六步寫字工作紙（Word／A4）：目標字、拆部件、筆順、謄寫、隱藏部件默寫。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <a class="back" href="../">← 返回導航</a>
+  <h1>中文字工作紙生成器</h1>
+  <p class="sub">輸入默書字詞 → 一鍵產生六步寫字工作紙（Word · A4 · 每字 2 頁）</p>
+</header>
+
+<main class="wrap">
+
+  <section class="panel">
+    <label class="field-label" for="chars">要練習的字</label>
+    <textarea id="chars" spellcheck="false" rows="7"
+      placeholder="一行一個字，或一行多個字，例如：&#10;別 學 習&#10;聲&#10;國 語 想"></textarea>
+
+    <div class="actions" id="actions">
+      <button id="go" class="primary">產生工作紙</button>
+      <button id="clear" class="ghost">清空</button>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div id="status" class="status" hidden></div>
+
+    <details class="adv">
+      <summary>進階：手動指定部件（可選）</summary>
+      <p class="hint">程式會自動拆部件；如果某個字拆得不理想，在這裡加一行即可，格式：<code>字 = 部件,部件</code> 或 <code>字 = 筆畫數,筆畫數</code></p>
+      <textarea id="ov" spellcheck="false" rows="4" placeholder="別 = 口,力,刂&#10;別 = 3,2,2"></textarea>
+    </details>
+  </section>
+
+  <section class="preview" id="preview">
+    <div class="empty">左邊輸入要練習的字，按「產生工作紙」。</div>
+  </section>
+
+  <section class="note">
+    <h2>工作紙包含</h2>
+    <ol>
+      <li><b>目標字</b>：三格示範 —— 無輔助線／九格線／米字線</li>
+      <li><b>分拆部首部件</b>：不同部件不同顏色</li>
+      <li><b>已拆細的部件</b>：按筆順次序排列，顏色與上一步相同</li>
+      <li><b>筆順展示</b>：一格加一筆，自動計算格數</li>
+      <li><b>按筆順順序謄寫</b>：4.8 → 3.6 → 2.4 → 1.2cm，首格淺灰示範字可描寫</li>
+      <li><b>隱藏部件默寫</b>：灰色長方形標示隱藏位置，逐步增加難度</li>
+      <li><b>默寫字詞</b>：首兩格附十字輔助線</li>
+    </ol>
+    <p class="tiny">字形以楷書筆順資料繪製，筆順與部件結構依標準字形；資料來源：hanzi-writer-data、cjkvi-ids、kfcd/chaizi。第一次使用需連網讀取筆順。</p>
+  </section>
+
+</main>
+
+<script src="vendor/docx.umd.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
