@@ -218,7 +218,7 @@
   .pages-toggle:hover{text-decoration:underline}
   .pages-toggle svg{width:12px;height:12px;transition:transform .18s}
   .card.open .pages-toggle svg{transform:rotate(180deg)}
-  .pages{list-style:none;margin:0 16px 14px;padding:10px 0 0;border-top:1px dashed var(--line);display:none}
+  .pages{list-style:none;margin:0 16px 14px;padding:10px 0 0;border-top:1px dashed var(--line);display:none;position:relative;z-index:1}
   .card.open .pages{display:block}
   .pages li{margin:0}
   .pages a{
@@ -371,6 +371,13 @@
   <div class="chips" id="chips"></div>
 
   <main id="sections"></main>
+
+  <noscript>
+    <p style="text-align:center;color:#6e7688;font-size:14px">
+      此頁需要 JavaScript 才能自動列出所有網站；你也可以直接到
+      <a href="https://github.com/tyhcch1234?tab=repositories">GitHub repos</a> 瀏覽。
+    </p>
+  </noscript>
 </div>
 
 <div class="empty" id="empty">

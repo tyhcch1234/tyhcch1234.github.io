@@ -5,6 +5,8 @@
   var OWNER = 'tyhcch1234';
   var SYNC_TTL = 30 * 60 * 1000;         // GitHub repo 清單快取 30 分鐘
   var TREE_TTL = 12 * 60 * 60 * 1000;    // 單一 repo 頁面清單快取 12 小時
+  var STALE_TTL = 24 * 60 * 60 * 1000;   // 每次開頁輪流更新 3 個 repo 的頁面清單
+  var STALE_PER_LOAD = 3;
 
   var CATS = {
     math:   { label: '數學 · 文憑試與測驗', glyph: 'g-math' },
@@ -308,6 +310,7 @@
     var s = byName[card.getAttribute('data-name')];
     if (!s) return;
     if (!s.pagesLoaded) {
+      expanded[s.name] = true;
       btn.disabled = true;
       btn.querySelector('.pt-label').textContent = '載入中…';
       ensurePages(s).then(function () {
@@ -370,6 +373,33 @@
     });
     return chain.then(function () {
       if (changed) { renderAll(); }
+      return changed;
+    });
+  }
+
+  /* 每次開頁輪流檢查幾個 repo 有沒有新增頁面（維持自動更新，又不浪費 API 配額） */
+  function refreshStale() {
+    var out = [];
+    sites.forEach(function (s) {
+      if (s.dyn || !s.pagesLoaded || s.pages.length > 20) return;
+      var raw = null;
+      try { raw = JSON.parse(localStorage.getItem('tree:' + s.name) || 'null'); } catch (e) {}
+      var at = raw && raw.at ? raw.at : 0;
+      if (Date.now() - at > STALE_TTL) out.push({ s: s, at: at });
+    });
+    out.sort(function (a, b) { return a.at - b.at; });
+    var queue = out.slice(0, STALE_PER_LOAD).map(function (o) { return o.s; });
+    var changed = 0, chain = Promise.resolve();
+    queue.forEach(function (s) {
+      chain = chain.then(function () {
+        return loadTree(s, true).then(function (ch) { if (ch) changed++; });
+      });
+    });
+    return chain.then(function () {
+      if (changed) {
+        renderAll();
+        setSync('已更新 ' + changed + ' 個網站的頁面');
+      }
       return changed;
     });
   }
@@ -518,4 +548,5 @@
   renderAll();
   sync(false);
   refreshDynamic();
+  refreshStale();
 })();
