@@ -136,6 +136,16 @@ OVERRIDES = {
         desc="生成的短片與動畫，持續累積",
         tags=["影片", "video", "動畫"],
     ),
+    "song": dict(
+        title="廣東話原創歌詞集", cat="media",
+        desc="Cantonese original songs · 原創歌詞與試聽",
+        tags=["廣東話", "歌詞", "音樂", "song"],
+    ),
+    "game": dict(
+        title="消防英雄 3D", cat="play",
+        desc="Three.js 第一人稱滅火救援遊戲：6 處火頭、3 位居民、180 秒",
+        tags=["遊戲", "3d", "消防", "three.js"],
+    ),
     "firefighter-3d": dict(
         title="消防英雄 3D", cat="play",
         desc="Three.js 第一人稱滅火救援遊戲：6 處火頭、3 位居民、180 秒",

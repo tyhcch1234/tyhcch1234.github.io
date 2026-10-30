@@ -15,7 +15,7 @@
     mind:   { label: '身心 · 益智 · 記憶',  glyph: 'g-mind' },
     design: { label: '設計 · 繪本 · 導覽',  glyph: 'g-cube' },
     daily:  { label: '每日日誌 · 自動累積', glyph: 'g-cal' },
-    media:  { label: '圖片 · 影片作品庫',   glyph: 'g-media' },
+    media:  { label: '作品庫 · 圖文影音',   glyph: 'g-media' },
     play:   { label: '遊戲 · 互動教學',     glyph: 'g-play' },
     tools:  { label: '工具 · PDF 與掃描',   glyph: 'g-file' }
   };
@@ -208,7 +208,7 @@
           '<svg class="arrow"><use href="#i-arrow"/></svg>' +
         '</a>' +
         (n || !s.pagesLoaded ? '<button class="pages-toggle" type="button">' +
-          '<span class="pt-label">' + (n ? '內含 ' + n + ' 頁' : '載入頁面') + '</span>' +
+          '<span class="pt-label">' + (n ? '展開站內頁面' : '載入頁面') + '</span>' +
           '<svg><use href="#i-chevron"/></svg></button>' : '') +
         '<ul class="pages"></ul>' +
       '</article>';
