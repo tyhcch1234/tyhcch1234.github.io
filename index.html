@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>學習與工具總覽 · tyhcch1234</title>
-<meta name="description" content="tyhcch1234 的 GitHub Pages 全站導覽：HKDSE 數學題解、中文識字與書寫、小學常識與科學、身心記憶練習、設計導覽與 PDF 工具。">
+<meta name="description" content="tyhcch1234 的 GitHub Pages 全站導覽：自動同步所有 repo，可搜尋 repo 與站內頁面——數學題解、中文識字、小學常識、身心記憶、設計導覽、每日日誌與工具。">
 <meta name="theme-color" content="#4f6ef7">
 <style>
   :root{
@@ -18,6 +18,8 @@
     --line-strong:#d6dbea;
     --brand:#4f6ef7;
     --brand-2:#8b5cf6;
+    --ok:#16a34a;
+    --warn:#b45309;
     --shadow:0 1px 2px rgba(16,24,40,.04), 0 10px 30px rgba(16,24,40,.06);
     --shadow-hover:0 6px 16px rgba(16,24,40,.08), 0 20px 46px rgba(79,110,247,.16);
     --radius:18px;
@@ -56,15 +58,11 @@
   .topbar{
     position:sticky;top:0;z-index:20;
     backdrop-filter:saturate(160%) blur(14px);
-    background:transparent;
-    border-bottom:1px solid transparent;
+    background:transparent;border-bottom:1px solid transparent;
     transition:border-color .25s, background .25s;
   }
   .topbar.stuck{border-bottom-color:var(--line);background:color-mix(in srgb, var(--bg) 88%, transparent)}
-  .topbar .inner{
-    max-width:var(--wrap);margin:0 auto;padding:12px 20px;
-    display:flex;align-items:center;gap:12px;
-  }
+  .topbar .inner{max-width:var(--wrap);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:14.5px;text-decoration:none}
   .brand .mark{
     width:30px;height:30px;border-radius:9px;flex:0 0 auto;
@@ -84,9 +82,11 @@
   .icon-btn .moon{display:none}
   html[data-theme="dark"] .icon-btn .sun{display:none}
   html[data-theme="dark"] .icon-btn .moon{display:block}
+  .icon-btn.spin svg{animation:spin .9s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
 
   /* ---------- hero ---------- */
-  header.hero{text-align:center;padding:64px 0 30px}
+  header.hero{text-align:center;padding:64px 0 24px}
   .avatar{
     width:66px;height:66px;border-radius:21px;margin:0 auto 20px;
     background:linear-gradient(135deg,var(--brand),var(--brand-2));
@@ -105,14 +105,12 @@
   .stat b{color:var(--ink);font-variant-numeric:tabular-nums}
   .stat .live{display:inline-flex;align-items:center;gap:6px}
   .stat .live i{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.16)}
+  .stat .live.warn i{background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.16)}
 
   /* ---------- search ---------- */
-  .search-wrap{max-width:520px;margin:34px auto 18px}
+  .search-wrap{max-width:560px;margin:30px auto 10px}
   .search{position:relative}
-  .search > svg{
-    position:absolute;left:16px;top:50%;transform:translateY(-50%);
-    width:18px;height:18px;color:var(--muted);
-  }
+  .search > svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
   .search input{
     width:100%;padding:14px 58px 14px 46px;border-radius:15px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);
@@ -126,9 +124,12 @@
     font-family:inherit;font-size:11.5px;color:var(--muted);
     border:1px solid var(--line);border-radius:7px;padding:2px 7px;background:var(--card-2);
   }
+  .hint{text-align:center;font-size:12.4px;color:var(--muted);margin:10px 0 0;min-height:20px}
+  .hint b{color:var(--ink)}
+  .hint .warn{color:var(--warn)}
 
   /* ---------- filter chips ---------- */
-  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 46px}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px auto 42px}
   .chip{
     font:inherit;font-size:13px;cursor:pointer;
     padding:7px 14px;border-radius:999px;
@@ -138,8 +139,7 @@
   .chip:hover{border-color:var(--line-strong);transform:translateY(-1px)}
   .chip[aria-pressed="true"]{
     background:linear-gradient(135deg,var(--brand),var(--brand-2));
-    border-color:transparent;color:#fff;
-    box-shadow:0 6px 18px rgba(79,110,247,.32);
+    border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(79,110,247,.32);
   }
   .chip span{opacity:.65;margin-left:5px;font-variant-numeric:tabular-nums}
 
@@ -150,53 +150,93 @@
   section[data-cat="junior"]{--accent:#16a34a}
   section[data-cat="mind"]{--accent:#8b5cf6}
   section[data-cat="design"]{--accent:#0ea5e9}
+  section[data-cat="daily"]{--accent:#db2777}
+  section[data-cat="media"]{--accent:#7c3aed}
+  section[data-cat="play"]{--accent:#ea580c}
   section[data-cat="tools"]{--accent:#0f766e}
 
   .sec-head{display:flex;align-items:center;gap:10px;margin:0 0 16px}
   .sec-head .glyph{
-    width:28px;height:28px;border-radius:9px;flex:0 0 auto;
-    display:grid;place-items:center;
-    background:color-mix(in srgb, var(--accent) 12%, transparent);
-    color:var(--accent);
+    width:28px;height:28px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;
+    background:color-mix(in srgb, var(--accent) 12%, transparent);color:var(--accent);
   }
   .sec-head .glyph svg{width:15px;height:15px}
   h2{font-size:15px;font-weight:700;letter-spacing:.03em;margin:0}
   .count{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
   .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:14px}
-  a.card{
-    display:flex;align-items:flex-start;gap:13px;
-    padding:17px 16px;border-radius:var(--radius);
-    background:var(--card);border:1px solid var(--line);
-    text-decoration:none;box-shadow:var(--shadow);
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;align-items:start}
+
+  /* ---------- card ---------- */
+  .card{
+    position:relative;display:flex;flex-direction:column;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);
     transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    position:relative;
   }
-  a.card::before{
+  .card::before{
     content:"";position:absolute;inset:0;border-radius:var(--radius);pointer-events:none;
     background:linear-gradient(135deg,color-mix(in srgb, var(--accent) 9%, transparent),transparent 52%);
     opacity:0;transition:opacity .18s ease;
   }
-  a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb, var(--accent) 34%, var(--line))}
-  a.card:hover::before{opacity:1}
-  a.card:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb, var(--accent) 34%, var(--line))}
+  .card:hover::before{opacity:1}
+  .card > .main{
+    display:flex;align-items:flex-start;gap:13px;padding:17px 16px 10px;
+    text-decoration:none;position:relative;z-index:1;
+  }
+  .card > .main:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:12px}
   .tile{
-    width:34px;height:34px;border-radius:11px;flex:0 0 auto;
-    display:grid;place-items:center;color:#fff;
+    width:34px;height:34px;border-radius:11px;flex:0 0 auto;display:grid;place-items:center;color:#fff;
     background:linear-gradient(135deg,var(--accent),color-mix(in srgb, var(--accent) 55%, #ffffff));
     box-shadow:0 6px 14px color-mix(in srgb, var(--accent) 30%, transparent);
   }
   .tile svg{width:17px;height:17px}
-  .body{min-width:0;flex:1;padding-right:12px}
+  .body{min-width:0;flex:1;padding-right:10px}
   .title{display:block;font-weight:650;font-size:14.5px;letter-spacing:-.005em;margin-bottom:3px}
   .desc{display:block;font-size:12.6px;color:var(--muted);line-height:1.5}
-  .arrow{
-    position:absolute;right:13px;bottom:13px;width:15px;height:15px;
-    color:var(--muted);opacity:0;transform:translate(-3px,3px);
-    transition:opacity .18s, transform .18s;
+  .meta{display:block;margin-top:7px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+  .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--line-strong)}
+  .badge{
+    font-size:10.6px;font-weight:650;letter-spacing:.02em;padding:1.5px 7px;border-radius:999px;
+    background:color-mix(in srgb, var(--accent) 13%, transparent);color:var(--accent);
   }
-  a.card:hover .arrow{opacity:.75;transform:translate(0,0)}
+  .badge.new{background:rgba(22,163,74,.14);color:#15803d}
+  html[data-theme="dark"] .badge.new{color:#4ade80}
+  .arrow{
+    position:absolute;right:13px;top:16px;width:15px;height:15px;color:var(--muted);
+    opacity:0;transform:translate(-3px,3px);transition:opacity .18s, transform .18s;
+  }
+  .card:hover .arrow{opacity:.75;transform:translate(0,0)}
+
+  .pages-toggle{
+    align-self:flex-start;margin:0 0 12px 63px;
+    font:inherit;font-size:12.3px;color:var(--accent);background:transparent;border:0;
+    padding:3px 0;cursor:pointer;display:inline-flex;align-items:center;gap:5px;
+    position:relative;z-index:1;
+  }
+  .pages-toggle:hover{text-decoration:underline}
+  .pages-toggle svg{width:12px;height:12px;transition:transform .18s}
+  .card.open .pages-toggle svg{transform:rotate(180deg)}
+  .pages{list-style:none;margin:0 16px 14px;padding:10px 0 0;border-top:1px dashed var(--line);display:none}
+  .card.open .pages{display:block}
+  .pages li{margin:0}
+  .pages a{
+    display:flex;gap:10px;justify-content:space-between;align-items:baseline;
+    padding:6px 8px;border-radius:9px;text-decoration:none;font-size:12.6px;color:var(--ink-2);
+    position:relative;z-index:1;
+  }
+  .pages a:hover{background:color-mix(in srgb, var(--accent) 9%, transparent);color:var(--ink)}
+  .pages a .p{
+    color:var(--muted);font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    flex:0 0 auto;max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .pages .more-pages{display:flex;justify-content:center;padding-top:4px}
+  .pages .more-pages button{
+    font:inherit;font-size:12px;color:var(--muted);background:transparent;border:0;cursor:pointer;padding:4px 8px;
+  }
+  .pages .more-pages button:hover{color:var(--accent);text-decoration:underline}
+  mark{background:color-mix(in srgb, var(--brand) 24%, transparent);color:inherit;border-radius:3px;padding:0 1px}
 
   /* ---------- empty / footer ---------- */
   .empty{display:none;text-align:center;padding:64px 0;color:var(--muted);font-size:14px}
@@ -219,10 +259,11 @@
 
   @media (max-width:560px){
     .wrap{padding:0 15px 70px}
-    header.hero{padding:44px 0 22px}
+    header.hero{padding:44px 0 18px}
     .grid{grid-template-columns:1fr}
     .search kbd{display:none}
     .search input{padding-right:16px}
+    .pages-toggle{margin-left:16px}
   }
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -252,17 +293,32 @@
     <symbol id="g-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14 3H7.5A2.5 2.5 0 0 0 5 5.5v13A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>
     </symbol>
+    <symbol id="g-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M7.5 13h3M13.5 13h3M7.5 17h3M13.5 17h3"/>
+    </symbol>
+    <symbol id="g-media" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M3.5 17l4.8-4.4a2 2 0 0 1 2.7 0l3 2.8 2.4-2.2a2 2 0 0 1 2.7 0l1.4 1.3"/>
+    </symbol>
+    <symbol id="g-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.5" y="7" width="19" height="10.5" rx="4.5"/><path d="M7 10.5v3.5M5.2 12.2h3.6"/><circle cx="16.3" cy="11" r="1"/><circle cx="18.6" cy="13.6" r="1"/>
+    </symbol>
     <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.4-3.4"/>
     </symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M7 17 17 7M17 7H9M17 7v8"/>
     </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9l6 6 6-6"/>
+    </symbol>
     <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
       <circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/>
     </symbol>
     <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
       <path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/>
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 11a8 8 0 1 0-2.6 6.1"/><path d="M20 4.5V11h-6.2"/>
     </symbol>
     <symbol id="i-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 19V5M6 11l6-6 6 6"/>
@@ -274,13 +330,13 @@
   <div class="inner">
     <a class="brand" href="#top">
       <span class="mark">T</span>
-      <span>tyhcch1234<small>學習與工具總覽</small></span>
+      <span>學習與工具總覽<small>tyhcch1234.github.io</small></span>
     </a>
     <div class="top-actions">
-      <button class="icon-btn" id="toTop" title="回到頂部" aria-label="回到頂部">
-        <svg><use href="#i-top"/></svg>
+      <button class="icon-btn" id="syncBtn" type="button" title="重新掃描 GitHub repo（自動更新）" aria-label="重新掃描 GitHub repo">
+        <svg><use href="#i-refresh"/></svg>
       </button>
-      <button class="icon-btn" id="themeToggle" title="切換深色模式" aria-label="切換深色模式">
+      <button class="icon-btn" id="themeToggle" type="button" title="切換深色模式" aria-label="切換深色模式">
         <svg class="sun"><use href="#i-sun"/></svg>
         <svg class="moon"><use href="#i-moon"/></svg>
       </button>
@@ -293,350 +349,566 @@
   <header class="hero">
     <div class="avatar">T</div>
     <h1>學習與工具總覽</h1>
-    <p class="sub">tyhcch1234 · GitHub Pages 全站導覽</p>
+    <p class="sub">自動掃描 GitHub 上所有 repo，可搜尋網站與站內頁面</p>
     <div class="stat">
-      <span><b>18</b> 個網站</span>
-      <span><b>6</b> 個分類</span>
-      <span class="live"><i></i>全部上線</span>
+      <span><b id="statSites">–</b> 個網站</span>
+      <span><b id="statPages">–</b> 個頁面</span>
+      <span class="live" id="statLive"><i></i><span id="statSync">讀取中…</span></span>
     </div>
   </header>
 
   <div class="search-wrap">
     <div class="search">
       <svg><use href="#i-search"/></svg>
-      <input id="q" type="search" placeholder="搜尋網站：數學、默書、靜心…" autocomplete="off" aria-label="搜尋網站">
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="搜尋 repo 或站內頁面，例如「數學」「默書」「優惠」…"
+             aria-label="搜尋網站與頁面">
       <kbd>/</kbd>
     </div>
+    <p class="hint" id="hint">搜尋會同時比對 repo 名稱、說明與站內每個頁面。</p>
   </div>
 
-  <div class="chips" id="chips" role="group" aria-label="依分類篩選">
-    <button class="chip" data-filter="all" aria-pressed="true">全部<span>18</span></button>
-    <button class="chip" data-filter="math" aria-pressed="false">數學<span>4</span></button>
-    <button class="chip" data-filter="lang" aria-pressed="false">中文<span>5</span></button>
-    <button class="chip" data-filter="junior" aria-pressed="false">小學常識<span>2</span></button>
-    <button class="chip" data-filter="mind" aria-pressed="false">身心記憶<span>3</span></button>
-    <button class="chip" data-filter="design" aria-pressed="false">設計導覽<span>2</span></button>
-    <button class="chip" data-filter="tools" aria-pressed="false">工具<span>2</span></button>
-  </div>
+  <div class="chips" id="chips"></div>
 
-  <div id="content">
-
-    <!-- 數學 -->
-    <section data-cat="math">
-      <div class="sec-head">
-        <span class="glyph"><svg><use href="#g-math"/></svg></span>
-        <h2>數學 · 文憑試與測驗</h2>
-        <span class="rule"></span>
-        <span class="count">4</span>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://tyhcch1234.github.io/HKDSE-Maths-Solutions/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-math"/></svg></span>
-          <span class="body">
-            <span class="title">HKDSE Maths Solutions</span>
-            <span class="desc">文憑試數學題解（英文版）· 可按年份或課題瀏覽</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/HKDSE-Maths-Chi-Solutions/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-math"/></svg></span>
-          <span class="body">
-            <span class="title">HKDSE 數學題解</span>
-            <span class="desc">香港中學文憑試數學（必修部分）中文題解</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/F4_Maths_UT1/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-math"/></svg></span>
-          <span class="body">
-            <span class="title">F4 數學 UT1 溫習</span>
-            <span class="desc">中四統一測驗一 · 重點整理與互動練習</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/F3_Maths_UT1/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-math"/></svg></span>
-          <span class="body">
-            <span class="title">F3 數學 UT1 溫習</span>
-            <span class="desc">中三統一測驗一 · 闖關式溫習</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- 中文 -->
-    <section data-cat="lang">
-      <div class="sec-head">
-        <span class="glyph"><svg><use href="#g-lang"/></svg></span>
-        <h2>中文 · 識字與書寫</h2>
-        <span class="rule"></span>
-        <span class="count">5</span>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://tyhcch1234.github.io/hanzi/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-lang"/></svg></span>
-          <span class="body">
-            <span class="title">中文字工作紙生成器</span>
-            <span class="desc">輸入默書字詞，一鍵產生六步寫字工作紙（Word／A4）</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/chinese-tracing-app/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-lang"/></svg></span>
-          <span class="body">
-            <span class="title">中文描紅練習 · 口訣版</span>
-            <span class="desc">筆順示範、口訣讀音、練寫與默書，累積分數抽卡</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/chinese_writing/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-lang"/></svg></span>
-          <span class="body">
-            <span class="title">部件拆字練習冊</span>
-            <span class="desc">小三 200 基本字 · 繁體部件拆字，讀音可點聽粵音</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/Chinese_Character/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-lang"/></svg></span>
-          <span class="body">
-            <span class="title">漢字部件拆解</span>
-            <span class="desc">以源流明體示範字形結構，按部首與部件分色</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/p3-dictation-unit2/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-lang"/></svg></span>
-          <span class="body">
-            <span class="title">默書探險隊</span>
-            <span class="desc">小三第二單元默書 · 遊戲化溫習</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- 小學常識與科學 -->
-    <section data-cat="junior">
-      <div class="sec-head">
-        <span class="glyph"><svg><use href="#g-flask"/></svg></span>
-        <h2>小學 · 常識與科學</h2>
-        <span class="rule"></span>
-        <span class="count">2</span>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://tyhcch1234.github.io/p3-common-sense/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-flask"/></svg></span>
-          <span class="body">
-            <span class="title">小三常識溫習樂園</span>
-            <span class="desc">我的好朋友、香港的植物、植物與生活 · 課文重點與多款題型</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/chem-adventure/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-flask"/></svg></span>
-          <span class="body">
-            <span class="title">化學物質大冒險</span>
-            <span class="desc">小三科學探險隊 · 生活中的化學物質與安全保護</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- 身心記憶 -->
-    <section data-cat="mind">
-      <div class="sec-head">
-        <span class="glyph"><svg><use href="#g-mind"/></svg></span>
-        <h2>身心 · 益智 · 記憶</h2>
-        <span class="rule"></span>
-        <span class="count">3</span>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://tyhcch1234.github.io/mindful-kids/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-mind"/></svg></span>
-          <span class="body">
-            <span class="title">心晴小星球</span>
-            <span class="desc">小三正向思維與靜心練習：彩虹呼吸、身體掃描、感恩日記</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/brain-training-seniors/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-mind"/></svg></span>
-          <span class="body">
-            <span class="title">腦友記 · 每日動腦筋</span>
-            <span class="desc">長者健腦練習：大字、慢節奏、不計時、不計分</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/bible-verses-memory/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-mind"/></svg></span>
-          <span class="body">
-            <span class="title">聖經金句 200 句</span>
-            <span class="desc">金句背誦與記憶練習</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- 設計導覽 -->
-    <section data-cat="design">
-      <div class="sec-head">
-        <span class="glyph"><svg><use href="#g-cube"/></svg></span>
-        <h2>設計 · 繪本 · 導覽</h2>
-        <span class="rule"></span>
-        <span class="count">2</span>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://tyhcch1234.github.io/interior-design-vr-tour/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-cube"/></svg></span>
-          <span class="body">
-            <span class="title">嘉雲臺室內設計 VR</span>
-            <span class="desc">4 房 1 套 1811 呎 · 360° 全景導覽</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/Fire_Truck_Book/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-cube"/></svg></span>
-          <span class="body">
-            <span class="title">《香港消防車》閱讀挑戰</span>
-            <span class="desc">按章節分類 82 題，每題附書本頁碼提示</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- 工具 -->
-    <section data-cat="tools">
-      <div class="sec-head">
-        <span class="glyph"><svg><use href="#g-file"/></svg></span>
-        <h2>工具 · PDF 與掃描</h2>
-        <span class="rule"></span>
-        <span class="count">2</span>
-      </div>
-      <div class="grid">
-        <a class="card" href="https://tyhcch1234.github.io/pdf-studio/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-file"/></svg></span>
-          <span class="body">
-            <span class="title">PDF Studio</span>
-            <span class="desc">PDF 轉 Word、合併、A3 分割</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="card" href="https://tyhcch1234.github.io/scanpro/" target="_blank" rel="noopener">
-          <span class="tile"><svg><use href="#g-file"/></svg></span>
-          <span class="body">
-            <span class="title">ScanPro</span>
-            <span class="desc">相片轉 PDF 掃描，自動校正與整理</span>
-          </span>
-          <svg class="arrow"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </section>
-
-  </div>
-
-  <div class="empty" id="empty">
-    <b>找不到符合的網站</b>
-    試試其他關鍵字，例如「數學」、「默書」、「靜心」。
-    <br><button type="button" id="reset">清除篩選</button>
-  </div>
-
-  <footer class="footer">
-    共 18 個 GitHub Pages 網站 · 部署於 <code>tyhcch1234.github.io/&lt;repo&gt;/</code><br>
-    更新於 2026 年 10 月 30 日 · <a href="https://github.com/tyhcch1234" target="_blank" rel="noopener">GitHub</a>
-  </footer>
-
+  <main id="sections"></main>
 </div>
 
-<script>
-(function(){
-  var q = document.getElementById('q');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var cards = Array.prototype.slice.call(document.querySelectorAll('a.card'));
-  var sections = Array.prototype.slice.call(document.querySelectorAll('section[data-cat]'));
-  var empty = document.getElementById('empty');
-  var activeCat = 'all';
+<div class="empty" id="empty">
+  <b>找不到符合的網站或頁面</b>
+  試試其他關鍵字，例如「數學」、「默書」、「靜心」、「優惠」。
+  <br><button type="button" id="reset">清除篩選</button>
+</div>
 
-  // 預先建立搜尋索引
-  cards.forEach(function(c){
-    c._hay = (c.textContent + ' ' + c.getAttribute('href')).toLowerCase();
+<footer class="footer">
+  共 <b id="footSites">–</b> 個網站 · <b id="footPages">–</b> 個頁面 · 部署於 <code>tyhcch1234.github.io/&lt;repo&gt;/</code><br>
+  資料快照：2026年10月30日 23:25 · 每次開頁會自動向 GitHub 同步新 repo<br>
+  <a href="https://github.com/tyhcch1234?tab=repositories" target="_blank" rel="noopener">GitHub repos</a>
+</footer>
+
+<script id="seed" type="application/json">{"owner":"tyhcch1234","generated":"2026-10-30T23:25:26+08:00","generated_human":"2026年10月30日 23:25","sites":[{"name":"F3_Maths_UT1","title":"F3 數學 UT1 溫習","desc":"中三統一測驗一 · 闖關式溫習","cat":"math","tags":["中三","數學","ut1","溫習"],"updated":"2026-10-16","url":"F3_Maths_UT1/","pages":[{"t":"溫習測驗（互動）","u":"中三數學_UT1_溫習測驗.html"}],"dyn":false},{"name":"F4_Maths_UT1","title":"F4 數學 UT1 溫習","desc":"中四統一測驗一 · 重點整理與互動練習","cat":"math","tags":["中四","數學","ut1","溫習"],"updated":"2026-10-24","url":"F4_Maths_UT1/","pages":[{"t":"溫習練習（36 題）","u":"F4_UT1_Revision.html"}],"dyn":false},{"name":"HKDSE-Maths-Solutions","title":"HKDSE Maths Solutions","desc":"文憑試數學題解（英文版）· 可按年份或課題瀏覽","cat":"math","tags":["dse","數學","maths","題解","solution"],"updated":"2026-10-28","url":"HKDSE-Maths-Solutions/","pages":[{"t":"按課題瀏覽（17 課題 · 全 15 年）","u":"DSE_Maths_By_Topic.html"},{"t":"練習模式（逐題練習）","u":"DSE_Maths_Exercise.html"},{"t":"百分數 · 50 題精練","u":"DSE_Percentages_50_Questions.html"},{"t":"坐標幾何 · 50 題精練","u":"DSE_coordinate-geometry_50_Questions.html"},{"t":"方程 · 50 題精練","u":"DSE_equations_50_Questions.html"},{"t":"估算與誤差 · 50 題精練","u":"DSE_estimation-approximation-error_50_Questions.html"},{"t":"公式與數列 · 50 題精練","u":"DSE_formulas-sequences_50_Questions.html"},{"t":"函數與圖像 · 50 題精練","u":"DSE_functions-graphs_50_Questions.html"},{"t":"幾何 · 50 題精練","u":"DSE_geometry_50_Questions.html"},{"t":"指數與對數 · 50 題精練","u":"DSE_indices-exponential-logarithmic_50_Questions.html"},{"t":"不等式與線性規劃 · 50 題精練","u":"DSE_inequalities-linear-programming_50_Questions.html"},{"t":"度量 · 50 題精練","u":"DSE_mensuration_50_Questions.html"},{"t":"多項式 · 50 題精練","u":"DSE_polynomials_50_Questions.html"},{"t":"概率 · 50 題精練","u":"DSE_probability_50_Questions.html"},{"t":"率、比與變分 · 50 題精練","u":"DSE_rate-ratio-variations_50_Questions.html"},{"t":"統計 · 50 題精練","u":"DSE_statistics_50_Questions.html"},{"t":"三角學 · 50 題精練","u":"DSE_trigonometry_50_Questions.html"},{"t":"Short video","u":"short_video.html"}],"dyn":false},{"name":"HKDSE-Maths-Chi-Solutions","title":"HKDSE 數學題解","desc":"香港中學文憑試數學（必修部分）中文題解","cat":"math","tags":["dse","數學","中文","題解"],"updated":"2026-10-29","url":"HKDSE-Maths-Chi-Solutions/","pages":[{"t":"按課題瀏覽（17 課題 · 全 15 年）","u":"DSE_Maths_By_Topic.html"},{"t":"百分數 · 50 題精練","u":"DSE_Percentages_50_Questions.html"},{"t":"坐標幾何 · 50 題精練","u":"DSE_coordinate-geometry_50_Questions.html"},{"t":"方程 · 50 題精練","u":"DSE_equations_50_Questions.html"},{"t":"估算與誤差 · 50 題精練","u":"DSE_estimation-approximation-error_50_Questions.html"},{"t":"公式與數列 · 50 題精練","u":"DSE_formulas-sequences_50_Questions.html"},{"t":"函數與圖像 · 50 題精練","u":"DSE_functions-graphs_50_Questions.html"},{"t":"幾何 · 50 題精練","u":"DSE_geometry_50_Questions.html"},{"t":"指數與對數 · 50 題精練","u":"DSE_indices-exponential-logarithmic_50_Questions.html"},{"t":"不等式與線性規劃 · 50 題精練","u":"DSE_inequalities-linear-programming_50_Questions.html"},{"t":"度量 · 50 題精練","u":"DSE_mensuration_50_Questions.html"},{"t":"多項式 · 50 題精練","u":"DSE_polynomials_50_Questions.html"},{"t":"概率 · 50 題精練","u":"DSE_probability_50_Questions.html"},{"t":"率、比與變分 · 50 題精練","u":"DSE_rate-ratio-variations_50_Questions.html"},{"t":"統計 · 50 題精練","u":"DSE_statistics_50_Questions.html"},{"t":"三角學 · 50 題精練","u":"DSE_trigonometry_50_Questions.html"}],"dyn":false},{"name":"hanzi","title":"中文字工作紙生成器","desc":"輸入默書字詞，一鍵產生六步寫字工作紙（Word／A4）","cat":"lang","tags":["中文","工作紙","寫字","worksheet"],"updated":"","url":"hanzi/","pages":[]},{"name":"chinese-tracing-app","title":"中文描紅練習 · 口訣版","desc":"筆順示範、口訣讀音、練寫與默書，累積分數抽卡","cat":"lang","tags":["中文","描紅","筆順","默書"],"updated":"2026-10-15","url":"chinese-tracing-app/","pages":[],"dyn":false},{"name":"Chinese_Character","title":"漢字部件拆解","desc":"以源流明體示範字形結構，按部首與部件分色","cat":"lang","tags":["中文","漢字","部首","部件"],"updated":"2026-10-26","url":"Chinese_Character/","pages":[],"dyn":false},{"name":"chinese_writing","title":"部件拆字練習冊","desc":"小三 200 基本字 · 繁體部件拆字，讀音可點聽粵音","cat":"lang","tags":["中文","部件","拆字","小三"],"updated":"2026-10-14","url":"chinese_writing/","pages":[],"dyn":false},{"name":"p3-dictation-unit2","title":"默書探險隊","desc":"小三第二單元默書 · 遊戲化溫習","cat":"lang","tags":["中文","默書","小三","dictation"],"updated":"2026-10-28","url":"p3-dictation-unit2/","pages":[],"dyn":false},{"name":"water-to-urine","title":"一杯水點樣變咗做尿？","desc":"小腸吸收 → 血液運送 → 腎臟過濾 → 排尿，互動教學","cat":"junior","tags":["科學","人體","腎臟","教學"],"updated":"2026-10-30","url":"water-to-urine/","pages":[],"dyn":false},{"name":"chem-adventure","title":"化學物質大冒險","desc":"小三科學探險隊 · 生活中的化學物質與安全保護","cat":"junior","tags":["科學","化學","小三"],"updated":"2026-10-29","url":"chem-adventure/","pages":[],"dyn":false},{"name":"p3-common-sense","title":"小三常識溫習樂園","desc":"我的好朋友、香港的植物、植物與生活 · 課文重點與多款題型","cat":"junior","tags":["常識","小三","溫習"],"updated":"2026-10-29","url":"p3-common-sense/","pages":[{"t":"課堂版 · 逐頁教學","u":"lesson.html"}],"dyn":false},{"name":"mindful-kids","title":"心晴小星球","desc":"小三正向思維與靜心練習：彩虹呼吸、身體掃描、感恩日記","cat":"mind","tags":["靜心","正向","情緒","小三"],"updated":"2026-10-26","url":"mindful-kids/","pages":[],"dyn":false},{"name":"bible-verses-memory","title":"聖經金句 200 句","desc":"金句背誦與記憶練習","cat":"mind","tags":["聖經","金句","記憶"],"updated":"2026-10-17","url":"bible-verses-memory/","pages":[{"t":"金句練習頁","u":"Bible_Verse.html"}],"dyn":false},{"name":"brain-training-seniors","title":"腦友記 · 每日動腦筋","desc":"長者健腦練習：大字、慢節奏、不計時、不計分","cat":"mind","tags":["長者","記憶","健腦"],"updated":"2026-10-26","url":"brain-training-seniors/","pages":[],"dyn":false},{"name":"Fire_Truck_Book","title":"《香港消防車》閱讀挑戰","desc":"按章節分類 82 題，每題附書本頁碼提示","cat":"design","tags":["閱讀","消防車","quiz"],"updated":"2026-10-26","url":"Fire_Truck_Book/","pages":[],"dyn":false},{"name":"interior-design-vr-tour","title":"嘉雲臺室內設計 VR","desc":"4 房 1 套 1811 呎 · 360° 全景導覽","cat":"design","tags":["室內設計","vr","360","導覽"],"updated":"2026-10-26","url":"interior-design-vr-tour/","pages":[],"dyn":false},{"name":"shopping","title":"全港購物優惠日誌","desc":"每晚 20 項最抵：超市・網購・商場・餐飲・家電，逐日累積","cat":"daily","tags":["優惠","購物","超市","著數"],"updated":"2026-10-30","url":"shopping/","pages":[{"t":"2026/10/30","u":"deals/2026-10-30-shopping-deals.html","d":1}],"dyn":true},{"name":"investment-daily","title":"每日投資晚報","desc":"港股・香港樓市・外圍，一晚一份逐日累積","cat":"daily","tags":["投資","港股","樓市","晚報"],"updated":"2026-10-30","url":"investment-daily/","pages":[{"t":"2026/10/30","u":"reports/2026-10-30-investment-brief.html","d":1},{"t":"2026/10/29","u":"reports/2026-10-29-investment-brief.html","d":1}],"dyn":true},{"name":"hot-internet-movie","title":"每日最興影片 / 熱話","desc":"Netflix Top 10・YouTube 熱片・香港熱搜，逐日累積","cat":"daily","tags":["影片","熱話","netflix","youtube","熱搜"],"updated":"2026-10-30","url":"hot-internet-movie/","pages":[{"t":"2026/10/30","u":"archive/2026-10-30.html","d":1}],"dyn":true},{"name":"movie","title":"AI 影片作品庫","desc":"生成的短片與動畫，持續累積","cat":"media","tags":["影片","video","動畫"],"updated":"2026-10-30","url":"movie/","pages":[],"dyn":false},{"name":"image","title":"圖片作品庫","desc":"海報、圖解、教學插圖，持續累積","cat":"media","tags":["圖片","海報","插圖","image"],"updated":"2026-10-30","url":"image/","pages":[],"dyn":false},{"name":"firefighter-3d","title":"消防英雄 3D","desc":"Three.js 第一人稱滅火救援遊戲：6 處火頭、3 位居民、180 秒","cat":"play","tags":["遊戲","3d","消防","three.js"],"updated":"2026-10-30","url":"firefighter-3d/","pages":[],"dyn":false},{"name":"pdf-studio","title":"PDF Studio","desc":"PDF 轉 Word、合併、A3 分割","cat":"tools","tags":["pdf","word","工具","合併"],"updated":"2026-10-30","url":"pdf-studio/","pages":[],"dyn":false},{"name":"scanpro","title":"ScanPro","desc":"相片轉 PDF 掃描，自動校正與整理","cat":"tools","tags":["掃描","pdf","scan","工具"],"updated":"2026-10-30","url":"scanpro/","pages":[{"t":"單檔離線版","u":"single.html"}],"dyn":false}]}</script>
+<script>
+/* 學習與工具總覽 — 自動 repo 索引 + 站內頁面搜尋 */
+(function () {
+  'use strict';
+
+  var OWNER = 'tyhcch1234';
+  var SYNC_TTL = 30 * 60 * 1000;         // GitHub repo 清單快取 30 分鐘
+  var TREE_TTL = 12 * 60 * 60 * 1000;    // 單一 repo 頁面清單快取 12 小時
+
+  var CATS = {
+    math:   { label: '數學 · 文憑試與測驗', glyph: 'g-math' },
+    lang:   { label: '中文 · 識字與書寫',   glyph: 'g-lang' },
+    junior: { label: '小學 · 常識與科學',   glyph: 'g-flask' },
+    mind:   { label: '身心 · 益智 · 記憶',  glyph: 'g-mind' },
+    design: { label: '設計 · 繪本 · 導覽',  glyph: 'g-cube' },
+    daily:  { label: '每日日誌 · 自動累積', glyph: 'g-cal' },
+    media:  { label: '圖片 · 影片作品庫',   glyph: 'g-media' },
+    play:   { label: '遊戲 · 互動教學',     glyph: 'g-play' },
+    tools:  { label: '工具 · PDF 與掃描',   glyph: 'g-file' }
+  };
+  var ORDER = ['math', 'lang', 'junior', 'mind', 'design', 'daily', 'media', 'play', 'tools'];
+  var PAGE_LIMIT = 8;
+
+  var seed = JSON.parse(document.getElementById('seed').textContent);
+  var sites = seed.sites.map(function (s) {
+    s.pages = s.pages || [];
+    s.pagesLoaded = true;
+    s._new = false;
+    return s;
   });
 
-  function apply(){
-    var kw = q.value.trim().toLowerCase();
-    var shown = 0;
-    cards.forEach(function(c){
-      var catOk = activeCat === 'all' || c.closest('section').getAttribute('data-cat') === activeCat;
-      var kwOk = !kw || c._hay.indexOf(kw) !== -1;
-      var show = catOk && kwOk;
-      c.style.display = show ? '' : 'none';
-      if(show) shown++;
-    });
-    sections.forEach(function(s){
-      var visible = s.querySelectorAll('a.card:not([style*="display: none"])').length;
-      s.style.display = visible ? '' : 'none';
-    });
-    empty.style.display = shown ? 'none' : 'block';
+  var byName = Object.create(null);
+  sites.forEach(function (s) { byName[s.name] = s; s._hay = siteHay(s); });
+
+  var activeCat = 'all';
+  var expanded = Object.create(null);
+  var q = '';
+  var searchTimer = null;
+
+  var el = {
+    sections: document.getElementById('sections'),
+    chips: document.getElementById('chips'),
+    input: document.getElementById('q'),
+    hint: document.getElementById('hint'),
+    empty: document.getElementById('empty'),
+    statSites: document.getElementById('statSites'),
+    statPages: document.getElementById('statPages'),
+    statSync: document.getElementById('statSync'),
+    statLive: document.getElementById('statLive'),
+    footSites: document.getElementById('footSites'),
+    footPages: document.getElementById('footPages'),
+    syncBtn: document.getElementById('syncBtn'),
+    topbar: document.getElementById('topbar'),
+    toTop: null
+  };
+
+  /* ------------------------------------------------------------ helpers */
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+  function siteHay(s) {
+    return [s.title, s.desc, (s.tags || []).join(' '), s.name, (CATS[s.cat] || {}).label]
+      .join(' ').toLowerCase();
+  }
+  function pageHay(p) { return (p.t + ' ' + p.u).toLowerCase(); }
+  function siteUrl(s) { return 'https://' + OWNER + '.github.io/' + (s.url || (s.name + '/')); }
+  function pageUrl(s, p) { return siteUrl(s) + p.u; }
+  function link(s, p) {
+    return encodeURI(pageUrl(s, p).replace(/ /g, '%20'));
+  }
+  function store(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+  function read(key, ttl) {
+    try {
+      var raw = localStorage.getItem(key);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      if (!ttl || Date.now() - o.at < ttl) return o;
+      return null;
+    } catch (e) { return null; }
+  }
+  function mark(text, needle) {
+    var t = esc(text);
+    if (!needle) return t;
+    var i = t.toLowerCase().indexOf(needle.toLowerCase());
+    if (i < 0) return t;
+    return t.slice(0, i) + '<mark>' + t.slice(i, i + needle.length) + '</mark>' + t.slice(i + needle.length);
+  }
+  function fmtDate(d) {
+    if (!d) return '';
+    var p = d.split('-');
+    return p.length === 3 ? (Number(p[1]) + '/' + Number(p[2])) : d;
   }
 
-  q.addEventListener('input', apply);
+  /* ------------------------------------------------- 自動分類（新 repo 用） */
+  function autoCat(name, desc) {
+    var low = (name + ' ' + desc).toLowerCase();
+    if (/math|數學|dse/.test(low)) return 'math';
+    if (/中文|hanzi|chinese|dictation|默書|寫字/.test(low)) return 'lang';
+    if (/小學|常識|科學|\bp[1-6]\b/.test(low)) return 'junior';
+    if (/長者|記憶|靜心|mindful|bible|聖經|brain/.test(low)) return 'mind';
+    if (/設計|design|vr|導覽|繪本|tour/.test(low)) return 'design';
+    if (/優惠|投資|日誌|deals|daily|熱話|news|brief|netflix/.test(low)) return 'daily';
+    if (/圖片|image|影片|video|作品/.test(low)) return 'media';
+    if (/遊戲|game|3d|互動/.test(low)) return 'play';
+    return 'tools';
+  }
 
-  chips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      activeCat = chip.getAttribute('data-filter');
-      chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === chip)); });
-      apply();
+  /* ------------------------------------- 由 repo 檔案清單抽出「站內頁面」 */
+  var SKIP_DIRS = ['node_modules/', 'vendor/', '_site/', 'assets/', 'images/', 'img/', 'cn/', 'docs/'];
+  var DATE_DIRS = ['archive/', 'deals/', 'reports/', 'posts/', 'daily/'];
+  var TOPIC = {
+    percentages: '百分數', 'coordinate-geometry': '坐標幾何', equations: '方程',
+    'estimation-approximation-error': '估算與誤差', 'formulas-sequences': '公式與數列',
+    'functions-graphs': '函數與圖像', geometry: '幾何',
+    'indices-exponential-logarithmic': '指數與對數',
+    'inequalities-linear-programming': '不等式與線性規劃', mensuration: '度量',
+    polynomials: '多項式', probability: '概率', 'rate-ratio-variations': '率、比與變分',
+    statistics: '統計', trigonometry: '三角學'
+  };
+
+  function massGenerated(base) {
+    return /^\d{4}_p\d_q\d+\.html$/i.test(base) ||
+      /^\d{4}_mc_\d+\.html$/i.test(base) ||
+      /^ex_t\d+_q\d+\.html$/i.test(base) ||
+      /^demo.*\.html$/i.test(base) ||
+      /_q\d+\.html$/i.test(base);
+  }
+  function prettyTitle(path) {
+    var base = path.split('/').pop().replace(/\.(html|md)$/i, '');
+    var m = base.match(/^dse_(.+)_50_questions$/i);
+    if (m) return (TOPIC[m[1].toLowerCase()] || m[1]) + ' · 50 題精練';
+    if (/^\d{4}-\d{2}-\d{2}/.test(base)) return base.slice(0, 10).replace(/-/g, '/');
+    base = base.replace(/^dse_/i, '').replace(/_/g, ' ');
+    return base;
+  }
+  function extractPages(paths) {
+    var named = [], dated = [];
+    paths.forEach(function (p) {
+      var low = p.toLowerCase();
+      for (var i = 0; i < SKIP_DIRS.length; i++) if (low.indexOf(SKIP_DIRS[i]) === 0) return;
+      var base = low.split('/').pop();
+      if (/\.html$/.test(low)) {
+        if (base === 'index.html' || base === '404.html') return;
+        if (massGenerated(base) || base.indexOf('.body.') !== -1) return;
+        named.push({ t: prettyTitle(p), u: p });
+      } else if (/\.md$/.test(low)) {
+        var ok = false;
+        for (var j = 0; j < DATE_DIRS.length; j++) if (low.indexOf(DATE_DIRS[j]) === 0) ok = true;
+        if (!ok) return;
+        dated.push({ t: prettyTitle(p), u: p.replace(/\.md$/i, '.html'), d: 1 });
+      }
     });
+    named.sort(function (a, b) { return a.u < b.u ? -1 : 1; });
+    dated.sort(function (a, b) { return a.u < b.u ? 1 : -1; });
+    return named.concat(dated);
+  }
+
+  /* ------------------------------------------------------------ 統計 */
+  function totals() {
+    var pages = 0;
+    sites.forEach(function (s) { pages += s.pages.length; });
+    return { sites: sites.length, pages: pages };
+  }
+  function paintTotals() {
+    var t = totals();
+    el.statSites.textContent = t.sites;
+    el.statPages.textContent = t.pages;
+    el.footSites.textContent = t.sites;
+    el.footPages.textContent = t.pages;
+  }
+  function setSync(text, warn) {
+    el.statSync.textContent = text;
+    el.statLive.classList.toggle('warn', !!warn);
+  }
+
+  /* ------------------------------------------------------------ 篩選器 */
+  function renderChips() {
+    var counts = { all: sites.length };
+    sites.forEach(function (s) { counts[s.cat] = (counts[s.cat] || 0) + 1; });
+    var html = '<button class="chip" type="button" data-filter="all" aria-pressed="true">全部<span>' + sites.length + '</span></button>';
+    ORDER.forEach(function (c) {
+      if (!counts[c]) return;
+      html += '<button class="chip" type="button" data-filter="' + c + '">' + esc(CATS[c].label.split(' · ')[0]) +
+        '<span>' + counts[c] + '</span></button>';
+    });
+    el.chips.innerHTML = html;
+  }
+
+  /* ------------------------------------------------------------ 卡片 */
+  function cardHTML(s) {
+    var n = s.pages.length;
+    var meta = [];
+    if (n) meta.push('<span class="badge">' + n + ' 頁</span>');
+    if (s._new) meta.push('<span class="badge new">新</span>');
+    if (s.updated) meta.push('<span>更新 ' + esc(fmtDate(s.updated)) + '</span>');
+    return '' +
+      '<article class="card' + (expanded[s.name] ? ' open' : '') + '" data-name="' + esc(s.name) + '">' +
+        '<a class="main" href="' + esc(siteUrl(s)) + '" target="_blank" rel="noopener">' +
+          '<span class="tile"><svg><use href="#' + (CATS[s.cat] || CATS.tools).glyph + '"/></svg></span>' +
+          '<span class="body">' +
+            '<span class="title">' + mark(s.title, q) + '</span>' +
+            '<span class="desc">' + mark(s.desc, q) + '</span>' +
+            (meta.length ? '<span class="meta">' + meta.join('<span class="dot"></span>') + '</span>' : '') +
+          '</span>' +
+          '<svg class="arrow"><use href="#i-arrow"/></svg>' +
+        '</a>' +
+        (n || !s.pagesLoaded ? '<button class="pages-toggle" type="button">' +
+          '<span class="pt-label">' + (n ? '內含 ' + n + ' 頁' : '載入頁面') + '</span>' +
+          '<svg><use href="#i-chevron"/></svg></button>' : '') +
+        '<ul class="pages"></ul>' +
+      '</article>';
+  }
+
+  function renderAll() {
+    var html = '';
+    ORDER.forEach(function (cat) {
+      var list = sites.filter(function (s) { return s.cat === cat; });
+      if (!list.length) return;
+      html += '<section data-cat="' + cat + '">' +
+        '<div class="sec-head">' +
+          '<span class="glyph"><svg><use href="#' + CATS[cat].glyph + '"/></svg></span>' +
+          '<h2>' + esc(CATS[cat].label) + '</h2>' +
+          '<span class="count">' + list.length + '</span>' +
+          '<span class="rule"></span>' +
+        '</div>' +
+        '<div class="grid">' + list.map(cardHTML).join('') + '</div>' +
+      '</section>';
+    });
+    el.sections.innerHTML = html;
+    paintTotals();
+    applyFilter();
+  }
+
+  /* 重畫單一卡片的頁面清單 */
+  function paintPages(card, s, matches) {
+    var ul = card.querySelector('.pages');
+    if (!ul) return 0;
+    var list = s.pages;
+    if (matches) list = matches;
+    var shown = list.slice(0, matches ? 40 : PAGE_LIMIT);
+    var hidden = list.length - shown.length;
+    var html = shown.map(function (p) {
+      return '<li><a href="' + esc(link(s, p)) + '" target="_blank" rel="noopener">' +
+        '<span class="pt">' + mark(p.t, q) + '</span>' +
+        '<span class="p">' + esc(p.u) + '</span></a></li>';
+    }).join('');
+    if (hidden > 0) {
+      html += '<li class="more-pages"><button type="button" data-more="' + esc(s.name) + '">還有 ' +
+        hidden + ' 頁 · 顯示全部</button></li>';
+    }
+    ul.innerHTML = html;
+    return shown.length;
+  }
+
+  /* ------------------------------------------------------------ 搜尋 */
+  function applyFilter() {
+    var needle = q;
+    var shownSites = 0, shownPages = 0;
+    var cards = el.sections.querySelectorAll('.card');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      var s = byName[card.getAttribute('data-name')];
+      if (!s) continue;
+      var catOk = activeCat === 'all' || s.cat === activeCat;
+      var siteMatch = !needle || s._hay.indexOf(needle) !== -1;
+      var hits = [];
+      if (needle) {
+        s.pages.forEach(function (p) { if (pageHay(p).indexOf(needle) !== -1) hits.push(p); });
+      }
+      var visible = catOk && (siteMatch || hits.length > 0);
+      card.style.display = visible ? '' : 'none';
+      if (!visible) continue;
+      shownSites++;
+      var open = needle ? hits.length > 0 : !!expanded[s.name];
+      card.classList.toggle('open', open);
+      if (open) shownPages += paintPages(card, s, needle && hits.length ? hits : null);
+    }
+    el.empty.style.display = shownSites ? 'none' : 'block';
+    paintHint(shownSites, shownPages);
+  }
+
+  function paintHint(shownSites, shownPages) {
+    if (!q) {
+      el.hint.innerHTML = '搜尋會同時比對 repo 名稱、說明與站內每個頁面。';
+      return;
+    }
+    if (!shownSites) {
+      el.hint.innerHTML = '沒有符合「<b>' + esc(q) + '</b>」的網站或頁面。';
+      return;
+    }
+    el.hint.innerHTML = shownPages
+      ? '找到 <b>' + shownSites + '</b> 個網站 · <b>' + shownPages + '</b> 個頁面'
+      : '找到 <b>' + shownSites + '</b> 個網站';
+  }
+
+  /* ------------------------------------------------- 事件：卡片展開／更多 */
+  el.sections.addEventListener('click', function (e) {
+    var more = e.target.closest('[data-more]');
+    if (more) {
+      var c = more.closest('.card');
+      paintAllPages(c, byName[more.getAttribute('data-more')]);
+      return;
+    }
+    var btn = e.target.closest('.pages-toggle');
+    if (!btn) return;
+    var card = btn.closest('.card');
+    var s = byName[card.getAttribute('data-name')];
+    if (!s) return;
+    if (!s.pagesLoaded) {
+      btn.disabled = true;
+      btn.querySelector('.pt-label').textContent = '載入中…';
+      ensurePages(s).then(function () {
+        btn.disabled = false;
+        renderAll();
+      });
+      return;
+    }
+    var name = s.name;
+    expanded[name] = !expanded[name];
+    card.classList.toggle('open', expanded[name]);
+    if (expanded[name]) paintPages(card, s, null);
   });
 
-  document.getElementById('reset').addEventListener('click', function(){
-    q.value = '';
+  function paintAllPages(card, s) {
+    var ul = card.querySelector('.pages');
+    ul.innerHTML = s.pages.map(function (p) {
+      return '<li><a href="' + esc(link(s, p)) + '" target="_blank" rel="noopener">' +
+        '<span class="pt">' + mark(p.t, q) + '</span>' +
+        '<span class="p">' + esc(p.u) + '</span></a></li>';
+    }).join('');
+  }
+
+  /* ------------------------------------------------- 自動載入 / 更新頁面清單 */
+  function loadTree(s, force) {
+    var cached = force ? null : read('tree:' + s.name, TREE_TTL);
+    if (cached && cached.pages) {
+      var before = JSON.stringify(s.pages);
+      s.pages = cached.pages;
+      s.pagesLoaded = true;
+      return Promise.resolve(JSON.stringify(s.pages) !== before);
+    }
+    var url = 'https://api.github.com/repos/' + OWNER + '/' + s.name + '/git/trees/' +
+      (s.branch || 'HEAD') + '?recursive=1';
+    return fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (j) {
+        var paths = (j.tree || []).filter(function (t) { return t.type === 'blob'; })
+          .map(function (t) { return t.path; });
+        var before = JSON.stringify(s.pages);
+        s.pages = extractPages(paths);
+        s.pagesLoaded = true;
+        store('tree:' + s.name, { at: Date.now(), pages: s.pages });
+        return JSON.stringify(s.pages) !== before;
+      })
+      .catch(function () { s.pagesLoaded = true; return false; });
+  }
+
+  function ensurePages(s) { return loadTree(s, false).then(function () { return s; }); }
+
+  /* 每日累積的 repo（購物優惠、投資晚報、熱話）自動抓最新頁面 */
+  function refreshDynamic() {
+    var queue = sites.filter(function (s) { return s.dyn && s.pagesLoaded; });
+    var changed = 0;
+    var chain = Promise.resolve();
+    queue.forEach(function (s) {
+      chain = chain.then(function () {
+        return loadTree(s, false).then(function (ch) { if (ch) changed++; });
+      });
+    });
+    return chain.then(function () {
+      if (changed) { renderAll(); }
+      return changed;
+    });
+  }
+
+  /* ------------------------------------------------- GitHub 同步 */
+  function minimal(list) {
+    return list.filter(function (r) { return r.has_pages && !r.fork; })
+      .map(function (r) {
+        return {
+          name: r.name, description: r.description || '',
+          updated_at: (r.updated_at || '').slice(0, 10),
+          default_branch: r.default_branch || 'main'
+        };
+      });
+  }
+
+  function applyLive(list) {
+    var added = 0;
+    list.forEach(function (r) {
+      if (r.name === OWNER + '.github.io') return;
+      if (byName[r.name]) return;
+      var cat = autoCat(r.name, r.description || '');
+      var s = {
+        name: r.name,
+        title: r.name.replace(/_/g, ' '),
+        desc: r.description || (CATS[cat].label + ' 網站'),
+        cat: cat,
+        tags: [],
+        updated: r.updated_at || '',
+        url: r.name + '/',
+        pages: [],
+        pagesLoaded: false,
+        branch: r.default_branch || 'main',
+        _new: true
+      };
+      s._hay = siteHay(s);
+      sites.push(s);
+      byName[s.name] = s;
+      added++;
+    });
+    if (added) {
+      renderChips();
+      renderAll();
+    }
+    return added;
+  }
+
+  function sync(force) {
+    if (!window.fetch) { setSync('離線快照 · ' + (seed.generated_human || ''), true); return; }
+    var cached = force ? null : read('portal-sync', SYNC_TTL);
+    if (cached) {
+      var n = applyLive(cached.list);
+      setSync('已同步 GitHub' + (n ? ' · 新增 ' + n + ' 個' : ''));
+      return;
+    }
+    el.syncBtn.classList.add('spin');
+    setSync('同步 GitHub…');
+    fetch('https://api.github.com/users/' + OWNER + '/repos?per_page=100&sort=updated&type=owner',
+      { headers: { 'Accept': 'application/vnd.github+json' } })
+      .then(function (r) {
+        if (r.status === 403 || r.status === 429) throw new Error('quota');
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (list) {
+        var m = minimal(list);
+        store('portal-sync', { at: Date.now(), list: m });
+        var n = applyLive(m);
+        setSync('已同步 GitHub · ' + m.length + ' 個 repo' + (n ? '（新增 ' + n + '）' : ''));
+      })
+      .catch(function (err) {
+        var old = read('portal-sync', 0);
+        var msg = err && err.message === 'quota'
+          ? 'GitHub 配額已滿 · 顯示快照'
+          : '離線快照 · ' + (seed.generated_human || '');
+        if (old) applyLive(old.list);
+        setSync(msg, true);
+        seed._stale = true;
+      })
+      .then(function () { el.syncBtn.classList.remove('spin'); });
+  }
+
+  /* ------------------------------------------------- 其他 UI */
+  el.input.addEventListener('input', function () {
+    clearTimeout(searchTimer);
+    var v = el.input.value.trim().toLowerCase();
+    searchTimer = setTimeout(function () { q = v; applyFilter(); }, 90);
+  });
+
+  el.chips.addEventListener('click', function (e) {
+    var chip = e.target.closest('.chip');
+    if (!chip) return;
+    activeCat = chip.getAttribute('data-filter');
+    Array.prototype.forEach.call(el.chips.children, function (c) {
+      c.setAttribute('aria-pressed', String(c === chip));
+    });
+    applyFilter();
+  });
+
+  document.getElementById('reset').addEventListener('click', function () {
+    el.input.value = '';
+    q = '';
     activeCat = 'all';
-    chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === 'all')); });
-    apply();
-    q.focus();
+    Array.prototype.forEach.call(el.chips.children, function (c) {
+      c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === 'all'));
+    });
+    applyFilter();
+    el.input.focus();
   });
 
-  // 按 / 或 Ctrl/Cmd+K 聚焦搜尋；Esc 清空
-  document.addEventListener('keydown', function(e){
+  document.addEventListener('keydown', function (e) {
     var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
-    if(e.key === '/' && !typing){ e.preventDefault(); q.focus(); }
-    if((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){ e.preventDefault(); q.focus(); q.select(); }
-    if(e.key === 'Escape' && document.activeElement === q){ q.value = ''; apply(); }
+    if (e.key === '/' && !typing) { e.preventDefault(); el.input.focus(); }
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault(); el.input.focus(); el.input.select();
+    }
+    if (e.key === 'Escape' && document.activeElement === el.input) {
+      el.input.value = ''; q = ''; applyFilter();
+    }
   });
 
-  // 深色模式
+  /* 深色模式 */
   var root = document.documentElement;
   var saved = null;
-  try { saved = localStorage.getItem('theme'); } catch(err){}
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
   var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var theme = saved || (prefersDark ? 'dark' : 'light');
-  root.setAttribute('data-theme', theme);
-  document.getElementById('themeToggle').addEventListener('click', function(){
-    theme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', theme);
-    try { localStorage.setItem('theme', theme); } catch(err){}
+  root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+  document.getElementById('themeToggle').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
   });
 
-  // 頂欄陰影與回頂
-  var topbar = document.getElementById('topbar');
-  var toTop = document.getElementById('toTop');
-  function onScroll(){
-    topbar.classList.toggle('stuck', window.scrollY > 8);
-    toTop.style.opacity = window.scrollY > 500 ? '1' : '.45';
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-  toTop.addEventListener('click', function(){
-    window.scrollTo({top:0, behavior:'smooth'});
+  /* 重新掃描 */
+  el.syncBtn.addEventListener('click', function () {
+    try { localStorage.removeItem('portal-sync'); } catch (e) {}
+    sync(true);
   });
 
-  apply();
+  window.addEventListener('scroll', function () {
+    el.topbar.classList.toggle('stuck', window.scrollY > 8);
+  }, { passive: true });
+
+  /* ------------------------------------------------- 啟動 */
+  renderChips();
+  renderAll();
+  sync(false);
+  refreshDynamic();
 })();
+
 </script>
 </body>
 </html>
