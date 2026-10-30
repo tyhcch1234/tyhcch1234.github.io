@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tyhcch1234 · 学习站点导航</title>
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --ink:#1b2030;
+    --muted:#6b7280;
+    --line:#e8eaf1;
+    --brand:#4f6ef7;
+    --brand-2:#8b5cf6;
+    --shadow:0 1px 2px rgba(16,24,40,.05), 0 8px 24px rgba(16,24,40,.06);
+    --shadow-hover:0 4px 12px rgba(16,24,40,.08), 0 16px 40px rgba(79,110,247,.16);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1200px 500px at 10% -10%, rgba(79,110,247,.10), transparent 60%),
+      radial-gradient(900px 400px at 100% 0%, rgba(139,92,246,.10), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:56px 20px 80px}
+
+  header{text-align:center;margin-bottom:36px}
+  .avatar{
+    width:64px;height:64px;border-radius:20px;margin:0 auto 18px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:700;font-size:26px;letter-spacing:.5px;
+    box-shadow:0 10px 30px rgba(79,110,247,.35);
+  }
+  h1{font-size:clamp(24px,4vw,34px);margin:0 0 8px;letter-spacing:-.02em}
+  .sub{color:var(--muted);margin:0;font-size:15px}
+  .stat{
+    display:inline-flex;gap:18px;margin-top:18px;padding:8px 18px;
+    background:rgba(255,255,255,.7);border:1px solid var(--line);
+    border-radius:999px;font-size:13.5px;color:var(--muted);backdrop-filter:blur(8px);
+  }
+  .stat b{color:var(--ink)}
+
+  .search{position:relative;max-width:440px;margin:0 auto 44px}
+  .search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.45}
+  .search input{
+    width:100%;padding:14px 16px 14px 46px;border-radius:14px;
+    border:1px solid var(--line);background:var(--card);color:var(--ink);
+    font-size:15px;outline:none;box-shadow:var(--shadow);
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .search input:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(79,110,247,.14)}
+
+  section{margin-bottom:40px}
+  .sec-head{display:flex;align-items:center;gap:10px;margin:0 0 16px;padding-left:2px}
+  .dot{width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  h2{font-size:15px;font-weight:650;letter-spacing:.04em;margin:0;color:var(--ink)}
+  .count{font-size:12.5px;color:var(--muted);margin-left:auto}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  a.card{
+    display:flex;flex-direction:column;gap:6px;padding:18px 18px 16px;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    text-decoration:none;color:inherit;box-shadow:var(--shadow);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    position:relative;overflow:hidden;
+  }
+  a.card::after{
+    content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+    background:linear-gradient(135deg,rgba(79,110,247,.06),transparent 45%);
+    opacity:0;transition:opacity .18s ease;
+  }
+  a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#d7dcf7}
+  a.card:hover::after{opacity:1}
+  .card .title{font-weight:650;font-size:15.5px;display:flex;align-items:center;gap:8px}
+  .card .desc{font-size:13px;color:var(--muted)}
+  .arrow{
+    position:absolute;right:16px;top:18px;opacity:.25;transition:opacity .18s, transform .18s;
+  }
+  a.card:hover .arrow{opacity:.9;transform:translate(2px,-2px)}
+
+  .footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:56px;line-height:1.8}
+  .footer code{background:rgba(79,110,247,.08);color:var(--brand);padding:2px 7px;border-radius:6px;font-size:12px}
+
+  .empty{display:none;text-align:center;color:var(--muted);padding:40px 0;font-size:14px}
+  mark{background:rgba(79,110,247,.18);color:inherit;border-radius:3px;padding:0 1px}
+
+  @media (max-width:520px){
+    .wrap{padding:36px 16px 64px}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="avatar">T</div>
+    <h1>学习站点导航</h1>
+    <p class="sub">tyhcch1234 · GitHub Pages 全集</p>
+    <div class="stat">
+      <span><b>16</b> 个站点</span>
+      <span><b>5</b> 个分类</span>
+      <span>全部在线</span>
+    </div>
+  </header>
+
+  <div class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
+    </svg>
+    <input id="q" type="search" placeholder="搜索站点，例如：数学、默书、正念…" autocomplete="off">
+  </div>
+
+  <div id="content">
+
+    <section data-cat>
+      <div class="sec-head"><span class="dot"></span><h2>中学 · HKDSE 数学</h2><span class="count">4</span></div>
+      <div class="grid">
+        <a class="card" href="https://tyhcch1234.github.io/HKDSE-Maths-Solutions/" target="_blank" rel="noopener">
+          <span class="title">HKDSE Maths Solutions</span>
+          <span class="desc">HKDSE 数学题解（英文版）</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/HKDSE-Maths-Chi-Solutions/" target="_blank" rel="noopener">
+          <span class="title">HKDSE Maths 中文题解</span>
+          <span class="desc">HKDSE 数学题解（中文版）</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/F4_Maths_UT1/" target="_blank" rel="noopener">
+          <span class="title">F4 Maths UT1</span>
+          <span class="desc">中四数学统一测验 1</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/F3_Maths_UT1/" target="_blank" rel="noopener">
+          <span class="title">F3 Maths UT1</span>
+          <span class="desc">中三数学统一测验 1</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section data-cat>
+      <div class="sec-head"><span class="dot"></span><h2>中文学习与书写</h2><span class="count">5</span></div>
+      <div class="grid">
+        <a class="card" href="https://tyhcch1234.github.io/chinese-tracing-app/" target="_blank" rel="noopener">
+          <span class="title">Chinese Tracing</span>
+          <span class="desc">中文笔顺描红练习</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/chinese_writing/" target="_blank" rel="noopener">
+          <span class="title">Chinese Writing</span>
+          <span class="desc">中文写作练习</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/Chinese_Character/" target="_blank" rel="noopener">
+          <span class="title">Chinese Character</span>
+          <span class="desc">汉字认读与学习</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/p3-chinese-dictation/" target="_blank" rel="noopener">
+          <span class="title">P3 Chinese Dictation</span>
+          <span class="desc">小三中文默书</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/p3-dictation-unit2/" target="_blank" rel="noopener">
+          <span class="title">P3 Dictation Unit 2</span>
+          <span class="desc">小三默书 · 第二单元</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section data-cat>
+      <div class="sec-head"><span class="dot"></span><h2>小学 · 通识与科学</h2><span class="count">2</span></div>
+      <div class="grid">
+        <a class="card" href="https://tyhcch1234.github.io/p3-common-sense/" target="_blank" rel="noopener">
+          <span class="title">P3 Common Sense</span>
+          <span class="desc">小三常识</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/chem-adventure/" target="_blank" rel="noopener">
+          <span class="title">Chem Adventure</span>
+          <span class="desc">化学冒险 · 互动学习</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section data-cat>
+      <div class="sec-head"><span class="dot"></span><h2>身心 · 益智 · 记忆</h2><span class="count">3</span></div>
+      <div class="grid">
+        <a class="card" href="https://tyhcch1234.github.io/mindful-kids/" target="_blank" rel="noopener">
+          <span class="title">Mindful Kids</span>
+          <span class="desc">儿童正念练习</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/brain-training-seniors/" target="_blank" rel="noopener">
+          <span class="title">Brain Training</span>
+          <span class="desc">长者健脑训练</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/bible-verses-memory/" target="_blank" rel="noopener">
+          <span class="title">Bible Verses</span>
+          <span class="desc">圣经金句记忆</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section data-cat>
+      <div class="sec-head"><span class="dot"></span><h2>设计与绘本</h2><span class="count">2</span></div>
+      <div class="grid">
+        <a class="card" href="https://tyhcch1234.github.io/interior-design-vr-tour/" target="_blank" rel="noopener">
+          <span class="title">Interior Design VR</span>
+          <span class="desc">室内设计 360° VR 导览</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a class="card" href="https://tyhcch1234.github.io/Fire_Truck_Book/" target="_blank" rel="noopener">
+          <span class="title">Fire Truck Book</span>
+          <span class="desc">消防车互动绘本</span>
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="empty" id="empty">没有匹配的站点</div>
+
+  <div class="footer">
+    共 16 个 GitHub Pages 站点 · 部署于 <code>tyhcch1234.github.io/&lt;repo&gt;/</code><br>
+    由 Accio 生成
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('a.card'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section[data-cat]'));
+  var empty = document.getElementById('empty');
+
+  q.addEventListener('input', function(){
+    var kw = q.value.trim().toLowerCase();
+    var total = 0;
+    cards.forEach(function(c){
+      var hit = !kw || c.textContent.toLowerCase().indexOf(kw) !== -1 || c.getAttribute('href').toLowerCase().indexOf(kw) !== -1;
+      c.style.display = hit ? '' : 'none';
+      if(hit) total++;
+    });
+    sections.forEach(function(s){
+      var visible = s.querySelectorAll('a.card:not([style*="display: none"])').length;
+      s.style.display = visible ? '' : 'none';
+    });
+    empty.style.display = total ? 'none' : 'block';
+  });
+
+  // Esc 清空
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ q.value=''; q.dispatchEvent(new Event('input')); }
+  });
+})();
+</script>
+</body>
+</html>
