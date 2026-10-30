@@ -6,7 +6,8 @@
   var SYNC_TTL = 30 * 60 * 1000;         // GitHub repo 清單快取 30 分鐘
   var TREE_TTL = 12 * 60 * 60 * 1000;    // 單一 repo 頁面清單快取 12 小時
   var STALE_TTL = 24 * 60 * 60 * 1000;   // 每次開頁輪流更新 3 個 repo 的頁面清單
-  var STALE_PER_LOAD = 3;
+  var STALE_PER_LOAD = 2;
+  var quotaHit = false;
 
   var CATS = {
     math:   { label: '數學 · 文憑試與測驗', glyph: 'g-math' },
@@ -336,6 +337,7 @@
 
   /* ------------------------------------------------- 自動載入 / 更新頁面清單 */
   function loadTree(s, force) {
+    if (quotaHit) return Promise.resolve(false);
     var cached = force ? null : read('tree:' + s.name, TREE_TTL);
     if (cached && cached.pages) {
       var before = JSON.stringify(s.pages);
@@ -346,7 +348,11 @@
     var url = 'https://api.github.com/repos/' + OWNER + '/' + s.name + '/git/trees/' +
       (s.branch || 'HEAD') + '?recursive=1';
     return fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (r) {
+        if (r.status === 403 || r.status === 429) { quotaHit = true; throw new Error('quota'); }
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function (j) {
         var paths = (j.tree || []).filter(function (t) { return t.type === 'blob'; })
           .map(function (t) { return t.path; });
@@ -363,6 +369,7 @@
 
   /* 每日累積的 repo（購物優惠、投資晚報、熱話）自動抓最新頁面 */
   function refreshDynamic() {
+    if (quotaHit) return Promise.resolve(0);
     var queue = sites.filter(function (s) { return s.dyn && s.pagesLoaded; });
     var changed = 0;
     var chain = Promise.resolve();
@@ -379,6 +386,7 @@
 
   /* 每次開頁輪流檢查幾個 repo 有沒有新增頁面（維持自動更新，又不浪費 API 配額） */
   function refreshStale() {
+    if (quotaHit) return Promise.resolve(0);
     var out = [];
     sites.forEach(function (s) {
       if (s.dyn || !s.pagesLoaded || s.pages.length > 20) return;
@@ -460,7 +468,7 @@
     fetch('https://api.github.com/users/' + OWNER + '/repos?per_page=100&sort=updated&type=owner',
       { headers: { 'Accept': 'application/vnd.github+json' } })
       .then(function (r) {
-        if (r.status === 403 || r.status === 429) throw new Error('quota');
+        if (r.status === 403 || r.status === 429) { quotaHit = true; throw new Error('quota'); }
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
       })
@@ -473,8 +481,8 @@
       .catch(function (err) {
         var old = read('portal-sync', 0);
         var msg = err && err.message === 'quota'
-          ? 'GitHub 配額已滿 · 顯示快照'
-          : '離線快照 · ' + (seed.generated_human || '');
+          ? '本地索引 · 用量上限，稍後自動同步'
+          : '離線 · 使用本地快照';
         if (old) applyLive(old.list);
         setSync(msg, true);
         seed._stale = true;
