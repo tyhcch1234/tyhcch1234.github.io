@@ -432,7 +432,7 @@
 
       var fresh = repos.filter(function (r) { return !byName[r.name]; })
         .slice(0, 8);                       // 一次最多補 8 個，避免用盡 API 配額
-      var added = 0;
+      var added = 0, touched = 0;
       var chain = Promise.resolve();
       fresh.forEach(function (r) {
         chain = chain.then(function () {
@@ -442,15 +442,43 @@
           });
         });
       });
+
+      /* 上次建清單後有 push 的網站：重掃一次頁面清單，令頁數跟得上 */
+      var dirty = repos.filter(function (r) {
+        var s = byName[r.name];
+        if (!s || s.virtual) return false;
+        var d = (r.updated_at || '').slice(0, 10);
+        if (!d || !s.updated || d <= s.updated) return false;
+        var raw = null;
+        try { raw = JSON.parse(localStorage.getItem('tree:' + r.name) || 'null'); } catch (e) {}
+        return !raw || Date.now() - (raw.at || 0) > 20 * 60 * 1000;
+      }).slice(0, 3);
+      dirty.forEach(function (r) {
+        chain = chain.then(function () {
+          if (state.quotaHit) return;
+          var s = byName[r.name];
+          return probeRepo(r.name, r.default_branch, true).then(function (pages) {
+            if (!pages) return;
+            s.updated = (r.updated_at || '').slice(0, 10);
+            if (JSON.stringify(pages) !== JSON.stringify(s.pages)) {
+              s.pages = pages;
+              s._hay = siteHay(s);
+              touched++;
+            }
+          });
+        });
+      });
+
       return chain.then(function () {
-        if (added || gone) setSites(state.sites, null);
+        if (added || gone || touched) setSites(state.sites, null);
         else paintTotals();
         var note = [];
         if (added) note.push('新增 ' + added + ' 個');
         if (gone) note.push('移除 ' + gone + ' 個');
+        if (touched) note.push('更新 ' + touched + ' 個頁面清單');
         setSync('已即時檢查 GitHub' + (note.length ? ' · ' + note.join(' · ') : ''),
           !!state.quotaHit);
-        return added;
+        return added + touched;
       });
     }).catch(function (err) {
       var quota = err && err.message === 'quota';
