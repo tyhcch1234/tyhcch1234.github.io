@@ -161,6 +161,36 @@ OVERRIDES = {
         desc="相片轉 PDF 掃描，自動校正與整理",
         tags=["掃描", "pdf", "scan", "工具"],
     ),
+    "hk-elderly-benefits": dict(
+        title="香港長者福利・優惠一站通", cat="mind",
+        desc="可搜尋的長者福利及優惠目錄（2026）",
+        tags=["長者", "福利", "優惠", "津貼"],
+    ),
+    "3d-model-library": dict(
+        title="立體模型庫", cat="design",
+        desc="可累積的 3D 模型收藏：STL 即時預覽、下載與打印資料",
+        tags=["3d", "stl", "模型", "打印"],
+    ),
+    "shiba-inu-guide": dict(
+        title="柴犬手帖", cat="design",
+        desc="品種、性格、飲食與照顧指南",
+        tags=["柴犬", "寵物", "guide"],
+    ),
+    "smart-home": dict(
+        title="Smart Home DIY", cat="tools",
+        desc="ESP32 智能家居網頁控制教學（粵語）",
+        tags=["esp32", "smart home", "教學", "iot"],
+    ),
+    "AI_Company": dict(
+        title="AI Company", cat="daily",
+        desc="AI 旗艦模型競賽 · 每日追蹤十大 AI 實驗室的旗艦模型",
+        tags=["ai", "模型", "比較", "每日"],
+    ),
+    "ai": dict(
+        title="每日 AI 應用", cat="daily",
+        desc="最新 AI 應用例子：自製工具、可試玩 demo、新上架產品",
+        tags=["ai", "應用", "每日", "demo"],
+    ),
 }
 
 # 個別頁面的好讀標題（key = repo + "/" + 檔案路徑）
@@ -281,7 +311,7 @@ def derive(repo):
         cat = "math"
     elif any(k in low for k in ("中文", "hanzi", "chinese", "dictation", "默書", "寫字")):
         cat = "lang"
-    elif any(k in low for k in ("小學", "常識", "科學", "p1", "p2", "p3", "p4", "p5", "p6")):
+    elif any(k in low for k in ("小學", "常識", "科學")) or re.search(r"\bp[1-6]\b", low):
         cat = "junior"
     elif any(k in low for k in ("長者", "記憶", "靜心", "mindful", "bible", "聖經", "brain")):
         cat = "mind"
@@ -305,7 +335,7 @@ def build(offline=False):
         repos = gh_api("/users/{}/repos?per_page=100&sort=updated".format(OWNER), paginate=True)
         data = []
         for r in repos:
-            if not r.get("has_pages") or r["name"] == ROOT_REPO:
+            if r["name"] == ROOT_REPO or r.get("fork") or r.get("archived"):
                 continue
             try:
                 tree = gh_api(
@@ -314,9 +344,14 @@ def build(offline=False):
                 paths = [x["path"] for x in tree.get("tree", []) if x.get("type") == "blob"]
             except subprocess.CalledProcessError:
                 paths = []
+            # 有啟用 Pages，或根目錄有 index.html，就當作網站（has_pages 偶爾會滯後）
+            has_root_index = any(p.lower() == "index.html" for p in paths)
+            if not (r.get("has_pages") or has_root_index):
+                continue
             data.append(dict(
                 name=r["name"], desc=r.get("description"),
                 updated=r["updated_at"], paths=paths,
+                branch=r.get("default_branch") or "main",
             ))
         os.makedirs(os.path.dirname(CACHE), exist_ok=True)
         json.dump(data, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -335,6 +370,7 @@ def build(offline=False):
             updated=(repo.get("updated") or "")[:10],
             url=ov.get("url") or (name + "/"),
             pages=extract_pages(name, repo.get("paths") or []),
+            branch=repo.get("branch") or "main",
         ))
         info["dyn"] = any(p.get("d") for p in info["pages"])
         sites.append(info)
@@ -344,7 +380,7 @@ def build(offline=False):
         ov = OVERRIDES["hanzi"]
         sites.append(dict(
             name="hanzi", title=ov["title"], desc=ov["desc"], cat=ov["cat"],
-            tags=ov["tags"], updated="", url="hanzi/", pages=[],
+            tags=ov["tags"], updated="", url="hanzi/", pages=[], virtual=True,
         ))
 
     cat_rank = {c: i for i, c in enumerate(
@@ -369,8 +405,13 @@ def build(offline=False):
     with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
 
+    # 獨立清單檔：網頁每次開啟先讀這份（不用等 GitHub API），
+    # 之後再向 GitHub 核對有沒有新 repo，所以數字同畫面永遠一致。
+    with open(os.path.join(HERE, "sites.json"), "w", encoding="utf-8") as f:
+        json.dump(seed, f, ensure_ascii=False, separators=(",", ":"))
+
     pages = sum(len(s["pages"]) for s in sites)
-    print("sites={} pages={} -> index.html".format(len(sites), pages))
+    print("sites={} pages={} -> index.html, sites.json".format(len(sites), pages))
 
 
 if __name__ == "__main__":
