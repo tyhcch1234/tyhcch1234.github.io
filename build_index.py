@@ -26,6 +26,11 @@ CACHE = os.path.join(HERE, "cache", "repos.json")
 # ---------------------------------------------------------------- 人手撰寫的文案
 # key = repo 名（或虛擬站台名）
 OVERRIDES = {
+    "fermat-last-theorem": dict(
+        title="費馬最後定理", cat="math",
+        desc="一句頁邊註記，數學家追了 358 年 · 命題・歷史・證明思路・互動反例搜尋器",
+        tags=["數學", "費馬", "最後定理", "fermat", "證明", "科普"],
+    ),
     "HKDSE-Maths-Solutions": dict(
         title="HKDSE Maths Solutions", cat="math",
         desc="文憑試數學題解（英文版）· 可按年份或課題瀏覽",
