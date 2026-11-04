@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8-character code · 5MMD9S52</title>
+<meta name="description" content="8 位隨機英數代碼，Crockford 字元集，secrets 模組生成。">
+<meta name="robots" content="noindex">
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#131822; --line:#232a38;
+    --ink:#e8edf5; --dim:#8b96a8; --accent:#5eead4;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; display:grid; place-items:center;
+    background:radial-gradient(circle at 50% 0%,#16202e 0%,var(--bg) 60%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans HK","PingFang HK",sans-serif;
+    padding:24px;
+  }
+  .card{
+    width:100%; max-width:520px; background:var(--panel);
+    border:1px solid var(--line); border-radius:20px; padding:32px 28px;
+    box-shadow:0 24px 60px rgba(0,0,0,.45);
+  }
+  .eyebrow{
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--dim); margin:0 0 18px;
+  }
+  .code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+    font-size:clamp(38px,11vw,58px); font-weight:700; letter-spacing:.12em;
+    color:var(--accent); margin:0 0 6px; word-break:break-all;
+    text-shadow:0 0 28px rgba(94,234,212,.25);
+  }
+  .sub{color:var(--dim); font-size:13px; margin:0 0 26px}
+  button{
+    width:100%; padding:12px; border-radius:12px; cursor:pointer;
+    border:1px solid var(--line); background:#1b2230; color:var(--ink);
+    font-size:14px; font-family:inherit; transition:.15s;
+  }
+  button:hover{background:#222c3d; border-color:#33405a}
+  button.ok{color:var(--accent); border-color:var(--accent)}
+  dl{display:grid; grid-template-columns:auto 1fr; gap:8px 16px; margin:26px 0 0;
+     font-size:13px; border-top:1px solid var(--line); padding-top:20px}
+  dt{color:var(--dim)}
+  dd{margin:0; text-align:right; font-family:ui-monospace,Menlo,monospace}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(94,234,212,.3)}
+</style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">8-character code</p>
+    <p class="code" id="code">5MMD9S52</p>
+    <p class="sub">Generated 2026-11-05 · Asia/Singapore</p>
+    <button id="copy" type="button">Copy code</button>
+    <dl>
+      <dt>Length</dt><dd>8</dd>
+      <dt>Charset</dt><dd>32 字元（無 0/O/1/I）</dd>
+      <dt>Entropy</dt><dd>≈ 40 bits</dd>
+      <dt>Source</dt><dd><a href="https://github.com/tyhcch1234/8-char-code">8-char-code</a></dd>
+    </dl>
+  </main>
+<script>
+  const btn = document.getElementById('copy');
+  btn.addEventListener('click', async () => {
+    const text = document.getElementById('code').textContent.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    btn.textContent = 'Copied';
+    btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = 'Copy code'; btn.classList.remove('ok'); }, 1600);
+  });
+</script>
+</body>
+</html>
