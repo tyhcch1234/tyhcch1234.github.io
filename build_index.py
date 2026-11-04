@@ -51,6 +51,11 @@ OVERRIDES = {
         desc="中三統一測驗一 · 闖關式溫習",
         tags=["中三", "數學", "ut1", "溫習"],
     ),
+    "p3-trapezoid": dict(
+        title="梯形大搜查 · 圖中有幾多個梯形？", cat="junior",
+        desc="小三互動教室：5 條橫線 + 2 條斜線，逐個亮起示範，一共 43 個梯形",
+        tags=["小三", "數學", "圖形", "梯形", "互動"], url="p3-trapezoid/",
+    ),
     "hanzi": dict(
         title="中文字工作紙生成器", cat="lang",
         desc="輸入默書字詞，一鍵產生六步寫字工作紙（Word／A4）",
@@ -381,11 +386,14 @@ def build(offline=False):
         sites.append(info)
 
     # 虛擬站台（放在本 repo 內，不是獨立 repo）
-    if not any(s["name"] == "hanzi" for s in sites):
-        ov = OVERRIDES["hanzi"]
+    for vname in ("hanzi", "p3-trapezoid"):
+        if any(s["name"] == vname for s in sites):
+            continue
+        ov = OVERRIDES[vname]
         sites.append(dict(
-            name="hanzi", title=ov["title"], desc=ov["desc"], cat=ov["cat"],
-            tags=ov["tags"], updated="", url="hanzi/", pages=[], virtual=True,
+            name=vname, title=ov["title"], desc=ov["desc"], cat=ov["cat"],
+            tags=ov["tags"], updated="", url=ov.get("url", vname + "/"),
+            pages=[], virtual=True,
         ))
 
     cat_rank = {c: i for i, c in enumerate(

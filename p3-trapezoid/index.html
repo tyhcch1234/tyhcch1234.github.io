@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>圖中有幾多個梯形？· 小三圖形互動教室</title>
+<meta name="description" content="一個正方形裡面有 5 條橫線同 2 條斜線，一共可以數出幾多個梯形？用「兩條平行線 + 兩條腰」的方法逐個示範，小三學生都睇得明。">
+<meta name="theme-color" content="#3b62f6">
+<meta property="og:title" content="圖中有幾多個梯形？· 小三圖形互動教室">
+<meta property="og:description" content="逐個梯形亮起，邊數邊睇，最後得出總數。">
+<style>
+  :root{
+    --bg:#f4f6fc;
+    --card:#ffffff;
+    --ink:#16203a;
+    --ink2:#33405e;
+    --muted:#67718c;
+    --line:#e4e9f4;
+    --line2:#d5dcec;
+    --brand:#3b62f6;
+    --brand-soft:#eaf0ff;
+    --brand2:#7c5cf5;
+    --accent:#ef8a17;
+    --accent-soft:#fff3e2;
+    --ok:#0f9d58;
+    --bad:#e5484d;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(18,28,58,.05), 0 12px 30px rgba(18,28,58,.07);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans TC","PingFang HK","Hiragino Sans GB","Microsoft JhengHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:800px;margin:0 auto;padding:20px 16px 64px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:0 0 18px}
+  h1{font-size:clamp(25px,6.4vw,34px);line-height:1.35;margin:10px 0 8px;letter-spacing:.5px}
+  h2{font-size:clamp(18px,4.6vw,21px);margin:0 0 12px;display:flex;align-items:center;gap:9px}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex:0 0 26px;border-radius:9px;background:var(--brand-soft);color:var(--brand);font-size:14px;font-weight:700}
+  h3{font-size:16px;margin:18px 0 8px}
+  p{margin:0 0 10px}
+  .muted{color:var(--muted)}
+  .small{font-size:14px}
+  .chip{display:inline-block;padding:3px 11px;border-radius:999px;background:var(--brand-soft);color:var(--brand);font-size:13px;font-weight:600;letter-spacing:.3px}
+  .hero{padding:24px 20px 20px}
+  .hero p.lead{font-size:15.5px;color:var(--ink2)}
+  .bigans{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,#eef3ff,#f6f0ff);border:1px solid #dfe7fb}
+  .bigans .n{font-size:40px;font-weight:800;line-height:1;color:var(--brand);letter-spacing:-1px}
+  .bigans .t{font-size:14px;color:var(--ink2);line-height:1.5}
+
+  /* ---------- 圖 ---------- */
+  .figbox{background:#fbfcff;border:1px solid var(--line);border-radius:14px;padding:8px}
+  svg.fig{display:block;width:100%;height:auto;touch-action:manipulation}
+  .figcap{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+
+  /* ---------- 定義小圖 ---------- */
+  .shapes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .shape{background:#fbfcff;border:1px solid var(--line);border-radius:12px;padding:8px 6px;text-align:center}
+  .shape svg{width:100%;height:auto;display:block}
+  .shape span{font-size:12.5px;color:var(--ink2);display:block;margin-top:2px}
+
+  /* ---------- 提示卡 ---------- */
+  .tip{display:flex;gap:10px;padding:13px 14px;border-radius:13px;font-size:14.5px;line-height:1.65;margin:12px 0 0}
+  .tip.key{background:var(--brand-soft);border:1px solid #d8e2ff}
+  .tip.warn{background:var(--accent-soft);border:1px solid #ffe0b8}
+  .tip .ico{flex:0 0 auto;font-weight:800;color:var(--brand)}
+  .tip.warn .ico{color:var(--accent)}
+  b,strong{font-weight:700;color:#0d1730}
+  .mark{background:linear-gradient(transparent 62%, #ffe9c7 62%);padding:0 2px;font-weight:700}
+
+  /* ---------- 互動計數 ---------- */
+  .stage{display:grid;grid-template-columns:1fr;gap:12px}
+  .counter{display:flex;align-items:baseline;gap:8px}
+  .counter .big{font-size:32px;font-weight:800;color:var(--brand);line-height:1}
+  .counter .of{font-size:15px;color:var(--muted)}
+  .caption{font-size:14.5px;line-height:1.7;background:#f8faff;border:1px solid var(--line);border-radius:12px;padding:11px 13px;min-height:62px}
+  .caption .k{color:var(--brand);font-weight:700}
+  .caption .k2{color:var(--accent);font-weight:700}
+  .ctrl{display:flex;gap:8px;margin-top:12px}
+  button{font-family:inherit;font-size:15px;font-weight:600;border-radius:12px;border:1px solid var(--line2);background:#fff;color:var(--ink);padding:11px 14px;cursor:pointer;transition:.16s}
+  button:hover:not(:disabled){border-color:var(--brand);color:var(--brand)}
+  button:disabled{opacity:.42;cursor:not-allowed}
+  button.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+  button.primary:hover:not(:disabled){background:#2f51d8;color:#fff}
+  .ctrl button{flex:1}
+  button.ghost{flex:0 0 auto;padding:11px 13px}
+  .groups{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .gchip{white-space:nowrap;font-size:12.5px;padding:5px 9px;border-radius:9px;border:1px solid var(--line2);background:#fff;color:var(--ink2);cursor:pointer;font-weight:600}
+  .gchip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .gchip .c{opacity:.7;font-weight:500}
+  .dots{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+  .dot{width:19px;height:19px;border-radius:6px;background:#e8ecf6;border:none;padding:0;cursor:pointer}
+  .dot.done{background:#c7d5ff}
+  .dot.on{background:var(--brand);transform:scale(1.16);box-shadow:0 0 0 3px #dbe4ff}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--muted);margin-top:10px}
+  .legend i{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:5px;vertical-align:middle}
+
+  /* ---------- 表格 ---------- */
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  th,td{padding:8px 6px;text-align:center;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:13px}
+  td.n{font-weight:700;color:var(--brand)}
+  table.trap td{vertical-align:top}
+  table.trap td:first-child{width:38%}
+  .formula{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;padding:13px 14px;border-radius:13px;background:#f7f9ff;border:1px dashed #cfdaf8;font-size:15px;font-weight:600;color:var(--ink)}
+  .formula .eq{font-size:22px;font-weight:800;color:var(--brand)}
+  .formula .small{font-weight:500;color:var(--muted)}
+
+  /* ---------- 自己試 ---------- */
+  .picker{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+  .pchip{font-size:14px;padding:8px 12px;border-radius:11px;border:1.5px solid var(--line2);background:#fff;cursor:pointer;font-weight:600;color:var(--ink2)}
+  .pchip.on{border-color:var(--brand);background:var(--brand);color:#fff}
+  .pchip.leg.on{border-color:var(--accent);background:var(--accent)}
+  .verdict{margin-top:10px;padding:12px 14px;border-radius:12px;font-size:14.5px;line-height:1.65}
+  .verdict.ok{background:#e9f8f0;border:1px solid #bfe8d3;color:#0b6b3f}
+  .verdict.bad{background:#fdeeee;border:1px solid #f8cfd0;color:#9b1c1f}
+  .verdict.idle{background:#f7f9ff;border:1px solid var(--line);color:var(--muted)}
+  .lbl{font-size:13px;font-weight:700;color:var(--muted);margin:12px 0 4px;letter-spacing:.4px}
+
+  footer{color:var(--muted);font-size:12.5px;text-align:center;padding:10px 4px 0;line-height:1.7}
+  footer a{color:var(--brand);text-decoration:none}
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none!important;animation:none!important}
+    .dot.on{transform:none}
+  }
+  @media (max-width:420px){
+    .card{padding:16px}
+    .hero{padding:20px 16px}
+    .bigans .n{font-size:34px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="card hero">
+    <span class="chip">小三 · 圖形與空間 · 梯形</span>
+    <h1>圖中有幾多個梯形？</h1>
+    <p class="lead">睇落好似好亂，但只要有次序咁數，就一個都唔會漏。秘訣只有一句：<b>先揀兩條橫線，再揀兩條腰。</b></p>
+    <div class="bigans">
+      <div class="n" id="totalBig">43</div>
+      <div class="t">個梯形<br><span class="muted">下面會逐個亮起，由 1 數到 <span id="totalSmall">43</span>，你可以自己覆核。</span></div>
+    </div>
+  </header>
+
+  <section class="card" id="s1">
+    <h2><span class="num">1</span>「梯形」係咩？</h2>
+    <p>梯形是一個<b>四邊形</b>，而且<b>只有一對</b>對邊平行。平行的兩條邊，我們叫它做上底和下底；另外兩條邊叫「腰」。</p>
+    <div class="shapes" id="shapes"></div>
+    <div class="tip warn">
+      <span class="ico">!</span>
+      <div><b>小心：</b>長方形、正方形、平行四邊形都有<b>兩對</b>平行邊，所以它們<b>不是</b>梯形。數梯形時要把它們剔走。</div>
+    </div>
+  </section>
+
+  <section class="card" id="s2">
+    <h2><span class="num">2</span>睇清楚幅圖</h2>
+    <div class="figbox">
+      <svg class="fig" id="figBase" viewBox="0 0 100 97" aria-label="正方形內有 5 條橫線和 2 條斜線"></svg>
+    </div>
+    <p class="figcap">① ② ③ ④ ⑤ 是 5 條橫線（① ⑤ 就是正方形的上下邊）</p>
+    <h3>圖裡面有咩？</h3>
+    <p class="small">
+      · <b>5 條橫線</b> ① ② ③ ④ ⑤ — 它們全部互相平行。<br>
+      · <b>2 條斜線</b> A、B — 它們在橫線 ④ 上面相交（畫成一個「X」）。<br>
+      · <b>2 條直邊</b> 左邊、右邊 — 它們也是互相平行的。
+    </p>
+    <div class="tip key">
+      <span class="ico">★</span>
+      <div>圖中<b>只有橫線可以造出「一對平行邊」</b>。所以每個梯形都一定是：<br>
+        <span class="mark">上下兩條邊 = 任意兩條橫線</span>，<span class="mark">左右兩條邊（腰）= 從「左直邊、右直邊、斜線 A、斜線 B」揀 2 條</span>。</div>
+    </div>
+  </section>
+
+  <section class="card" id="s3">
+    <h2><span class="num">3</span>逐個數（互動示範）</h2>
+    <div class="stage">
+      <div class="figbox"><svg class="fig" id="figMain" viewBox="0 0 100 97" aria-label="逐個梯形示範"></svg></div>
+      <div>
+        <div class="counter"><span class="big" id="idx">1</span><span class="of">/ <span id="totalSmall2">43</span> 個</span></div>
+        <div class="caption" id="caption"></div>
+        <div class="ctrl">
+          <button id="prev" class="ghost" aria-label="上一個">◀</button>
+          <button id="next" class="primary">下一個 ▶</button>
+          <button id="play" class="ghost">自動播放</button>
+        </div>
+        <div class="legend">
+          <span><i style="background:#64748b"></i>直邊</span>
+          <span><i style="background:#ef8a17"></i>斜線</span>
+          <span><i style="background:#3b62f6"></i>這一刻的梯形</span>
+        </div>
+        <div class="groups" id="groups"></div>
+        <div class="dots" id="dots"></div>
+      </div>
+  </section>
+
+  <section class="card" id="s4">
+    <h2><span class="num">4</span>點解一共係 <span id="totalSmall3">43</span> 個？</h2>
+    <p class="small">把 5 條橫線兩兩配對，一共可以配出 <b>4 + 3 + 2 + 1 = 10 組</b>。每一組，兩條腰有 <b>4 種</b>揀法：</p>
+    <p class="small">左邊 + 斜線A　·　左邊 + 斜線B　·　斜線A + 右邊　·　斜線B + 右邊</p>
+    <table>
+      <thead><tr><th>橫線組合</th><th>梯形數目</th><th>備註</th></tr></thead>
+      <tbody id="tbl"></tbody>
+    </table>
+    <div class="formula">
+      <span>10 組 × 4 個 = 40</span>
+      <span>+</span>
+      <span>3 個（只用兩條斜線做腰）</span>
+      <span class="eq">= <span id="totalSmall4">43</span></span>
+    </div>
+    <p class="small muted" style="margin-top:10px">* 額外那 3 個，是 ①+②、①+③、②+③ 這 3 組：因為兩條斜線在這 3 段範圍內<b>未相交</b>，所以只用斜線 A、B 做腰，都可以圍出一個梯形。</p>
+  </section>
+
+  <section class="card" id="s5">
+    <h2><span class="num">5</span>三個「唔算」嘅陷阱</h2>
+    <p class="small">數得多就數錯，通常都是這三個原因：</p>
+    <table class="trap">
+      <tbody>
+        <tr><td style="text-align:left"><b>① 左邊 + 右邊</b></td><td style="text-align:left">這兩條邊都平行，加上下兩條橫線，圍出來是<b>長方形</b>，有兩對平行邊，<b>唔算梯形</b>。</td></tr>
+        <tr><td style="text-align:left"><b>② 斜線 A + 斜線 B，夾住橫線 ④ 同 ⑤</b></td><td style="text-align:left">兩條斜線在橫線 ④ 上已經<b>碰在一起</b>，下面只圍出一個<b>三角形</b>，唔夠四條邊。</td></tr>
+        <tr><td style="text-align:left"><b>③ 斜線 A + 斜線 B，橫跨 ④</b></td><td style="text-align:left">兩條斜線在範圍內<b>交叉</b>，圍出來是「蝴蝶形」，自己打結，不是四邊形。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card" id="s6">
+    <h2><span class="num">6</span>自己試下揀</h2>
+    <p class="small">揀 2 條橫線 + 2 條腰，睇下圍出來係咩圖形。</p>
+    <div class="lbl">橫線（揀 2 條）</div>
+    <div class="picker" id="pickH"></div>
+    <div class="lbl">腰（揀 2 條）</div>
+    <div class="picker" id="pickL"></div>
+    <div class="figbox" style="margin-top:12px"><svg class="fig" id="figTry" viewBox="0 0 100 97" aria-label="自己試"></svg></div>
+    <div class="verdict idle" id="verdict">未揀夠 4 條線。</div>
+  </section>
+
+  <section class="card" id="s7">
+    <h2><span class="num">7</span>小結</h2>
+    <p><b>口訣：</b>先揀兩條橫線，再揀兩條腰；由最上面開始，一組一組數落去。</p>
+    <p class="small">每一組 4 個，10 組就是 40 個；再加上 3 個只用斜線做腰的，一共 <b id="totalSmall5">43</b> 個梯形。</p>
+    <p class="small muted">給家長／老師：本頁採用「只有一對對邊平行」的定義（長方形、平行四邊形不計）。若題目只要求「用兩條斜線做腰」的梯形，答案會是 3 個；若把左右直邊做腰的也計入，就是本頁的 <span id="totalSmall6">43</span> 個。</p>
+  </section>
+
+  <footer>
+    小三圖形互動教室 · 用滑鼠或手指都可以操作<br>
+    <a href="../">← 返回網站首頁</a>
+  </footer>
+</div>
+<script>
+/* =========================================================
+   幾何模型（以 10 × 10 的正方形為坐標）
+   y 向下：0 是上邊，10 是下邊
+   ========================================================= */
+const H  = [0, 2.5, 5, 7.5, 10];                 // 5 條橫線
+const CI = ['①','②','③','④','⑤'];
+const xA = y => 2.5 + y / 3;                     // 斜線 A：由 (2.5,0) 斜落 (5.833,10)
+const xB = y => 7.5 - y / 3;                     // 斜線 B：由 (7.5,0) 斜落 (4.167,10)
+const LEGS = [
+  { k:'L', name:'左直邊', short:'左', c:'#64748b' },
+  { k:'R', name:'右直邊', short:'右', c:'#64748b' },
+  { k:'A', name:'斜線 A', short:'A', c:'#ef8a17' },
+  { k:'B', name:'斜線 B', short:'B', c:'#ef8a17' }
+];
+const LEGMAP = Object.fromEntries(LEGS.map(l => [l.k, l]));
+const px = (k, y) => k === 'L' ? 0 : k === 'R' ? 10 : k === 'A' ? xA(y) : xB(y);
+
+/* 由兩條橫線 + 兩條腰造出四邊形，並判斷它是不是梯形 */
+function makeQuad(i, j, k1, k2){
+  const yT = H[i], yB = H[j];
+  const P = (k, y) => [px(k, y), y];
+  const top1 = P(k1, yT), top2 = P(k2, yT), bot2 = P(k2, yB), bot1 = P(k1, yB);
+  const poly = [top1, top2, bot2, bot1];
+  if (k1 === 'L' && k2 === 'R') return { ok:false, why:'rect', poly };
+  if (Math.abs(top1[0] - top2[0]) < 1e-9 || Math.abs(bot1[0] - bot2[0]) < 1e-9)
+    return { ok:false, why:'degen', poly };
+  // 兩條腰在範圍內交叉？（檢查對邊 0-1 與 2-3，以及 1-2 與 3-0）
+  const cross = (a,b,c,d) => {
+    const s = (o,p,q) => (p[0]-o[0])*(q[1]-o[1]) - (p[1]-o[1])*(q[0]-o[0]);
+    const d1 = s(c,d,a), d2 = s(c,d,b), d3 = s(a,b,c), d4 = s(a,b,d);
+    return ((d1>0&&d2<0)||(d1<0&&d2>0)) && ((d3>0&&d4<0)||(d3<0&&d4>0));
+  };
+  if (cross(poly[0],poly[1],poly[2],poly[3]) || cross(poly[1],poly[2],poly[3],poly[0]))
+    return { ok:false, why:'cross', poly };
+  const area = Math.abs((poly[0][0]*poly[1][1]-poly[1][0]*poly[0][1]) +
+                        (poly[1][0]*poly[2][1]-poly[2][0]*poly[1][1]) +
+                        (poly[2][0]*poly[3][1]-poly[3][0]*poly[2][1]) +
+                        (poly[3][0]*poly[0][1]-poly[0][0]*poly[3][1])) / 2;
+  if (area < 1e-9) return { ok:false, why:'degen', poly };
+  return { ok:true, why:'ok', poly, area };
+}
+
+/* 全部 43 個梯形（按「橫線組合」分組，由最上面開始） */
+const PAIRS = [['L','A'],['L','B'],['A','R'],['B','R'],['A','B']];
+const GROUPS = [];
+const STEPS = [];
+for (let i = 0; i < 5; i++){
+  for (let j = i+1; j < 5; j++){
+    const items = [];
+    for (const [k1, k2] of PAIRS){
+      const q = makeQuad(i, j, k1, k2);
+      if (!q.ok) continue;
+      const step = { i, j, k1, k2, poly:q.poly, gi:GROUPS.length };
+      items.push(step); STEPS.push(step);
+    }
+    if (items.length) GROUPS.push({ i, j, items, start:STEPS.length - items.length });
+  }
+}
+const TOTAL = STEPS.length;   // = 43
+
+/* =========================================================
+   畫圖工具
+   ========================================================= */
+const S = 8.2, PADX = 12, PADY = 7.5;          // 10 → 82px；左邊留位給 ①~⑤ 標籤
+const X = x => PADX + x * S;
+const Y = y => PADY + y * S;
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs){
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  return n;
+}
+
+/* 基本圖形：正方形、3 條內橫線、左/右直邊、2 條斜線 + 標籤 */
+function drawBase(svg, opts){
+  opts = opts || {};
+  svg.innerHTML = '';
+  const g = el('g', {});
+  // 正方形外框
+  g.appendChild(el('rect', { x:X(0), y:Y(0), width:S*10, height:S*10, fill:'#ffffff',
+    stroke:'#111a30', 'stroke-width':0.9, rx:0.4 }));
+  // 內部 3 條橫線
+  for (let i = 1; i <= 3; i++){
+    g.appendChild(el('line', { x1:X(0), y1:Y(H[i]), x2:X(10), y2:Y(H[i]),
+      stroke:'#111a30', 'stroke-width':0.55, 'stroke-linecap':'round' }));
+  }
+  // 兩條斜線
+  g.appendChild(el('line', { x1:X(xA(0)), y1:Y(0), x2:X(xA(10)), y2:Y(10),
+    stroke:'#ef8a17', 'stroke-width':0.75, 'stroke-linecap':'round' }));
+  g.appendChild(el('line', { x1:X(xB(0)), y1:Y(0), x2:X(xB(10)), y2:Y(10),
+    stroke:'#ef8a17', 'stroke-width':0.75, 'stroke-linecap':'round' }));
+  // 橫線編號
+  for (let i = 0; i < 5; i++){
+    const t = el('text', { x:X(0)-4.2, y:Y(H[i])+1.5, 'text-anchor':'middle',
+      'font-size':4.4, fill:'#5d6780', 'font-family':'inherit' });
+    t.textContent = CI[i]; g.appendChild(t);
+  }
+  // 斜線標籤
+  const la = el('text', { x:X(xA(0))+2.4, y:Y(0)-2.3, 'font-size':4.2, fill:'#ef8a17', 'font-family':'inherit' });
+  la.textContent = 'A'; g.appendChild(la);
+  const lb = el('text', { x:X(xB(0))-3.2, y:Y(0)-2.3, 'font-size':4.2, fill:'#ef8a17', 'font-family':'inherit' });
+  lb.textContent = 'B'; g.appendChild(lb);
+  svg.appendChild(g);
+  return g;
+}
+
+/* =========================================================
+   主示範
+   ========================================================= */
+const figMain = document.getElementById('figMain');
+let cur = 0, timer = null;
+
+function renderStep(){
+  drawBase(figMain);
+  const st = STEPS[cur];
+  const poly = el('polygon', {
+    points: st.poly.map(p => X(p[0]) + ',' + Y(p[1])).join(' '),
+    fill:'rgba(59,98,246,.26)', stroke:'#3b62f6', 'stroke-width':1.5,
+    'stroke-linejoin':'round'
+  });
+  figMain.appendChild(poly);
+  // 兩條平行邊加記號
+  const tick = (y, x1, x2) => {
+    for (const f of [0.42, 0.58]){
+      const x = x1 + (x2 - x1) * f;
+      figMain.appendChild(el('line', { x1:X(x), y1:Y(y)-1.5, x2:X(x), y2:Y(y)+1.5,
+        stroke:'#3b62f6', 'stroke-width':1.1, 'stroke-linecap':'round' }));
+    }
+  };
+  const xs = st.poly.map(p => p[0]);
+  tick(H[st.i], Math.min(xs[0], xs[1]), Math.max(xs[0], xs[1]));
+  tick(H[st.j], Math.min(xs[2], xs[3]), Math.max(xs[2], xs[3]));
+
+  // 文字
+  document.getElementById('idx').textContent = cur + 1;
+  const nl = LEGMAP[st.k1].name, nr = LEGMAP[st.k2].name;
+  document.getElementById('caption').innerHTML =
+    '<b>上底／下底：</b>橫線 <span class="k">' + CI[st.i] + '</span> 和 <span class="k">' + CI[st.j] + '</span>（平行）<br>' +
+    '<b>兩條腰：</b><span class="k2">' + nl + '</span> + <span class="k2">' + nr + '</span>';
+  // 狀態
+  document.querySelectorAll('.dot').forEach((d, k) => {
+    d.classList.toggle('on', k === cur);
+    d.classList.toggle('done', k < cur);
+  });
+  document.querySelectorAll('.gchip').forEach((c, k) => {
+    c.classList.toggle('on', GROUPS[k] === GROUPS[st.gi]);
+  });
+  document.getElementById('prev').disabled = cur === 0;
+  document.getElementById('next').disabled = cur === TOTAL - 1;
+}
+
+/* 分組按鈕 */
+const groupsBox = document.getElementById('groups');
+GROUPS.forEach((g, k) => {
+  const b = document.createElement('button');
+  b.className = 'gchip';
+  b.innerHTML = CI[g.i] + '+' + CI[g.j] + ' <span class="c">' + g.items.length + '</span>';
+  b.onclick = () => { stop(); cur = g.start; renderStep(); };
+  groupsBox.appendChild(b);
+});
+
+/* 進度點 */
+const dotsBox = document.getElementById('dots');
+for (let k = 0; k < TOTAL; k++){
+  const d = document.createElement('button');
+  d.className = 'dot';
+  d.setAttribute('aria-label', '第 ' + (k+1) + ' 個梯形');
+  d.onclick = () => { stop(); cur = k; renderStep(); };
+  dotsBox.appendChild(d);
+}
+
+document.getElementById('prev').onclick = () => { stop(); if (cur > 0){ cur--; renderStep(); } };
+document.getElementById('next').onclick = () => { stop(); if (cur < TOTAL - 1){ cur++; renderStep(); } };
+function stop(){
+  if (timer){ clearInterval(timer); timer = null; document.getElementById('play').textContent = '自動播放'; }
+}
+document.getElementById('play').onclick = () => {
+  const btn = document.getElementById('play');
+  if (timer){ stop(); return; }
+  if (cur === TOTAL - 1){ cur = 0; renderStep(); }
+  btn.textContent = '暫停';
+  timer = setInterval(() => {
+    if (cur < TOTAL - 1){ cur++; renderStep(); } else { stop(); }
+  }, 1100);
+};
+
+/* =========================================================
+   定義小圖（三種梯形）
+   ========================================================= */
+(function(){
+  const box = document.getElementById('shapes');
+  const shapes = [
+    { name:'一般梯形', pts:[[2,2.5],[7.5,2.5],[9.5,8.5],[1,8.5]] },
+    { name:'等腰梯形', pts:[[3,2.5],[7.5,2.5],[9,8.5],[1.5,8.5]] },
+    { name:'直角梯形', pts:[[2.5,2.5],[8,2.5],[9.5,8.5],[2.5,8.5]] }
+  ];
+  shapes.forEach(s => {
+    const wrap = document.createElement('div');
+    wrap.className = 'shape';
+    const svg = el('svg', { viewBox:'0 0 11 11' });
+    svg.appendChild(el('polygon', { points: s.pts.map(p => p.join(',')).join(' '), fill:'#eaf0ff', stroke:'#3b62f6', 'stroke-width':0.35 }));
+    // 平行記號（上下兩條底各畫一個短豎線記號）
+    [ [s.pts[0], s.pts[1], 2.5], [s.pts[3], s.pts[2], 8.5] ].forEach(([a, b, y]) => {
+      const mx = (a[0] + b[0]) / 2;
+      svg.appendChild(el('line', { x1:mx, y1:y - 0.8, x2:mx, y2:y + 0.8, stroke:'#ef8a17', 'stroke-width':0.32, 'stroke-linecap':'round' }));
+    });
+    wrap.appendChild(svg);
+    const sp = document.createElement('span');
+    sp.textContent = s.name;
+    wrap.appendChild(sp);
+    box.appendChild(wrap);
+  });
+})();
+
+/* =========================================================
+   表格（每組數量）
+   ========================================================= */
+(function(){
+  const tb = document.getElementById('tbl');
+  GROUPS.forEach(g => {
+    const tr = document.createElement('tr');
+    const extra = g.items.length === 5 ? '多 1 個（斜線A+斜線B）' : '—';
+    tr.innerHTML = '<td>' + CI[g.i] + ' + ' + CI[g.j] + '</td><td class="n">' + g.items.length + '</td><td class="small muted">' + extra + '</td>';
+    tb.appendChild(tr);
+  });
+  const tr = document.createElement('tr');
+  tr.innerHTML = '<td><b>合計</b></td><td class="n">' + TOTAL + '</td><td class="small muted">4×10 + 3</td>';
+  tb.appendChild(tr);
+})();
+
+/* =========================================================
+   自己試
+   ========================================================= */
+(function(){
+  const pickH = document.getElementById('pickH'), pickL = document.getElementById('pickL');
+  const figTry = document.getElementById('figTry'), verdict = document.getElementById('verdict');
+  let selH = [], selL = [];
+
+  for (let i = 0; i < 5; i++){
+    const b = document.createElement('button');
+    b.className = 'pchip'; b.textContent = CI[i];
+    b.onclick = () => { selH = toggle(selH, i, 2); refresh(); };
+    pickH.appendChild(b);
+  }
+  LEGS.forEach(l => {
+    const b = document.createElement('button');
+    b.className = 'pchip leg'; b.textContent = l.name;
+    b.onclick = () => { selL = toggle(selL, l.k, 2); refresh(); };
+    pickL.appendChild(b);
+  });
+  function toggle(arr, v, max){
+    if (arr.includes(v)) return arr.filter(x => x !== v);
+    const out = arr.concat([v]);
+    return out.length > max ? out.slice(1) : out;
+  }
+  function refresh(){
+    document.querySelectorAll('#pickH .pchip').forEach((b, i) => b.classList.toggle('on', selH.includes(i)));
+    document.querySelectorAll('#pickL .pchip').forEach((b, i) => b.classList.toggle('on', selL.includes(LEGS[i].k)));
+    drawBase(figTry);
+
+    if (selH.length < 2 || selL.length < 2){
+      verdict.className = 'verdict idle';
+      verdict.textContent = '未揀夠。要揀 2 條橫線 + 2 條腰，一共 4 條線。';
+      return;
+    }
+    const i = Math.min(...selH), j = Math.max(...selH);
+    const [k1, k2] = selL;
+    const q = makeQuad(i, j, k1, k2);
+    if (q.ok){
+      figTry.appendChild(el('polygon', {
+        points: q.poly.map(p => X(p[0]) + ',' + Y(p[1])).join(' '),
+        fill:'rgba(15,157,88,.22)', stroke:'#0f9d58', 'stroke-width':1.4, 'stroke-linejoin':'round'
+      }));
+      verdict.className = 'verdict ok';
+      verdict.innerHTML = '<b>✓ 係梯形！</b>橫線 ' + CI[i] + '+' + CI[j] + ' 平行，' +
+        LEGMAP[k1].name + ' 和 ' + LEGMAP[k2].name + ' 是兩條腰（它們不平行）。';
+    } else {
+      if (q.poly) figTry.appendChild(el('polygon', {
+        points: q.poly.map(p => X(p[0]) + ',' + Y(p[1])).join(' '),
+        fill:'rgba(229,72,77,.12)', stroke:'#e5484d', 'stroke-width':1, 'stroke-dasharray':'2 2', 'stroke-linejoin':'round'
+      }));
+      verdict.className = 'verdict bad';
+      const msg = {
+        rect:  '<b>✗ 唔算梯形。</b>左邊和右邊都平行，加上下兩條橫線就是長方形，有兩對平行邊。',
+        degen: '<b>✗ 唔夠四條邊。</b>兩條斜線在橫線 ④ 上面碰在一起，圍出來是三角形。',
+        cross: '<b>✗ 自己打結。</b>兩條斜線在這個範圍內交叉，圍出來是蝴蝶形，不是四邊形。'
+      };
+      verdict.innerHTML = msg[q.why] || '<b>✗ 唔算梯形。</b>';
+    }
+  }
+  refresh();
+})();
+
+/* =========================================================
+   初始化
+   ========================================================= */
+['totalBig','totalSmall','totalSmall2','totalSmall3','totalSmall4','totalSmall5','totalSmall6'].forEach(id => {
+  const n = document.getElementById(id);
+  if (n) n.textContent = TOTAL;
+});
+drawBase(document.getElementById('figBase'));
+renderStep();
+</script>
+</body>
+</html>
