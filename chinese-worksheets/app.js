@@ -51,6 +51,8 @@
     state.revealed = false;
     renderTabs();
     renderVolume();
+    var act = document.querySelector('.tab.active');
+    if (act && act.scrollIntoView) act.scrollIntoView({ inline: 'center', block: 'nearest' });
     try { history.replaceState(null, '', '?v=' + (i + 1)); } catch (e) {}
     window.scrollTo({ top: 0, behavior: 'smooth' });
     try { localStorage.setItem('ws-last', String(i)); } catch (e) {}
@@ -354,19 +356,32 @@
   }
 
   function updateProgress() {
-    var total = 0, done = 0;
-    D.volumes[state.vi].sections.forEach(function (sec, si) {
-      if (sec.kind === 'cloze') { total += sec.paragraphs.length; }
-      else { total += sec.items.length; }
-    });
-    var ids = Object.keys(store).filter(function (k) { return k.indexOf(D.volumes[state.vi].id + ':') === 0; });
-    ids.forEach(function (k) {
-      var val = store[k];
-      var filled = Array.isArray(val) ? val.some(function (x) { return String(x || '').trim(); }) : String(val || '').trim();
-      if (filled) done++;
+    var total = D.volumes[state.vi].count;
+    var done = 0;
+    Array.prototype.forEach.call(app.querySelectorAll('.q'), function (q) {
+      var kind = q.getAttribute('data-kind');
+      if (kind === 'wordbank' || kind === 'fill' || kind === 'cloze') {
+        Array.prototype.forEach.call(q.querySelectorAll('input.blank, textarea.write'), function (x) {
+          if (String(x.value || '').trim()) done++;
+        });
+      } else if (kind === 'punct') {
+        Array.prototype.forEach.call(q.querySelectorAll('select.punct'), function (s2) {
+          if (s2.value) done++;
+        });
+      } else if (kind === 'choice') {
+        if (q.querySelector('.choice.on')) done++;
+      } else if (kind === 'match') {
+        if (q.querySelector('select').value) done++;
+      } else if (kind === 'reorder') {
+        if (q.querySelector('.slot .chip')) done++;
+      } else if (kind === 'write') {
+        var ta = q.querySelector('textarea');
+        if (ta && ta.value.trim()) done++;
+      }
     });
     if (!state.graded) {
-      document.getElementById('score').textContent = '已作答 ' + Math.min(done, total) + ' / ' + total + ' 題';
+      document.getElementById('score').textContent =
+        '已作答 ' + Math.min(done, total) + ' / ' + total + ' 題';
     }
   }
 
@@ -551,6 +566,8 @@
     state.vi = last;
     renderTabs();
     renderVolume();
+    var act0 = document.querySelector('.tab.active');
+    if (act0 && act0.scrollIntoView) act0.scrollIntoView({ inline: 'center', block: 'nearest' });
 
     document.getElementById('checkBtn').addEventListener('click', function () { gradeAll(true); });
     document.getElementById('revealBtn').addEventListener('click', revealAll);
