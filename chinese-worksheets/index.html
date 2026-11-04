@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中文期考練習 · 14 卷互動工作紙（可下載 Word）</title>
+<meta name="description" content="依校內中文期考學習重點編寫的 14 卷工作紙：字詞填充、句式「被」與「一起……一起……」、部首、成語、近義詞、反問句、標點、擴寫與比喻。可網上互動作答、即時對答案，並下載 Word 版本。">
+<meta name="theme-color" content="#f6f7fb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f6ef7'/%3E%3Ctext x='32' y='45' font-size='34' text-anchor='middle' fill='white' font-family='PingFang TC,sans-serif'%3E%E8%AA%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <a class="back" href="../">← 返回導航</a>
+  <h1>中文期考練習</h1>
+  <p class="sub">14 卷工作紙 · 依期考學習重點與原卷題型編寫 · 網上互動作答＋Word 下載</p>
+  <ul class="stats" id="stats"></ul>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="選擇工作紙"></nav>
+
+<main class="wrap" id="app">
+  <noscript><p class="noscript">此頁需要 JavaScript 才能互動作答；你仍可直接下載 <a href="docx/all-worksheets.zip">全部 14 卷 Word</a>。</p></noscript>
+</main>
+
+<div class="dock" id="dock">
+  <div class="dock-inner">
+    <div class="dock-score" id="score">尚未作答</div>
+    <button class="btn primary" id="checkBtn">對答案</button>
+    <button class="btn" id="revealBtn">看答案</button>
+    <button class="btn ghost" id="resetBtn">重設</button>
+    <div class="dock-dl">
+      <a class="btn dl" id="dlDoc" href="#" download>下載本卷 Word</a>
+      <a class="btn dl ghost" id="dlAns" href="#" download>答案版</a>
+    </div>
+  </div>
+</div>
+
+<section class="wrap mapwrap">
+  <details class="map">
+    <summary>對照表：14 卷 vs 原卷要求（點擊展開）</summary>
+    <table>
+      <thead><tr><th>卷</th><th>工作紙內容</th><th>依據</th><th>題目</th></tr></thead>
+      <tbody>
+        <tr><td>一</td><td>字詞填充（一）：語五《給山區筆友的信》、語六《給嘉怡的回信》</td><td>圖1</td><td>供詞填充 40</td></tr>
+        <tr><td>二</td><td>字詞填充（二）：語一《小敏的手錶》、語二《做好事》</td><td>圖4</td><td>供詞填充 40</td></tr>
+        <tr><td>三</td><td>字詞填充（三）：語七《大榕樹》、語八《鳥聲》</td><td>圖10</td><td>供詞填充 40</td></tr>
+        <tr><td>四</td><td>句式「被」：填充、重組、改寫</td><td>圖1</td><td>30</td></tr>
+        <tr><td>五</td><td>句式「一起……一起……」：重組、配對、看圖寫句（10 幅示意圖）</td><td>圖1</td><td>30</td></tr>
+        <tr><td>六</td><td>部首「水（氵）」「冫」填字＋口語與書面語</td><td>圖2</td><td>20</td></tr>
+        <tr><td>七</td><td>部首辨識＋成語選擇＋成語填充</td><td>圖6</td><td>30</td></tr>
+        <tr><td>八</td><td>部首「阜（阝）」「邑（阝）」＋擬聲詞（含段落填充）</td><td>圖11</td><td>40</td></tr>
+        <tr><td>九</td><td>近義詞辨析</td><td>圖9</td><td>20</td></tr>
+        <tr><td>十</td><td>形容詞重疊＋語氣詞「了／吧／呢／嗎」</td><td>圖8</td><td>40</td></tr>
+        <tr><td>十一</td><td>轉折句式：「……，卻……」聯結與重組、「雖然……但是……」續寫與重組</td><td>圖3、圖16</td><td>40</td></tr>
+        <tr><td>十二</td><td>反問句「……不是……嗎？」：寫作、重組、改寫</td><td>圖7</td><td>30</td></tr>
+        <tr><td>十三</td><td>標點符號：頓號、省略號、逗號、句號、引號、書名號、分號、冒號</td><td>圖12、圖13</td><td>106 個空格</td></tr>
+        <tr><td>十四</td><td>顏色詞擴寫、句子擴寫、比喻句續寫與重組</td><td>圖14、圖15</td><td>40</td></tr>
+      </tbody>
+    </table>
+  </details>
+</section>
+
+<footer class="foot">
+  <p>共 <span id="footTotal">546</span> 道小題 · 依 16 張原卷圖的題型與資料重編 · 供學習用途</p>
+  <p><a href="docx/all-worksheets.zip" download>一次下載全部 14 卷（Word · ZIP）</a></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

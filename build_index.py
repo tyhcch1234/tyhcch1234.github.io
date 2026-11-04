@@ -56,6 +56,11 @@ OVERRIDES = {
         desc="梯形・平行四邊形・長方形・菱形・正方形・箏形：包含關係、對邊平行／相等、對角線性質、判斷流程與小測驗",
         tags=["數學", "四邊形", "平行四邊形", "梯形", "正方形", "幾何"], url="quadrilaterals/",
     ),
+    "p3-trapezoid": dict(
+        title="梯形大搜查 · 圖中有幾多個梯形？", cat="junior",
+        desc="小三互動教室：5 條橫線 + 2 條斜線，逐個亮起示範，一共 43 個梯形",
+        tags=["小三", "數學", "圖形", "梯形", "互動"], url="p3-trapezoid/",
+    ),
     "hanzi": dict(
         title="中文字工作紙生成器", cat="lang",
         desc="輸入默書字詞，一鍵產生六步寫字工作紙（Word／A4）",
@@ -236,7 +241,7 @@ TOPIC_NAMES = {
     "trigonometry": "三角學",
 }
 
-VIRTUAL_SITES = ("quadrilaterals", "hanzi")
+VIRTUAL_SITES = ("quadrilaterals", "hanzi", "p3-trapezoid")
 
 SKIP_DIRS = ("node_modules/", "vendor/", "_site/", "assets/", "images/", "img/", "cn/", "docs/")
 DATE_DIRS = ("archive/", "deals/", "reports/", "posts/", "daily/")
@@ -394,7 +399,8 @@ def build(offline=False):
         ov = OVERRIDES[vname]
         sites.append(dict(
             name=vname, title=ov["title"], desc=ov["desc"], cat=ov["cat"],
-            tags=ov["tags"], updated="", url=ov.get("url", vname + "/"), pages=[], virtual=True,
+            tags=ov["tags"], updated="", url=ov.get("url", vname + "/"),
+            pages=[], virtual=True,
         ))
 
     cat_rank = {c: i for i, c in enumerate(
