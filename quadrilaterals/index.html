@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四邊形家族圖鑑 · 平行四邊形、長方形、正方形、梯形之關係</title>
+<meta name="description" content="用一張圖睇清梯形、平行四邊形、長方形、菱形、正方形、箏形嘅包含關係：對邊平行、對邊相等、對角相等、對角線互相平分／相等／垂直，附判斷流程、易錯位同小測驗。">
+<meta name="theme-color" content="#4f6ef7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234f6ef7'/><path d='M24 72 L40 28 H76 L60 72 Z' fill='none' stroke='white' stroke-width='7'/></svg>">
+<style>
+:root{
+  --bg:#f5f7fc;
+  --card:#fff;
+  --card-2:#fbfcff;
+  --ink:#14192a;
+  --ink-2:#333c52;
+  --muted:#6b7488;
+  --line:#e5e9f3;
+  --line-2:#d5dbeb;
+  --brand:#4f6ef7;
+  --purple:#8b5cf6;
+  --par:#2563eb;      /* 平行 */
+  --eq:#e11d48;       /* 等長 */
+  --right:#059669;    /* 直角 */
+  --diag:#f59e0b;     /* 對角線 */
+  --ok:#15803d;
+  --no:#b91c1c;
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 10px 28px rgba(16,24,40,.06);
+  --radius:18px;
+  --wrap:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 420px at 6% -10%,rgba(79,110,247,.14),transparent 60%),
+    radial-gradient(760px 380px at 98% -6%,rgba(139,92,246,.13),transparent 58%),
+    var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","PingFang HK","Microsoft JhengHei","Noto Sans TC",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 18px 80px}
+a{color:var(--brand);text-decoration:none}
+h1,h2,h3{line-height:1.3;margin:0}
+p{margin:0}
+
+/* ---------- hero ---------- */
+.hero{padding:44px 0 18px;text-align:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--brand);background:rgba(79,110,247,.1);
+  padding:5px 12px;border-radius:999px;font-weight:700;
+}
+.hero h1{font-size:clamp(27px,6vw,44px);letter-spacing:-.02em;margin:16px 0 12px}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--brand),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--ink-2);max-width:620px;margin:0 auto;font-size:15.5px}
+@media(max-width:640px){.hero p br{display:none}.hero{padding:32px 0 12px}}
+.hero .hint{margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* ---------- nav ---------- */
+.tabs{
+  position:sticky;top:0;z-index:30;
+  display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;
+  padding:10px 18px;margin:8px -18px 22px;
+  background:rgba(245,247,252,.86);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid rgba(214,220,235,.7);
+}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{
+  flex:0 0 auto;font-size:13px;font-weight:600;color:var(--ink-2);
+  padding:7px 13px;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);white-space:nowrap;
+}
+.tabs a:hover{border-color:var(--brand);color:var(--brand)}
+.tabs a.on{background:var(--brand);border-color:var(--brand);color:#fff}
+
+/* ---------- generic card ---------- */
+section{margin:34px 0 0;scroll-margin-top:64px}
+.shead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.num{
+  font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff;
+  background:linear-gradient(135deg,var(--brand),var(--purple));
+  width:24px;height:24px;border-radius:8px;display:grid;place-items:center;
+  flex:0 0 auto;transform:translateY(-1px);
+}
+.shead h2{font-size:clamp(19px,3.4vw,24px);letter-spacing:-.01em}
+.slead{color:var(--muted);font-size:14.5px;margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+
+/* ---------- 條件鏈 ---------- */
+.chain{display:grid;gap:0;margin-top:6px}
+.step{
+  display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 14px;box-shadow:var(--shadow);
+}
+.step .fig{width:52px;height:44px;flex:0 0 auto}
+.step .fig svg{width:100%;height:100%;display:block}
+.step h3{font-size:15.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.step .add{
+  font-size:11.5px;font-weight:700;color:#7c3aed;background:#f3edff;
+  border:1px solid #e4d8ff;padding:2px 8px;border-radius:999px;
+}
+.step small{display:block;color:var(--muted);font-size:12.8px;line-height:1.5}
+.arrow{display:grid;place-items:center;color:#98a3bb;font-size:14px;height:20px;line-height:1}
+.branchlabel{font-size:12.5px;color:#7c3aed;text-align:center;margin:2px 0 8px;font-weight:600}
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.branch .step{grid-template-columns:1fr;gap:8px;padding:12px}
+.branch .step .fig{width:100%;max-width:210px;height:auto;margin:0 auto 6px}
+@media(max-width:560px){.branch{grid-template-columns:1fr}}
+.tagline{font-size:12.6px;color:var(--muted);text-align:center;margin:6px 0 2px}
+
+/* ---------- callout ---------- */
+.note{
+  border-left:4px solid var(--brand);background:#f7f9ff;
+  border-radius:0 12px 12px 0;padding:13px 15px;font-size:14px;color:var(--ink-2);
+  margin:14px 0 0;
+}
+.note b{color:var(--ink)}
+.note.warn{border-color:#f59e0b;background:#fffaf0}
+
+/* ---------- venn ---------- */
+.venn-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center}
+@media(max-width:720px){.venn-wrap{grid-template-columns:1fr}}
+.venn-wrap svg{width:100%;height:auto;display:block}
+.venn-list{font-size:14px;color:var(--ink-2);display:grid;gap:9px}
+.venn-list div{padding-left:16px;position:relative}
+.venn-list div::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--brand)}
+
+/* ---------- shape cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px}
+.scard{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:14px 14px 16px;box-shadow:var(--shadow);transition:.18s;
+}
+.scard:hover{transform:translateY(-2px);border-color:var(--line-2)}
+.scard .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.scard h3{font-size:16.5px}
+.scard .en{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.scard .def{font-size:13px;color:var(--ink-2);margin:6px 0 4px}
+.scard svg{width:100%;height:auto;display:block;margin:2px 0 4px}
+.scard ul{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}
+.scard ul li{margin:2px 0}
+.scard .no{color:var(--no)}
+.scard .yes{color:var(--ok)}
+.chip{
+  display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;
+  background:#eef2ff;color:#3730a3;border:1px solid #dfe4ff;margin-left:4px;
+}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);margin:2px 0 16px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:20px;height:3px;border-radius:2px;display:inline-block}
+
+/* ---------- table ---------- */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:12.6px;min-width:720px}
+th,td{padding:8px 7px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+thead th{background:#f8faff;font-size:11.8px;color:var(--ink-2);font-weight:700;line-height:1.35}
+tbody th{text-align:left;font-weight:700;background:var(--card-2);position:sticky;left:0;z-index:1}
+tbody tr:hover td{background:#f6f8ff}
+tbody tr:hover th{background:#eef2ff}
+td.y{color:var(--ok);font-weight:800}
+td.n{color:#c3c9d6;font-weight:800}
+td.q{color:#b45309;font-size:11.5px;font-weight:700}
+.legend-sm{font-size:12px;color:var(--muted);margin-top:8px}
+
+/* ---------- flow ---------- */
+.flow{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted);margin-bottom:14px;min-height:19px}
+.crumbs span{background:#f3f5fb;border:1px solid var(--line);padding:1px 8px;border-radius:999px}
+.qtext{font-size:17px;font-weight:700;margin:2px 0 14px;letter-spacing:-.01em}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  font:inherit;font-size:14.5px;font-weight:700;cursor:pointer;
+  padding:11px 20px;border-radius:12px;border:1px solid var(--line-2);
+  background:#fff;color:var(--ink-2);transition:.15s;
+}
+.btn:hover{border-color:var(--brand);color:var(--brand);background:#f7f9ff}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--purple));border-color:transparent;color:#fff}
+.btn.primary:hover{filter:brightness(1.05);color:#fff}
+.btn.ghost{background:transparent;border-style:dashed;color:var(--muted)}
+.result{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:center;margin-top:4px}
+@media(max-width:520px){.result{grid-template-columns:1fr}}
+.result svg{width:100%;height:auto;background:#fbfcff;border-radius:12px;border:1px solid var(--line)}
+.result h4{font-size:19px;margin:0 0 4px}
+.result p{font-size:13.5px;color:var(--ink-2)}
+.result .chips{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.result .chips b{font-size:11.5px;font-weight:700;color:#3730a3;background:#eef2ff;border:1px solid #dfe4ff;padding:2px 9px;border-radius:999px}
+
+/* ---------- myths ---------- */
+.myths{display:grid;gap:10px}
+.myth{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;box-shadow:var(--shadow)}
+.myth .q{font-size:14px;font-weight:700;color:var(--ink)}
+.myth .a{font-size:13.5px;color:var(--ink-2);margin-top:4px}
+.badge{font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;margin-right:6px;vertical-align:1px}
+.badge.ok{background:#e8f7ee;color:var(--ok);border:1px solid #cdebd9}
+.badge.no{background:#fdecec;color:var(--no);border:1px solid #f7d4d4}
+
+/* ---------- area ---------- */
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:720px){.area-grid{grid-template-columns:1fr}}
+.formula{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:13.5px;background:#f6f8ff;border:1px dashed var(--line-2);border-radius:10px;padding:8px 10px;display:inline-block;margin:6px 0}
+.sliders{display:grid;gap:10px;margin-top:6px}
+.sliders label{display:grid;grid-template-columns:64px 1fr 44px;align-items:center;gap:10px;font-size:13px;color:var(--ink-2)}
+input[type=range]{width:100%;accent-color:var(--brand)}
+.sliders output{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.readout{font-size:13.5px;color:var(--ink-2);margin-top:10px}
+.readout b{color:var(--brand);font-size:15.5px}
+
+/* ---------- quiz ---------- */
+.quiz{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.qq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;box-shadow:var(--shadow)}
+.qq .stem{font-size:14.5px;font-weight:600;margin-bottom:10px}
+.qq .stem i{font-style:normal;color:var(--muted);font-size:12.5px;margin-right:6px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{
+  font:inherit;font-size:13.5px;cursor:pointer;padding:8px 16px;border-radius:10px;
+  border:1px solid var(--line-2);background:#fff;color:var(--ink-2);transition:.15s;min-width:74px;
+}
+.opt:hover{border-color:var(--brand)}
+.opt.correct{background:#e8f7ee;border-color:#7fc79b;color:var(--ok);font-weight:700}
+.opt.wrong{background:#fdecec;border-color:#e9a0a0;color:var(--no);font-weight:700}
+.qq .exp{font-size:12.8px;color:var(--ink-2);margin-top:9px;padding:9px 11px;border-radius:9px;background:#f7f9ff;display:none}
+.qq .exp.show{display:block}
+.qq .exp b{color:var(--brand)}
+.score{font-size:13px;color:var(--muted);margin-top:12px;text-align:right}
+
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+footer p{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">中一至中三 · 幾何</div>
+  <h1>四邊形家族圖鑑<br><em>平行四邊形 / 長方形 / 正方形 / 梯形</em></h1>
+  <p>同一個家族，唔同嘅「條件」。加多一個條件，範圍就收窄一圈——<br>睇完你就知邊個係邊個嘅「一種」，同埋邊啲性質係包喺入面。</p>
+  <div class="hint">所有圖都標明：箭咀＝平行　短劃＝等長　小方框＝直角　虛線＝對角線</div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <a href="#chain" class="on">① 一條條件鏈</a>
+  <a href="#venn">② 包含關係</a>
+  <a href="#shapes">③ 逐個認識</a>
+  <a href="#matrix">④ 性質對照表</a>
+  <a href="#flow">⑤ 判斷流程</a>
+  <a href="#myths">⑥ 易錯位</a>
+  <a href="#area">⑦ 面積</a>
+  <a href="#quiz">⑧ 小測驗</a>
+</nav>
+
+<!-- ① 條件鏈 -->
+<section id="chain">
+  <div class="shead"><span class="num">1</span><h2>一條條件鏈：每上一級，就多一個條件</h2></div>
+  <p class="slead">四邊形嘅分類唔係死記，而係「逐個條件加落去」。條件加得越多，符合嘅圖形就越少、性質就越多。</p>
+  <div class="chain" id="chainBox"></div>
+  <div class="note">
+    <b>點解「正方形」擺最低？</b> 因為佢嘅條件最嚴（四邊相等 <b>兼</b> 四個直角），所以符合嘅圖形最少；
+    但反過來，佢自動擁有上面各級嘅<b>全部</b>性質。呢個就係「包含關係」嘅意思。
+  </div>
+</section>
+
+<!-- ② 包含關係 -->
+<section id="venn">
+  <div class="shead"><span class="num">2</span><h2>包含關係：正方形＝長方形 ∩ 菱形</h2></div>
+  <p class="slead">把「長方形」同「菱形」當成兩個條件集，佢哋重疊嘅部分，正好就係正方形。</p>
+  <div class="card">
+    <div class="venn-wrap">
+      <svg viewBox="0 0 520 300" role="img" aria-label="長方形與菱形相交得出正方形的包含圖">
+        <defs>
+          <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4f6ef7" stop-opacity=".20"/><stop offset="1" stop-color="#4f6ef7" stop-opacity=".08"/>
+          </linearGradient>
+          <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8b5cf6" stop-opacity=".20"/><stop offset="1" stop-color="#8b5cf6" stop-opacity=".08"/>
+          </linearGradient>
+        </defs>
+        <!-- 外框：平行四邊形 -->
+        <rect x="10" y="8" width="500" height="284" rx="26" fill="#f8faff" stroke="#c7d2fe" stroke-width="2" stroke-dasharray="7 6"/>
+        <text x="26" y="34" font-size="13" font-weight="700" fill="#4338ca">平行四邊形（兩組對邊平行）</text>
+        <!-- 兩個橢圓 -->
+        <ellipse cx="196" cy="160" rx="132" ry="92" fill="url(#gA)" stroke="#4f6ef7" stroke-width="2"/>
+        <ellipse cx="324" cy="160" rx="132" ry="92" fill="url(#gB)" stroke="#8b5cf6" stroke-width="2"/>
+        <!-- 交集：正方形 -->
+        <path d="M260 92 L292 128 L260 164 L228 128 Z" fill="#16a34a" fill-opacity=".14" stroke="#16a34a" stroke-width="2"/>
+        <text x="260" y="132" font-size="12.5" font-weight="800" fill="#15803d" text-anchor="middle">正方形</text>
+        <!-- 標籤 -->
+        <text x="130" y="164" font-size="14" font-weight="800" fill="#3b49c9" text-anchor="middle">長方形</text>
+        <text x="130" y="184" font-size="11.5" fill="#6b7488" text-anchor="middle">四個直角</text>
+        <text x="390" y="164" font-size="14" font-weight="800" fill="#7c3aed" text-anchor="middle">菱形</text>
+        <text x="390" y="184" font-size="11.5" fill="#6b7488" text-anchor="middle">四邊相等</text>
+        <!-- 註 -->
+        <text x="260" y="282" font-size="11" fill="#8a93a6" text-anchor="middle">箏形、梯形等其餘四邊形都在此框之外</text>
+      </svg>
+      <div class="venn-list">
+        <div><b>正方形 = 長方形 ∩ 菱形</b>：兩個條件同時成立嘅，就只有正方形。</div>
+        <div><b>正方形 ⊂ 菱形</b>：同理，正方形只係「有直角嘅菱形」。</div>
+        <div><b>長方形 ⊂ 平行四邊形</b>：長方形只係「有一個直角嘅平行四邊形」。</div>
+        <div><b>菱形 ⊂ 平行四邊形</b>：菱形只係「四邊相等嘅平行四邊形」。</div>
+        <div>所以：<b>正方形 ⊂ 長方形 ⊂ 平行四邊形</b>，同時 <b>正方形 ⊂ 菱形 ⊂ 平行四邊形</b>。</div>
+      </div>
+    </div>
+  </div>
+  <div class="note warn">
+    <b>「包含」唔等於「相等」。</b> 正方形係長方形嘅一種，但唔係所有長方形都係正方形——好似「香港人係中國人嘅一種」，
+    但唔係所有中國人都係香港人。講「正方形係長方形」係<b>正確</b>嘅，唔少同學喺呢度失分。
+  </div>
+</section>
+
+<!-- ③ 逐個認識 -->
+<section id="shapes">
+  <div class="shead"><span class="num">3</span><h2>逐個認識：定義、性質、唔一定成立嘅事</h2></div>
+  <p class="slead">每張卡都分兩欄：「一定成立」同「唔一定成立」。後者往往就係考試陷阱。</p>
+  <div class="legend">
+    <span><i style="background:var(--par)"></i>箭咀：對邊平行</span>
+    <span><i style="background:var(--eq)"></i>短劃：等長</span>
+    <span><i style="background:var(--right)"></i>方框：直角</span>
+    <span><i style="background:var(--diag)"></i>虛線：對角線</span>
+  </div>
+  <div class="grid" id="shapeGrid"></div>
+  <div class="note">
+    <b>梯形嘅定義有兩派，計數前要睇清楚。</b><br>
+    <b>香港課本</b>：梯形＝<b>只有</b>一組對邊平行（另一組一定唔平行）。→ 平行四邊形<b>唔算</b>梯形。<br>
+    <b>英美廣義</b>：梯形＝<b>至少</b>一組對邊平行。→ 平行四邊形、長方形、正方形<b>都算</b>梯形。<br>
+    兩派都有人用，但香港考試跟「只有一組」，所以本文其餘部分一律用香港定義。
+  </div>
+</section>
+
+<!-- ④ 對照表 -->
+<section id="matrix">
+  <div class="shead"><span class="num">4</span><h2>性質對照表：一眼睇清邊個有邊個冇</h2></div>
+  <p class="slead">打橫睇，就係同一個圖形嘅全套性質；打直睇，就係同一個性質邊個有、邊個冇。</p>
+  <div class="tbl-scroll">
+    <table id="matrixTable">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="legend-sm">✓＝一定成立　✗＝唔一定成立（甚至一定唔成立）　△＝要額外條件先成立（滑鼠停留可看說明）</p>
+  <div class="note">
+    <b>最容易記錯嘅三格：</b>
+    平行四邊形嘅對角線<b>只會互相平分</b>，唔會相等、亦唔會垂直；
+    長方形嘅對角線<b>相等但唔垂直</b>；菱形嘅對角線<b>垂直但唔相等</b>；
+    只有正方形兩樣都有。
+  </div>
+</section>
+
+<!-- ⑤ 判斷流程 -->
+<section id="flow">
+  <div class="shead"><span class="num">5</span><h2>判斷流程：答三、四條問題就知係邊個</h2></div>
+  <p class="slead">遇到一個四邊形，唔好靠感覺。照住問落去，答案自然出嚟。</p>
+  <div class="flow">
+    <div class="crumbs" id="crumbs"></div>
+    <div id="flowBody"></div>
+  </div>
+</section>
+
+<!-- ⑥ 易錯位 -->
+<section id="myths">
+  <div class="shead"><span class="num">6</span><h2>六個最常見嘅易錯位</h2></div>
+  <p class="slead">呢幾句，你或者都聽過。逐句拆解。</p>
+  <div class="myths" id="mythsBox"></div>
+</section>
+
+<!-- ⑦ 面積 -->
+<section id="area">
+  <div class="shead"><span class="num">7</span><h2>面積：同一條公式嘅變形</h2></div>
+  <p class="slead">平行四邊形、長方形、正方形嘅面積，其實都係「底 × 高」；梯形就係「兩個底嘅平均 × 高」。</p>
+  <div class="area-grid">
+    <div class="card">
+      <h3 style="font-size:15.5px;margin-bottom:8px">四條公式</h3>
+      <p style="font-size:13.5px;color:var(--ink-2)">長方形：<span class="formula">A = 長 × 闊</span></p>
+      <p style="font-size:13.5px;color:var(--ink-2)">正方形：<span class="formula">A = 邊²</span></p>
+      <p style="font-size:13.5px;color:var(--ink-2)">平行四邊形：<span class="formula">A = 底 × 高</span></p>
+      <p style="font-size:13.5px;color:var(--ink-2)">梯形：<span class="formula">A = (上底 + 下底) × 高 ÷ 2</span></p>
+      <div class="note" style="margin-top:12px">
+        平行四邊形嘅「高」係兩條底之間嘅<b>垂直距離</b>，唔係斜邊長度。
+        用斜邊乘底係最常見嘅計錯法。
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15.5px;margin-bottom:8px">拖一拖：梯形面積</h3>
+      <svg id="trapSvg" viewBox="0 0 400 218" style="width:100%;height:auto;background:#fbfcff;border:1px solid var(--line);border-radius:12px"></svg>
+      <div class="sliders">
+        <label>上底 a<input type="range" id="sa" min="1" max="10" value="4" step="1"><output id="oa">4</output></label>
+        <label>下底 b<input type="range" id="sb" min="1" max="10" value="8" step="1"><output id="ob">8</output></label>
+        <label>高 h<input type="range" id="sh" min="2" max="8" value="5" step="1"><output id="oh">5</output></label>
+      </div>
+      <div class="readout" id="areaOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ 小測驗 -->
+<section id="quiz">
+  <div class="shead"><span class="num">8</span><h2>小測驗：八題，即時對答案</h2></div>
+  <p class="slead">揀完即刻知對錯，下面會解釋點解。</p>
+  <div class="quiz" id="quizBox"></div>
+  <div class="score" id="score"></div>
+</section>
+
+<footer>
+  <p><b>四邊形家族圖鑑</b> · 由 <a href="https://tyhcch1234.github.io/">tyhcch1234.github.io</a> 製作</p>
+  <p>定義依香港初中課本慣例（梯形＝只有一組對邊平行）；英美「至少一組」嘅廣義用法已於第 3 節註明。</p>
+</footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>
