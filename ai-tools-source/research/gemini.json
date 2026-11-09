@@ -1,0 +1,107 @@
+{
+  "id": "gemini",
+  "name": "Google Gemini",
+  "category": "chat",
+  "tagline": "Google 多模態 AI 助手",
+  "description": "Google Gemini 是對話式 AI 助手，可用文字、語音與圖片提問，協助寫作、翻譯、學習、整理內容與規劃行程；亦提供圖像生成、深入研究及 Google 服務整合，部分功能依方案、裝置與地區而異。",
+  "features": [
+    "支援文字、語音及圖片互動，可協助寫作、腦力激盪、翻譯、學習與摘要整理。",
+    "可生成及編輯圖片；Deep Research、影片生成、Canvas、Gemini Live 等功能依方案、地區和用量而異。",
+    "可連結 Gmail、Google Drive 等 Google 服務以查找或整理個人資料，實際可用連結應用程式依地區、語言、裝置和帳戶而異。",
+    "Android 上可依支援情況作為行動助理，並以相機、語音或螢幕內容提問。"
+  ],
+  "bestFor": [
+    "希望以自然語言快速寫作、翻譯、摘要或學習的人。",
+    "日常已使用 Google 服務，想在支援的地區與帳戶中串接資料完成工作的人。",
+    "需要圖像生成、文件分析或研究工具，並接受功能受訂閱方案與用量限制的創作者或學生。"
+  ],
+  "pros": [
+    "官方支援繁體中文；網頁版語言清單亦列有中文（香港），並支援文字、語音和圖片等互動方式。",
+    "與 Gmail、Google Drive、Maps 等 Google 服務及多種生成式工具整合，涵蓋多類日常工作。"
+  ],
+  "limitations": [
+    "免費版及付費版均有用量限制；上限會依提示複雜度、模型、功能和對話長度調整，並可能變動。",
+    "不同平台、語言、地區和帳戶可用的功能不完全相同；部分 Google 助理功能、連結應用程式或新功能可能不支援。",
+    "Google 提醒回覆可能不準確或不恰當；重要資訊需另行查證，不應視為醫療、法律或財務專業建議。"
+  ],
+  "platforms": [
+    "網頁版（gemini.google）",
+    "Android 手機及平板 Gemini 行動應用程式（Android 9 以上、至少 2 GB RAM）",
+    "iPhone 及 iPad Gemini 行動應用程式（iOS 16 以上）",
+    "部分 Google 產品整合，例如 Gmail、Google Drive、Google Maps；依帳戶、方案、語言及地區而異。"
+  ],
+  "languages": "官方網頁版支援中文（簡體／繁體／香港）；Android 與 iOS 行動版列有中文（簡體／繁體）。可用繁體中文互動，但官方資料未保證所有功能均支援廣東話語音辨識或語音輸出，相關語言與語音功能可能受平台限制。",
+  "regionNote": "Google 官方網頁版支援地區清單明列香港，並將中國大陸標示為僅限 Workspace。行動版另有獨立地區支援清單及逐步推出安排，不應由網頁版可用性推定手機應用程式或所有功能均可用；在香港使用前宜按裝置與帳戶查閱 Google 官方清單及商店頁面。",
+  "officialUrl": "https://gemini.google/",
+  "pricingUrl": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US",
+  "hasFree": true,
+  "freeSummary": "可免費使用 Gemini，但免費存取有標準用量限制，且限制按提示複雜度、模型、功能與對話長度動態計算；官方列出免費版脈絡窗口為 3.2 萬個詞元。部分高階模型、Deep Research、媒體生成等功能僅限特定方案或有額外限制。",
+  "priceLabel": "US$9.99 / 月起（美國；Google AI Plus）",
+  "monthlyUSD": 9.99,
+  "billingNote": "以下採美國官方頁面的月繳美元價。Google AI Plus 為 US$9.99／月、Pro 為 US$19.99／月；Ultra 分為 5x（US$99.99／月）與 20x（US$199.99／月）兩級，非單一價格。年繳等效價未核實；價格及權益依地區、帳戶與結帳頁而異。",
+  "plans": [
+    {
+      "name": "Gemini 免費版",
+      "price": "免費",
+      "billing": "免費方案",
+      "summary": "標準用量限制會動態調整；官方列出 3.2 萬詞元脈絡窗口。部分高階模型和工具不可用或有額外限制。"
+    },
+    {
+      "name": "Google AI Plus",
+      "price": "US$9.99 / 月（美國頁面）",
+      "billing": "月繳；年繳價未核實",
+      "summary": "美國方案頁列 2 TB 儲存空間，Gemini 用量高於免費版；高用量工具仍可能設限。實際功能與價格按地區而異。"
+    },
+    {
+      "name": "Google AI Pro",
+      "price": "US$19.99 / 月（美國頁面）",
+      "billing": "月繳；年繳價未核實",
+      "summary": "美國方案頁列 5 TB 儲存空間，Gemini 用量及部分進階功能提升；Google One 說明家庭群組成員可享部分 AI 權益，細節按方案為準。"
+    },
+    {
+      "name": "Google AI Ultra 5x（20 TB）",
+      "price": "US$99.99 / 月（美國頁面）",
+      "billing": "月繳；年繳價未核實",
+      "summary": "Ultra 5x 層級；Google AI 權益及 Gemini 用量高於 Pro，實際功能與用量依地區而異。"
+    },
+    {
+      "name": "Google AI Ultra 20x（30 TB）",
+      "price": "US$199.99 / 月（美國頁面）",
+      "billing": "月繳；年繳價未核實",
+      "summary": "Ultra 20x 層級；官方列出相較 Pro 高出 20 倍的 Gemini 用量，實際功能與用量依地區而異。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini 網頁應用程式支援語言與國家/地區",
+      "url": "https://support.google.com/gemini/answer/13575153?hl=zh-Hant"
+    },
+    {
+      "title": "Gemini 行動應用程式功能",
+      "url": "https://support.google.com/gemini/answer/14579631?hl=zh-Hant&co=GENIE.Platform%3DAndroid"
+    },
+    {
+      "title": "Gemini 行動應用程式支援裝置、語言與地區（iOS）",
+      "url": "https://support.google.com/gemini/answer/14579026?hl=zh-Hant&co=GENIE.Platform%3DiOS"
+    },
+    {
+      "title": "Gemini 應用程式用量限制與功能適用情況",
+      "url": "https://support.google.com/gemini/answer/16275805?hl=zh-Hant"
+    },
+    {
+      "title": "Google One 美國方案與價格",
+      "url": "https://one.google.com/about/plans?hl=en-US&gl=US"
+    },
+    {
+      "title": "Google AI 訂閱方案與 Gemini 權益",
+      "url": "https://gemini.google/subscriptions/"
+    },
+    {
+      "title": "Google AI 方案與美國月費（官方）",
+      "url": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "2026-11-09 核對 Google 官方美國 Google AI 方案頁、Google One 美國方案頁及 Gemini 訂閱頁：Google AI Plus US$9.99／月、Pro US$19.99／月；Ultra 分為 5x US$99.99／月及 20x US$199.99／月。Google AI 方案包含 Gemini 權益。官方方案與價格依地區、帳戶及供應情況而異；美國標價不是香港報價。",
+  "filePath": "/home/ubuntu/aipicks/research/gemini.json"
+}

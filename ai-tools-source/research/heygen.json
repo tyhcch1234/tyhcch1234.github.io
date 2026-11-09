@@ -1,0 +1,92 @@
+{
+  "id": "heygen",
+  "name": "HeyGen",
+  "category": "video",
+  "tagline": "用AI分身快速製作多語影片",
+  "description": "HeyGen以文字、圖片或簡報生成講者影片，亦可建立個人AI分身、配音並翻譯既有影片；支援繁體粵語語音，適合教學、行銷及跨語市場內容製作，輸出長度與用量依方案及點數而異。",
+  "features": [
+    "以文字稿、提示或簡報製作帶AI虛擬講者的影片，並可建立個人數位分身。",
+    "以文字或圖片生成影片，透過Video Agent組合腳本、旁白、畫面與字幕，並在AI Studio編修。",
+    "為既有影片配音及翻譯，支援聲音複製和唇形同步；語言與功能視方案而定。",
+    "提供多種輸出解析度與片長上限；Creator支援最高1080p，Pro支援最高4K。"
+  ],
+  "bestFor": [
+    "製作企業培訓、入職介紹及教學影片的團隊。",
+    "需要快速製作講者型產品介紹、行銷內容或社群短片的創作者與行銷人員。",
+    "要將講者影片配成粵語或其他語言、觸及多地受眾的團隊。"
+  ],
+  "pros": [
+    "把虛擬講者、影片製作、編修與多語翻譯整合在同一工作區，減少拍攝和後製流程。",
+    "官方語音清單明列繁體粵語及多種中文語音選項，適合粵語內容製作。"
+  ],
+  "limitations": [
+    "免費方案影片有浮水印且每段最長1分鐘；官方支援中心指出免費影片配額依地區為每月1至3支。",
+    "付費方案按點數計用量，功能、模型、影片長度及素材生成會影響點數消耗；Creator不能另購一次性點數，需升級方案取得更多點數。",
+    "個人方案限單一使用者；團隊協作、集中管理及進階安全功能需Business或更高方案。"
+  ],
+  "platforms": [
+    "網頁瀏覽器",
+    "iOS／iPhone",
+    "Android"
+  ],
+  "languages": "官方內建語音支援清單列有 Chinese (Cantonese - Traditional)，亦列出簡體普通話、台灣國語等中文語音。這核實的是語音生成支援，不代表已核實繁體中文介面。",
+  "regionNote": "官方未明確列出香港不可用；但免費影片配額為每月1至3支且依地區而異，自訂數位分身名額亦可能因地區和帳戶建立日期不同。香港帳戶的實際配額、功能與結帳價格應以登入後官網帳戶／結帳頁確認。",
+  "officialUrl": "https://www.heygen.com/",
+  "pricingUrl": "https://www.heygen.com/pricing",
+  "hasFree": true,
+  "freeSummary": "有常設Free方案，無需信用卡；免費影片每月最多3支（支援中心稱依地區為1至3支），每支最長1分鐘並帶浮水印，且不使用付費點數。",
+  "priceLabel": "US$29／月起",
+  "monthlyUSD": 29,
+  "billingNote": "Creator月繳US$29；年繳US$288，折合US$24／月。付費功能依點數消耗；月繳未用點數可延至下一週期，年繳點數累積至續約。Business額外席位US$20／席／月，席位不增加共用點數。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0",
+      "billing": "免費方案",
+      "summary": "每月最多3支影片（依地區可能為1至3支），每支最長1分鐘並帶浮水印；不需信用卡。"
+    },
+    {
+      "name": "Creator",
+      "price": "US$29／月；年繳US$288（折合US$24／月）",
+      "billing": "月繳或年繳；年繳價格為按年付款的月均等值",
+      "summary": "每月600點，最高1080p輸出、移除浮水印；每支影片最長30分鐘。月繳未用點數延續一個週期，年繳點數累積至續約。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$49／月起",
+      "billing": "月繳起價；可選更多點數的Pro級別，價格隨點數增加",
+      "summary": "入門級每月1,000點，支援最高4K輸出、每支影片最長30分鐘及較高用量；不能另買一次性點數，需改選更高點數級別。"
+    },
+    {
+      "name": "Business",
+      "price": "US$149／月（首席）；額外席位US$20／席／月",
+      "billing": "首席月費，另加席位費",
+      "summary": "首席每月1,500點，團隊共用點數池；新增席位不增加點數。最高4K、每支影片最長60分鐘，並提供協作、管理及進階功能；可另購點數。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "HeyGen 官方定價與方案比較",
+      "url": "https://www.heygen.com/pricing"
+    },
+    {
+      "title": "HeyGen 支援中心：點數制方案與訂閱說明",
+      "url": "https://help.heygen.com/en/articles/15125761-heygen-credit-based-pricing-plans-subscriptions-explained"
+    },
+    {
+      "title": "HeyGen 支援中心：語音支援語言清單",
+      "url": "https://help.heygen.com/en/articles/11391932-voice-languages-we-support"
+    },
+    {
+      "title": "HeyGen 官方AI影片生成器與平台說明",
+      "url": "https://www.heygen.com/tool/ai-video-generator"
+    },
+    {
+      "title": "HeyGen 官方產品網站",
+      "url": "https://www.heygen.com/"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於2026-11-09檢查HeyGen官方定價頁、產品頁及支援中心方案與語音清單。官網列示Creator月繳US$29、年繳折合US$24／月；免費配額及自訂分身名額有地區差異，地區適用條件未明確說明香港是否受影響，應以帳戶結帳頁確認。",
+  "filePath": "/home/ubuntu/aipicks/research/heygen.json"
+}

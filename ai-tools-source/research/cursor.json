@@ -1,0 +1,91 @@
+{
+  "id": "cursor",
+  "name": "Cursor",
+  "category": "code",
+  "tagline": "融入編輯器的 AI 程式代理",
+  "description": "Cursor 是面向軟體開發的 AI 程式代理與編輯環境，可在程式專案中協助撰寫、修改與修復程式碼，也能讓代理自主執行並平行處理任務。現行新訂閱與 Grok、X 方案合併，模型額度與可用性依方案及地區而異。",
+  "features": [
+    "在程式開發環境中使用 AI 代理協助建立、修改及處理程式專案。",
+    "代理可自主執行工作，並支援平行處理多項任務。",
+    "可使用 Cursor 自有模型；Premium 及以上方案可另外使用第三方模型，按模型 API 價格從預付額度扣款。",
+    "Premium 及以上方案包含雲端代理與自動化功能。"
+  ],
+  "bestFor": [
+    "希望在程式編輯流程中直接交辦 AI 撰寫、修改或修復程式碼的開發者。",
+    "需要讓多個代理平行處理程式工作，或使用雲端代理的個人與團隊。"
+  ],
+  "pros": [
+    "AI 代理整合在程式開發流程中，並可自主或平行執行工作。",
+    "付費高階方案可搭配多家第三方模型，並提供雲端代理及自動化功能。"
+  ],
+  "limitations": [
+    "免費方案的 Agent 與 Chat 使用量有限；付費方案含量亦受每週共用額度與模型耗用速度影響。",
+    "第三方模型不包含在現行 Plus 方案；Premium 及以上使用時仍須按 API 價格另購預付額度。",
+    "模型供應商會按地區限制部分模型，實際可用模型可能因所在地而異。"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux",
+    "網頁瀏覽器（啟動雲端代理）",
+    "終端機／CLI"
+  ],
+  "languages": "官方資料未明確承諾繁體中文介面或完整中文支援；建議以中文提示實際測試效果，勿視為已核實的語言支援保證。",
+  "regionNote": "官方說明部分模型受模型供應商的地區政策限制，未在該頁明確列出香港是否受限；香港使用者應於 Cursor 官方地區說明及帳戶模型選單確認可用模型。",
+  "officialUrl": "https://cursor.com/",
+  "pricingUrl": "https://cursor.com/pricing",
+  "hasFree": true,
+  "freeSummary": "現行新用戶可選 Free（US$0/月），Agent 與 Chat 使用量有限。官方另說明舊版 Hobby 免費方案僅為 legacy plan；不要把付費試用視為永久免費。",
+  "priceLabel": "US$8／月起",
+  "monthlyUSD": 8,
+  "billingNote": "現行新訂閱與 Grok、X 合併；Plus 月繳 US$8，年繳 US$80（折合約 US$6.67／月）。Premium 月繳 US$30，年繳 US$300（折合 US$25／月）。年繳為預付年費，價格未含稅；週額度跨 Cursor/Grok 共用，第三方模型另按用量付費。舊版 Pro US$20／月僅供既有客戶，不是新用戶現行入門價。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0／月",
+      "billing": "免費方案；無年繳價格",
+      "summary": "Agent 與 Chat 使用量有限，且不含第三方模型。"
+    },
+    {
+      "name": "Plus",
+      "price": "US$8／月；年繳 US$80／年（折合約 US$6.67／月）",
+      "billing": "可月繳或年繳；年繳金額預付，未含稅",
+      "summary": "入門付費方案；包含共享週額度與 Cursor 自有模型，不含第三方模型、Cloud Agents 或 Automations。"
+    },
+    {
+      "name": "Premium",
+      "price": "US$30／月；年繳 US$300／年（折合 US$25／月）",
+      "billing": "可月繳或年繳；年繳金額預付，未含稅",
+      "summary": "較 Plus 提供 4 倍使用額度，並加入雲端代理、自動化及第三方模型使用；第三方模型依 API 價格另從預付額度扣款。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cursor 官方定價",
+      "url": "https://cursor.com/pricing"
+    },
+    {
+      "title": "Cursor 官方模型與價格說明",
+      "url": "https://cursor.com/docs/models-and-pricing"
+    },
+    {
+      "title": "Cursor 官方產品功能",
+      "url": "https://cursor.com/features"
+    },
+    {
+      "title": "Cursor 官方下載與使用介面",
+      "url": "https://cursor.com/download"
+    },
+    {
+      "title": "Cursor 官方地區可用性說明",
+      "url": "https://cursor.com/docs/account/regions"
+    },
+    {
+      "title": "Cursor 官方舊版方案說明",
+      "url": "https://cursor.com/docs/account/pricing/legacy-cursor-plans"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查閱 Cursor 官方定價、產品、平台、模型計費及地區說明。官方現行頁面將新訂閱列為 The X Subscription；舊版 Cursor Pro 僅供既有訂戶使用。價格及方案可能變動，且官網未明確確認香港各模型的可用情況。",
+  "filePath": "/home/ubuntu/aipicks/research/cursor.json"
+}

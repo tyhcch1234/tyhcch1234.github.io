@@ -1,0 +1,1739 @@
+{
+  "tools": [
+    {
+      "bestFor": [
+        "日常問答、寫作改稿、摘要、翻譯與學習輔助。",
+        "需要網頁資料整理、跨來源研究或報告草稿的工作。",
+        "想以對話方式處理文件、表格、圖片或語音內容的個人用戶。"
+      ],
+      "billingNote": "個人付費方案按用戶／月標價；Go US$8、Plus US$20、Pro 起 US$100。Plus 不提供年繳；網頁結帳可能依地區使用當地幣別，App Store／Google Play 以當地幣別扣款。Pro 宣傳的最高每月 US$500 API 額度須符合資格並啟用，未用額度會到期且條款可能變動；API 用量另計。",
+      "category": "chat",
+      "description": "OpenAI 的對話式 AI 助手，可用自然語言問答、寫作、翻譯與整理資料；依方案提供網頁搜尋、深度研究、檔案與圖片分析及語音等工具，免費版的部分功能和用量有限。",
+      "features": [
+        "以自然語言回答問題、解釋概念，並協助起草、改寫、摘要、創作與翻譯。",
+        "可搜尋網頁；深度研究能綜合多個線上來源並產生附來源的結構化結果，供多步驟研究使用。",
+        "可分析上傳圖片、圖表及文件，也可按方案使用圖像生成與自然語言編輯。",
+        "可上傳文件及支援的音訊；支援方案可做檔案分析、資料分析和語音對話。",
+        "提供記憶、Projects 及自訂 GPT 等功能，實際可用項目和額度依方案、設定與地區而異。"
+      ],
+      "freeSummary": "有免費版，非限時試用。官方列出文字聊天在遵守合理使用及防濫用規則下不限量；訊息／模型額度、上傳、圖像生成、語音、深度研究、記憶與上下文則有限，且部分功能可能受頻寬或供應狀況影響。",
+      "hasFree": true,
+      "id": "chatgpt",
+      "languages": "官方語言設定支援中文，但未在清單中區分繁體與簡體中文，也未單獨列出粵語。可用繁體中文或粵語輸入提示；官方資料未保證粵語語音或特定方言表現，效果可能因任務而異。",
+      "limitations": [
+        "免費版及付費版均可能有使用上限；模型與工具額度會隨方案、需求及系統狀況變動。",
+        "生成內容可能出錯或缺漏；重要事實仍應核對引用來源或原始資料。",
+        "付費功能和結帳貨幣依地區與訂閱平台而異；ChatGPT 訂閱不包含 API 用量。"
+      ],
+      "monthlyUSD": 8,
+      "name": "ChatGPT",
+      "officialUrl": "https://openai.com/chatgpt/overview/",
+      "plans": [
+        {
+          "billing": "免費使用；非限時試用",
+          "name": "Free",
+          "price": "US$0",
+          "summary": "可使用基本聊天；文字聊天受合理使用規則約束。模型／訊息額度、上傳、圖像、語音、深度研究及記憶等有上限。"
+        },
+        {
+          "billing": "按月；依所在地結帳貨幣可能不同",
+          "name": "Go",
+          "price": "US$8 / 月",
+          "summary": "比免費版有更多工具訊息、上傳、圖像生成及語音額度，並提供較長記憶；官方指出此方案可能包含廣告。"
+        },
+        {
+          "billing": "按月；官方說明目前不支援年繳",
+          "name": "Plus",
+          "price": "US$20 / 月",
+          "summary": "提供較廣模型與推理工具存取、更高訊息額度、語音、圖像生成、檔案分析及深度研究等；額度仍可能受限制。"
+        },
+        {
+          "billing": "按月；官方價格頁列有三種用量層級，具體選項以帳戶結帳頁為準",
+          "name": "Pro",
+          "price": "US$100 / 月起",
+          "summary": "包含 Plus 功能並提供更高用量及更廣研究、記憶和圖像功能。官方列出符合資格者可獲最高每月 US$500 API 額度；需啟用，未使用額度會在週期末到期，金額及續發可能變更。"
+        }
+      ],
+      "platforms": [
+        "網頁版",
+        "iOS／iPadOS App",
+        "Android App",
+        "macOS 桌面 App",
+        "Windows 桌面 App"
+      ],
+      "priceLabel": "US$8 / 月起",
+      "pricingUrl": "https://openai.com/chatgpt/pricing/",
+      "pros": [
+        "把文字對話、搜尋研究、檔案與圖像分析、語音等能力整合在同一服務中。",
+        "有可長期使用的免費方案，且官方提供網頁、手機與桌面應用程式。"
+      ],
+      "regionNote": "OpenAI 官方支援國家／地區清單於查閱時列有台灣，但未列香港；官方並提醒在清單以外地區使用或提供服務可能導致帳戶被封鎖或暫停。地區政策可能更新，香港用戶請以官方清單及帳戶實際可用性為準。",
+      "sources": [
+        {
+          "title": "ChatGPT Plans and Pricing",
+          "url": "https://openai.com/chatgpt/pricing/"
+        },
+        {
+          "title": "ChatGPT capabilities overview",
+          "url": "https://help.openai.com/en/articles/9260256-chatgpt-capabilities-overview"
+        },
+        {
+          "title": "What is ChatGPT Plus?",
+          "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus"
+        },
+        {
+          "title": "ChatGPT Supported Countries",
+          "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries"
+        },
+        {
+          "title": "How to change your language setting in ChatGPT",
+          "url": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt"
+        },
+        {
+          "title": "ChatGPT iOS and Android app FAQ",
+          "url": "https://help.openai.com/en/articles/8142208-chatgpt-ios-and-android-app-faq"
+        },
+        {
+          "title": "Using the ChatGPT Windows app",
+          "url": "https://help.openai.com/en/articles/9982051-using-the-chatgpt-windows-app"
+        },
+        {
+          "title": "ChatGPT release notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          "title": "Multi-currency billing",
+          "url": "https://help.openai.com/en/articles/10421635-multicurrency-billing"
+        }
+      ],
+      "tagline": "一站式問答、寫作與多模態助理",
+      "verificationNote": "於 2026-11-09 查閱 OpenAI 官方定價、產品與說明中心頁面。所列美元月價為當日官方頁面標價；網頁結帳及手機應用程式可能依地區或平台採用當地幣別。功能、額度、價格與支援地區均可能更新，請以官方頁及帳戶結帳畫面為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "撰寫、改寫、摘要和分析文件或長篇資料。",
+        "需要用 AI 協助研究、整理工作流程或處理程式碼的人。",
+        "想在網頁、手機與桌面端接續使用同一 Claude 帳戶的人。"
+      ],
+      "billingNote": "Pro 網頁月繳 US$20；年繳 US$200 預付（折合約 US$16.67/月）。Max、Ultra 僅月繳。標價未含適用稅項，地區與手機商店價格可能不同。Pro 不含 API；Max/Ultra 含月度 API credits，並非無限制 API。",
+      "category": "chat",
+      "description": "Claude 是 Anthropic 的對話式 AI，可回答問題、整理文件、撰寫和分析內容，並支援網頁搜尋、語音、Artifacts、檔案處理與連接器。免費版用量有限；Claude Code、Research 等功能依付費方案提供。",
+      "features": [
+        "對話問答、網頁搜尋與語音模式；可用 Projects 整理工作內容。",
+        "建立 Artifacts，並可用程式碼執行建立或編輯檔案。",
+        "連接器可延伸 Claude 的工作流程；記憶功能可保留偏好與背景。",
+        "付費方案提供 Research 與 Claude Code 等功能；實際功能依方案而異。"
+      ],
+      "freeSummary": "有免費方案，含網頁／手機／桌面聊天、網頁搜尋、語音、Artifacts、連接器、記憶及最多 5 個 Projects；使用量受 5 小時 session 與每週等限制，訊息數依需求、模型、對話及檔案大小等變動。",
+      "hasFree": true,
+      "id": "claude",
+      "languages": "可用中文與 Claude 對話；官方表示可用任何語言交談。偏好介面語言清單目前未列中文，粵語語音支援未獲官方資料確認。",
+      "limitations": [
+        "免費與付費方案都有使用上限；實際訊息量會受模型、對話長度、檔案及需求影響。",
+        "官方偏好介面語言清單未列中文；繁體中文介面及粵語語音支援未獲官方資料確認。",
+        "Pro 訂閱不包含 Claude Console API 用量；API 需另外付費或使用符合條件方案的月度 credits。"
+      ],
+      "monthlyUSD": 20,
+      "name": "Claude",
+      "officialUrl": "https://claude.ai",
+      "plans": [
+        {
+          "billing": "免費方案",
+          "name": "Free",
+          "price": "US$0",
+          "summary": "基本聊天與工具功能；用量有限，5 小時 session 及每週限制會依需求和使用情況而變。"
+        },
+        {
+          "billing": "月繳或年繳；年費預付",
+          "name": "Pro",
+          "price": "US$20/月；US$200/年（約 US$16.67/月）",
+          "summary": "較免費版有更多 session 用量、高流量時優先使用及新功能；仍有 5 小時與每週用量上限。Claude Console API 另計。"
+        },
+        {
+          "billing": "月繳",
+          "name": "Max",
+          "price": "US$100/月",
+          "summary": "每 5 小時及每週用量為 Pro 的 5 倍，享新功能優先使用、Claude Code 與每月 US$100 API credits；仍受用量限制。"
+        },
+        {
+          "billing": "月繳",
+          "name": "Ultra",
+          "price": "US$200/月",
+          "summary": "每週用量為 Pro 的 10 倍；已驗證帳戶沒有 5 小時上限，並含每月 US$200 API credits；仍有每週及其他限制。"
+        }
+      ],
+      "platforms": [
+        "網頁（claude.ai）",
+        "iOS 應用程式",
+        "Android 應用程式",
+        "Claude Desktop（macOS、Windows）"
+      ],
+      "priceLabel": "US$20 / 月起",
+      "pricingUrl": "https://claude.com/pricing",
+      "pros": [
+        "可用中文對話，適合寫作、摘要與多步驟分析。",
+        "網頁、iOS、Android 和桌面應用整合搜尋、語音、Artifacts 等工具。"
+      ],
+      "regionNote": "Anthropic 官方 Claude.ai 支援地區清單目前未列香港；不能據此確認香港可用，請在註冊前查閱官方最新支援地區與結帳頁。台灣有列在清單內。",
+      "sources": [
+        {
+          "title": "Claude Plans & Pricing",
+          "url": "https://claude.com/pricing"
+        },
+        {
+          "title": "What is the Pro plan?",
+          "url": "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
+        },
+        {
+          "title": "What is the Max plan?",
+          "url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
+        },
+        {
+          "title": "What is the Ultra plan?",
+          "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan"
+        },
+        {
+          "title": "Get started with Claude",
+          "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude"
+        },
+        {
+          "title": "How to use Claude in your preferred language",
+          "url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
+        },
+        {
+          "title": "Where can I access Claude?",
+          "url": "https://support.claude.com/en/articles/8461763-where-can-i-access-claude"
+        },
+        {
+          "title": "Supported countries & regions",
+          "url": "https://www.anthropic.com/claude-ai-locations"
+        }
+      ],
+      "tagline": "能寫能分析的多用途 AI 助手",
+      "verificationNote": "已於 2026-11-09 查閱 Anthropic 官方定價頁、Claude Help Center 與支援地區頁。定價頁標示價格和方案可能變動；地區及手機商店價格可能不同。香港未出現在目前官方 Claude.ai 支援清單，實際可用性應以官方最新清單與註冊／結帳流程為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "希望以自然語言快速寫作、翻譯、摘要或學習的人。",
+        "日常已使用 Google 服務，想在支援的地區與帳戶中串接資料完成工作的人。",
+        "需要圖像生成、文件分析或研究工具，並接受功能受訂閱方案與用量限制的創作者或學生。"
+      ],
+      "billingNote": "以下採美國官方頁面的月繳美元價。Google AI Plus 為 US$9.99／月、Pro 為 US$19.99／月；Ultra 分為 5x（US$99.99／月）與 20x（US$199.99／月）兩級，非單一價格。年繳等效價未核實；價格及權益依地區、帳戶與結帳頁而異。",
+      "category": "chat",
+      "description": "Google Gemini 是對話式 AI 助手，可用文字、語音與圖片提問，協助寫作、翻譯、學習、整理內容與規劃行程；亦提供圖像生成、深入研究及 Google 服務整合，部分功能依方案、裝置與地區而異。",
+      "features": [
+        "支援文字、語音及圖片互動，可協助寫作、腦力激盪、翻譯、學習與摘要整理。",
+        "可生成及編輯圖片；Deep Research、影片生成、Canvas、Gemini Live 等功能依方案、地區和用量而異。",
+        "可連結 Gmail、Google Drive 等 Google 服務以查找或整理個人資料，實際可用連結應用程式依地區、語言、裝置和帳戶而異。",
+        "Android 上可依支援情況作為行動助理，並以相機、語音或螢幕內容提問。"
+      ],
+      "freeSummary": "可免費使用 Gemini，但免費存取有標準用量限制，且限制按提示複雜度、模型、功能與對話長度動態計算；官方列出免費版脈絡窗口為 3.2 萬個詞元。部分高階模型、Deep Research、媒體生成等功能僅限特定方案或有額外限制。",
+      "hasFree": true,
+      "id": "gemini",
+      "languages": "官方網頁版支援中文（簡體／繁體／香港）；Android 與 iOS 行動版列有中文（簡體／繁體）。可用繁體中文互動，但官方資料未保證所有功能均支援廣東話語音辨識或語音輸出，相關語言與語音功能可能受平台限制。",
+      "limitations": [
+        "免費版及付費版均有用量限制；上限會依提示複雜度、模型、功能和對話長度調整，並可能變動。",
+        "不同平台、語言、地區和帳戶可用的功能不完全相同；部分 Google 助理功能、連結應用程式或新功能可能不支援。",
+        "Google 提醒回覆可能不準確或不恰當；重要資訊需另行查證，不應視為醫療、法律或財務專業建議。"
+      ],
+      "monthlyUSD": 9.99,
+      "name": "Google Gemini",
+      "officialUrl": "https://gemini.google/",
+      "plans": [
+        {
+          "billing": "免費方案",
+          "name": "Gemini 免費版",
+          "price": "免費",
+          "summary": "標準用量限制會動態調整；官方列出 3.2 萬詞元脈絡窗口。部分高階模型和工具不可用或有額外限制。"
+        },
+        {
+          "billing": "月繳；年繳價未核實",
+          "name": "Google AI Plus",
+          "price": "US$9.99 / 月（美國頁面）",
+          "summary": "美國方案頁列 2 TB 儲存空間，Gemini 用量高於免費版；高用量工具仍可能設限。實際功能與價格按地區而異。"
+        },
+        {
+          "billing": "月繳；年繳價未核實",
+          "name": "Google AI Pro",
+          "price": "US$19.99 / 月（美國頁面）",
+          "summary": "美國方案頁列 5 TB 儲存空間，Gemini 用量及部分進階功能提升；Google One 說明家庭群組成員可享部分 AI 權益，細節按方案為準。"
+        },
+        {
+          "billing": "月繳；年繳價未核實",
+          "name": "Google AI Ultra 5x（20 TB）",
+          "price": "US$99.99 / 月（美國頁面）",
+          "summary": "Ultra 5x 層級；Google AI 權益及 Gemini 用量高於 Pro，實際功能與用量依地區而異。"
+        },
+        {
+          "billing": "月繳；年繳價未核實",
+          "name": "Google AI Ultra 20x（30 TB）",
+          "price": "US$199.99 / 月（美國頁面）",
+          "summary": "Ultra 20x 層級；官方列出相較 Pro 高出 20 倍的 Gemini 用量，實際功能與用量依地區而異。"
+        }
+      ],
+      "platforms": [
+        "網頁版（gemini.google）",
+        "Android 手機及平板 Gemini 行動應用程式（Android 9 以上、至少 2 GB RAM）",
+        "iPhone 及 iPad Gemini 行動應用程式（iOS 16 以上）",
+        "部分 Google 產品整合，例如 Gmail、Google Drive、Google Maps；依帳戶、方案、語言及地區而異。"
+      ],
+      "priceLabel": "US$9.99 / 月起（美國；Google AI Plus）",
+      "pricingUrl": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US",
+      "pros": [
+        "官方支援繁體中文；網頁版語言清單亦列有中文（香港），並支援文字、語音和圖片等互動方式。",
+        "與 Gmail、Google Drive、Maps 等 Google 服務及多種生成式工具整合，涵蓋多類日常工作。"
+      ],
+      "regionNote": "Google 官方網頁版支援地區清單明列香港，並將中國大陸標示為僅限 Workspace。行動版另有獨立地區支援清單及逐步推出安排，不應由網頁版可用性推定手機應用程式或所有功能均可用；在香港使用前宜按裝置與帳戶查閱 Google 官方清單及商店頁面。",
+      "sources": [
+        {
+          "title": "Gemini 網頁應用程式支援語言與國家/地區",
+          "url": "https://support.google.com/gemini/answer/13575153?hl=zh-Hant"
+        },
+        {
+          "title": "Gemini 行動應用程式功能",
+          "url": "https://support.google.com/gemini/answer/14579631?hl=zh-Hant&co=GENIE.Platform%3DAndroid"
+        },
+        {
+          "title": "Gemini 行動應用程式支援裝置、語言與地區（iOS）",
+          "url": "https://support.google.com/gemini/answer/14579026?hl=zh-Hant&co=GENIE.Platform%3DiOS"
+        },
+        {
+          "title": "Gemini 應用程式用量限制與功能適用情況",
+          "url": "https://support.google.com/gemini/answer/16275805?hl=zh-Hant"
+        },
+        {
+          "title": "Google One 美國方案與價格",
+          "url": "https://one.google.com/about/plans?hl=en-US&gl=US"
+        },
+        {
+          "title": "Google AI 訂閱方案與 Gemini 權益",
+          "url": "https://gemini.google/subscriptions/"
+        },
+        {
+          "title": "Google AI 方案與美國月費（官方）",
+          "url": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US"
+        }
+      ],
+      "tagline": "Google 多模態 AI 助手",
+      "verificationNote": "2026-11-09 核對 Google 官方美國 Google AI 方案頁、Google One 美國方案頁及 Gemini 訂閱頁：Google AI Plus US$9.99／月、Pro US$19.99／月；Ultra 分為 5x US$99.99／月及 20x US$199.99／月。Google AI 方案包含 Gemini 權益。官方方案與價格依地區、帳戶及供應情況而異；美國標價不是香港報價。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "想免費使用 AI 對話、中文問答或協助撰寫文字與程式碼的人。",
+        "需要搜尋網頁、閱讀上傳文件或嘗試深度思考模式的人。",
+        "希望在網頁與手機 App 間延續聊天紀錄的個人使用者。"
+      ],
+      "billingNote": "網頁／App 聊天無月費；API 按 token 計費，價格依模型、快取及尖峰時段變動，非聊天訂閱價。",
+      "category": "chat",
+      "description": "DeepSeek 提供網頁與手機 AI 對話，可用搜尋模式查找網上資訊，也能切換 Deep-Think 深度思考；支援上傳檔案並擷取文字。聊天目前列為免費，API 則另按 token 用量計費。",
+      "features": [
+        "一般 AI 對話；官方服務條款說明可產生文字、表格與程式碼。",
+        "可啟用網頁搜尋與 Deep-Think 深度思考模式。",
+        "支援上傳檔案及文字擷取。",
+        "登入後可跨平台同步聊天紀錄。"
+      ],
+      "freeSummary": "官方 App 介紹稱 100% 免費、無廣告及內購，Apple App Store 亦標示免費。官方未列明聊天每日配額或使用量上限，故不應視為無限額承諾；付費 API 是另一項按用量計費服務。",
+      "hasFree": true,
+      "id": "deepseek",
+      "languages": "Apple App Store 將繁體中文與簡體中文列為 App 支援語言。可用中文輸入對話；官方未提供粵語口語能力或品質保證，粵語效果宜自行確認。",
+      "limitations": [
+        "官方提醒生成內容可能不準確；重要資訊應自行查證。",
+        "官方隱私政策稱服務資料可能在中國境內直接收集、處理及儲存；不宜輸入敏感個資。",
+        "官方條款不保證服務在特定司法管轄區可用，功能亦可能因地區而異。"
+      ],
+      "monthlyUSD": null,
+      "name": "DeepSeek",
+      "officialUrl": "https://chat.deepseek.com/",
+      "plans": [
+        {
+          "billing": "免費使用；非 API 方案",
+          "name": "DeepSeek 聊天網頁／App",
+          "price": "免費",
+          "summary": "官方 App 介紹稱無廣告、無內購，App Store 標示免費；官方未公布固定訊息配額或月度上限。"
+        },
+        {
+          "billing": "按實際 token 用量；輸入快取命中另按 US$0.003／百萬（尖峰 US$0.006）計",
+          "name": "DeepSeek-V4.1-Flash API",
+          "price": "按每百萬 token：輸入 US$0.15（尖峰 US$0.30）；輸出 US$0.60（尖峰 US$1.20）",
+          "summary": "非訂閱、非每位使用者月費；官方定價頁列離峰／尖峰費率，尖峰時段價格較高。"
+        },
+        {
+          "billing": "按實際 token 用量；輸入快取命中另按 US$0.022／百萬（尖峰 US$0.044）計",
+          "name": "DeepSeek-V4-Pro API",
+          "price": "按每百萬 token：輸入 US$0.66（尖峰 US$1.32）；輸出 US$1.98（尖峰 US$3.96）",
+          "summary": "非訂閱、非每位使用者月費；實際 API 費用視輸入／輸出 token、快取命中及尖峰時段而定。"
+        }
+      ],
+      "platforms": [
+        "網頁版（chat.deepseek.com）",
+        "iPhone／iPad（Apple App Store；需 iOS 15／iPadOS 15 或以上）",
+        "Android（Google Play 及官方 Android 下載渠道）"
+      ],
+      "priceLabel": "聊天免費；API 按用量收費",
+      "pricingUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "pros": [
+        "官方 App 介紹列出搜尋、深度思考、檔案文字擷取及跨平台聊天同步。",
+        "官方 App 目前標示免費；消費者聊天與 API 計價分開。"
+      ],
+      "regionNote": "官方條款明示不保證服務在任何特定司法管轄區可用，功能亦可能因地區而異；條款沒有明確列出香港是否可用。香港用戶請以官方網站及所在地 App Store／Google Play 當下可用性為準。",
+      "sources": [
+        {
+          "title": "Introducing DeepSeek App（官方 App 功能與免費說明）",
+          "url": "https://api-docs.deepseek.com/news/news250115/"
+        },
+        {
+          "title": "Models & Pricing（官方 API 定價）",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/"
+        },
+        {
+          "title": "DeepSeek Terms of Use（官方服務條款；地區可用性）",
+          "url": "https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html"
+        },
+        {
+          "title": "DeepSeek Privacy Policy（官方隱私政策；資料收集及儲存）",
+          "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html"
+        },
+        {
+          "title": "DeepSeek - AI Assistant（Apple App Store 官方 listing）",
+          "url": "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349"
+        },
+        {
+          "title": "DeepSeek - AI Assistant（Google Play 官方 listing）",
+          "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat"
+        },
+        {
+          "title": "DeepSeek Chat（官方聊天入口）",
+          "url": "https://chat.deepseek.com/"
+        }
+      ],
+      "tagline": "免費對話、搜尋與深度思考",
+      "verificationNote": "已於 2026-11-09 核對 DeepSeek 官方 App 介紹、API 定價頁、服務條款與隱私政策，以及 Apple App Store／Google Play listing。官方 API 價格頁未標示本次費率的生效日期，且明示價格可能調整；此處只記錄查核當日頁面所列數字，後續價格與香港可用性均應以官網及官方商店即時資訊為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "需要附來源的網路資料查找、交叉核對與研究整理。",
+        "要比較多個主題或深入探索複雜問題並產出報告。",
+        "需要上傳檔案，結合文件與網路來源進行分析的個人使用者。"
+      ],
+      "billingNote": "美元個人方案：Pro 月繳 US$20，或年繳 US$200（約 US$17/月的年付折算價）；Max 月繳 US$200，或年繳 US$2,000（約 US$167/月的年付折算價）。API 另按用量／購買額度計費，不含在訂閱內。",
+      "category": "research",
+      "description": "以網路搜尋與來源引用整理答案，並可用多種 AI 模型進行深入研究；付費方案加入檔案分析、圖片與影片生成，以及報告和應用建立，適合查證資料與彙整複雜主題。",
+      "features": [
+        "搜尋網頁並以引用來源整理答案，方便回查資料。",
+        "Research 模式可多步分析複雜問題並產出較完整的研究報告。",
+        "Pro 以上方案可選用多種進階 AI 模型；可用模型及額度依方案而異。",
+        "付費方案提供檔案上傳與分析，並可建立報告、試算表、簡報或簡單應用；另有圖像及有限影片生成。"
+      ],
+      "freeSummary": "Standard 免費版：一般基本搜尋近乎不限量；每日 3 次 Pro Search、每月 1 次 Research；模型由系統選擇，檔案上傳有限，沒有進階模型或圖像生成。",
+      "hasFree": true,
+      "id": "perplexity",
+      "languages": "官方查核頁未明確保證繁體中文或粵語的專門支援與輸出品質；如需繁中或粵語回覆，可在提示中指定，但應自行核對內容，尤其不應假設粵語語氣受到專門支援。",
+      "limitations": [
+        "免費版每日僅有 3 次 Pro Search、每月 1 次 Research，且進階模型與圖像生成不開放；檔案上傳亦有限。",
+        "付費方案的搜尋、研究、檔案及生成用量仍受方案額度或使用上限約束；尖峰期間進階模型存取也可能受限。",
+        "官方提醒答案可能不準確；引用來源仍需自行核實，不能把引用存在視為內容必然正確。"
+      ],
+      "monthlyUSD": 20,
+      "name": "Perplexity",
+      "officialUrl": "https://www.perplexity.ai/",
+      "plans": [
+        {
+          "billing": "免費，不需付費訂閱",
+          "name": "Standard（免費）",
+          "price": "US$0",
+          "summary": "基本搜尋近乎不限量；每日 3 次 Pro Search、每月 1 次 Research；有限檔案上傳，不能手動選進階模型或使用圖像生成。"
+        },
+        {
+          "billing": "個人訂閱；月繳或年繳。年付折算價不是月繳價格。",
+          "name": "Pro",
+          "price": "US$20/月；US$200/年（年付約 US$17/月）",
+          "summary": "較多 Pro Search、進階模型、Research、較高檔案上傳量、圖像生成及有限影片生成；仍受方案使用額度限制。"
+        },
+        {
+          "billing": "個人訂閱；月繳或年繳。年繳僅官網網頁版提供。",
+          "name": "Max",
+          "price": "US$200/月；US$2,000/年（年付約 US$167/月）",
+          "summary": "包含 Pro 功能並提供最高層級模型存取、較高研究與檔案／應用建立額度，以及新功能優先體驗；仍有方案限額。"
+        }
+      ],
+      "platforms": [
+        "網頁版",
+        "iOS／iPadOS App",
+        "Android App",
+        "macOS 桌面 App",
+        "Windows 桌面 App",
+        "Linux 上的 Portable Computer（限官方支援的特定硬體與部署方式，非一般桌面版功能完整度保證）"
+      ],
+      "priceLabel": "US$20 / 月起",
+      "pricingUrl": "https://www.perplexity.ai/hub/pricing",
+      "pros": [
+        "答案附引用來源，較容易檢視依據並延伸閱讀。",
+        "搜尋、深入研究、多模型選擇及檔案分析集中在同一服務。"
+      ],
+      "regionNote": "本次查核的官方資料未提供可確認香港消費者訂閱服務可用性的明確清單。香港用戶應以 Perplexity 官網實際可選方案、付款方式及所在地區條款為準；目前不據此宣稱香港一定可用或不可用。",
+      "sources": [
+        {
+          "title": "Perplexity 訂閱方案比較與免費版限制（官方說明中心）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
+        },
+        {
+          "title": "Perplexity 官方定價頁",
+          "url": "https://www.perplexity.ai/hub/pricing"
+        },
+        {
+          "title": "Perplexity Pro 功能與搜尋模式（官方說明中心）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro"
+        },
+        {
+          "title": "Perplexity Max 功能與月繳、年繳價格（官方說明中心）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max"
+        },
+        {
+          "title": "Perplexity Personal Computer 桌面平台與系統需求（官方說明中心）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/14659663-what-is-personal-computer"
+        },
+        {
+          "title": "Perplexity iOS 語音助理使用說明（官方說明中心）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/11132456-how-to-use-the-perplexity-voice-assistant-for-ios"
+        },
+        {
+          "title": "Perplexity Pro／Max／Enterprise 月繳與年繳起價（官方 Slack Connector 說明）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/12167980-using-the-connector-for-slack"
+        }
+      ],
+      "tagline": "附來源引用的 AI 搜尋研究",
+      "verificationNote": "已於 2026-11-09 查閱 Perplexity 官方定價頁及說明中心方案、產品與平台資料。月付／年付金額以當日可見的官方說明為準；價格、額度和平台可能調整。官方查核頁未能確認香港服務可用性，也未提供繁體中文或粵語的專門支援保證。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "整理論文、報告或多份文件，並追溯回答所依據的來源。",
+        "把課程資料轉成摘要、音訊概覽、閃卡或測驗來複習。",
+        "從大量文件建立研究簡報、報告或知識問答工作區。"
+      ],
+      "billingNote": "NotebookLM 的加量權益包含在 Google AI 訂閱中，並非獨立 NotebookLM 訂閱；Google 官方方案頁目前使用「Gemini Notebook」名稱，此處保留 NotebookLM 供熟悉產品的讀者辨識。美國月繳標價為 Google AI Plus US$9.99／月、Pro US$19.99／月；Ultra 5x 為 US$99.99／月、Ultra 20x 為 US$199.99／月。年繳等效價未核實；各地實價與資格以登入後官方結帳頁為準。",
+      "category": "research",
+      "description": "匯入文件、網頁或 YouTube 影片後，NotebookLM 會根據你的來源回答並附引用，也能整理摘要、生成音訊概覽、報告和學習素材；適合將資料轉成可追溯的研究與複習工作區。",
+      "features": [
+        "匯入 PDF、Google 文件與簡報、Office 文件、網頁、公開 YouTube 影片、音訊及文字等來源；部分來源可從 Google Drive 同步。",
+        "依筆記本內選定來源回答問題、整理摘要，回覆可附來源引用，方便回查原文。",
+        "生成 Audio Overview 音訊概覽，並可製作影片概覽、心智圖、簡報、報告、資訊圖、測驗與閃卡等素材。",
+        "可從網頁或 Drive 搜尋來源，亦可在筆記本內使用 Deep Research 蒐集及整理研究材料。"
+      ],
+      "freeSummary": "可用 Google 帳戶免費註冊，屬免費方案而非試用；標準版每人最多 100 本筆記、每本最多 50 個來源，生成與聊天另有標準用量限制，配額可能調整。",
+      "hasFree": true,
+      "id": "notebooklm",
+      "languages": "瀏覽器版可選繁體中文作為生成輸出語言；官方亦列出繁體粵語音訊匯入支援。不同功能的語言支援可能不同，官方資料未確認 Audio Overview 會以粵語生成或朗讀。",
+      "limitations": [
+        "AI 生成內容仍可能不準確；音訊概覽也不保證完整或客觀，重要資訊應回看原始來源。",
+        "免費版每本最多 50 個來源，生成與聊天另有標準用量限制；各方案配額可能調整。",
+        "網頁匯入主要擷取頁面文字，付費牆頁面不支援；手機應用程式部分功能可能有限或尚在逐步推出。"
+      ],
+      "monthlyUSD": 9.99,
+      "name": "NotebookLM",
+      "officialUrl": "https://notebook.google/",
+      "plans": [
+        {
+          "billing": "免費使用；非限時試用",
+          "name": "標準版（免費）",
+          "price": "US$0",
+          "summary": "每人最多 100 本筆記、每本最多 50 個來源；採標準聊天與生成配額。"
+        },
+        {
+          "billing": "美國月繳標價；年繳等效價未核實",
+          "name": "Google AI Plus",
+          "price": "US$9.99／月",
+          "summary": "附 NotebookLM 加量權益；每人最多 200 本筆記、每本最多 100 個來源。"
+        },
+        {
+          "billing": "美國月繳標價；年繳等效價未核實",
+          "name": "Google AI Pro",
+          "price": "US$19.99／月",
+          "summary": "NotebookLM 擴充使用額度；每人最多 500 本筆記、每本最多 300 個來源。"
+        },
+        {
+          "billing": "美國月繳標價；年繳等效價未核實",
+          "name": "Google AI Ultra 5x（20 TB）",
+          "price": "US$99.99／月",
+          "summary": "包含 Gemini Notebook（官方頁目前稱 Gemini Notebook）加量權益；Ultra 5x 層級，每人最多 600 個來源／本。"
+        },
+        {
+          "billing": "美國月繳標價；年繳等效價未核實",
+          "name": "Google AI Ultra 20x（30 TB）",
+          "price": "US$199.99／月",
+          "summary": "包含 Gemini Notebook（官方頁目前稱 Gemini Notebook）加量權益；Ultra 20x 層級，每人最多 600 個來源／本。"
+        }
+      ],
+      "platforms": [
+        "網頁瀏覽器",
+        "Android 應用程式",
+        "iPhone／iPad 應用程式"
+      ],
+      "priceLabel": "US$9.99 / 月起（美國；Google AI Plus，包含 NotebookLM 權益）",
+      "pricingUrl": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US",
+      "pros": [
+        "以使用者匯入的資料為依據並提供引用，較容易核對回答來源。",
+        "支援多種文件及網頁來源，並能把同一批材料轉為多種文字、音訊和學習成果。"
+      ],
+      "regionNote": "Google 說明 NotebookLM 瀏覽器版及 Google AI 訂閱方案只在各自支援的國家／地區提供；本次查閱的官方頁面未能確認香港的訂閱資格或本地價格。香港用戶請登入 NotebookLM／Google One 查看帳戶所在區域的實際可用性與收費；手機版亦可能分區逐步推出。",
+      "sources": [
+        {
+          "title": "Gemini Notebook 官方方案頁",
+          "url": "https://notebook.google/plans"
+        },
+        {
+          "title": "Google AI 方案與美國月費（官方）",
+          "url": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US"
+        },
+        {
+          "title": "NotebookLM 方案、用量與地區說明",
+          "url": "https://support.google.com/gemininotebook/answer/16213268?hl=en"
+        },
+        {
+          "title": "NotebookLM 支援來源類型與限制",
+          "url": "https://support.google.com/notebooklm/answer/16215270?hl=en"
+        },
+        {
+          "title": "NotebookLM 輸出語言清單",
+          "url": "https://support.google.com/notebooklm/answer/16261963?hl=en"
+        },
+        {
+          "title": "Google AI Plus 官方美國月費公告",
+          "url": "https://blog.google/products-and-platforms/products/google-one/google-ai-plus-availability/"
+        },
+        {
+          "title": "Google Play 上的 Gemini Notebook 官方 Android 應用",
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.labs.language.tailwind"
+        },
+        {
+          "title": "Apple App Store 上的 Gemini Notebook 官方 iOS 應用",
+          "url": "https://apps.apple.com/us/app/gemini-notebook/id6737527615"
+        },
+        {
+          "title": "Google AI 訂閱及 Gemini Notebook 權益（官方）",
+          "url": "https://gemini.google/subscriptions/"
+        }
+      ],
+      "tagline": "把資料變成可查證的研究筆記",
+      "verificationNote": "2026-11-09 核對 Google 官方美國 Google AI 方案頁、Gemini 訂閱頁及 NotebookLM／Gemini Notebook 方案頁。美國月繳價為 Plus US$9.99、Pro US$19.99、Ultra 5x US$99.99、Ultra 20x US$199.99；NotebookLM 的加量功能隨 Google AI 方案提供，非獨立訂閱。官方方案頁目前稱 Gemini Notebook，保留 NotebookLM 作為熟悉產品名。價格和地區供應可能變動，年繳等效價未核實。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "需要快速製作社群圖像、海報或簡報的個人創作者與小型商家。",
+        "希望以文字起稿，再用視覺編輯器自行調整的非專業設計者。",
+        "需要維持品牌視覺一致並製作多種行銷素材的團隊。"
+      ],
+      "billingNote": "可選月繳或年繳並自動續訂。此次官方定價頁未呈現可核實的 Pro 美元月繳價格，故不以年費折算月費；Business 頁面顯示 US$250／人／年。稅項、地區與結帳價格可能不同。",
+      "category": "image",
+      "description": "Canva 整合範本、圖像編輯與生成式 AI，可用文字建立或修改社群貼文、簡報、海報等內容，再於編輯器中調整並匯出；AI 額度、功能與語言及地區支援依方案而異。",
+      "features": [
+        "以文字描述生成社群貼文、簡報等設計，並可在編輯器透過對話繼續修改。",
+        "生成圖像、文字、影片與互動式內容；部分功能依方案開放。",
+        "可套用品牌工具包、範本，並使用背景移除、圖像放大等 AI 編輯工具。",
+        "可在同一平台編輯照片、影片、簡報與社群內容，並匯出常見格式。",
+        "提供 Canva AI 網頁研究、檔案參照及連接外部應用等功能；支援狀態依方案而異。"
+      ],
+      "freeSummary": "Canva Free 是長期免費方案，不是試用。官方方案比較列出 5GB 雲端空間，Standard 與 Premium AI 各最多 20 次的估算用量；這些工具共用 AI 額度、不同操作消耗不同，達限後可能需等待重置，且不含 Ultra AI。",
+      "hasFree": true,
+      "id": "canva",
+      "languages": "Canva AI 官方列出繁體中文為支援語言之一；惟各項功能支援語言可能不同，官方未在查核頁確認粵語語音支援，不能據此推定所有功能均能以粵語操作。",
+      "limitations": [
+        "免費方案的 AI 使用量有限；不同 AI 工具共用月度額度，較複雜或高階功能會消耗更多，免費方案不含 Ultra AI。",
+        "AI 功能會按方案、帳戶語言及所在區域提供；部分功能可能尚未推出或受到管理員限制。",
+        "生成內容可能不準確或不具唯一性，商用前仍需自行檢查事實、權利與適用性。"
+      ],
+      "monthlyUSD": null,
+      "name": "Canva",
+      "officialUrl": "https://www.canva.com/",
+      "plans": [
+        {
+          "billing": "免費方案，非限時試用",
+          "name": "Free",
+          "price": "US$0",
+          "summary": "含 5GB 雲端空間及有限 AI 用量；部分高階 AI 功能不可用。"
+        },
+        {
+          "billing": "可選月繳或年繳；實際價格依官網帳戶頁顯示",
+          "name": "Pro",
+          "price": "官方查核頁未顯示可讀的美元金額",
+          "summary": "個人創作者方案，含進階素材、設計工具與更高 AI 存取；AI 額度依工具而異。"
+        },
+        {
+          "billing": "年繳標價；月繳金額未能從查核頁核實",
+          "name": "Business",
+          "price": "US$250／人／年（官方頁面所示年費）",
+          "summary": "面向個人、行銷者與成長型團隊，提供較高 AI 額度及品牌管理等商業功能。"
+        }
+      ],
+      "platforms": [
+        "網頁瀏覽器",
+        "Windows 桌面應用程式",
+        "macOS 桌面應用程式",
+        "iOS",
+        "Android",
+        "Chromebook"
+      ],
+      "priceLabel": "收費以官網為準（美元月費未核實）",
+      "pricingUrl": "https://www.canva.com/en/pricing/",
+      "pros": [
+        "範本、編輯器與 AI 生成整合在同一工作流程，生成後可再手動修改。",
+        "免費方案可用，並支援網頁及多種桌面、行動平台。"
+      ],
+      "regionNote": "官方說明 Canva AI 可能尚未在部分語言或國家／地區提供，功能亦可能分批推出；查核頁未指出香港為受限地區。香港帳戶的實際可用功能及價格應以登入後的 Canva 官方頁面或結帳頁確認。",
+      "sources": [
+        {
+          "title": "Canva Plans and pricing 官方定價與方案比較",
+          "url": "https://www.canva.com/en/pricing/"
+        },
+        {
+          "title": "Canva Help Center：Get started with Canva AI",
+          "url": "https://www.canva.com/help/using-canva-ai/"
+        },
+        {
+          "title": "Canva Help Center：Understanding your AI usage",
+          "url": "https://www.canva.com/help/ai-access/"
+        },
+        {
+          "title": "Canva Help Center：Upgrading to Canva Pro or Canva Business",
+          "url": "https://www.canva.com/help/upgrade-to-canva-pro-or-business/"
+        },
+        {
+          "title": "Canva 官方下載頁：桌面與行動平台",
+          "url": "https://www.canva.com/download/"
+        }
+      ],
+      "tagline": "AI 輔助的視覺設計平台",
+      "verificationNote": "已於 2026-11-09 查核 Canva 官方定價頁及 Help Center。定價會依地區與付款週期顯示；查核頁未呈現可核實的 Pro 美元月繳金額，因此不推算或以年費折算。Business 年價僅按官方頁面當時顯示，實際價格與香港可用性請以登入後官網及結帳頁為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "需要快速探索插畫、概念圖、風格化視覺方向的創作者。",
+        "想在網頁或 Discord 透過提示詞反覆調整圖片的人。",
+        "需要生成圖片並延伸成短片的個人創作者或小型團隊。"
+      ],
+      "billingNote": "月繳入門價 US$10；年繳需預付全年，官方稱可省 20%（折合 Basic US$8、Standard US$24、Pro US$48、Mega US$96／月）。價格未含可能適用的地區稅；訂閱自動續約。圖片 Relax 無限為 Standard 以上，影片 Relax 無限及 Stealth 僅 Pro／Mega。",
+      "category": "image",
+      "description": "Midjourney 讓使用者以文字提示和參考圖片生成影像，並可製作變體、放大或在網頁編輯器中修改；亦能把圖片轉成短片。可於官方網站或 Discord 使用，訂閱方案按 GPU 時間與隱私功能分級。",
+      "features": [
+        "以文字提示生成影像；每次可產生一組四張候選圖。",
+        "可用圖片提示、風格參考及個人化設定引導生成結果。",
+        "提供變體、放大、延展與網頁 Editor 編修工具。",
+        "可將生成圖或自備圖片轉成短片；方案限制影片的 Relax 模式。"
+      ],
+      "freeSummary": "官方文件稱網站及 Discord 目前沒有免費試用。Niji·Journey iOS／Android App 有限量試用，但不是永久免費方案。",
+      "hasFree": false,
+      "id": "midjourney",
+      "languages": "官方文件本次查閱為英文版；未能確認完整繁體中文介面或中文提示詞的現行官方支援程度。官方舊版文件只明確提到 Niji 6 可繪製簡單中文字符，不能據此推論目前模型能力。",
+      "limitations": [
+        "midjourney.com 與 Discord 目前沒有免費試用；有限量試用只在 Niji·Journey iOS／Android App 提供，並非永久免費方案。",
+        "作品預設可能出現在網站 Explore；Stealth 僅限 Pro／Mega，且共享 Discord 頻道內的作品仍可被同頻道成員看見。",
+        "方案以訂閱及 GPU 時間區分，部分 Relax 功能只在較高階方案開放；中文提示與繁體中文介面支援未能由本次官方資料確認。"
+      ],
+      "monthlyUSD": 10,
+      "name": "Midjourney",
+      "officialUrl": "https://www.midjourney.com/",
+      "plans": [
+        {
+          "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+          "name": "Basic",
+          "price": "US$10／月；年繳 US$96／年（折合 US$8／月）",
+          "summary": "入門付費方案；無 Standard 以上的無限量圖片 Relax 模式。"
+        },
+        {
+          "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+          "name": "Standard",
+          "price": "US$30／月；年繳 US$288／年（折合 US$24／月）",
+          "summary": "含無限量 Relax 模式圖片生成；不含無限量 Relax 影片或 Stealth。"
+        },
+        {
+          "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+          "name": "Pro",
+          "price": "US$60／月；年繳 US$576／年（折合 US$48／月）",
+          "summary": "含無限量 Relax 模式圖片與影片生成，並可使用 Stealth；共享 Discord 頻道仍非私密。"
+        },
+        {
+          "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+          "name": "Mega",
+          "price": "US$120／月；年繳 US$1,152／年（折合 US$96／月）",
+          "summary": "最高階訂閱；含無限量 Relax 模式圖片與影片生成及 Stealth。"
+        }
+      ],
+      "platforms": [
+        "Midjourney 官方網站（瀏覽器）",
+        "Discord（需連結 Discord 帳戶）",
+        "Niji·Journey iOS／Android App（官方文件僅確認有限量試用；不視為完整 Midjourney 免費方案）"
+      ],
+      "priceLabel": "US$10 / 月起",
+      "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+      "pros": [
+        "可由文字、參考圖片及風格設定引導生成，並串接編修與短片工作流程。",
+        "Standard 以上提供無限量 Relax 模式圖片生成；Pro／Mega 有 Stealth 隱私模式。"
+      ],
+      "regionNote": "本次查閱的官方資料未明確說明香港是否可註冊、訂閱或使用全部功能；香港可用性及付款方式請以官方網站與帳戶結帳頁為準，不作未經證實的可用性承諾。",
+      "sources": [
+        {
+          "title": "Comparing Midjourney Plans（官方方案與價格比較）",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+        },
+        {
+          "title": "Free Trials（官方免費試用說明）",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/27870399340173-Free-Trials"
+        },
+        {
+          "title": "Getting Started Guide（官方入門與生成流程）",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/33329261836941-Getting-Started-Guide"
+        },
+        {
+          "title": "Logging In & Connecting Accounts（官方網站與 Discord 帳戶連結）",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/33390994570509-Logging-In-Connecting-Accounts"
+        },
+        {
+          "title": "Keeping Your Creations Private（官方 Stealth 與作品可見度說明）",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/28014645615373-Keeping-Your-Creations-Private"
+        },
+        {
+          "title": "Legacy Features（官方舊版模型與中文字符說明）",
+          "url": "https://docs.midjourney.com/hc/en-us/articles/33329788681101-Legacy-Features"
+        }
+      ],
+      "tagline": "文字生成與編修影像",
+      "verificationNote": "於 2026-11-09 查閱 Midjourney 官方產品與說明文件。方案比較頁未標示明確更新日期；價格採該官方頁可見的四級方案月費及 20% 年繳折扣計算，年繳總額為月費乘 12 再折 20%。價格、功能及香港地區可用性日後可能變動，應以官方頁及結帳頁為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "需要快速製作或修改行銷、社群及品牌視覺的設計師與內容創作者。",
+        "想在同一 Adobe 工作流程中構思圖像、短片或音訊素材的創作者。",
+        "已使用 Adobe 工具，並重視可商用 Adobe Firefly 模型及內容來源標示的團隊或個人。"
+      ],
+      "billingNote": "美元月付標價，最低為個人 Firefly Standard US$9.99／月；非免費試用價，也不是年繳折算價。已核對頁面未呈現可確認的年繳月均價，故不列年繳數字。個人方案依訂閱提供每月點數（Standard 2,000、Pro 4,000、Premium 50,000）；點數用量依功能／模型而異，方案、促銷、地區稅費及團隊席位價格可能不同，結帳前請核對 Adobe 當地頁面。",
+      "category": "image",
+      "description": "Adobe Firefly 是 Adobe 的生成式創作平台，可用文字提示生成及編修圖像，並整合影片、音訊和向量工具。它結合 Adobe 自家與合作夥伴模型，另有 Firefly Boards 協作構思，適合從靈感發想到素材製作。",
+      "features": [
+        "以文字提示生成圖像，並用生成式填色、擴張等工具編修現有影像。",
+        "在同一平台生成影片、音效、音樂與語音，也提供部分音訊／影片翻譯功能。",
+        "可在 Adobe 自家模型與 Google、OpenAI 等合作夥伴模型間選擇；各模型的點數消耗和使用條款可能不同。",
+        "Firefly Boards 提供視覺構思、整理與協作畫布，作品亦可接續到 Photoshop、Adobe Express 等 Adobe 工作流程。"
+      ],
+      "freeSummary": "Adobe 提供免費方案，可試用 Firefly，但生成次數有限，並非永久不限量。Adobe HelpX 說明免費方案的生成點數會在首次使用 Firefly 功能時發放，並於一個月後到期；官方產品頁沒有提供可穩定核對的固定每日數字，因此不列具體上限。",
+      "hasFree": true,
+      "id": "firefly",
+      "languages": "Adobe 技術需求頁列出繁體中文提示支援；頁面介面語言清單與提示語言能力並不完全相同。沒有找到官方資料確認 Firefly 提供粵語語音輸入或粵語介面，宜以繁體中文文字提示描述需求。",
+      "limitations": [
+        "免費使用有生成次數限制；付費方案點數按月配置，實際消耗依功能、模型及輸出而變，較高階生成可能很快用完點數。",
+        "Adobe 表示生成結果會受提示詞影響；Beta 功能的商用條件可能不同，使用合作夥伴模型時應另查該模型的條款。",
+        "Adobe 官方列明中國、俄羅斯、白俄羅斯等地區不可使用；香港是否可訂閱及付款，仍應以當地 Adobe 頁面和帳戶結帳資訊為準。"
+      ],
+      "monthlyUSD": 9.99,
+      "name": "Adobe Firefly",
+      "officialUrl": "https://www.adobe.com/products/firefly.html",
+      "plans": [
+        {
+          "billing": "月付；美元公開標價，未核實年繳折算價",
+          "name": "Firefly Standard",
+          "price": "US$9.99／月",
+          "summary": "每月 2,000 點；包含網頁與行動版 Firefly、標準圖像功能及部分生成式功能。"
+        },
+        {
+          "billing": "月付；美元公開標價，未核實年繳折算價",
+          "name": "Firefly Pro",
+          "price": "US$19.99／月",
+          "summary": "每月 4,000 點，並含 Adobe Express Premium、Photoshop 網頁與行動版完整使用權等方案權益。"
+        },
+        {
+          "billing": "月付；美元公開標價，未核實年繳折算價",
+          "name": "Firefly Premium",
+          "price": "US$199.99／月",
+          "summary": "每月 50,000 點，並含 Firefly Video Model 影片生成功能的不限量存取；影片仍受產品功能與公平使用條款限制。"
+        }
+      ],
+      "platforms": [
+        "桌面瀏覽器：Firefly 網頁版；官方列出 Windows、macOS、ChromeOS 及 Chrome、Edge、Firefox 等瀏覽器需求。",
+        "手機瀏覽器：iOS、Android 的行動網頁版。",
+        "原生行動 App：iOS 與 Android。",
+        "可將素材接續至 Photoshop、Illustrator、Premiere、Lightroom、Adobe Express 等 Adobe 應用；這些整合不代表 Firefly 全部功能皆有桌面原生版。"
+      ],
+      "priceLabel": "US$9.99／月起",
+      "pricingUrl": "https://www.adobe.com/products/firefly/plans.html",
+      "pros": [
+        "生成、編修與構思工具整合於 Firefly，亦可銜接 Adobe 創意應用。",
+        "Adobe 說明其 Firefly 自家模型以授權內容及公有領域內容訓練，並為部分輸出附上 Content Credentials。"
+      ],
+      "regionNote": "Adobe Firefly FAQ 明列中國（並列俄羅斯、白俄羅斯等）不可用，沒有把香港單獨列為禁用地區；但這不足以保證香港每種方案、功能或付款方式均可用。香港用戶請以 Adobe 香港官方頁面、帳戶登入及結帳時顯示的供應情況為準。",
+      "sources": [
+        {
+          "title": "Adobe Firefly 產品與功能介紹",
+          "url": "https://www.adobe.com/products/firefly.html"
+        },
+        {
+          "title": "Adobe Firefly 官方方案比較",
+          "url": "https://www.adobe.com/products/firefly/plans.html"
+        },
+        {
+          "title": "Adobe Firefly 技術需求與支援語言",
+          "url": "https://helpx.adobe.com/firefly/web/get-started/learn-the-basics/technical-requirements.html"
+        },
+        {
+          "title": "Adobe Firefly FAQ：地區供應、使用與商用說明",
+          "url": "https://helpx.adobe.com/firefly/web/get-started/learn-the-basics/adobe-firefly-faq.html"
+        },
+        {
+          "title": "Adobe Generative Credits FAQ",
+          "url": "https://helpx.adobe.com/creative-cloud/apps/generative-ai/generative-credits-faq.html"
+        },
+        {
+          "title": "Adobe 官方 Firefly 新方案介紹",
+          "url": "https://blog.adobe.com/en/publish/2025/10/28/explore-new-adobe-firefly-your-all-in-one-home-ai-powered-creativity"
+        }
+      ],
+      "tagline": "Adobe 創作流程中的生成式 AI",
+      "verificationNote": "依參考日期 2026-11-09 查閱 Adobe 官方產品頁、方案比較、HelpX 說明及 Adobe 官方新聞稿。美元月付價格以 Adobe 公開方案資訊為準；方案頁動態顯示的價格／促銷可能隨地區及時間改變，且本次官方頁面未能核實年繳折算價、固定免費每日額度或香港各方案的結帳可用性。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "需要快速製作概念片、短片或廣告素材的影像創作者。",
+        "想用文字提示改造既有影片，或把圖片延伸成動態內容的人。",
+        "需要把影片、影像及音訊生成工具集中在同一創作流程的團隊或個人。"
+      ],
+      "billingNote": "官網同時列月繳價及年繳折合月均價；年繳 Standard／Pro／Max 分別為 US$12／28／76 每月（年繳），月繳則為 US$15／35／95。每月 credits 按模型用量扣除；付費方案可加購 credits。",
+      "category": "video",
+      "description": "Runway 是以網頁及手機應用程式提供的生成式影像創作平台，可用文字、圖片、影片或音訊生成及編輯影片，並整合影像、音訊與創作工作流程；可用模型、成品規格與生成量依方案和 credits 而異。",
+      "features": [
+        "以文字、圖片、影片或音訊生成影片；不同生成模型與工具的輸入方式各異。",
+        "以提示詞編輯或轉換影片，例如改變場景光線、風格，或新增及移除畫面元素。",
+        "整合影像、音訊、語音與音效等生成工具。",
+        "提供影片升頻、背景替換及角色表演等專用創作工具；部分功能依方案而定。",
+        "提供自訂節點式工作流程，可串接多個模型與生成步驟。"
+      ],
+      "freeSummary": "免費方案為永久免費層級，含 125 一次性、不會重置且不會過期的 credits、5GB 素材儲存及有限生成工具；可用模型會變動，生成影片有浮水印，不能在免費方案購買額外 credits。",
+      "hasFree": true,
+      "id": "runway",
+      "languages": "介面目前僅美式英文，可用 Chrome 網頁翻譯協助閱讀。官方表示模型接受其他語言提示，但不同提示效果不一；可嘗試繁體中文或粵語，惟粵語效果未獲特別保證。",
+      "limitations": [
+        "生成按模型與工具消耗 credits；相同月額度可產出的影片長度會因模型而不同。Standard 與 Pro 未用完的月度 credits 月底到期。",
+        "免費方案只有一次性 125 credits，工具和模型選擇有限，生成影片帶 Runway 浮水印，且不能另購 credits。",
+        "介面目前只有美式英文；其他語言提示效果不一，官方沒有特別保證粵語生成品質。"
+      ],
+      "monthlyUSD": 15,
+      "name": "Runway",
+      "officialUrl": "https://runwayml.com/product",
+      "plans": [
+        {
+          "billing": "月繳或年繳；年繳價格為月均折合價",
+          "name": "Standard",
+          "price": "US$15／月；年繳折合 US$12／月",
+          "summary": "每月 625 credits、最多 5 個並行生成、20GB 儲存、可用全部 AI 影片與影像模型，輸出免浮水印。未用 credits 月底到期。"
+        },
+        {
+          "billing": "月繳或年繳；年繳價格為月均折合價",
+          "name": "Pro",
+          "price": "US$35／月；年繳折合 US$28／月",
+          "summary": "每月 2,250 credits、最多 15 個並行生成、100GB 儲存；含 1 個 Brand Kit、1 個自訂聲音複製、Runway MCP 及無限 4K 影片升頻。未用 credits 月底到期。"
+        },
+        {
+          "billing": "月繳或年繳；年繳價格為月均折合價",
+          "name": "Max",
+          "price": "US$95／月；年繳折合 US$76／月",
+          "summary": "每月 9,500 credits、最多 20 個並行生成、500GB 儲存；含新模型搶先體驗、專業級 HDR／ProRes／影格序列生成及無限 4K 升頻；未用 credits 最多結轉 1 個月。"
+        }
+      ],
+      "platforms": [
+        "網頁版（桌上型或筆記型電腦可使用完整體驗）",
+        "iOS App（iPhone；iOS App 不支援 iPad）",
+        "Android App"
+      ],
+      "priceLabel": "US$15／月起（按月訂閱）",
+      "pricingUrl": "https://runwayml.com/pricing",
+      "pros": [
+        "生成、編輯及升頻等多種影片工作集中於同一平台，並支援多種輸入媒介。",
+        "付費 Standard 以上方案提供免浮水印輸出；Pro 以上包含無限 4K 影片升頻。"
+      ],
+      "regionNote": "查閱的官方頁面未提供香港帳戶、付款或服務可用性的明確確認；請以 Runway 官網註冊與結帳結果，以及香港區 App Store／Google Play 上架狀態為準，不宜假定一定可用。",
+      "sources": [
+        {
+          "title": "Runway 官方產品頁",
+          "url": "https://runwayml.com/product"
+        },
+        {
+          "title": "Runway 官方定價頁",
+          "url": "https://runwayml.com/pricing"
+        },
+        {
+          "title": "Runway Help Center：Free plan details",
+          "url": "https://help.runwayml.com/hc/en-us/articles/50404627334547-Free-plan-details"
+        },
+        {
+          "title": "Runway Help Center：Which plan is right for me?",
+          "url": "https://help.runwayml.com/hc/en-us/articles/21664961171475-Which-plan-is-right-for-me"
+        },
+        {
+          "title": "Runway Help Center：Mobile device compatibility",
+          "url": "https://help.runwayml.com/hc/en-us/articles/15913840746003-Mobile-device-compatibility"
+        },
+        {
+          "title": "Runway Help Center：What languages can I prompt in?",
+          "url": "https://help.runwayml.com/hc/en-us/articles/24342920074131-What-languages-can-I-prompt-in"
+        },
+        {
+          "title": "Runway Help Center：Translating Runway into a different language",
+          "url": "https://help.runwayml.com/hc/en-us/articles/25563791920147-Translating-Runway-into-a-different-language"
+        }
+      ],
+      "tagline": "用生成式 AI 創作與編輯影片",
+      "verificationNote": "已於 2026-11-09 檢視 Runway 官方產品、定價與 Help Center 頁面。方案與功能以該日官網所列為準；官方未明確確認香港地區可用性，價格與方案可能變動。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "製作企業培訓、入職介紹及教學影片的團隊。",
+        "需要快速製作講者型產品介紹、行銷內容或社群短片的創作者與行銷人員。",
+        "要將講者影片配成粵語或其他語言、觸及多地受眾的團隊。"
+      ],
+      "billingNote": "Creator月繳US$29；年繳US$288，折合US$24／月。付費功能依點數消耗；月繳未用點數可延至下一週期，年繳點數累積至續約。Business額外席位US$20／席／月，席位不增加共用點數。",
+      "category": "video",
+      "description": "HeyGen以文字、圖片或簡報生成講者影片，亦可建立個人AI分身、配音並翻譯既有影片；支援繁體粵語語音，適合教學、行銷及跨語市場內容製作，輸出長度與用量依方案及點數而異。",
+      "features": [
+        "以文字稿、提示或簡報製作帶AI虛擬講者的影片，並可建立個人數位分身。",
+        "以文字或圖片生成影片，透過Video Agent組合腳本、旁白、畫面與字幕，並在AI Studio編修。",
+        "為既有影片配音及翻譯，支援聲音複製和唇形同步；語言與功能視方案而定。",
+        "提供多種輸出解析度與片長上限；Creator支援最高1080p，Pro支援最高4K。"
+      ],
+      "freeSummary": "有常設Free方案，無需信用卡；免費影片每月最多3支（支援中心稱依地區為1至3支），每支最長1分鐘並帶浮水印，且不使用付費點數。",
+      "hasFree": true,
+      "id": "heygen",
+      "languages": "官方內建語音支援清單列有 Chinese (Cantonese - Traditional)，亦列出簡體普通話、台灣國語等中文語音。這核實的是語音生成支援，不代表已核實繁體中文介面。",
+      "limitations": [
+        "免費方案影片有浮水印且每段最長1分鐘；官方支援中心指出免費影片配額依地區為每月1至3支。",
+        "付費方案按點數計用量，功能、模型、影片長度及素材生成會影響點數消耗；Creator不能另購一次性點數，需升級方案取得更多點數。",
+        "個人方案限單一使用者；團隊協作、集中管理及進階安全功能需Business或更高方案。"
+      ],
+      "monthlyUSD": 29,
+      "name": "HeyGen",
+      "officialUrl": "https://www.heygen.com/",
+      "plans": [
+        {
+          "billing": "免費方案",
+          "name": "Free",
+          "price": "US$0",
+          "summary": "每月最多3支影片（依地區可能為1至3支），每支最長1分鐘並帶浮水印；不需信用卡。"
+        },
+        {
+          "billing": "月繳或年繳；年繳價格為按年付款的月均等值",
+          "name": "Creator",
+          "price": "US$29／月；年繳US$288（折合US$24／月）",
+          "summary": "每月600點，最高1080p輸出、移除浮水印；每支影片最長30分鐘。月繳未用點數延續一個週期，年繳點數累積至續約。"
+        },
+        {
+          "billing": "月繳起價；可選更多點數的Pro級別，價格隨點數增加",
+          "name": "Pro",
+          "price": "US$49／月起",
+          "summary": "入門級每月1,000點，支援最高4K輸出、每支影片最長30分鐘及較高用量；不能另買一次性點數，需改選更高點數級別。"
+        },
+        {
+          "billing": "首席月費，另加席位費",
+          "name": "Business",
+          "price": "US$149／月（首席）；額外席位US$20／席／月",
+          "summary": "首席每月1,500點，團隊共用點數池；新增席位不增加點數。最高4K、每支影片最長60分鐘，並提供協作、管理及進階功能；可另購點數。"
+        }
+      ],
+      "platforms": [
+        "網頁瀏覽器",
+        "iOS／iPhone",
+        "Android"
+      ],
+      "priceLabel": "US$29／月起",
+      "pricingUrl": "https://www.heygen.com/pricing",
+      "pros": [
+        "把虛擬講者、影片製作、編修與多語翻譯整合在同一工作區，減少拍攝和後製流程。",
+        "官方語音清單明列繁體粵語及多種中文語音選項，適合粵語內容製作。"
+      ],
+      "regionNote": "官方未明確列出香港不可用；但免費影片配額為每月1至3支且依地區而異，自訂數位分身名額亦可能因地區和帳戶建立日期不同。香港帳戶的實際配額、功能與結帳價格應以登入後官網帳戶／結帳頁確認。",
+      "sources": [
+        {
+          "title": "HeyGen 官方定價與方案比較",
+          "url": "https://www.heygen.com/pricing"
+        },
+        {
+          "title": "HeyGen 支援中心：點數制方案與訂閱說明",
+          "url": "https://help.heygen.com/en/articles/15125761-heygen-credit-based-pricing-plans-subscriptions-explained"
+        },
+        {
+          "title": "HeyGen 支援中心：語音支援語言清單",
+          "url": "https://help.heygen.com/en/articles/11391932-voice-languages-we-support"
+        },
+        {
+          "title": "HeyGen 官方AI影片生成器與平台說明",
+          "url": "https://www.heygen.com/tool/ai-video-generator"
+        },
+        {
+          "title": "HeyGen 官方產品網站",
+          "url": "https://www.heygen.com/"
+        }
+      ],
+      "tagline": "用AI分身快速製作多語影片",
+      "verificationNote": "已於2026-11-09檢查HeyGen官方定價頁、產品頁及支援中心方案與語音清單。官網列示Creator月繳US$29、年繳折合US$24／月；免費配額及自訂分身名額有地區差異，地區適用條件未明確說明香港是否受影響，應以帳戶結帳頁確認。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "製作影片旁白、播客、有聲書或遊戲角色語音的創作者。",
+        "需要把語音內容配音翻譯或轉錄的團隊。",
+        "需要整合文字轉語音、語音辨識或對話代理的開發者。"
+      ],
+      "billingNote": "美元月繳常規價；年繳頁面顯示的是年度付款的月均價，非月繳價。方案按月給 credits，實際可生成量隨功能及模型而異；價格不含稅，可能另購 credits。",
+      "category": "audio",
+      "description": "ElevenLabs 提供 AI 文字轉語音、語音克隆與設計、配音翻譯及語音轉文字，也可創作音樂和音效。可用於旁白、有聲書、短片與多語內容；不同模型、語言和訂閱方案的功能與用量各有差異。",
+      "features": [
+        "文字轉語音可調整情緒、語氣與節奏，適合旁白、角色配音及有聲內容。",
+        "可由短音訊建立即時語音克隆，也可用文字提示設計聲音；專業語音克隆需較高方案。",
+        "提供配音翻譯、語音轉文字，以及包含音樂、音效與影音創作的工具。",
+        "提供 API 和即時低延遲語音模型，亦可建置語音或文字對話代理。"
+      ],
+      "freeSummary": "常設 Free 方案：每月 10,000 credits，可用文字轉語音、語音轉文字、音效、語音設計、音樂等工具，Studio 最多 3 個專案；商業授權及部分克隆功能不包含在免費方案。",
+      "hasFree": true,
+      "id": "elevenlabs",
+      "languages": "官方 Eleven v4 語音合成語言清單明確列有粵語（Cantonese）及普通話（Mandarin Chinese）；不同模型的語言清單不完全相同，且官方提醒部分語言的流暢度會有差異。",
+      "limitations": [
+        "免費方案每月 10,000 credits 並限 3 個 Studio 專案；商用授權及克隆等功能需付費方案。",
+        "各模型支援語言與效果不同；官方指出部分語言的流暢度不一，粵語結果宜先試用確認。",
+        "用量以 credits 計算，不同功能消耗不同；超額用量或額外 credits 可能增加費用。"
+      ],
+      "monthlyUSD": 6,
+      "name": "ElevenLabs",
+      "officialUrl": "https://elevenlabs.io/",
+      "plans": [
+        {
+          "billing": "免費；每月更新",
+          "name": "Free",
+          "price": "US$0",
+          "summary": "每月 10,000 credits、最多 3 個 Studio 專案；包含多項創作工具，免費方案功能及用途有限。"
+        },
+        {
+          "billing": "月繳或年繳；月繳為常規月價，年繳月均價按年度預付",
+          "name": "Starter",
+          "price": "US$6／月；年繳約 US$5／月均（US$60／年）",
+          "summary": "每月 30,000 credits；加入商業授權、即時語音克隆、配音工作室等。"
+        },
+        {
+          "billing": "月繳或年繳；月繳為常規月價，年繳月均價按年度預付",
+          "name": "Creator",
+          "price": "US$22／月；年繳約 US$18.33／月均（US$220／年）",
+          "summary": "每月 121,000 credits，加入專業語音克隆及額外 credits 選項。"
+        },
+        {
+          "billing": "月繳或年繳；月繳為常規月價，年繳月均價按年度預付",
+          "name": "Pro",
+          "price": "US$99／月；年繳約 US$82.50／月均（US$990／年）",
+          "summary": "每月 600,000 credits，並提供較高品質音訊輸出選項。"
+        }
+      ],
+      "platforms": [
+        "網頁（ElevenCreative／ElevenLabs 網站）",
+        "iOS 官方應用",
+        "Android 官方應用",
+        "開發者 API"
+      ],
+      "priceLabel": "US$6／月起",
+      "pricingUrl": "https://elevenlabs.io/pricing",
+      "pros": [
+        "語音生成提供情緒及表達控制，並涵蓋多種語言和語音克隆工作流程。",
+        "可在網頁、iOS 和 Android 使用，亦提供 API。"
+      ],
+      "regionNote": "查核的官方產品、價格及說明頁未明確確認香港是否可使用所有服務或付款方式；香港可用性及個別功能請以官方註冊流程、應用商店和結帳頁為準。",
+      "sources": [
+        {
+          "title": "ElevenLabs 官方定價",
+          "url": "https://elevenlabs.io/pricing"
+        },
+        {
+          "title": "ElevenLabs 官方產品首頁",
+          "url": "https://elevenlabs.io/"
+        },
+        {
+          "title": "Eleven v4 官方說明與語言清單",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech/eleven-v4"
+        },
+        {
+          "title": "官方支援語言說明",
+          "url": "https://elevenlabs.io/docs/help-center/other/what-languages-do-you-support"
+        },
+        {
+          "title": "ElevenLabs 官方 iOS 與 Android 應用說明",
+          "url": "https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/what-is-the-elevenlabs-app"
+        }
+      ],
+      "tagline": "生成、克隆並編輯自然語音",
+      "verificationNote": "已於 2026-11-09 查閱 ElevenLabs 官方定價、產品與說明頁。月繳頁面顯示 Starter US$6、Creator US$22；Pro US$99/月另由官方定價頁搜尋索引核對。年繳月均價採官方定價頁顯示值。官方頁面可能更新，價格、促銷與可用性應以購買當日頁面為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "想用簡單文字快速做歌曲草稿、歌詞或完整人聲歌曲的初學者與創作者。",
+        "需要為影片、Podcast 或其他內容製作音樂，並在付費方案下載及依方案條款商用的人。",
+        "需要分軌編輯、較多生成額度或 Suno Studio 的活躍音樂製作者。"
+      ],
+      "billingNote": "Pro 月付 US$10；年付 US$96（折合 US$8/月）。Premier 月付 US$30；年付 US$288（折合 US$24/月）。年付折算不是月付價格；訂閱自動續訂，稅金於結帳計算。",
+      "category": "audio",
+      "description": "Suno 讓你以文字描述曲風、情緒或主題，快速生成含歌詞、人聲、編曲與製作的完整歌曲，也可延伸或修改作品。付費方案增加生成點數、下載、商用權益與進階製作工具。",
+      "features": [
+        "輸入文字、曲風或歌詞，生成含人聲、歌詞、伴奏與製作的完整歌曲，也可製作純音樂。",
+        "可重新生成、延伸及編修歌曲，付費方案提供 Song Editor、進階編輯與自訂模型等功能。",
+        "付費方案支援分離音軌；Pro 有兩種分離方式，Premier 有三種。",
+        "Pro 可錄製或上傳自己的聲音並創建歌曲；Premier 另含 Suno Studio、MIDI、效果與自動化等製作功能。"
+      ],
+      "freeSummary": "永久免費方案：每日補充 50 點（官方稱約可做 10 首），可用免費模型、標準功能及上傳最多 8 分鐘音訊；無每月歌曲下載、無商用權益。官方下載 FAQ 另列每帳戶最多 7 首終身試用下載，僅限個人非商用。",
+      "hasFree": true,
+      "id": "suno",
+      "languages": "官方頁面未明確列出繁體中文或粵語支援承諾；可嘗試輸入中文提示詞或歌詞，但中文（尤其粵語）咬字與生成效果需自行測試，不作保證。",
+      "limitations": [
+        "免費方案每日 50 點（官方稱約可生成 10 首），僅供標準功能；沒有每月歌曲下載或商用權益，最多 7 首終身試用下載僅供個人非商用。",
+        "付費方案的歌曲下載數有月上限（Pro 20 首、Premier 60 首）；未用完不累積，免費生成內容亦不會因日後訂閱自動取得商用權益。",
+        "Suno 條款不保證手機 App 或付費服務在任何特定地區可用；版權與輸出結果亦可能因地區及用途而異。"
+      ],
+      "monthlyUSD": 10,
+      "name": "Suno",
+      "officialUrl": "https://suno.com/",
+      "plans": [
+        {
+          "billing": "免費，無須付款；永久免費方案",
+          "name": "Free",
+          "price": "US$0/月",
+          "summary": "每日 50 點、標準功能；無每月下載與商用權益。官方下載 FAQ 列最多 7 首終身試用下載，僅限個人非商用。"
+        },
+        {
+          "billing": "月付或年付；年付等值不可視為月付費率，自動續訂",
+          "name": "Pro",
+          "price": "月付 US$10；年付 US$96/年（折合 US$8/月）",
+          "summary": "每月 2,500 點、每月 20 首下載、商用權益、優先生成、最佳模型及早期功能；支援自訂模型、音軌分離和進階編輯。"
+        },
+        {
+          "billing": "月付或年付；年付等值不可視為月付費率，自動續訂",
+          "name": "Premier",
+          "price": "月付 US$30；年付 US$288/年（折合 US$24/月）",
+          "summary": "每月 10,000 點、每月 60 首下載、商用權益及 Pro 功能，另含 Suno Studio、進階音軌分離與最多 30 分鐘音訊上傳。"
+        }
+      ],
+      "platforms": [
+        "網頁版（suno.com）",
+        "iOS App（Apple App Store；官方稱仍屬有限度推出）",
+        "Android App（Google Play；官方稱仍屬有限度推出）"
+      ],
+      "priceLabel": "US$10 / 月起",
+      "pricingUrl": "https://suno.com/pricing",
+      "pros": [
+        "不需樂理或製作經驗即可由文字提示生成含人聲與編曲的完整歌曲。",
+        "付費方案提供商用權益、優先生成及不同層級的編輯、音軌分離與 Studio 工具。"
+      ],
+      "regionNote": "官方服務條款明言不保證 App 或付費服務在任何特定地區可用；未找到官方對香港可用性的明確確認。香港用戶應以當地 App Store／Google Play 上架情況、官網帳戶及結帳頁為準。",
+      "sources": [
+        {
+          "title": "Suno 官方價格頁",
+          "url": "https://suno.com/pricing"
+        },
+        {
+          "title": "Suno 官方付費方案說明",
+          "url": "https://help.suno.com/en/articles/14617153"
+        },
+        {
+          "title": "Suno 官方方案與每日點數說明",
+          "url": "https://help.suno.com/en/articles/2410049"
+        },
+        {
+          "title": "Suno 官方下載限制與試用下載 FAQ",
+          "url": "https://help.suno.com/en/articles/13614785"
+        },
+        {
+          "title": "Suno 官方手機 App 說明",
+          "url": "https://help.suno.com/en/articles/3134337"
+        },
+        {
+          "title": "Suno 官方服務條款",
+          "url": "https://suno.com/terms"
+        },
+        {
+          "title": "Suno 官方產品首頁",
+          "url": "https://suno.com/"
+        }
+      ],
+      "tagline": "文字生成完整歌曲",
+      "verificationNote": "已於 2026-11-09 查閱 Suno 官方價格頁、產品首頁、說明中心及服務條款。價格與額度依當日官網所示；官方下載 FAQ 說明限制自 2026-09-03 起實施，但 FAQ 頁仍保留部分「即將變更」措辭，因此實際帳戶權益及地區可用性仍應以登入後官網與結帳頁為準。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "希望在程式編輯流程中直接交辦 AI 撰寫、修改或修復程式碼的開發者。",
+        "需要讓多個代理平行處理程式工作，或使用雲端代理的個人與團隊。"
+      ],
+      "billingNote": "現行新訂閱與 Grok、X 合併；Plus 月繳 US$8，年繳 US$80（折合約 US$6.67／月）。Premium 月繳 US$30，年繳 US$300（折合 US$25／月）。年繳為預付年費，價格未含稅；週額度跨 Cursor/Grok 共用，第三方模型另按用量付費。舊版 Pro US$20／月僅供既有客戶，不是新用戶現行入門價。",
+      "category": "code",
+      "description": "Cursor 是面向軟體開發的 AI 程式代理與編輯環境，可在程式專案中協助撰寫、修改與修復程式碼，也能讓代理自主執行並平行處理任務。現行新訂閱與 Grok、X 方案合併，模型額度與可用性依方案及地區而異。",
+      "features": [
+        "在程式開發環境中使用 AI 代理協助建立、修改及處理程式專案。",
+        "代理可自主執行工作，並支援平行處理多項任務。",
+        "可使用 Cursor 自有模型；Premium 及以上方案可另外使用第三方模型，按模型 API 價格從預付額度扣款。",
+        "Premium 及以上方案包含雲端代理與自動化功能。"
+      ],
+      "freeSummary": "現行新用戶可選 Free（US$0/月），Agent 與 Chat 使用量有限。官方另說明舊版 Hobby 免費方案僅為 legacy plan；不要把付費試用視為永久免費。",
+      "hasFree": true,
+      "id": "cursor",
+      "languages": "官方資料未明確承諾繁體中文介面或完整中文支援；建議以中文提示實際測試效果，勿視為已核實的語言支援保證。",
+      "limitations": [
+        "免費方案的 Agent 與 Chat 使用量有限；付費方案含量亦受每週共用額度與模型耗用速度影響。",
+        "第三方模型不包含在現行 Plus 方案；Premium 及以上使用時仍須按 API 價格另購預付額度。",
+        "模型供應商會按地區限制部分模型，實際可用模型可能因所在地而異。"
+      ],
+      "monthlyUSD": 8,
+      "name": "Cursor",
+      "officialUrl": "https://cursor.com/",
+      "plans": [
+        {
+          "billing": "免費方案；無年繳價格",
+          "name": "Free",
+          "price": "US$0／月",
+          "summary": "Agent 與 Chat 使用量有限，且不含第三方模型。"
+        },
+        {
+          "billing": "可月繳或年繳；年繳金額預付，未含稅",
+          "name": "Plus",
+          "price": "US$8／月；年繳 US$80／年（折合約 US$6.67／月）",
+          "summary": "入門付費方案；包含共享週額度與 Cursor 自有模型，不含第三方模型、Cloud Agents 或 Automations。"
+        },
+        {
+          "billing": "可月繳或年繳；年繳金額預付，未含稅",
+          "name": "Premium",
+          "price": "US$30／月；年繳 US$300／年（折合 US$25／月）",
+          "summary": "較 Plus 提供 4 倍使用額度，並加入雲端代理、自動化及第三方模型使用；第三方模型依 API 價格另從預付額度扣款。"
+        }
+      ],
+      "platforms": [
+        "macOS",
+        "Windows",
+        "Linux",
+        "網頁瀏覽器（啟動雲端代理）",
+        "終端機／CLI"
+      ],
+      "priceLabel": "US$8／月起",
+      "pricingUrl": "https://cursor.com/pricing",
+      "pros": [
+        "AI 代理整合在程式開發流程中，並可自主或平行執行工作。",
+        "付費高階方案可搭配多家第三方模型，並提供雲端代理及自動化功能。"
+      ],
+      "regionNote": "官方說明部分模型受模型供應商的地區政策限制，未在該頁明確列出香港是否受限；香港使用者應於 Cursor 官方地區說明及帳戶模型選單確認可用模型。",
+      "sources": [
+        {
+          "title": "Cursor 官方定價",
+          "url": "https://cursor.com/pricing"
+        },
+        {
+          "title": "Cursor 官方模型與價格說明",
+          "url": "https://cursor.com/docs/models-and-pricing"
+        },
+        {
+          "title": "Cursor 官方產品功能",
+          "url": "https://cursor.com/features"
+        },
+        {
+          "title": "Cursor 官方下載與使用介面",
+          "url": "https://cursor.com/download"
+        },
+        {
+          "title": "Cursor 官方地區可用性說明",
+          "url": "https://cursor.com/docs/account/regions"
+        },
+        {
+          "title": "Cursor 官方舊版方案說明",
+          "url": "https://cursor.com/docs/account/pricing/legacy-cursor-plans"
+        }
+      ],
+      "tagline": "融入編輯器的 AI 程式代理",
+      "verificationNote": "已於 2026-11-09 查閱 Cursor 官方定價、產品、平台、模型計費及地區說明。官方現行頁面將新訂閱列為 The X Subscription；舊版 Cursor Pro 僅供既有訂戶使用。價格及方案可能變動，且官網未明確確認香港各模型的可用情況。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "希望在 VS Code、Visual Studio 或其他支援 IDE 中加快日常編碼的開發者。",
+        "想把 issue、程式碼撰寫、變更審查及 pull request 串入 GitHub 工作流程的個人或團隊。"
+      ],
+      "billingNote": "價格頁列示每位使用者的月費；本次頁面內容未確認年繳等值。AI 點數每點 US$0.01；聊天與代理用量按模型及任務消耗，超出月度額度可能需另設付費預算。",
+      "category": "code",
+      "description": "GitHub Copilot 整合於 GitHub 與多款 IDE，協助補全程式碼、對話解題、代理執行任務及審查變更。免費版每月限量使用；付費方案按人計費，聊天與代理工作會消耗依模型及任務而異的 AI 點數。",
+      "features": [
+        "在編輯器中提供程式碼補全、下一步編輯建議及對話式程式協助。",
+        "可在 IDE、終端 CLI 及 GitHub 工作流程中使用代理執行開發任務。",
+        "可從 issue 指派工作，由 Copilot 研究、規劃並撰寫程式碼或建立 pull request。",
+        "支援審查本機變更與 pull request，並可選擇模型或讓 Copilot 配對模型。"
+      ],
+      "freeSummary": "永久 Free 方案：每月 2,000 次程式碼補全、入門模型使用權、Copilot CLI 及社群支援；官方頁稱不需信用卡。這是免費方案而非試用期。",
+      "hasFree": true,
+      "id": "copilot",
+      "languages": "官方稱 Copilot 受訓於公開程式碼庫出現的各種程式語言；自然語言提示亦可使用，但 GitHub 提醒非英文提示可能令服務品質較低，未找到繁體中文品質保證。",
+      "limitations": [
+        "GitHub 指出自然語言提示若非英文，服務品質可能較低；繁體中文可用程度未有官方保證。",
+        "生成內容可能含錯誤或不安全程式碼，仍須自行測試、審查並使用安全檢查工具。",
+        "免費版每月限 2,000 次程式碼補全；付費方案的聊天與代理工作會消耗月度 AI 點數，實際消耗依模型及任務複雜度而異。"
+      ],
+      "monthlyUSD": 10,
+      "name": "GitHub Copilot",
+      "officialUrl": "https://github.com/features/copilot",
+      "plans": [
+        {
+          "billing": "免費方案；每月額度重設",
+          "name": "Free",
+          "price": "US$0",
+          "summary": "每月 2,000 次補全及入門模型使用權，另含 Copilot CLI。"
+        },
+        {
+          "billing": "按月計費；未核實年繳等值",
+          "name": "Pro",
+          "price": "US$10／使用者／月",
+          "summary": "個人日常編碼方案，含 Free 功能並提供代理編碼能力。"
+        },
+        {
+          "billing": "按月計費；未核實年繳等值",
+          "name": "Pro+",
+          "price": "US$39／使用者／月",
+          "summary": "含 Pro 功能、進階模型（包括 Opus）及頁面所列每月總額 US$70 的點數。"
+        },
+        {
+          "billing": "按月計費；未核實年繳等值",
+          "name": "Max",
+          "price": "US$100／使用者／月",
+          "summary": "面向高用量代理工作流程，含較高用量、優先使用新模型與功能，以及頁面所列每月總額 US$200 的點數。"
+        }
+      ],
+      "platforms": [
+        "GitHub 網站與 GitHub Mobile",
+        "Visual Studio Code",
+        "Visual Studio",
+        "JetBrains IDEs",
+        "Xcode",
+        "Vim／Neovim",
+        "Eclipse",
+        "Zed",
+        "終端／Copilot CLI",
+        "GitHub Copilot 桌面應用程式",
+        "Slack",
+        "Microsoft Teams"
+      ],
+      "priceLabel": "US$10 / 月起",
+      "pricingUrl": "https://github.com/features/copilot/plans",
+      "pros": [
+        "涵蓋多款主流 IDE、終端及 GitHub 網頁與行動端，可在既有開發流程中使用。",
+        "除補全與聊天外，也支援代理任務、程式碼審查及多種模型選擇。"
+      ],
+      "regionNote": "GitHub 官方貿易管制頁稱 Copilot 可出口至大多數目的地，並列明若干禁運或受限地區；香港不在該頁列出的 Copilot 禁售目的地中。這不等同個別帳戶、付款方式或服務可用性的保證，使用前宜查閱 GitHub 最新政策及結帳頁。",
+      "sources": [
+        {
+          "title": "GitHub Copilot 方案與定價",
+          "url": "https://github.com/features/copilot/plans"
+        },
+        {
+          "title": "GitHub Copilot 產品與功能",
+          "url": "https://github.com/features/copilot"
+        },
+        {
+          "title": "GitHub 與貿易管制及 Copilot 地區政策",
+          "url": "https://docs.github.com/en/site-policy/other-site-policies/github-and-trade-controls"
+        }
+      ],
+      "tagline": "IDE 內建的 AI 程式開發助手",
+      "verificationNote": "已於 2026-11-09 查閱 GitHub 官方產品、方案定價及貿易管制頁面。官方頁未標明本次所見定價的生效日期；月費與方案內容按查閱當日頁面記錄，可能變動。年繳價格未由所查頁面確認。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "已用 Notion 管理文件、專案或內部知識，想在原工作流程中搜尋和整理資訊的個人或團隊。",
+        "需要跨工作區或已連結的 Slack、Google Drive 等來源查找答案的團隊。",
+        "需要會議摘要、文字潤飾、翻譯或快速建立資料庫的工作者。"
+      ],
+      "billingNote": "官方定價頁以美元顯示年繳折合價：Plus US$10、Business US$20／成員／月；頁面切換至月繳後的價格未能核實，故不填月費。Business/Enterprise 含每人每月 1,500 Standard 及 500 Select credits（額度依方案與購買安排可能不同）；額外 Notion credits 另計，官方價格頁列出每 1,000 月度 credits US$10。",
+      "category": "office",
+      "description": "Notion AI 直接整合在 Notion 工作空間，可依照你有權存取的頁面與已連結應用程式回答問題、搜尋資料、撰寫和翻譯內容，也能整理會議紀錄及建立資料庫，適合把文件、專案與團隊知識集中管理。",
+      "features": [
+        "Notion Agent 可依工作區與連結應用程式的脈絡回答問題，並建立或編輯頁面和資料庫。",
+        "Enterprise Search 與連接器可跨 Notion、Slack、Google Drive 等工作內容搜尋；Research Mode 可整理較深入的研究報告。",
+        "可在頁面內草擬、改寫、摘要與翻譯，也能自動填寫資料庫欄位並協助撰寫公式。",
+        "AI Meeting Notes 可轉錄會議、整理摘要、決策和待辦事項。",
+        "可在 Notion AI 對話中分析上傳檔案，並產生可下載的文件、試算表或簡報等成果。"
+      ],
+      "freeSummary": "Notion 平台有永久 Free 方案，但這不代表完整 Notion AI 免費：官方列出 Free/Plus 僅能試用 AI 功能並獲有限免費回應；完整 AI 功能屬 Business/Enterprise 方案。",
+      "hasFree": false,
+      "id": "notion",
+      "languages": "Notion 介面支援繁體中文；AI 可將頁面翻譯成所需語言。官方會議筆記支援中文，但未查到對廣東話辨識或生成品質的特別保證，不能視為有專門粵語支援。",
+      "limitations": [
+        "完整 Notion AI 主要隨 Business 或 Enterprise 提供；Free 和 Plus 只有有限免費 AI 回應可試用，並非永久完整免費方案。",
+        "Business/Enterprise 的每人月度 Standard、Select 額度有上限且不結轉；用盡後相關功能會暫停，除非管理員另開付費 Notion credits。",
+        "官方目前沒有 Linux 桌面應用程式；瀏覽器版會議轉錄只收麥克風音訊，視訊會議的系統音訊以桌面程式較適合。"
+      ],
+      "monthlyUSD": null,
+      "name": "Notion AI",
+      "officialUrl": "https://www.notion.com/product/ai",
+      "plans": [
+        {
+          "billing": "免費方案；Notion AI 僅限有限免費回應試用",
+          "name": "Free",
+          "price": "US$0／成員／月",
+          "summary": "個人可使用 Notion 基本工作空間功能；AI 試用回應有上限，不是完整或永久免費 AI。"
+        },
+        {
+          "billing": "官方定價頁年繳選項顯示；月繳實價以官網結帳為準",
+          "name": "Plus",
+          "price": "US$10／成員／月（年繳折合）",
+          "summary": "個人與小型團隊的付費工作空間；AI 仍為有限試用回應，不包含 Business/Enterprise 的完整 AI 權益。"
+        },
+        {
+          "billing": "官方定價頁年繳選項顯示；月繳實價以官網結帳為準",
+          "name": "Business",
+          "price": "US$20／成員／月（年繳折合）",
+          "summary": "包含 Notion AI、Notion Agent、AI Meeting Notes 與 Enterprise Search；每人每月含 Standard/Select credits，超額使用須管理員啟用付費 Notion credits。"
+        },
+        {
+          "billing": "聯絡 Notion 銷售洽詢",
+          "name": "Enterprise",
+          "price": "客製報價",
+          "summary": "包含 Business 功能及企業級安全、管理和資料保留控制；AI credits 額度依方案與購買安排確認。"
+        }
+      ],
+      "platforms": [
+        "網頁瀏覽器",
+        "macOS 桌面應用程式",
+        "Windows 桌面應用程式",
+        "iOS 與 Android 行動應用程式"
+      ],
+      "priceLabel": "收費以官網為準",
+      "pricingUrl": "https://www.notion.com/pricing",
+      "pros": [
+        "AI 與 Notion 頁面、資料庫及權限脈絡整合，減少在多個工具間切換。",
+        "同一工作區涵蓋搜尋、寫作、翻譯、會議摘要和資料整理。"
+      ],
+      "regionNote": "官方定價說明指出方案可用性可能因情況而異；查到的官方資料未能確認香港對 Notion AI 各方案或付款方式的具體限制。香港用戶請以 Notion 官網方案頁及登入後結帳頁顯示的可用方案、幣別和付款條件為準。",
+      "sources": [
+        {
+          "title": "Notion 官方定價頁",
+          "url": "https://www.notion.com/pricing"
+        },
+        {
+          "title": "Notion AI 官方 FAQ",
+          "url": "https://www.notion.com/help/notion-ai-faqs"
+        },
+        {
+          "title": "Notion 官方 Business 與 Enterprise 方案指南",
+          "url": "https://www.notion.com/help/guides/is-notions-business-or-enterprise-plan-right-for-you"
+        },
+        {
+          "title": "Notion 官方 AI credits 說明",
+          "url": "https://www.notion.com/help/manage-your-ai-credits"
+        },
+        {
+          "title": "Notion 官方介面語言說明",
+          "url": "https://www.notion.com/help/change-your-language"
+        },
+        {
+          "title": "Notion 官方桌面應用程式說明",
+          "url": "https://www.notion.com/help/notion-for-desktop"
+        },
+        {
+          "title": "Notion 官方 AI Meeting Notes 說明",
+          "url": "https://www.notion.com/help/ai-meeting-notes"
+        },
+        {
+          "title": "Notion 官方 AI 功能總覽",
+          "url": "https://www.notion.com/help/guides/everything-you-can-do-with-notion-ai"
+        }
+      ],
+      "tagline": "融入工作空間的 AI 助理",
+      "verificationNote": "已於 2026-11-09 查核 Notion 官方產品、說明及定價頁。定價頁在當日可見美元年繳折合價，且列明 Free/Plus 的 AI 試用與 Business/Enterprise AI credits；官方頁面文字抽取無法確認月繳切換後的價格，因此未推估或填入月費。方案、額度及價格可能變動，香港地區適用性亦應以登入後官網資訊確認。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "想用無程式方式把電郵、表單、CRM 與協作工具串接的個人或小型團隊。",
+        "需要 AI 整理或分類資料，再把結果送往其他應用的重複辦公流程。",
+        "希望讓 AI 助手透過 MCP 操作既有商務應用的團隊。"
+      ],
+      "billingNote": "官方定價文章列 Professional US$19.99/月、Team US$69/月，兩者均為年繳等值；查核頁未確認月繳實際價，故 monthlyUSD 留空。AI 模型依層級消耗 1x/3x/5x tasks，額度由帳戶方案共用，超額可能按任務收費。",
+      "category": "office",
+      "description": "Zapier AI 將生成式 AI 嵌入無程式自動化：用自然語言建立工作流程，讓 AI 整理資料、參照知識來源，並跨數千個應用執行動作。適合把重複的辦公流程串成可持續運作的自動化。",
+      "features": [
+        "以自然語言描述需求，AI 可協助建立 Zap 工作流程並建議觸發條件與動作。",
+        "AI by Zapier 可在流程中分析資料、生成回覆；AI 步驟可設定模型層級，並可加入工具呼叫。",
+        "Zapier Agents 可參照連接的知識來源，按觸發條件或使用者指令獨立執行應用動作。",
+        "Zapier MCP 讓相容的 AI 助手透過 Zapier 在 9,000 多個應用中執行動作。",
+        "Copilot 可協助建立和修改流程；Zapier 亦提供 AI 格式化、程式碼生成與錯誤排查工具。"
+      ],
+      "freeSummary": "官方列有永久免費 Free 方案：每月 100 tasks、可建立不限數量的 Zaps，但每個 Zap 限兩步；成功動作會計入額度。",
+      "hasFree": true,
+      "id": "zapier",
+      "languages": "官方查核頁未明列繁體中文介面或粵語支援承諾；中文輸入及生成效果可能受所選 AI 模型與連接應用影響，需自行確認。",
+      "limitations": [
+        "免費方案每月只有 100 tasks，且 Zap 限兩步；成功執行的動作會消耗任務額度。",
+        "AI 模型層級及工具呼叫會增加任務消耗：官方列出 Standard 1x、Advanced 3x、Premium 5x；超額可能按任務計費。",
+        "官方資料表示 Agents 正移轉至 AI by Zapier；Agents 是帳戶綁定的個人自動化，不能直接嵌入網站作面向客戶的聊天機器人。"
+      ],
+      "monthlyUSD": null,
+      "name": "Zapier AI",
+      "officialUrl": "https://zapier.com/",
+      "plans": [
+        {
+          "billing": "永久免費",
+          "name": "Free",
+          "price": "US$0/月",
+          "summary": "每月 100 tasks；不限 Zaps、每個 Zap 限兩步，適合試做簡單自動化。"
+        },
+        {
+          "billing": "年繳；實際月繳價未在已核官方來源確認",
+          "name": "Professional",
+          "price": "US$19.99/月（年繳等值）",
+          "summary": "官方文章列每月 750 tasks，支援多步驟流程及進階功能；超額任務可能另計。"
+        },
+        {
+          "billing": "年繳；實際月繳價未在已核官方來源確認",
+          "name": "Team",
+          "price": "US$69/月（年繳等值）",
+          "summary": "最多 25 位使用者，提供共享資料夾、應用連線與團隊協作功能。"
+        },
+        {
+          "billing": "依合約",
+          "name": "Enterprise",
+          "price": "自訂報價",
+          "summary": "面向大型組織，包含進階管理、安全與治理功能。"
+        }
+      ],
+      "platforms": [
+        "Zapier 網頁平台",
+        "9,000 多個應用整合，例如 Google Docs、Slack、Salesforce、Zendesk、GitHub",
+        "Zapier MCP 可連接 Claude、ChatGPT 等相容 AI 助手"
+      ],
+      "priceLabel": "收費以官網為準",
+      "pricingUrl": "https://zapier.com/pricing",
+      "pros": [
+        "應用整合範圍廣，流程可連接多個常用商務工具。",
+        "AI 與自動化整合在同一平台，無須為 AI by Zapier 另訂一個獨立模型帳戶。"
+      ],
+      "regionNote": "查核到的官方頁面未明確列出香港的服務可用性或付款支援結論；香港註冊、付款貨幣及個別功能可用性請以 Zapier 官方帳戶頁面或支援資訊確認。",
+      "sources": [
+        {
+          "title": "Zapier Plans & Pricing",
+          "url": "https://zapier.com/pricing"
+        },
+        {
+          "title": "Zapier pricing: Why Zapier is a better value for automation",
+          "url": "https://zapier.com/blog/zapier-pricing/"
+        },
+        {
+          "title": "Zapier Agents",
+          "url": "https://zapier.com/agents"
+        },
+        {
+          "title": "AI quick start guide in Zapier",
+          "url": "https://help.zapier.com/hc/en-us/articles/18590756459277-AI-quick-start-guide-in-Zapier"
+        },
+        {
+          "title": "AI by Zapier: new model-based pricing starting June 15, 2026",
+          "url": "https://help.zapier.com/hc/en-us/articles/46597632373389-AI-by-Zapier-new-model-based-pricing-starting-June-15-2026"
+        },
+        {
+          "title": "Build an agent in Zapier Agents",
+          "url": "https://help.zapier.com/hc/en-us/articles/24393442652557-Build-an-agent-in-Zapier-Agents"
+        }
+      ],
+      "tagline": "把 AI 接進日常工作流程",
+      "verificationNote": "於 2026-11-09 查核 Zapier 官方定價、產品及說明頁；官方定價文章列出年繳等值起價，但本次查核未確認月繳實際費用，故未填 monthlyUSD。中文支援與香港可用性未見明確官方承諾，已保留確認提醒。",
+      "verifiedDate": "2026-11-09"
+    },
+    {
+      "bestFor": [
+        "需要由提示或大綱快速起草簡報、提案或教學內容的人。",
+        "想將同一內容整理成文件、網站或社群圖文的個人與小型團隊。",
+        "需要匯入既有簡報或 PDF，再以 AI 協助改寫和排版的人。"
+      ],
+      "billingNote": "月付按席收費；年繳頁顯示 Plus US$9、Pro US$18、Ultra US$90／席／月的折算價，分別預付 US$108、216、1,080／年。另可能加所在地稅費。Plus 點數在月付價格卡顯示 1,500 點／月，年付價格頁及說明中心則見 1,000 點／月；以購買時官網顯示為準。AI 消耗按功能、模型及生成長度變動。",
+      "category": "slides",
+      "description": "Gamma 是 AI 視覺敘事工具，可把提示或大綱轉成簡報、文件、網站與社群圖文，並支援對話式編修、匯入既有檔案及多格式匯出，適合快速整理內容並製作可分享成果。",
+      "features": [
+        "輸入提示後可先整理大綱，再生成視覺內容；可在編輯器旁以對話方式要求修改。",
+        "可製作簡報、文件、網站、社群圖文與圖片，不限於投影片。",
+        "可匯入 PDF 與 PowerPoint，並匯出 PDF、PPTX、PNG 或 Google Slides。",
+        "提供智慧版面與自由編輯，可調整風格、品牌樣式及內容布局。",
+        "官方列有 Slack、Notion、Dropbox 等連接器，並稱支援 25 種以上工具整合。"
+      ],
+      "freeSummary": "有無時限的免費方案，並非限時試用：新帳戶獲 400 點，AI 點數不定期補充；每次提示最多生成 10 張投影片，可匯入 PDF／PPTX，並匯出 PDF、PPTX、PNG 或 Google Slides。免費用戶可透過推薦好友取得額外點數。",
+      "hasFree": true,
+      "id": "gamma",
+      "languages": "官方說明稱可用系統支援的語言輸入提示並生成該語言內容，因此可用中文提示；但該說明未列出完整介面語言名單，未能確認繁體中文介面是否正式支援。",
+      "limitations": [
+        "AI 功能以點數計量；消耗量會隨功能、模型及生成長度或複雜度改變。",
+        "免費方案的 400 點不會定期補充；生成每次提示最多 10 張投影片。",
+        "按席收費且價格未含可能適用的稅費；官網月付與年付資料的 Plus 點數數字不一致，購買前應核對結帳頁。"
+      ],
+      "monthlyUSD": 12,
+      "name": "Gamma",
+      "officialUrl": "https://gamma.app/",
+      "plans": [
+        {
+          "billing": "月繳或年繳；年繳價格為全年預付的月均折算價。",
+          "name": "Plus",
+          "price": "US$12／席／月；年繳折算 US$9／席／月（預付 US$108／年）",
+          "summary": "移除 Gamma 品牌標示、每次提示最多生成 100 張投影片並提供進階圖片模型。官網不同計費視圖對 Plus 月點數分別列 1,500 與 1,000，購買前需核對。"
+        },
+        {
+          "billing": "月繳或年繳；年繳價格為全年預付的月均折算價。",
+          "name": "Pro",
+          "price": "US$25／席／月；年繳折算 US$18／席／月（預付 US$216／年）",
+          "summary": "含每月 4,000 點、進階品牌設定、詳細分析及最多 10 個自訂網域。"
+        },
+        {
+          "billing": "月繳或年繳；官網定價頁可切換顯示年繳價格，實際付款與方案資格以結帳頁為準。",
+          "name": "Ultra",
+          "price": "US$100／席／月；年繳折算 US$90／席／月（預付 US$1,080／年）",
+          "summary": "含每月 20,000 點、進階文字／圖片／影片模型及最多 100 個自訂網域。"
+        }
+      ],
+      "platforms": [
+        "網頁版（瀏覽器）",
+        "iOS App",
+        "Android App"
+      ],
+      "priceLabel": "US$12 / 月起（按席）",
+      "pricingUrl": "https://gamma.app/pricing",
+      "pros": [
+        "涵蓋簡報以外的多種視覺內容形式，並可匯出到常用簡報及文件格式。",
+        "AI 對話修改與手動拖放、自由編排可在同一工作流程中切換。"
+      ],
+      "regionNote": "官方定價頁只說稅費依所在地而異，未列出香港可用地區清單；香港註冊及付款可用性請以官網帳號／結帳頁或官方客服確認。",
+      "sources": [
+        {
+          "title": "Gamma 官方定價頁",
+          "url": "https://gamma.app/pricing"
+        },
+        {
+          "title": "Gamma 官方產品首頁",
+          "url": "https://gamma.app/"
+        },
+        {
+          "title": "Gamma 說明中心：點數如何運作",
+          "url": "https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma"
+        },
+        {
+          "title": "Gamma 說明中心：如何以偏好語言使用 Gamma",
+          "url": "https://help.gamma.app/en/articles/11016506-how-do-i-use-gamma-in-my-preferred-language"
+        },
+        {
+          "title": "Gamma 說明中心：如何升級訂閱方案",
+          "url": "https://help.gamma.app/en/articles/8077107-how-can-i-upgrade-my-gamma-subscription"
+        }
+      ],
+      "tagline": "一句提示，生成可分享簡報",
+      "verificationNote": "於 2026-11-09 查閱 Gamma 官方定價頁（月繳與年繳切換）、產品首頁及說明中心。Plus 點數在官方月付價格卡、年付顯示及說明中心之間存在數字差異；香港可用性未見官方地區清單，相關資訊應以購買時官網及帳號結帳頁為準。",
+      "verifiedDate": "2026-11-09"
+    }
+  ],
+  "verifiedDate": "2026-11-09"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "suno",
+  "name": "Suno",
+  "category": "audio",
+  "tagline": "文字生成完整歌曲",
+  "description": "Suno 讓你以文字描述曲風、情緒或主題，快速生成含歌詞、人聲、編曲與製作的完整歌曲，也可延伸或修改作品。付費方案增加生成點數、下載、商用權益與進階製作工具。",
+  "features": [
+    "輸入文字、曲風或歌詞，生成含人聲、歌詞、伴奏與製作的完整歌曲，也可製作純音樂。",
+    "可重新生成、延伸及編修歌曲，付費方案提供 Song Editor、進階編輯與自訂模型等功能。",
+    "付費方案支援分離音軌；Pro 有兩種分離方式，Premier 有三種。",
+    "Pro 可錄製或上傳自己的聲音並創建歌曲；Premier 另含 Suno Studio、MIDI、效果與自動化等製作功能。"
+  ],
+  "bestFor": [
+    "想用簡單文字快速做歌曲草稿、歌詞或完整人聲歌曲的初學者與創作者。",
+    "需要為影片、Podcast 或其他內容製作音樂，並在付費方案下載及依方案條款商用的人。",
+    "需要分軌編輯、較多生成額度或 Suno Studio 的活躍音樂製作者。"
+  ],
+  "pros": [
+    "不需樂理或製作經驗即可由文字提示生成含人聲與編曲的完整歌曲。",
+    "付費方案提供商用權益、優先生成及不同層級的編輯、音軌分離與 Studio 工具。"
+  ],
+  "limitations": [
+    "免費方案每日 50 點（官方稱約可生成 10 首），僅供標準功能；沒有每月歌曲下載或商用權益，最多 7 首終身試用下載僅供個人非商用。",
+    "付費方案的歌曲下載數有月上限（Pro 20 首、Premier 60 首）；未用完不累積，免費生成內容亦不會因日後訂閱自動取得商用權益。",
+    "Suno 條款不保證手機 App 或付費服務在任何特定地區可用；版權與輸出結果亦可能因地區及用途而異。"
+  ],
+  "platforms": [
+    "網頁版（suno.com）",
+    "iOS App（Apple App Store；官方稱仍屬有限度推出）",
+    "Android App（Google Play；官方稱仍屬有限度推出）"
+  ],
+  "languages": "官方頁面未明確列出繁體中文或粵語支援承諾；可嘗試輸入中文提示詞或歌詞，但中文（尤其粵語）咬字與生成效果需自行測試，不作保證。",
+  "regionNote": "官方服務條款明言不保證 App 或付費服務在任何特定地區可用；未找到官方對香港可用性的明確確認。香港用戶應以當地 App Store／Google Play 上架情況、官網帳戶及結帳頁為準。",
+  "officialUrl": "https://suno.com/",
+  "pricingUrl": "https://suno.com/pricing",
+  "hasFree": true,
+  "freeSummary": "永久免費方案：每日補充 50 點（官方稱約可做 10 首），可用免費模型、標準功能及上傳最多 8 分鐘音訊；無每月歌曲下載、無商用權益。官方下載 FAQ 另列每帳戶最多 7 首終身試用下載，僅限個人非商用。",
+  "priceLabel": "US$10 / 月起",
+  "monthlyUSD": 10,
+  "billingNote": "Pro 月付 US$10；年付 US$96（折合 US$8/月）。Premier 月付 US$30；年付 US$288（折合 US$24/月）。年付折算不是月付價格；訂閱自動續訂，稅金於結帳計算。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0/月",
+      "billing": "免費，無須付款；永久免費方案",
+      "summary": "每日 50 點、標準功能；無每月下載與商用權益。官方下載 FAQ 列最多 7 首終身試用下載，僅限個人非商用。"
+    },
+    {
+      "name": "Pro",
+      "price": "月付 US$10；年付 US$96/年（折合 US$8/月）",
+      "billing": "月付或年付；年付等值不可視為月付費率，自動續訂",
+      "summary": "每月 2,500 點、每月 20 首下載、商用權益、優先生成、最佳模型及早期功能；支援自訂模型、音軌分離和進階編輯。"
+    },
+    {
+      "name": "Premier",
+      "price": "月付 US$30；年付 US$288/年（折合 US$24/月）",
+      "billing": "月付或年付；年付等值不可視為月付費率，自動續訂",
+      "summary": "每月 10,000 點、每月 60 首下載、商用權益及 Pro 功能，另含 Suno Studio、進階音軌分離與最多 30 分鐘音訊上傳。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Suno 官方價格頁",
+      "url": "https://suno.com/pricing"
+    },
+    {
+      "title": "Suno 官方付費方案說明",
+      "url": "https://help.suno.com/en/articles/14617153"
+    },
+    {
+      "title": "Suno 官方方案與每日點數說明",
+      "url": "https://help.suno.com/en/articles/2410049"
+    },
+    {
+      "title": "Suno 官方下載限制與試用下載 FAQ",
+      "url": "https://help.suno.com/en/articles/13614785"
+    },
+    {
+      "title": "Suno 官方手機 App 說明",
+      "url": "https://help.suno.com/en/articles/3134337"
+    },
+    {
+      "title": "Suno 官方服務條款",
+      "url": "https://suno.com/terms"
+    },
+    {
+      "title": "Suno 官方產品首頁",
+      "url": "https://suno.com/"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查閱 Suno 官方價格頁、產品首頁、說明中心及服務條款。價格與額度依當日官網所示；官方下載 FAQ 說明限制自 2026-09-03 起實施，但 FAQ 頁仍保留部分「即將變更」措辭，因此實際帳戶權益及地區可用性仍應以登入後官網與結帳頁為準。",
+  "filePath": "/home/ubuntu/aipicks/research/suno.json"
+}

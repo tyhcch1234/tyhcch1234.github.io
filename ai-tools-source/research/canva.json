@@ -1,0 +1,90 @@
+{
+  "id": "canva",
+  "name": "Canva",
+  "category": "image",
+  "tagline": "AI 輔助的視覺設計平台",
+  "description": "Canva 整合範本、圖像編輯與生成式 AI，可用文字建立或修改社群貼文、簡報、海報等內容，再於編輯器中調整並匯出；AI 額度、功能與語言及地區支援依方案而異。",
+  "features": [
+    "以文字描述生成社群貼文、簡報等設計，並可在編輯器透過對話繼續修改。",
+    "生成圖像、文字、影片與互動式內容；部分功能依方案開放。",
+    "可套用品牌工具包、範本，並使用背景移除、圖像放大等 AI 編輯工具。",
+    "可在同一平台編輯照片、影片、簡報與社群內容，並匯出常見格式。",
+    "提供 Canva AI 網頁研究、檔案參照及連接外部應用等功能；支援狀態依方案而異。"
+  ],
+  "bestFor": [
+    "需要快速製作社群圖像、海報或簡報的個人創作者與小型商家。",
+    "希望以文字起稿，再用視覺編輯器自行調整的非專業設計者。",
+    "需要維持品牌視覺一致並製作多種行銷素材的團隊。"
+  ],
+  "pros": [
+    "範本、編輯器與 AI 生成整合在同一工作流程，生成後可再手動修改。",
+    "免費方案可用，並支援網頁及多種桌面、行動平台。"
+  ],
+  "limitations": [
+    "免費方案的 AI 使用量有限；不同 AI 工具共用月度額度，較複雜或高階功能會消耗更多，免費方案不含 Ultra AI。",
+    "AI 功能會按方案、帳戶語言及所在區域提供；部分功能可能尚未推出或受到管理員限制。",
+    "生成內容可能不準確或不具唯一性，商用前仍需自行檢查事實、權利與適用性。"
+  ],
+  "platforms": [
+    "網頁瀏覽器",
+    "Windows 桌面應用程式",
+    "macOS 桌面應用程式",
+    "iOS",
+    "Android",
+    "Chromebook"
+  ],
+  "languages": "Canva AI 官方列出繁體中文為支援語言之一；惟各項功能支援語言可能不同，官方未在查核頁確認粵語語音支援，不能據此推定所有功能均能以粵語操作。",
+  "regionNote": "官方說明 Canva AI 可能尚未在部分語言或國家／地區提供，功能亦可能分批推出；查核頁未指出香港為受限地區。香港帳戶的實際可用功能及價格應以登入後的 Canva 官方頁面或結帳頁確認。",
+  "officialUrl": "https://www.canva.com/",
+  "pricingUrl": "https://www.canva.com/en/pricing/",
+  "hasFree": true,
+  "freeSummary": "Canva Free 是長期免費方案，不是試用。官方方案比較列出 5GB 雲端空間，Standard 與 Premium AI 各最多 20 次的估算用量；這些工具共用 AI 額度、不同操作消耗不同，達限後可能需等待重置，且不含 Ultra AI。",
+  "priceLabel": "收費以官網為準（美元月費未核實）",
+  "monthlyUSD": null,
+  "billingNote": "可選月繳或年繳並自動續訂。此次官方定價頁未呈現可核實的 Pro 美元月繳價格，故不以年費折算月費；Business 頁面顯示 US$250／人／年。稅項、地區與結帳價格可能不同。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0",
+      "billing": "免費方案，非限時試用",
+      "summary": "含 5GB 雲端空間及有限 AI 用量；部分高階 AI 功能不可用。"
+    },
+    {
+      "name": "Pro",
+      "price": "官方查核頁未顯示可讀的美元金額",
+      "billing": "可選月繳或年繳；實際價格依官網帳戶頁顯示",
+      "summary": "個人創作者方案，含進階素材、設計工具與更高 AI 存取；AI 額度依工具而異。"
+    },
+    {
+      "name": "Business",
+      "price": "US$250／人／年（官方頁面所示年費）",
+      "billing": "年繳標價；月繳金額未能從查核頁核實",
+      "summary": "面向個人、行銷者與成長型團隊，提供較高 AI 額度及品牌管理等商業功能。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Canva Plans and pricing 官方定價與方案比較",
+      "url": "https://www.canva.com/en/pricing/"
+    },
+    {
+      "title": "Canva Help Center：Get started with Canva AI",
+      "url": "https://www.canva.com/help/using-canva-ai/"
+    },
+    {
+      "title": "Canva Help Center：Understanding your AI usage",
+      "url": "https://www.canva.com/help/ai-access/"
+    },
+    {
+      "title": "Canva Help Center：Upgrading to Canva Pro or Canva Business",
+      "url": "https://www.canva.com/help/upgrade-to-canva-pro-or-business/"
+    },
+    {
+      "title": "Canva 官方下載頁：桌面與行動平台",
+      "url": "https://www.canva.com/download/"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查核 Canva 官方定價頁及 Help Center。定價會依地區與付款週期顯示；查核頁未呈現可核實的 Pro 美元月繳金額，因此不推算或以年費折算。Business 年價僅按官方頁面當時顯示，實際價格與香港可用性請以登入後官網及結帳頁為準。",
+  "filePath": "/home/ubuntu/aipicks/research/canva.json"
+}

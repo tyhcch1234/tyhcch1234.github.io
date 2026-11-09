@@ -1,0 +1,93 @@
+{
+  "id": "elevenlabs",
+  "name": "ElevenLabs",
+  "category": "audio",
+  "tagline": "生成、克隆並編輯自然語音",
+  "description": "ElevenLabs 提供 AI 文字轉語音、語音克隆與設計、配音翻譯及語音轉文字，也可創作音樂和音效。可用於旁白、有聲書、短片與多語內容；不同模型、語言和訂閱方案的功能與用量各有差異。",
+  "features": [
+    "文字轉語音可調整情緒、語氣與節奏，適合旁白、角色配音及有聲內容。",
+    "可由短音訊建立即時語音克隆，也可用文字提示設計聲音；專業語音克隆需較高方案。",
+    "提供配音翻譯、語音轉文字，以及包含音樂、音效與影音創作的工具。",
+    "提供 API 和即時低延遲語音模型，亦可建置語音或文字對話代理。"
+  ],
+  "bestFor": [
+    "製作影片旁白、播客、有聲書或遊戲角色語音的創作者。",
+    "需要把語音內容配音翻譯或轉錄的團隊。",
+    "需要整合文字轉語音、語音辨識或對話代理的開發者。"
+  ],
+  "pros": [
+    "語音生成提供情緒及表達控制，並涵蓋多種語言和語音克隆工作流程。",
+    "可在網頁、iOS 和 Android 使用，亦提供 API。"
+  ],
+  "limitations": [
+    "免費方案每月 10,000 credits 並限 3 個 Studio 專案；商用授權及克隆等功能需付費方案。",
+    "各模型支援語言與效果不同；官方指出部分語言的流暢度不一，粵語結果宜先試用確認。",
+    "用量以 credits 計算，不同功能消耗不同；超額用量或額外 credits 可能增加費用。"
+  ],
+  "platforms": [
+    "網頁（ElevenCreative／ElevenLabs 網站）",
+    "iOS 官方應用",
+    "Android 官方應用",
+    "開發者 API"
+  ],
+  "languages": "官方 Eleven v4 語音合成語言清單明確列有粵語（Cantonese）及普通話（Mandarin Chinese）；不同模型的語言清單不完全相同，且官方提醒部分語言的流暢度會有差異。",
+  "regionNote": "查核的官方產品、價格及說明頁未明確確認香港是否可使用所有服務或付款方式；香港可用性及個別功能請以官方註冊流程、應用商店和結帳頁為準。",
+  "officialUrl": "https://elevenlabs.io/",
+  "pricingUrl": "https://elevenlabs.io/pricing",
+  "hasFree": true,
+  "freeSummary": "常設 Free 方案：每月 10,000 credits，可用文字轉語音、語音轉文字、音效、語音設計、音樂等工具，Studio 最多 3 個專案；商業授權及部分克隆功能不包含在免費方案。",
+  "priceLabel": "US$6／月起",
+  "monthlyUSD": 6,
+  "billingNote": "美元月繳常規價；年繳頁面顯示的是年度付款的月均價，非月繳價。方案按月給 credits，實際可生成量隨功能及模型而異；價格不含稅，可能另購 credits。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0",
+      "billing": "免費；每月更新",
+      "summary": "每月 10,000 credits、最多 3 個 Studio 專案；包含多項創作工具，免費方案功能及用途有限。"
+    },
+    {
+      "name": "Starter",
+      "price": "US$6／月；年繳約 US$5／月均（US$60／年）",
+      "billing": "月繳或年繳；月繳為常規月價，年繳月均價按年度預付",
+      "summary": "每月 30,000 credits；加入商業授權、即時語音克隆、配音工作室等。"
+    },
+    {
+      "name": "Creator",
+      "price": "US$22／月；年繳約 US$18.33／月均（US$220／年）",
+      "billing": "月繳或年繳；月繳為常規月價，年繳月均價按年度預付",
+      "summary": "每月 121,000 credits，加入專業語音克隆及額外 credits 選項。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$99／月；年繳約 US$82.50／月均（US$990／年）",
+      "billing": "月繳或年繳；月繳為常規月價，年繳月均價按年度預付",
+      "summary": "每月 600,000 credits，並提供較高品質音訊輸出選項。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ElevenLabs 官方定價",
+      "url": "https://elevenlabs.io/pricing"
+    },
+    {
+      "title": "ElevenLabs 官方產品首頁",
+      "url": "https://elevenlabs.io/"
+    },
+    {
+      "title": "Eleven v4 官方說明與語言清單",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech/eleven-v4"
+    },
+    {
+      "title": "官方支援語言說明",
+      "url": "https://elevenlabs.io/docs/help-center/other/what-languages-do-you-support"
+    },
+    {
+      "title": "ElevenLabs 官方 iOS 與 Android 應用說明",
+      "url": "https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/what-is-the-elevenlabs-app"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查閱 ElevenLabs 官方定價、產品與說明頁。月繳頁面顯示 Starter US$6、Creator US$22；Pro US$99/月另由官方定價頁搜尋索引核對。年繳月均價採官方定價頁顯示值。官方頁面可能更新，價格、促銷與可用性應以購買當日頁面為準。",
+  "filePath": "/home/ubuntu/aipicks/research/elevenlabs.json"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "category": "chat",
+  "tagline": "能寫能分析的多用途 AI 助手",
+  "description": "Claude 是 Anthropic 的對話式 AI，可回答問題、整理文件、撰寫和分析內容，並支援網頁搜尋、語音、Artifacts、檔案處理與連接器。免費版用量有限；Claude Code、Research 等功能依付費方案提供。",
+  "features": [
+    "對話問答、網頁搜尋與語音模式；可用 Projects 整理工作內容。",
+    "建立 Artifacts，並可用程式碼執行建立或編輯檔案。",
+    "連接器可延伸 Claude 的工作流程；記憶功能可保留偏好與背景。",
+    "付費方案提供 Research 與 Claude Code 等功能；實際功能依方案而異。"
+  ],
+  "bestFor": [
+    "撰寫、改寫、摘要和分析文件或長篇資料。",
+    "需要用 AI 協助研究、整理工作流程或處理程式碼的人。",
+    "想在網頁、手機與桌面端接續使用同一 Claude 帳戶的人。"
+  ],
+  "pros": [
+    "可用中文對話，適合寫作、摘要與多步驟分析。",
+    "網頁、iOS、Android 和桌面應用整合搜尋、語音、Artifacts 等工具。"
+  ],
+  "limitations": [
+    "免費與付費方案都有使用上限；實際訊息量會受模型、對話長度、檔案及需求影響。",
+    "官方偏好介面語言清單未列中文；繁體中文介面及粵語語音支援未獲官方資料確認。",
+    "Pro 訂閱不包含 Claude Console API 用量；API 需另外付費或使用符合條件方案的月度 credits。"
+  ],
+  "platforms": [
+    "網頁（claude.ai）",
+    "iOS 應用程式",
+    "Android 應用程式",
+    "Claude Desktop（macOS、Windows）"
+  ],
+  "languages": "可用中文與 Claude 對話；官方表示可用任何語言交談。偏好介面語言清單目前未列中文，粵語語音支援未獲官方資料確認。",
+  "regionNote": "Anthropic 官方 Claude.ai 支援地區清單目前未列香港；不能據此確認香港可用，請在註冊前查閱官方最新支援地區與結帳頁。台灣有列在清單內。",
+  "officialUrl": "https://claude.ai",
+  "pricingUrl": "https://claude.com/pricing",
+  "hasFree": true,
+  "freeSummary": "有免費方案，含網頁／手機／桌面聊天、網頁搜尋、語音、Artifacts、連接器、記憶及最多 5 個 Projects；使用量受 5 小時 session 與每週等限制，訊息數依需求、模型、對話及檔案大小等變動。",
+  "priceLabel": "US$20 / 月起",
+  "monthlyUSD": 20,
+  "billingNote": "Pro 網頁月繳 US$20；年繳 US$200 預付（折合約 US$16.67/月）。Max、Ultra 僅月繳。標價未含適用稅項，地區與手機商店價格可能不同。Pro 不含 API；Max/Ultra 含月度 API credits，並非無限制 API。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0",
+      "billing": "免費方案",
+      "summary": "基本聊天與工具功能；用量有限，5 小時 session 及每週限制會依需求和使用情況而變。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$20/月；US$200/年（約 US$16.67/月）",
+      "billing": "月繳或年繳；年費預付",
+      "summary": "較免費版有更多 session 用量、高流量時優先使用及新功能；仍有 5 小時與每週用量上限。Claude Console API 另計。"
+    },
+    {
+      "name": "Max",
+      "price": "US$100/月",
+      "billing": "月繳",
+      "summary": "每 5 小時及每週用量為 Pro 的 5 倍，享新功能優先使用、Claude Code 與每月 US$100 API credits；仍受用量限制。"
+    },
+    {
+      "name": "Ultra",
+      "price": "US$200/月",
+      "billing": "月繳",
+      "summary": "每週用量為 Pro 的 10 倍；已驗證帳戶沒有 5 小時上限，並含每月 US$200 API credits；仍有每週及其他限制。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Claude Plans & Pricing",
+      "url": "https://claude.com/pricing"
+    },
+    {
+      "title": "What is the Pro plan?",
+      "url": "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
+    },
+    {
+      "title": "What is the Max plan?",
+      "url": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
+    },
+    {
+      "title": "What is the Ultra plan?",
+      "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan"
+    },
+    {
+      "title": "Get started with Claude",
+      "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude"
+    },
+    {
+      "title": "How to use Claude in your preferred language",
+      "url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
+    },
+    {
+      "title": "Where can I access Claude?",
+      "url": "https://support.claude.com/en/articles/8461763-where-can-i-access-claude"
+    },
+    {
+      "title": "Supported countries & regions",
+      "url": "https://www.anthropic.com/claude-ai-locations"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查閱 Anthropic 官方定價頁、Claude Help Center 與支援地區頁。定價頁標示價格和方案可能變動；地區及手機商店價格可能不同。香港未出現在目前官方 Claude.ai 支援清單，實際可用性應以官方最新清單與註冊／結帳流程為準。",
+  "filePath": "/home/ubuntu/aipicks/research/claude.json"
+}

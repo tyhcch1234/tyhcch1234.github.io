@@ -1,0 +1,95 @@
+{
+  "id": "runway",
+  "name": "Runway",
+  "category": "video",
+  "tagline": "用生成式 AI 創作與編輯影片",
+  "description": "Runway 是以網頁及手機應用程式提供的生成式影像創作平台，可用文字、圖片、影片或音訊生成及編輯影片，並整合影像、音訊與創作工作流程；可用模型、成品規格與生成量依方案和 credits 而異。",
+  "features": [
+    "以文字、圖片、影片或音訊生成影片；不同生成模型與工具的輸入方式各異。",
+    "以提示詞編輯或轉換影片，例如改變場景光線、風格，或新增及移除畫面元素。",
+    "整合影像、音訊、語音與音效等生成工具。",
+    "提供影片升頻、背景替換及角色表演等專用創作工具；部分功能依方案而定。",
+    "提供自訂節點式工作流程，可串接多個模型與生成步驟。"
+  ],
+  "bestFor": [
+    "需要快速製作概念片、短片或廣告素材的影像創作者。",
+    "想用文字提示改造既有影片，或把圖片延伸成動態內容的人。",
+    "需要把影片、影像及音訊生成工具集中在同一創作流程的團隊或個人。"
+  ],
+  "pros": [
+    "生成、編輯及升頻等多種影片工作集中於同一平台，並支援多種輸入媒介。",
+    "付費 Standard 以上方案提供免浮水印輸出；Pro 以上包含無限 4K 影片升頻。"
+  ],
+  "limitations": [
+    "生成按模型與工具消耗 credits；相同月額度可產出的影片長度會因模型而不同。Standard 與 Pro 未用完的月度 credits 月底到期。",
+    "免費方案只有一次性 125 credits，工具和模型選擇有限，生成影片帶 Runway 浮水印，且不能另購 credits。",
+    "介面目前只有美式英文；其他語言提示效果不一，官方沒有特別保證粵語生成品質。"
+  ],
+  "platforms": [
+    "網頁版（桌上型或筆記型電腦可使用完整體驗）",
+    "iOS App（iPhone；iOS App 不支援 iPad）",
+    "Android App"
+  ],
+  "languages": "介面目前僅美式英文，可用 Chrome 網頁翻譯協助閱讀。官方表示模型接受其他語言提示，但不同提示效果不一；可嘗試繁體中文或粵語，惟粵語效果未獲特別保證。",
+  "regionNote": "查閱的官方頁面未提供香港帳戶、付款或服務可用性的明確確認；請以 Runway 官網註冊與結帳結果，以及香港區 App Store／Google Play 上架狀態為準，不宜假定一定可用。",
+  "officialUrl": "https://runwayml.com/product",
+  "pricingUrl": "https://runwayml.com/pricing",
+  "hasFree": true,
+  "freeSummary": "免費方案為永久免費層級，含 125 一次性、不會重置且不會過期的 credits、5GB 素材儲存及有限生成工具；可用模型會變動，生成影片有浮水印，不能在免費方案購買額外 credits。",
+  "priceLabel": "US$15／月起（按月訂閱）",
+  "monthlyUSD": 15,
+  "billingNote": "官網同時列月繳價及年繳折合月均價；年繳 Standard／Pro／Max 分別為 US$12／28／76 每月（年繳），月繳則為 US$15／35／95。每月 credits 按模型用量扣除；付費方案可加購 credits。",
+  "plans": [
+    {
+      "name": "Standard",
+      "price": "US$15／月；年繳折合 US$12／月",
+      "billing": "月繳或年繳；年繳價格為月均折合價",
+      "summary": "每月 625 credits、最多 5 個並行生成、20GB 儲存、可用全部 AI 影片與影像模型，輸出免浮水印。未用 credits 月底到期。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$35／月；年繳折合 US$28／月",
+      "billing": "月繳或年繳；年繳價格為月均折合價",
+      "summary": "每月 2,250 credits、最多 15 個並行生成、100GB 儲存；含 1 個 Brand Kit、1 個自訂聲音複製、Runway MCP 及無限 4K 影片升頻。未用 credits 月底到期。"
+    },
+    {
+      "name": "Max",
+      "price": "US$95／月；年繳折合 US$76／月",
+      "billing": "月繳或年繳；年繳價格為月均折合價",
+      "summary": "每月 9,500 credits、最多 20 個並行生成、500GB 儲存；含新模型搶先體驗、專業級 HDR／ProRes／影格序列生成及無限 4K 升頻；未用 credits 最多結轉 1 個月。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Runway 官方產品頁",
+      "url": "https://runwayml.com/product"
+    },
+    {
+      "title": "Runway 官方定價頁",
+      "url": "https://runwayml.com/pricing"
+    },
+    {
+      "title": "Runway Help Center：Free plan details",
+      "url": "https://help.runwayml.com/hc/en-us/articles/50404627334547-Free-plan-details"
+    },
+    {
+      "title": "Runway Help Center：Which plan is right for me?",
+      "url": "https://help.runwayml.com/hc/en-us/articles/21664961171475-Which-plan-is-right-for-me"
+    },
+    {
+      "title": "Runway Help Center：Mobile device compatibility",
+      "url": "https://help.runwayml.com/hc/en-us/articles/15913840746003-Mobile-device-compatibility"
+    },
+    {
+      "title": "Runway Help Center：What languages can I prompt in?",
+      "url": "https://help.runwayml.com/hc/en-us/articles/24342920074131-What-languages-can-I-prompt-in"
+    },
+    {
+      "title": "Runway Help Center：Translating Runway into a different language",
+      "url": "https://help.runwayml.com/hc/en-us/articles/25563791920147-Translating-Runway-into-a-different-language"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 檢視 Runway 官方產品、定價與 Help Center 頁面。方案與功能以該日官網所列為準；官方未明確確認香港地區可用性，價格與方案可能變動。",
+  "filePath": "/home/ubuntu/aipicks/research/runway.json"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "deepseek",
+  "name": "DeepSeek",
+  "category": "chat",
+  "tagline": "免費對話、搜尋與深度思考",
+  "description": "DeepSeek 提供網頁與手機 AI 對話，可用搜尋模式查找網上資訊，也能切換 Deep-Think 深度思考；支援上傳檔案並擷取文字。聊天目前列為免費，API 則另按 token 用量計費。",
+  "features": [
+    "一般 AI 對話；官方服務條款說明可產生文字、表格與程式碼。",
+    "可啟用網頁搜尋與 Deep-Think 深度思考模式。",
+    "支援上傳檔案及文字擷取。",
+    "登入後可跨平台同步聊天紀錄。"
+  ],
+  "bestFor": [
+    "想免費使用 AI 對話、中文問答或協助撰寫文字與程式碼的人。",
+    "需要搜尋網頁、閱讀上傳文件或嘗試深度思考模式的人。",
+    "希望在網頁與手機 App 間延續聊天紀錄的個人使用者。"
+  ],
+  "pros": [
+    "官方 App 介紹列出搜尋、深度思考、檔案文字擷取及跨平台聊天同步。",
+    "官方 App 目前標示免費；消費者聊天與 API 計價分開。"
+  ],
+  "limitations": [
+    "官方提醒生成內容可能不準確；重要資訊應自行查證。",
+    "官方隱私政策稱服務資料可能在中國境內直接收集、處理及儲存；不宜輸入敏感個資。",
+    "官方條款不保證服務在特定司法管轄區可用，功能亦可能因地區而異。"
+  ],
+  "platforms": [
+    "網頁版（chat.deepseek.com）",
+    "iPhone／iPad（Apple App Store；需 iOS 15／iPadOS 15 或以上）",
+    "Android（Google Play 及官方 Android 下載渠道）"
+  ],
+  "languages": "Apple App Store 將繁體中文與簡體中文列為 App 支援語言。可用中文輸入對話；官方未提供粵語口語能力或品質保證，粵語效果宜自行確認。",
+  "regionNote": "官方條款明示不保證服務在任何特定司法管轄區可用，功能亦可能因地區而異；條款沒有明確列出香港是否可用。香港用戶請以官方網站及所在地 App Store／Google Play 當下可用性為準。",
+  "officialUrl": "https://chat.deepseek.com/",
+  "pricingUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "hasFree": true,
+  "freeSummary": "官方 App 介紹稱 100% 免費、無廣告及內購，Apple App Store 亦標示免費。官方未列明聊天每日配額或使用量上限，故不應視為無限額承諾；付費 API 是另一項按用量計費服務。",
+  "priceLabel": "聊天免費；API 按用量收費",
+  "monthlyUSD": null,
+  "billingNote": "網頁／App 聊天無月費；API 按 token 計費，價格依模型、快取及尖峰時段變動，非聊天訂閱價。",
+  "plans": [
+    {
+      "name": "DeepSeek 聊天網頁／App",
+      "price": "免費",
+      "billing": "免費使用；非 API 方案",
+      "summary": "官方 App 介紹稱無廣告、無內購，App Store 標示免費；官方未公布固定訊息配額或月度上限。"
+    },
+    {
+      "name": "DeepSeek-V4.1-Flash API",
+      "price": "按每百萬 token：輸入 US$0.15（尖峰 US$0.30）；輸出 US$0.60（尖峰 US$1.20）",
+      "billing": "按實際 token 用量；輸入快取命中另按 US$0.003／百萬（尖峰 US$0.006）計",
+      "summary": "非訂閱、非每位使用者月費；官方定價頁列離峰／尖峰費率，尖峰時段價格較高。"
+    },
+    {
+      "name": "DeepSeek-V4-Pro API",
+      "price": "按每百萬 token：輸入 US$0.66（尖峰 US$1.32）；輸出 US$1.98（尖峰 US$3.96）",
+      "billing": "按實際 token 用量；輸入快取命中另按 US$0.022／百萬（尖峰 US$0.044）計",
+      "summary": "非訂閱、非每位使用者月費；實際 API 費用視輸入／輸出 token、快取命中及尖峰時段而定。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Introducing DeepSeek App（官方 App 功能與免費說明）",
+      "url": "https://api-docs.deepseek.com/news/news250115/"
+    },
+    {
+      "title": "Models & Pricing（官方 API 定價）",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "title": "DeepSeek Terms of Use（官方服務條款；地區可用性）",
+      "url": "https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html"
+    },
+    {
+      "title": "DeepSeek Privacy Policy（官方隱私政策；資料收集及儲存）",
+      "url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html"
+    },
+    {
+      "title": "DeepSeek - AI Assistant（Apple App Store 官方 listing）",
+      "url": "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349"
+    },
+    {
+      "title": "DeepSeek - AI Assistant（Google Play 官方 listing）",
+      "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat"
+    },
+    {
+      "title": "DeepSeek Chat（官方聊天入口）",
+      "url": "https://chat.deepseek.com/"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 核對 DeepSeek 官方 App 介紹、API 定價頁、服務條款與隱私政策，以及 Apple App Store／Google Play listing。官方 API 價格頁未標示本次費率的生效日期，且明示價格可能調整；此處只記錄查核當日頁面所列數字，後續價格與香港可用性均應以官網及官方商店即時資訊為準。",
+  "filePath": "/home/ubuntu/aipicks/research/deepseek.json"
+}

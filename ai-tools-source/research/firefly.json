@@ -1,0 +1,91 @@
+{
+  "id": "firefly",
+  "name": "Adobe Firefly",
+  "category": "image",
+  "tagline": "Adobe 創作流程中的生成式 AI",
+  "description": "Adobe Firefly 是 Adobe 的生成式創作平台，可用文字提示生成及編修圖像，並整合影片、音訊和向量工具。它結合 Adobe 自家與合作夥伴模型，另有 Firefly Boards 協作構思，適合從靈感發想到素材製作。",
+  "features": [
+    "以文字提示生成圖像，並用生成式填色、擴張等工具編修現有影像。",
+    "在同一平台生成影片、音效、音樂與語音，也提供部分音訊／影片翻譯功能。",
+    "可在 Adobe 自家模型與 Google、OpenAI 等合作夥伴模型間選擇；各模型的點數消耗和使用條款可能不同。",
+    "Firefly Boards 提供視覺構思、整理與協作畫布，作品亦可接續到 Photoshop、Adobe Express 等 Adobe 工作流程。"
+  ],
+  "bestFor": [
+    "需要快速製作或修改行銷、社群及品牌視覺的設計師與內容創作者。",
+    "想在同一 Adobe 工作流程中構思圖像、短片或音訊素材的創作者。",
+    "已使用 Adobe 工具，並重視可商用 Adobe Firefly 模型及內容來源標示的團隊或個人。"
+  ],
+  "pros": [
+    "生成、編修與構思工具整合於 Firefly，亦可銜接 Adobe 創意應用。",
+    "Adobe 說明其 Firefly 自家模型以授權內容及公有領域內容訓練，並為部分輸出附上 Content Credentials。"
+  ],
+  "limitations": [
+    "免費使用有生成次數限制；付費方案點數按月配置，實際消耗依功能、模型及輸出而變，較高階生成可能很快用完點數。",
+    "Adobe 表示生成結果會受提示詞影響；Beta 功能的商用條件可能不同，使用合作夥伴模型時應另查該模型的條款。",
+    "Adobe 官方列明中國、俄羅斯、白俄羅斯等地區不可使用；香港是否可訂閱及付款，仍應以當地 Adobe 頁面和帳戶結帳資訊為準。"
+  ],
+  "platforms": [
+    "桌面瀏覽器：Firefly 網頁版；官方列出 Windows、macOS、ChromeOS 及 Chrome、Edge、Firefox 等瀏覽器需求。",
+    "手機瀏覽器：iOS、Android 的行動網頁版。",
+    "原生行動 App：iOS 與 Android。",
+    "可將素材接續至 Photoshop、Illustrator、Premiere、Lightroom、Adobe Express 等 Adobe 應用；這些整合不代表 Firefly 全部功能皆有桌面原生版。"
+  ],
+  "languages": "Adobe 技術需求頁列出繁體中文提示支援；頁面介面語言清單與提示語言能力並不完全相同。沒有找到官方資料確認 Firefly 提供粵語語音輸入或粵語介面，宜以繁體中文文字提示描述需求。",
+  "regionNote": "Adobe Firefly FAQ 明列中國（並列俄羅斯、白俄羅斯等）不可用，沒有把香港單獨列為禁用地區；但這不足以保證香港每種方案、功能或付款方式均可用。香港用戶請以 Adobe 香港官方頁面、帳戶登入及結帳時顯示的供應情況為準。",
+  "officialUrl": "https://www.adobe.com/products/firefly.html",
+  "pricingUrl": "https://www.adobe.com/products/firefly/plans.html",
+  "hasFree": true,
+  "freeSummary": "Adobe 提供免費方案，可試用 Firefly，但生成次數有限，並非永久不限量。Adobe HelpX 說明免費方案的生成點數會在首次使用 Firefly 功能時發放，並於一個月後到期；官方產品頁沒有提供可穩定核對的固定每日數字，因此不列具體上限。",
+  "priceLabel": "US$9.99／月起",
+  "monthlyUSD": 9.99,
+  "billingNote": "美元月付標價，最低為個人 Firefly Standard US$9.99／月；非免費試用價，也不是年繳折算價。已核對頁面未呈現可確認的年繳月均價，故不列年繳數字。個人方案依訂閱提供每月點數（Standard 2,000、Pro 4,000、Premium 50,000）；點數用量依功能／模型而異，方案、促銷、地區稅費及團隊席位價格可能不同，結帳前請核對 Adobe 當地頁面。",
+  "plans": [
+    {
+      "name": "Firefly Standard",
+      "price": "US$9.99／月",
+      "billing": "月付；美元公開標價，未核實年繳折算價",
+      "summary": "每月 2,000 點；包含網頁與行動版 Firefly、標準圖像功能及部分生成式功能。"
+    },
+    {
+      "name": "Firefly Pro",
+      "price": "US$19.99／月",
+      "billing": "月付；美元公開標價，未核實年繳折算價",
+      "summary": "每月 4,000 點，並含 Adobe Express Premium、Photoshop 網頁與行動版完整使用權等方案權益。"
+    },
+    {
+      "name": "Firefly Premium",
+      "price": "US$199.99／月",
+      "billing": "月付；美元公開標價，未核實年繳折算價",
+      "summary": "每月 50,000 點，並含 Firefly Video Model 影片生成功能的不限量存取；影片仍受產品功能與公平使用條款限制。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Adobe Firefly 產品與功能介紹",
+      "url": "https://www.adobe.com/products/firefly.html"
+    },
+    {
+      "title": "Adobe Firefly 官方方案比較",
+      "url": "https://www.adobe.com/products/firefly/plans.html"
+    },
+    {
+      "title": "Adobe Firefly 技術需求與支援語言",
+      "url": "https://helpx.adobe.com/firefly/web/get-started/learn-the-basics/technical-requirements.html"
+    },
+    {
+      "title": "Adobe Firefly FAQ：地區供應、使用與商用說明",
+      "url": "https://helpx.adobe.com/firefly/web/get-started/learn-the-basics/adobe-firefly-faq.html"
+    },
+    {
+      "title": "Adobe Generative Credits FAQ",
+      "url": "https://helpx.adobe.com/creative-cloud/apps/generative-ai/generative-credits-faq.html"
+    },
+    {
+      "title": "Adobe 官方 Firefly 新方案介紹",
+      "url": "https://blog.adobe.com/en/publish/2025/10/28/explore-new-adobe-firefly-your-all-in-one-home-ai-powered-creativity"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "依參考日期 2026-11-09 查閱 Adobe 官方產品頁、方案比較、HelpX 說明及 Adobe 官方新聞稿。美元月付價格以 Adobe 公開方案資訊為準；方案頁動態顯示的價格／促銷可能隨地區及時間改變，且本次官方頁面未能核實年繳折算價、固定免費每日額度或香港各方案的結帳可用性。",
+  "filePath": "/home/ubuntu/aipicks/research/firefly.json"
+}

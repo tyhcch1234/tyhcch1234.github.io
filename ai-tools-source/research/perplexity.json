@@ -1,0 +1,97 @@
+{
+  "id": "perplexity",
+  "name": "Perplexity",
+  "category": "research",
+  "tagline": "附來源引用的 AI 搜尋研究",
+  "description": "以網路搜尋與來源引用整理答案，並可用多種 AI 模型進行深入研究；付費方案加入檔案分析、圖片與影片生成，以及報告和應用建立，適合查證資料與彙整複雜主題。",
+  "features": [
+    "搜尋網頁並以引用來源整理答案，方便回查資料。",
+    "Research 模式可多步分析複雜問題並產出較完整的研究報告。",
+    "Pro 以上方案可選用多種進階 AI 模型；可用模型及額度依方案而異。",
+    "付費方案提供檔案上傳與分析，並可建立報告、試算表、簡報或簡單應用；另有圖像及有限影片生成。"
+  ],
+  "bestFor": [
+    "需要附來源的網路資料查找、交叉核對與研究整理。",
+    "要比較多個主題或深入探索複雜問題並產出報告。",
+    "需要上傳檔案，結合文件與網路來源進行分析的個人使用者。"
+  ],
+  "pros": [
+    "答案附引用來源，較容易檢視依據並延伸閱讀。",
+    "搜尋、深入研究、多模型選擇及檔案分析集中在同一服務。"
+  ],
+  "limitations": [
+    "免費版每日僅有 3 次 Pro Search、每月 1 次 Research，且進階模型與圖像生成不開放；檔案上傳亦有限。",
+    "付費方案的搜尋、研究、檔案及生成用量仍受方案額度或使用上限約束；尖峰期間進階模型存取也可能受限。",
+    "官方提醒答案可能不準確；引用來源仍需自行核實，不能把引用存在視為內容必然正確。"
+  ],
+  "platforms": [
+    "網頁版",
+    "iOS／iPadOS App",
+    "Android App",
+    "macOS 桌面 App",
+    "Windows 桌面 App",
+    "Linux 上的 Portable Computer（限官方支援的特定硬體與部署方式，非一般桌面版功能完整度保證）"
+  ],
+  "languages": "官方查核頁未明確保證繁體中文或粵語的專門支援與輸出品質；如需繁中或粵語回覆，可在提示中指定，但應自行核對內容，尤其不應假設粵語語氣受到專門支援。",
+  "regionNote": "本次查核的官方資料未提供可確認香港消費者訂閱服務可用性的明確清單。香港用戶應以 Perplexity 官網實際可選方案、付款方式及所在地區條款為準；目前不據此宣稱香港一定可用或不可用。",
+  "officialUrl": "https://www.perplexity.ai/",
+  "pricingUrl": "https://www.perplexity.ai/hub/pricing",
+  "hasFree": true,
+  "freeSummary": "Standard 免費版：一般基本搜尋近乎不限量；每日 3 次 Pro Search、每月 1 次 Research；模型由系統選擇，檔案上傳有限，沒有進階模型或圖像生成。",
+  "priceLabel": "US$20 / 月起",
+  "monthlyUSD": 20,
+  "billingNote": "美元個人方案：Pro 月繳 US$20，或年繳 US$200（約 US$17/月的年付折算價）；Max 月繳 US$200，或年繳 US$2,000（約 US$167/月的年付折算價）。API 另按用量／購買額度計費，不含在訂閱內。",
+  "plans": [
+    {
+      "name": "Standard（免費）",
+      "price": "US$0",
+      "billing": "免費，不需付費訂閱",
+      "summary": "基本搜尋近乎不限量；每日 3 次 Pro Search、每月 1 次 Research；有限檔案上傳，不能手動選進階模型或使用圖像生成。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$20/月；US$200/年（年付約 US$17/月）",
+      "billing": "個人訂閱；月繳或年繳。年付折算價不是月繳價格。",
+      "summary": "較多 Pro Search、進階模型、Research、較高檔案上傳量、圖像生成及有限影片生成；仍受方案使用額度限制。"
+    },
+    {
+      "name": "Max",
+      "price": "US$200/月；US$2,000/年（年付約 US$167/月）",
+      "billing": "個人訂閱；月繳或年繳。年繳僅官網網頁版提供。",
+      "summary": "包含 Pro 功能並提供最高層級模型存取、較高研究與檔案／應用建立額度，以及新功能優先體驗；仍有方案限額。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Perplexity 訂閱方案比較與免費版限制（官方說明中心）",
+      "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you"
+    },
+    {
+      "title": "Perplexity 官方定價頁",
+      "url": "https://www.perplexity.ai/hub/pricing"
+    },
+    {
+      "title": "Perplexity Pro 功能與搜尋模式（官方說明中心）",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro"
+    },
+    {
+      "title": "Perplexity Max 功能與月繳、年繳價格（官方說明中心）",
+      "url": "https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max"
+    },
+    {
+      "title": "Perplexity Personal Computer 桌面平台與系統需求（官方說明中心）",
+      "url": "https://www.perplexity.ai/help-center/en/articles/14659663-what-is-personal-computer"
+    },
+    {
+      "title": "Perplexity iOS 語音助理使用說明（官方說明中心）",
+      "url": "https://www.perplexity.ai/help-center/en/articles/11132456-how-to-use-the-perplexity-voice-assistant-for-ios"
+    },
+    {
+      "title": "Perplexity Pro／Max／Enterprise 月繳與年繳起價（官方 Slack Connector 說明）",
+      "url": "https://www.perplexity.ai/help-center/en/articles/12167980-using-the-connector-for-slack"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查閱 Perplexity 官方定價頁及說明中心方案、產品與平台資料。月付／年付金額以當日可見的官方說明為準；價格、額度和平台可能調整。官方查核頁未能確認香港服務可用性，也未提供繁體中文或粵語的專門支援保證。",
+  "filePath": "/home/ubuntu/aipicks/research/perplexity.json"
+}

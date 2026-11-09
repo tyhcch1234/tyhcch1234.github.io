@@ -1,0 +1,92 @@
+{
+  "id": "copilot",
+  "name": "GitHub Copilot",
+  "category": "code",
+  "tagline": "IDE 內建的 AI 程式開發助手",
+  "description": "GitHub Copilot 整合於 GitHub 與多款 IDE，協助補全程式碼、對話解題、代理執行任務及審查變更。免費版每月限量使用；付費方案按人計費，聊天與代理工作會消耗依模型及任務而異的 AI 點數。",
+  "features": [
+    "在編輯器中提供程式碼補全、下一步編輯建議及對話式程式協助。",
+    "可在 IDE、終端 CLI 及 GitHub 工作流程中使用代理執行開發任務。",
+    "可從 issue 指派工作，由 Copilot 研究、規劃並撰寫程式碼或建立 pull request。",
+    "支援審查本機變更與 pull request，並可選擇模型或讓 Copilot 配對模型。"
+  ],
+  "bestFor": [
+    "希望在 VS Code、Visual Studio 或其他支援 IDE 中加快日常編碼的開發者。",
+    "想把 issue、程式碼撰寫、變更審查及 pull request 串入 GitHub 工作流程的個人或團隊。"
+  ],
+  "pros": [
+    "涵蓋多款主流 IDE、終端及 GitHub 網頁與行動端，可在既有開發流程中使用。",
+    "除補全與聊天外，也支援代理任務、程式碼審查及多種模型選擇。"
+  ],
+  "limitations": [
+    "GitHub 指出自然語言提示若非英文，服務品質可能較低；繁體中文可用程度未有官方保證。",
+    "生成內容可能含錯誤或不安全程式碼，仍須自行測試、審查並使用安全檢查工具。",
+    "免費版每月限 2,000 次程式碼補全；付費方案的聊天與代理工作會消耗月度 AI 點數，實際消耗依模型及任務複雜度而異。"
+  ],
+  "platforms": [
+    "GitHub 網站與 GitHub Mobile",
+    "Visual Studio Code",
+    "Visual Studio",
+    "JetBrains IDEs",
+    "Xcode",
+    "Vim／Neovim",
+    "Eclipse",
+    "Zed",
+    "終端／Copilot CLI",
+    "GitHub Copilot 桌面應用程式",
+    "Slack",
+    "Microsoft Teams"
+  ],
+  "languages": "官方稱 Copilot 受訓於公開程式碼庫出現的各種程式語言；自然語言提示亦可使用，但 GitHub 提醒非英文提示可能令服務品質較低，未找到繁體中文品質保證。",
+  "regionNote": "GitHub 官方貿易管制頁稱 Copilot 可出口至大多數目的地，並列明若干禁運或受限地區；香港不在該頁列出的 Copilot 禁售目的地中。這不等同個別帳戶、付款方式或服務可用性的保證，使用前宜查閱 GitHub 最新政策及結帳頁。",
+  "officialUrl": "https://github.com/features/copilot",
+  "pricingUrl": "https://github.com/features/copilot/plans",
+  "hasFree": true,
+  "freeSummary": "永久 Free 方案：每月 2,000 次程式碼補全、入門模型使用權、Copilot CLI 及社群支援；官方頁稱不需信用卡。這是免費方案而非試用期。",
+  "priceLabel": "US$10 / 月起",
+  "monthlyUSD": 10,
+  "billingNote": "價格頁列示每位使用者的月費；本次頁面內容未確認年繳等值。AI 點數每點 US$0.01；聊天與代理用量按模型及任務消耗，超出月度額度可能需另設付費預算。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0",
+      "billing": "免費方案；每月額度重設",
+      "summary": "每月 2,000 次補全及入門模型使用權，另含 Copilot CLI。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$10／使用者／月",
+      "billing": "按月計費；未核實年繳等值",
+      "summary": "個人日常編碼方案，含 Free 功能並提供代理編碼能力。"
+    },
+    {
+      "name": "Pro+",
+      "price": "US$39／使用者／月",
+      "billing": "按月計費；未核實年繳等值",
+      "summary": "含 Pro 功能、進階模型（包括 Opus）及頁面所列每月總額 US$70 的點數。"
+    },
+    {
+      "name": "Max",
+      "price": "US$100／使用者／月",
+      "billing": "按月計費；未核實年繳等值",
+      "summary": "面向高用量代理工作流程，含較高用量、優先使用新模型與功能，以及頁面所列每月總額 US$200 的點數。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Copilot 方案與定價",
+      "url": "https://github.com/features/copilot/plans"
+    },
+    {
+      "title": "GitHub Copilot 產品與功能",
+      "url": "https://github.com/features/copilot"
+    },
+    {
+      "title": "GitHub 與貿易管制及 Copilot 地區政策",
+      "url": "https://docs.github.com/en/site-policy/other-site-policies/github-and-trade-controls"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查閱 GitHub 官方產品、方案定價及貿易管制頁面。官方頁未標明本次所見定價的生效日期；月費與方案內容按查閱當日頁面記錄，可能變動。年繳價格未由所查頁面確認。",
+  "filePath": "/home/ubuntu/aipicks/research/copilot.json"
+}

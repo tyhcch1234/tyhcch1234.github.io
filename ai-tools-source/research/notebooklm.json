@@ -1,0 +1,114 @@
+{
+  "id": "notebooklm",
+  "name": "NotebookLM",
+  "category": "research",
+  "tagline": "把資料變成可查證的研究筆記",
+  "description": "匯入文件、網頁或 YouTube 影片後，NotebookLM 會根據你的來源回答並附引用，也能整理摘要、生成音訊概覽、報告和學習素材；適合將資料轉成可追溯的研究與複習工作區。",
+  "features": [
+    "匯入 PDF、Google 文件與簡報、Office 文件、網頁、公開 YouTube 影片、音訊及文字等來源；部分來源可從 Google Drive 同步。",
+    "依筆記本內選定來源回答問題、整理摘要，回覆可附來源引用，方便回查原文。",
+    "生成 Audio Overview 音訊概覽，並可製作影片概覽、心智圖、簡報、報告、資訊圖、測驗與閃卡等素材。",
+    "可從網頁或 Drive 搜尋來源，亦可在筆記本內使用 Deep Research 蒐集及整理研究材料。"
+  ],
+  "bestFor": [
+    "整理論文、報告或多份文件，並追溯回答所依據的來源。",
+    "把課程資料轉成摘要、音訊概覽、閃卡或測驗來複習。",
+    "從大量文件建立研究簡報、報告或知識問答工作區。"
+  ],
+  "pros": [
+    "以使用者匯入的資料為依據並提供引用，較容易核對回答來源。",
+    "支援多種文件及網頁來源，並能把同一批材料轉為多種文字、音訊和學習成果。"
+  ],
+  "limitations": [
+    "AI 生成內容仍可能不準確；音訊概覽也不保證完整或客觀，重要資訊應回看原始來源。",
+    "免費版每本最多 50 個來源，生成與聊天另有標準用量限制；各方案配額可能調整。",
+    "網頁匯入主要擷取頁面文字，付費牆頁面不支援；手機應用程式部分功能可能有限或尚在逐步推出。"
+  ],
+  "platforms": [
+    "網頁瀏覽器",
+    "Android 應用程式",
+    "iPhone／iPad 應用程式"
+  ],
+  "languages": "瀏覽器版可選繁體中文作為生成輸出語言；官方亦列出繁體粵語音訊匯入支援。不同功能的語言支援可能不同，官方資料未確認 Audio Overview 會以粵語生成或朗讀。",
+  "regionNote": "Google 說明 NotebookLM 瀏覽器版及 Google AI 訂閱方案只在各自支援的國家／地區提供；本次查閱的官方頁面未能確認香港的訂閱資格或本地價格。香港用戶請登入 NotebookLM／Google One 查看帳戶所在區域的實際可用性與收費；手機版亦可能分區逐步推出。",
+  "officialUrl": "https://notebook.google/",
+  "pricingUrl": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US",
+  "hasFree": true,
+  "freeSummary": "可用 Google 帳戶免費註冊，屬免費方案而非試用；標準版每人最多 100 本筆記、每本最多 50 個來源，生成與聊天另有標準用量限制，配額可能調整。",
+  "priceLabel": "US$9.99 / 月起（美國；Google AI Plus，包含 NotebookLM 權益）",
+  "monthlyUSD": 9.99,
+  "billingNote": "NotebookLM 的加量權益包含在 Google AI 訂閱中，並非獨立 NotebookLM 訂閱；Google 官方方案頁目前使用「Gemini Notebook」名稱，此處保留 NotebookLM 供熟悉產品的讀者辨識。美國月繳標價為 Google AI Plus US$9.99／月、Pro US$19.99／月；Ultra 5x 為 US$99.99／月、Ultra 20x 為 US$199.99／月。年繳等效價未核實；各地實價與資格以登入後官方結帳頁為準。",
+  "plans": [
+    {
+      "name": "標準版（免費）",
+      "price": "US$0",
+      "billing": "免費使用；非限時試用",
+      "summary": "每人最多 100 本筆記、每本最多 50 個來源；採標準聊天與生成配額。"
+    },
+    {
+      "name": "Google AI Plus",
+      "price": "US$9.99／月",
+      "billing": "美國月繳標價；年繳等效價未核實",
+      "summary": "附 NotebookLM 加量權益；每人最多 200 本筆記、每本最多 100 個來源。"
+    },
+    {
+      "name": "Google AI Pro",
+      "price": "US$19.99／月",
+      "billing": "美國月繳標價；年繳等效價未核實",
+      "summary": "NotebookLM 擴充使用額度；每人最多 500 本筆記、每本最多 300 個來源。"
+    },
+    {
+      "name": "Google AI Ultra 5x（20 TB）",
+      "price": "US$99.99／月",
+      "billing": "美國月繳標價；年繳等效價未核實",
+      "summary": "包含 Gemini Notebook（官方頁目前稱 Gemini Notebook）加量權益；Ultra 5x 層級，每人最多 600 個來源／本。"
+    },
+    {
+      "name": "Google AI Ultra 20x（30 TB）",
+      "price": "US$199.99／月",
+      "billing": "美國月繳標價；年繳等效價未核實",
+      "summary": "包含 Gemini Notebook（官方頁目前稱 Gemini Notebook）加量權益；Ultra 20x 層級，每人最多 600 個來源／本。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gemini Notebook 官方方案頁",
+      "url": "https://notebook.google/plans"
+    },
+    {
+      "title": "Google AI 方案與美國月費（官方）",
+      "url": "https://one.google.com/about/google-ai-plans/?hl=en-US&gl=US"
+    },
+    {
+      "title": "NotebookLM 方案、用量與地區說明",
+      "url": "https://support.google.com/gemininotebook/answer/16213268?hl=en"
+    },
+    {
+      "title": "NotebookLM 支援來源類型與限制",
+      "url": "https://support.google.com/notebooklm/answer/16215270?hl=en"
+    },
+    {
+      "title": "NotebookLM 輸出語言清單",
+      "url": "https://support.google.com/notebooklm/answer/16261963?hl=en"
+    },
+    {
+      "title": "Google AI Plus 官方美國月費公告",
+      "url": "https://blog.google/products-and-platforms/products/google-one/google-ai-plus-availability/"
+    },
+    {
+      "title": "Google Play 上的 Gemini Notebook 官方 Android 應用",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.labs.language.tailwind"
+    },
+    {
+      "title": "Apple App Store 上的 Gemini Notebook 官方 iOS 應用",
+      "url": "https://apps.apple.com/us/app/gemini-notebook/id6737527615"
+    },
+    {
+      "title": "Google AI 訂閱及 Gemini Notebook 權益（官方）",
+      "url": "https://gemini.google/subscriptions/"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "2026-11-09 核對 Google 官方美國 Google AI 方案頁、Gemini 訂閱頁及 NotebookLM／Gemini Notebook 方案頁。美國月繳價為 Plus US$9.99、Pro US$19.99、Ultra 5x US$99.99、Ultra 20x US$199.99；NotebookLM 的加量功能隨 Google AI 方案提供，非獨立訂閱。官方方案頁目前稱 Gemini Notebook，保留 NotebookLM 作為熟悉產品名。價格和地區供應可能變動，年繳等效價未核實。",
+  "filePath": "/home/ubuntu/aipicks/research/notebooklm.json"
+}

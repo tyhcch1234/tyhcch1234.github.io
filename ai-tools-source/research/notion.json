@@ -1,0 +1,106 @@
+{
+  "id": "notion",
+  "name": "Notion AI",
+  "category": "office",
+  "tagline": "融入工作空間的 AI 助理",
+  "description": "Notion AI 直接整合在 Notion 工作空間，可依照你有權存取的頁面與已連結應用程式回答問題、搜尋資料、撰寫和翻譯內容，也能整理會議紀錄及建立資料庫，適合把文件、專案與團隊知識集中管理。",
+  "features": [
+    "Notion Agent 可依工作區與連結應用程式的脈絡回答問題，並建立或編輯頁面和資料庫。",
+    "Enterprise Search 與連接器可跨 Notion、Slack、Google Drive 等工作內容搜尋；Research Mode 可整理較深入的研究報告。",
+    "可在頁面內草擬、改寫、摘要與翻譯，也能自動填寫資料庫欄位並協助撰寫公式。",
+    "AI Meeting Notes 可轉錄會議、整理摘要、決策和待辦事項。",
+    "可在 Notion AI 對話中分析上傳檔案，並產生可下載的文件、試算表或簡報等成果。"
+  ],
+  "bestFor": [
+    "已用 Notion 管理文件、專案或內部知識，想在原工作流程中搜尋和整理資訊的個人或團隊。",
+    "需要跨工作區或已連結的 Slack、Google Drive 等來源查找答案的團隊。",
+    "需要會議摘要、文字潤飾、翻譯或快速建立資料庫的工作者。"
+  ],
+  "pros": [
+    "AI 與 Notion 頁面、資料庫及權限脈絡整合，減少在多個工具間切換。",
+    "同一工作區涵蓋搜尋、寫作、翻譯、會議摘要和資料整理。"
+  ],
+  "limitations": [
+    "完整 Notion AI 主要隨 Business 或 Enterprise 提供；Free 和 Plus 只有有限免費 AI 回應可試用，並非永久完整免費方案。",
+    "Business/Enterprise 的每人月度 Standard、Select 額度有上限且不結轉；用盡後相關功能會暫停，除非管理員另開付費 Notion credits。",
+    "官方目前沒有 Linux 桌面應用程式；瀏覽器版會議轉錄只收麥克風音訊，視訊會議的系統音訊以桌面程式較適合。"
+  ],
+  "platforms": [
+    "網頁瀏覽器",
+    "macOS 桌面應用程式",
+    "Windows 桌面應用程式",
+    "iOS 與 Android 行動應用程式"
+  ],
+  "languages": "Notion 介面支援繁體中文；AI 可將頁面翻譯成所需語言。官方會議筆記支援中文，但未查到對廣東話辨識或生成品質的特別保證，不能視為有專門粵語支援。",
+  "regionNote": "官方定價說明指出方案可用性可能因情況而異；查到的官方資料未能確認香港對 Notion AI 各方案或付款方式的具體限制。香港用戶請以 Notion 官網方案頁及登入後結帳頁顯示的可用方案、幣別和付款條件為準。",
+  "officialUrl": "https://www.notion.com/product/ai",
+  "pricingUrl": "https://www.notion.com/pricing",
+  "hasFree": false,
+  "freeSummary": "Notion 平台有永久 Free 方案，但這不代表完整 Notion AI 免費：官方列出 Free/Plus 僅能試用 AI 功能並獲有限免費回應；完整 AI 功能屬 Business/Enterprise 方案。",
+  "priceLabel": "收費以官網為準",
+  "monthlyUSD": null,
+  "billingNote": "官方定價頁以美元顯示年繳折合價：Plus US$10、Business US$20／成員／月；頁面切換至月繳後的價格未能核實，故不填月費。Business/Enterprise 含每人每月 1,500 Standard 及 500 Select credits（額度依方案與購買安排可能不同）；額外 Notion credits 另計，官方價格頁列出每 1,000 月度 credits US$10。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0／成員／月",
+      "billing": "免費方案；Notion AI 僅限有限免費回應試用",
+      "summary": "個人可使用 Notion 基本工作空間功能；AI 試用回應有上限，不是完整或永久免費 AI。"
+    },
+    {
+      "name": "Plus",
+      "price": "US$10／成員／月（年繳折合）",
+      "billing": "官方定價頁年繳選項顯示；月繳實價以官網結帳為準",
+      "summary": "個人與小型團隊的付費工作空間；AI 仍為有限試用回應，不包含 Business/Enterprise 的完整 AI 權益。"
+    },
+    {
+      "name": "Business",
+      "price": "US$20／成員／月（年繳折合）",
+      "billing": "官方定價頁年繳選項顯示；月繳實價以官網結帳為準",
+      "summary": "包含 Notion AI、Notion Agent、AI Meeting Notes 與 Enterprise Search；每人每月含 Standard/Select credits，超額使用須管理員啟用付費 Notion credits。"
+    },
+    {
+      "name": "Enterprise",
+      "price": "客製報價",
+      "billing": "聯絡 Notion 銷售洽詢",
+      "summary": "包含 Business 功能及企業級安全、管理和資料保留控制；AI credits 額度依方案與購買安排確認。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Notion 官方定價頁",
+      "url": "https://www.notion.com/pricing"
+    },
+    {
+      "title": "Notion AI 官方 FAQ",
+      "url": "https://www.notion.com/help/notion-ai-faqs"
+    },
+    {
+      "title": "Notion 官方 Business 與 Enterprise 方案指南",
+      "url": "https://www.notion.com/help/guides/is-notions-business-or-enterprise-plan-right-for-you"
+    },
+    {
+      "title": "Notion 官方 AI credits 說明",
+      "url": "https://www.notion.com/help/manage-your-ai-credits"
+    },
+    {
+      "title": "Notion 官方介面語言說明",
+      "url": "https://www.notion.com/help/change-your-language"
+    },
+    {
+      "title": "Notion 官方桌面應用程式說明",
+      "url": "https://www.notion.com/help/notion-for-desktop"
+    },
+    {
+      "title": "Notion 官方 AI Meeting Notes 說明",
+      "url": "https://www.notion.com/help/ai-meeting-notes"
+    },
+    {
+      "title": "Notion 官方 AI 功能總覽",
+      "url": "https://www.notion.com/help/guides/everything-you-can-do-with-notion-ai"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "已於 2026-11-09 查核 Notion 官方產品、說明及定價頁。定價頁在當日可見美元年繳折合價，且列明 Free/Plus 的 AI 試用與 Business/Enterprise AI credits；官方頁面文字抽取無法確認月繳切換後的價格，因此未推估或填入月費。方案、額度及價格可能變動，香港地區適用性亦應以登入後官網資訊確認。",
+  "filePath": "/home/ubuntu/aipicks/research/notion.json"
+}

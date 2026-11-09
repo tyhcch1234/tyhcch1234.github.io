@@ -1,0 +1,87 @@
+{
+  "id": "gamma",
+  "name": "Gamma",
+  "category": "slides",
+  "tagline": "一句提示，生成可分享簡報",
+  "description": "Gamma 是 AI 視覺敘事工具，可把提示或大綱轉成簡報、文件、網站與社群圖文，並支援對話式編修、匯入既有檔案及多格式匯出，適合快速整理內容並製作可分享成果。",
+  "features": [
+    "輸入提示後可先整理大綱，再生成視覺內容；可在編輯器旁以對話方式要求修改。",
+    "可製作簡報、文件、網站、社群圖文與圖片，不限於投影片。",
+    "可匯入 PDF 與 PowerPoint，並匯出 PDF、PPTX、PNG 或 Google Slides。",
+    "提供智慧版面與自由編輯，可調整風格、品牌樣式及內容布局。",
+    "官方列有 Slack、Notion、Dropbox 等連接器，並稱支援 25 種以上工具整合。"
+  ],
+  "bestFor": [
+    "需要由提示或大綱快速起草簡報、提案或教學內容的人。",
+    "想將同一內容整理成文件、網站或社群圖文的個人與小型團隊。",
+    "需要匯入既有簡報或 PDF，再以 AI 協助改寫和排版的人。"
+  ],
+  "pros": [
+    "涵蓋簡報以外的多種視覺內容形式，並可匯出到常用簡報及文件格式。",
+    "AI 對話修改與手動拖放、自由編排可在同一工作流程中切換。"
+  ],
+  "limitations": [
+    "AI 功能以點數計量；消耗量會隨功能、模型及生成長度或複雜度改變。",
+    "免費方案的 400 點不會定期補充；生成每次提示最多 10 張投影片。",
+    "按席收費且價格未含可能適用的稅費；官網月付與年付資料的 Plus 點數數字不一致，購買前應核對結帳頁。"
+  ],
+  "platforms": [
+    "網頁版（瀏覽器）",
+    "iOS App",
+    "Android App"
+  ],
+  "languages": "官方說明稱可用系統支援的語言輸入提示並生成該語言內容，因此可用中文提示；但該說明未列出完整介面語言名單，未能確認繁體中文介面是否正式支援。",
+  "regionNote": "官方定價頁只說稅費依所在地而異，未列出香港可用地區清單；香港註冊及付款可用性請以官網帳號／結帳頁或官方客服確認。",
+  "officialUrl": "https://gamma.app/",
+  "pricingUrl": "https://gamma.app/pricing",
+  "hasFree": true,
+  "freeSummary": "有無時限的免費方案，並非限時試用：新帳戶獲 400 點，AI 點數不定期補充；每次提示最多生成 10 張投影片，可匯入 PDF／PPTX，並匯出 PDF、PPTX、PNG 或 Google Slides。免費用戶可透過推薦好友取得額外點數。",
+  "priceLabel": "US$12 / 月起（按席）",
+  "monthlyUSD": 12,
+  "billingNote": "月付按席收費；年繳頁顯示 Plus US$9、Pro US$18、Ultra US$90／席／月的折算價，分別預付 US$108、216、1,080／年。另可能加所在地稅費。Plus 點數在月付價格卡顯示 1,500 點／月，年付價格頁及說明中心則見 1,000 點／月；以購買時官網顯示為準。AI 消耗按功能、模型及生成長度變動。",
+  "plans": [
+    {
+      "name": "Plus",
+      "price": "US$12／席／月；年繳折算 US$9／席／月（預付 US$108／年）",
+      "billing": "月繳或年繳；年繳價格為全年預付的月均折算價。",
+      "summary": "移除 Gamma 品牌標示、每次提示最多生成 100 張投影片並提供進階圖片模型。官網不同計費視圖對 Plus 月點數分別列 1,500 與 1,000，購買前需核對。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$25／席／月；年繳折算 US$18／席／月（預付 US$216／年）",
+      "billing": "月繳或年繳；年繳價格為全年預付的月均折算價。",
+      "summary": "含每月 4,000 點、進階品牌設定、詳細分析及最多 10 個自訂網域。"
+    },
+    {
+      "name": "Ultra",
+      "price": "US$100／席／月；年繳折算 US$90／席／月（預付 US$1,080／年）",
+      "billing": "月繳或年繳；官網定價頁可切換顯示年繳價格，實際付款與方案資格以結帳頁為準。",
+      "summary": "含每月 20,000 點、進階文字／圖片／影片模型及最多 100 個自訂網域。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Gamma 官方定價頁",
+      "url": "https://gamma.app/pricing"
+    },
+    {
+      "title": "Gamma 官方產品首頁",
+      "url": "https://gamma.app/"
+    },
+    {
+      "title": "Gamma 說明中心：點數如何運作",
+      "url": "https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma"
+    },
+    {
+      "title": "Gamma 說明中心：如何以偏好語言使用 Gamma",
+      "url": "https://help.gamma.app/en/articles/11016506-how-do-i-use-gamma-in-my-preferred-language"
+    },
+    {
+      "title": "Gamma 說明中心：如何升級訂閱方案",
+      "url": "https://help.gamma.app/en/articles/8077107-how-can-i-upgrade-my-gamma-subscription"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "於 2026-11-09 查閱 Gamma 官方定價頁（月繳與年繳切換）、產品首頁及說明中心。Plus 點數在官方月付價格卡、年付顯示及說明中心之間存在數字差異；香港可用性未見官方地區清單，相關資訊應以購買時官網及帳號結帳頁為準。",
+  "filePath": "/home/ubuntu/aipicks/research/gamma.json"
+}

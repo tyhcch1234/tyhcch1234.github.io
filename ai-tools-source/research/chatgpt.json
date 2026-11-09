@@ -1,0 +1,111 @@
+{
+  "id": "chatgpt",
+  "name": "ChatGPT",
+  "category": "chat",
+  "tagline": "一站式問答、寫作與多模態助理",
+  "description": "OpenAI 的對話式 AI 助手，可用自然語言問答、寫作、翻譯與整理資料；依方案提供網頁搜尋、深度研究、檔案與圖片分析及語音等工具，免費版的部分功能和用量有限。",
+  "features": [
+    "以自然語言回答問題、解釋概念，並協助起草、改寫、摘要、創作與翻譯。",
+    "可搜尋網頁；深度研究能綜合多個線上來源並產生附來源的結構化結果，供多步驟研究使用。",
+    "可分析上傳圖片、圖表及文件，也可按方案使用圖像生成與自然語言編輯。",
+    "可上傳文件及支援的音訊；支援方案可做檔案分析、資料分析和語音對話。",
+    "提供記憶、Projects 及自訂 GPT 等功能，實際可用項目和額度依方案、設定與地區而異。"
+  ],
+  "bestFor": [
+    "日常問答、寫作改稿、摘要、翻譯與學習輔助。",
+    "需要網頁資料整理、跨來源研究或報告草稿的工作。",
+    "想以對話方式處理文件、表格、圖片或語音內容的個人用戶。"
+  ],
+  "pros": [
+    "把文字對話、搜尋研究、檔案與圖像分析、語音等能力整合在同一服務中。",
+    "有可長期使用的免費方案，且官方提供網頁、手機與桌面應用程式。"
+  ],
+  "limitations": [
+    "免費版及付費版均可能有使用上限；模型與工具額度會隨方案、需求及系統狀況變動。",
+    "生成內容可能出錯或缺漏；重要事實仍應核對引用來源或原始資料。",
+    "付費功能和結帳貨幣依地區與訂閱平台而異；ChatGPT 訂閱不包含 API 用量。"
+  ],
+  "platforms": [
+    "網頁版",
+    "iOS／iPadOS App",
+    "Android App",
+    "macOS 桌面 App",
+    "Windows 桌面 App"
+  ],
+  "languages": "官方語言設定支援中文，但未在清單中區分繁體與簡體中文，也未單獨列出粵語。可用繁體中文或粵語輸入提示；官方資料未保證粵語語音或特定方言表現，效果可能因任務而異。",
+  "regionNote": "OpenAI 官方支援國家／地區清單於查閱時列有台灣，但未列香港；官方並提醒在清單以外地區使用或提供服務可能導致帳戶被封鎖或暫停。地區政策可能更新，香港用戶請以官方清單及帳戶實際可用性為準。",
+  "officialUrl": "https://openai.com/chatgpt/overview/",
+  "pricingUrl": "https://openai.com/chatgpt/pricing/",
+  "hasFree": true,
+  "freeSummary": "有免費版，非限時試用。官方列出文字聊天在遵守合理使用及防濫用規則下不限量；訊息／模型額度、上傳、圖像生成、語音、深度研究、記憶與上下文則有限，且部分功能可能受頻寬或供應狀況影響。",
+  "priceLabel": "US$8 / 月起",
+  "monthlyUSD": 8,
+  "billingNote": "個人付費方案按用戶／月標價；Go US$8、Plus US$20、Pro 起 US$100。Plus 不提供年繳；網頁結帳可能依地區使用當地幣別，App Store／Google Play 以當地幣別扣款。Pro 宣傳的最高每月 US$500 API 額度須符合資格並啟用，未用額度會到期且條款可能變動；API 用量另計。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0",
+      "billing": "免費使用；非限時試用",
+      "summary": "可使用基本聊天；文字聊天受合理使用規則約束。模型／訊息額度、上傳、圖像、語音、深度研究及記憶等有上限。"
+    },
+    {
+      "name": "Go",
+      "price": "US$8 / 月",
+      "billing": "按月；依所在地結帳貨幣可能不同",
+      "summary": "比免費版有更多工具訊息、上傳、圖像生成及語音額度，並提供較長記憶；官方指出此方案可能包含廣告。"
+    },
+    {
+      "name": "Plus",
+      "price": "US$20 / 月",
+      "billing": "按月；官方說明目前不支援年繳",
+      "summary": "提供較廣模型與推理工具存取、更高訊息額度、語音、圖像生成、檔案分析及深度研究等；額度仍可能受限制。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$100 / 月起",
+      "billing": "按月；官方價格頁列有三種用量層級，具體選項以帳戶結帳頁為準",
+      "summary": "包含 Plus 功能並提供更高用量及更廣研究、記憶和圖像功能。官方列出符合資格者可獲最高每月 US$500 API 額度；需啟用，未使用額度會在週期末到期，金額及續發可能變更。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ChatGPT Plans and Pricing",
+      "url": "https://openai.com/chatgpt/pricing/"
+    },
+    {
+      "title": "ChatGPT capabilities overview",
+      "url": "https://help.openai.com/en/articles/9260256-chatgpt-capabilities-overview"
+    },
+    {
+      "title": "What is ChatGPT Plus?",
+      "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus"
+    },
+    {
+      "title": "ChatGPT Supported Countries",
+      "url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries"
+    },
+    {
+      "title": "How to change your language setting in ChatGPT",
+      "url": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt"
+    },
+    {
+      "title": "ChatGPT iOS and Android app FAQ",
+      "url": "https://help.openai.com/en/articles/8142208-chatgpt-ios-and-android-app-faq"
+    },
+    {
+      "title": "Using the ChatGPT Windows app",
+      "url": "https://help.openai.com/en/articles/9982051-using-the-chatgpt-windows-app"
+    },
+    {
+      "title": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    },
+    {
+      "title": "Multi-currency billing",
+      "url": "https://help.openai.com/en/articles/10421635-multicurrency-billing"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "於 2026-11-09 查閱 OpenAI 官方定價、產品與說明中心頁面。所列美元月價為當日官方頁面標價；網頁結帳及手機應用程式可能依地區或平台採用當地幣別。功能、額度、價格與支援地區均可能更新，請以官方頁及帳戶結帳畫面為準。",
+  "filePath": "/home/ubuntu/aipicks/research/chatgpt.json"
+}

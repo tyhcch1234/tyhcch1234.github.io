@@ -1,0 +1,97 @@
+{
+  "id": "zapier",
+  "name": "Zapier AI",
+  "category": "office",
+  "tagline": "把 AI 接進日常工作流程",
+  "description": "Zapier AI 將生成式 AI 嵌入無程式自動化：用自然語言建立工作流程，讓 AI 整理資料、參照知識來源，並跨數千個應用執行動作。適合把重複的辦公流程串成可持續運作的自動化。",
+  "features": [
+    "以自然語言描述需求，AI 可協助建立 Zap 工作流程並建議觸發條件與動作。",
+    "AI by Zapier 可在流程中分析資料、生成回覆；AI 步驟可設定模型層級，並可加入工具呼叫。",
+    "Zapier Agents 可參照連接的知識來源，按觸發條件或使用者指令獨立執行應用動作。",
+    "Zapier MCP 讓相容的 AI 助手透過 Zapier 在 9,000 多個應用中執行動作。",
+    "Copilot 可協助建立和修改流程；Zapier 亦提供 AI 格式化、程式碼生成與錯誤排查工具。"
+  ],
+  "bestFor": [
+    "想用無程式方式把電郵、表單、CRM 與協作工具串接的個人或小型團隊。",
+    "需要 AI 整理或分類資料，再把結果送往其他應用的重複辦公流程。",
+    "希望讓 AI 助手透過 MCP 操作既有商務應用的團隊。"
+  ],
+  "pros": [
+    "應用整合範圍廣，流程可連接多個常用商務工具。",
+    "AI 與自動化整合在同一平台，無須為 AI by Zapier 另訂一個獨立模型帳戶。"
+  ],
+  "limitations": [
+    "免費方案每月只有 100 tasks，且 Zap 限兩步；成功執行的動作會消耗任務額度。",
+    "AI 模型層級及工具呼叫會增加任務消耗：官方列出 Standard 1x、Advanced 3x、Premium 5x；超額可能按任務計費。",
+    "官方資料表示 Agents 正移轉至 AI by Zapier；Agents 是帳戶綁定的個人自動化，不能直接嵌入網站作面向客戶的聊天機器人。"
+  ],
+  "platforms": [
+    "Zapier 網頁平台",
+    "9,000 多個應用整合，例如 Google Docs、Slack、Salesforce、Zendesk、GitHub",
+    "Zapier MCP 可連接 Claude、ChatGPT 等相容 AI 助手"
+  ],
+  "languages": "官方查核頁未明列繁體中文介面或粵語支援承諾；中文輸入及生成效果可能受所選 AI 模型與連接應用影響，需自行確認。",
+  "regionNote": "查核到的官方頁面未明確列出香港的服務可用性或付款支援結論；香港註冊、付款貨幣及個別功能可用性請以 Zapier 官方帳戶頁面或支援資訊確認。",
+  "officialUrl": "https://zapier.com/",
+  "pricingUrl": "https://zapier.com/pricing",
+  "hasFree": true,
+  "freeSummary": "官方列有永久免費 Free 方案：每月 100 tasks、可建立不限數量的 Zaps，但每個 Zap 限兩步；成功動作會計入額度。",
+  "priceLabel": "收費以官網為準",
+  "monthlyUSD": null,
+  "billingNote": "官方定價文章列 Professional US$19.99/月、Team US$69/月，兩者均為年繳等值；查核頁未確認月繳實際價，故 monthlyUSD 留空。AI 模型依層級消耗 1x/3x/5x tasks，額度由帳戶方案共用，超額可能按任務收費。",
+  "plans": [
+    {
+      "name": "Free",
+      "price": "US$0/月",
+      "billing": "永久免費",
+      "summary": "每月 100 tasks；不限 Zaps、每個 Zap 限兩步，適合試做簡單自動化。"
+    },
+    {
+      "name": "Professional",
+      "price": "US$19.99/月（年繳等值）",
+      "billing": "年繳；實際月繳價未在已核官方來源確認",
+      "summary": "官方文章列每月 750 tasks，支援多步驟流程及進階功能；超額任務可能另計。"
+    },
+    {
+      "name": "Team",
+      "price": "US$69/月（年繳等值）",
+      "billing": "年繳；實際月繳價未在已核官方來源確認",
+      "summary": "最多 25 位使用者，提供共享資料夾、應用連線與團隊協作功能。"
+    },
+    {
+      "name": "Enterprise",
+      "price": "自訂報價",
+      "billing": "依合約",
+      "summary": "面向大型組織，包含進階管理、安全與治理功能。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Zapier Plans & Pricing",
+      "url": "https://zapier.com/pricing"
+    },
+    {
+      "title": "Zapier pricing: Why Zapier is a better value for automation",
+      "url": "https://zapier.com/blog/zapier-pricing/"
+    },
+    {
+      "title": "Zapier Agents",
+      "url": "https://zapier.com/agents"
+    },
+    {
+      "title": "AI quick start guide in Zapier",
+      "url": "https://help.zapier.com/hc/en-us/articles/18590756459277-AI-quick-start-guide-in-Zapier"
+    },
+    {
+      "title": "AI by Zapier: new model-based pricing starting June 15, 2026",
+      "url": "https://help.zapier.com/hc/en-us/articles/46597632373389-AI-by-Zapier-new-model-based-pricing-starting-June-15-2026"
+    },
+    {
+      "title": "Build an agent in Zapier Agents",
+      "url": "https://help.zapier.com/hc/en-us/articles/24393442652557-Build-an-agent-in-Zapier-Agents"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "於 2026-11-09 查核 Zapier 官方定價、產品及說明頁；官方定價文章列出年繳等值起價，但本次查核未確認月繳實際費用，故未填 monthlyUSD。中文支援與香港可用性未見明確官方承諾，已保留確認提醒。",
+  "filePath": "/home/ubuntu/aipicks/research/zapier.json"
+}

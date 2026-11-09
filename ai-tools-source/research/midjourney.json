@@ -1,0 +1,96 @@
+{
+  "id": "midjourney",
+  "name": "Midjourney",
+  "category": "image",
+  "tagline": "文字生成與編修影像",
+  "description": "Midjourney 讓使用者以文字提示和參考圖片生成影像，並可製作變體、放大或在網頁編輯器中修改；亦能把圖片轉成短片。可於官方網站或 Discord 使用，訂閱方案按 GPU 時間與隱私功能分級。",
+  "features": [
+    "以文字提示生成影像；每次可產生一組四張候選圖。",
+    "可用圖片提示、風格參考及個人化設定引導生成結果。",
+    "提供變體、放大、延展與網頁 Editor 編修工具。",
+    "可將生成圖或自備圖片轉成短片；方案限制影片的 Relax 模式。"
+  ],
+  "bestFor": [
+    "需要快速探索插畫、概念圖、風格化視覺方向的創作者。",
+    "想在網頁或 Discord 透過提示詞反覆調整圖片的人。",
+    "需要生成圖片並延伸成短片的個人創作者或小型團隊。"
+  ],
+  "pros": [
+    "可由文字、參考圖片及風格設定引導生成，並串接編修與短片工作流程。",
+    "Standard 以上提供無限量 Relax 模式圖片生成；Pro／Mega 有 Stealth 隱私模式。"
+  ],
+  "limitations": [
+    "midjourney.com 與 Discord 目前沒有免費試用；有限量試用只在 Niji·Journey iOS／Android App 提供，並非永久免費方案。",
+    "作品預設可能出現在網站 Explore；Stealth 僅限 Pro／Mega，且共享 Discord 頻道內的作品仍可被同頻道成員看見。",
+    "方案以訂閱及 GPU 時間區分，部分 Relax 功能只在較高階方案開放；中文提示與繁體中文介面支援未能由本次官方資料確認。"
+  ],
+  "platforms": [
+    "Midjourney 官方網站（瀏覽器）",
+    "Discord（需連結 Discord 帳戶）",
+    "Niji·Journey iOS／Android App（官方文件僅確認有限量試用；不視為完整 Midjourney 免費方案）"
+  ],
+  "languages": "官方文件本次查閱為英文版；未能確認完整繁體中文介面或中文提示詞的現行官方支援程度。官方舊版文件只明確提到 Niji 6 可繪製簡單中文字符，不能據此推論目前模型能力。",
+  "regionNote": "本次查閱的官方資料未明確說明香港是否可註冊、訂閱或使用全部功能；香港可用性及付款方式請以官方網站與帳戶結帳頁為準，不作未經證實的可用性承諾。",
+  "officialUrl": "https://www.midjourney.com/",
+  "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+  "hasFree": false,
+  "freeSummary": "官方文件稱網站及 Discord 目前沒有免費試用。Niji·Journey iOS／Android App 有限量試用，但不是永久免費方案。",
+  "priceLabel": "US$10 / 月起",
+  "monthlyUSD": 10,
+  "billingNote": "月繳入門價 US$10；年繳需預付全年，官方稱可省 20%（折合 Basic US$8、Standard US$24、Pro US$48、Mega US$96／月）。價格未含可能適用的地區稅；訂閱自動續約。圖片 Relax 無限為 Standard 以上，影片 Relax 無限及 Stealth 僅 Pro／Mega。",
+  "plans": [
+    {
+      "name": "Basic",
+      "price": "US$10／月；年繳 US$96／年（折合 US$8／月）",
+      "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+      "summary": "入門付費方案；無 Standard 以上的無限量圖片 Relax 模式。"
+    },
+    {
+      "name": "Standard",
+      "price": "US$30／月；年繳 US$288／年（折合 US$24／月）",
+      "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+      "summary": "含無限量 Relax 模式圖片生成；不含無限量 Relax 影片或 Stealth。"
+    },
+    {
+      "name": "Pro",
+      "price": "US$60／月；年繳 US$576／年（折合 US$48／月）",
+      "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+      "summary": "含無限量 Relax 模式圖片與影片生成，並可使用 Stealth；共享 Discord 頻道仍非私密。"
+    },
+    {
+      "name": "Mega",
+      "price": "US$120／月；年繳 US$1,152／年（折合 US$96／月）",
+      "billing": "月繳訂閱，或預付全年；年繳折扣 20%",
+      "summary": "最高階訂閱；含無限量 Relax 模式圖片與影片生成及 Stealth。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Comparing Midjourney Plans（官方方案與價格比較）",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+    },
+    {
+      "title": "Free Trials（官方免費試用說明）",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/27870399340173-Free-Trials"
+    },
+    {
+      "title": "Getting Started Guide（官方入門與生成流程）",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/33329261836941-Getting-Started-Guide"
+    },
+    {
+      "title": "Logging In & Connecting Accounts（官方網站與 Discord 帳戶連結）",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/33390994570509-Logging-In-Connecting-Accounts"
+    },
+    {
+      "title": "Keeping Your Creations Private（官方 Stealth 與作品可見度說明）",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/28014645615373-Keeping-Your-Creations-Private"
+    },
+    {
+      "title": "Legacy Features（官方舊版模型與中文字符說明）",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/33329788681101-Legacy-Features"
+    }
+  ],
+  "verifiedDate": "2026-11-09",
+  "verificationNote": "於 2026-11-09 查閱 Midjourney 官方產品與說明文件。方案比較頁未標示明確更新日期；價格採該官方頁可見的四級方案月費及 20% 年繳折扣計算，年繳總額為月費乘 12 再折 20%。價格、功能及香港地區可用性日後可能變動，應以官方頁及結帳頁為準。",
+  "filePath": "/home/ubuntu/aipicks/research/midjourney.json"
+}
