@@ -336,7 +336,7 @@
     if (!force && state.meta.generated && read('manifest:skip', 60 * 1000)) return Promise.resolve(false);
     return fetch('sites.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      // sites.json 是密文（密碼鎖）：交由 lock.js 用同一條金鑰解密；解不開就沿用頁內 seed
+      // sites.json 已改為明文；若仍是舊版密文（有 lock.js）則交由其解密，解不開就沿用頁內 seed
       .then(function (j) { return window.__hubDecryptJSON ? window.__hubDecryptJSON(j) : j; })
       .then(function (j) {
         if (!j || !Array.isArray(j.sites) || !j.sites.length) return false;

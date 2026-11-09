@@ -425,26 +425,12 @@ def build(offline=False):
 
     # 獨立清單檔：網頁每次開啟先讀這份（不用等 GitHub API），
     # 之後再向 GitHub 核對有沒有新 repo，所以數字同畫面永遠一致。
-    # 先寫成暫存檔，交由 lock_build.mjs 加密後才落盤（repo 內不留明文清單）。
-    manifest_tmp = os.path.join(HERE, "sites.json.tmp")
-    with open(manifest_tmp, "w", encoding="utf-8") as f:
+    # 首頁與清單都以明文輸出（已取消密碼鎖）。
+    with open(os.path.join(HERE, "sites.json"), "w", encoding="utf-8") as f:
         json.dump(seed, f, ensure_ascii=False, separators=(",", ":"))
 
-    # 首頁同樣加密：明文只留在記憶體／暫存檔，加密失敗就保留舊版 index.html，
-    # 不會出現「建置失敗但網站變成無鎖」的情況。
-    cmd = ["node", os.path.join(HERE, "lock_build.mjs"), "--manifest", manifest_tmp]
-    try:
-        proc = subprocess.run(cmd, input=out, capture_output=True, text=True, cwd=HERE)
-    except FileNotFoundError:
-        os.remove(manifest_tmp)
-        sys.exit("找不到 node，無法加密首頁（index.html 未更新）")
-    if proc.returncode != 0:
-        os.remove(manifest_tmp)
-        sys.exit("加密失敗，index.html 未更新：\n" + (proc.stderr or "").strip())
-
     with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as f:
-        f.write(proc.stdout)
-    os.replace(manifest_tmp, os.path.join(HERE, "sites.json"))
+        f.write(out)
 
     pages = sum(len(s["pages"]) for s in sites)
     print("sites={} pages={} -> index.html, sites.json".format(len(sites), pages))
