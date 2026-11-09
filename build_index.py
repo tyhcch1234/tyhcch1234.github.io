@@ -26,6 +26,11 @@ CACHE = os.path.join(HERE, "cache", "repos.json")
 # ---------------------------------------------------------------- 人手撰寫的文案
 # key = repo 名（或虛擬站台名）
 OVERRIDES = {
+    "secondary-funding": dict(
+        title="香港中學資助指南", cat="tools",
+        desc="政府及非政府資助分類目錄：資助目的、金額、學校資格及官方來源，可按校名與用途搜尋。",
+        tags=["中學", "資助", "津貼", "政府", "慈善基金", "學校發展"], url="secondary-funding/",
+    ),
     "fermat-last-theorem": dict(
         title="費馬最後定理", cat="math",
         desc="一句頁邊註記，數學家追了 358 年 · 命題・歷史・證明思路・互動反例搜尋器",
@@ -241,7 +246,7 @@ TOPIC_NAMES = {
     "trigonometry": "三角學",
 }
 
-VIRTUAL_SITES = ("quadrilaterals", "hanzi", "p3-trapezoid")
+VIRTUAL_SITES = ("quadrilaterals", "hanzi", "p3-trapezoid", "secondary-funding")
 
 SKIP_DIRS = ("node_modules/", "vendor/", "_site/", "assets/", "images/", "img/", "cn/", "docs/")
 DATE_DIRS = ("archive/", "deals/", "reports/", "posts/", "daily/")
