@@ -25,3 +25,9 @@
 若另行部署的資料庫後端已公開，執行 `pnpm exec tsx scripts/export-pages.ts --api-url https://正式後端網址/api/tools`，前端會從該公開 API 讀取最新已保存資料；API 暫時不可用時保留初始資料庫快照並顯示讀取警告。正式後端的 `/api/tools` 只為 `https://tyhcch1234.github.io` 設置跨來源允許讀取，無跨來源身份 cookies；不公開任何資料庫 DSN 或 GitHub Token。首次 Manus 發佈預設可能為私人，公開選項由擁有者確認。
 
 GitHub 更新只應包含 `ai-tools/` 和 `ai-tools-source/`。推送前取得最新 main 並整合，不可 force-push，不修改原站發布來源或根目錄首頁。源碼不包含 `.env`、依賴資料夾、建置暫存或憑證。第一次發布應記錄原首頁 blob SHA，以核對未改动。
+
+## 已確認正式網址
+
+GitHub Pages：https://tyhcch1234.github.io/ai-tools/ 。完整原始碼：https://github.com/tyhcch1234/tyhcch1234.github.io/tree/main/ai-tools-source 。正式動態後端：https://aipicks-tywtycjx.manus.space ，公開目錄 API：https://aipicks-tywtycjx.manus.space/api/tools 。此 API 已以指定 Pages origin 實際驗證 HTTP 200 及 18 款工具。
+
+正式 Pages 匯出指令為 `pnpm exec tsx scripts/export-pages.ts --api-url https://aipicks-tywtycjx.manus.space/api/tools`。前端直接讀取已保存資料庫內容，讀取失敗時保留匯出當刻的初始資料並顯示警告；研究價格資料本身不會自動重新查核。首頁原 blob 保留核對值為 `48f858ddd3e46c6991c9b4ed6a6e4597a95060c6`。

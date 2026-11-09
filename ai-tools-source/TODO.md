@@ -13,7 +13,11 @@
 
 ## 指定 GitHub 倉庫部署
 
-- [ ] 在 tyhcch1234/tyhcch1234.github.io 的 main 分支新增 ai-tools/ 網站及 ai-tools-source/ 原始碼；保留原有首頁、其他子網站及 Git 歷史，不 force-push，不改動原站發布設定。
-- [ ] GitHub Pages 的 /ai-tools/ 支援正確子目錄導向、完整圖片、搜尋、分類、免費／付費、收藏及最多三款比較；初始資料及必要備援來自已保存的 MySQL 真實資料，無憑證進入前端或倉庫。
-- [ ] 保留並另行發佈資料庫後端；公開讀取 API 只允許指定 GitHub Pages origin 的跨來源讀取。前端可連接正式 API，後端未公開／暫時不可用時，清楚保留顯示資料庫匯出快照，而非空白或假資料。
-- [ ] 確認 GitHub 推送提交、Pages 建置及正式網址可讀，並核對原有首頁內容未改動。交付實際成功網址，若後端公開權限待用戶設定則如實說明。
+- [x] 在 tyhcch1234/tyhcch1234.github.io 的 main 分支新增 ai-tools/ 網站及 ai-tools-source/ 原始碼；保留原有首頁、其他子網站及 Git 歷史，不 force-push，不改動原站發布設定。
+- [x] GitHub Pages 的 /ai-tools/ 支援正確子目錄導向、完整圖片、搜尋、分類、免費／付費、收藏及最多三款比較；初始資料及必要備援來自已保存的 MySQL 真實資料，無憑證進入前端或倉庫。
+- [x] 保留並另行發佈資料庫後端；公開讀取 API 只允許指定 GitHub Pages origin 的跨來源讀取。前端可連接正式 API，後端未公開／暫時不可用時，清楚保留顯示資料庫匯出快照，而非空白或假資料。
+- [x] 確認 GitHub 推送提交、Pages 建置及正式網址可讀，並核對原有首頁內容未改動。交付實際成功網址，若後端公開權限待用戶設定則如實說明。
+
+## GitHub 部署完成證據
+
+GitHub 初次提交 028911fc7a7024e591f47033d6152ab0339a3a84 已推送並於正式 /ai-tools/ 回應 200，圖片、CSS、JavaScript、catalog.json 與 favicon 全部 200；18 款真實工具資料已核對。原首頁 blob 48f858ddd3e46c6991c9b4ed6a6e4597a95060c6 保持不變。22 項測試、正式伺服器建置及一次唯讀部署檢查通過。資料庫後端 0c70a5fcc9c5a870612b7c0c0bd68defb284be6a 已發佈到 https://aipicks-tywtycjx.manus.space ，公開 API /api/tools 回應 200、18 款工具並允許指定 GitHub Pages origin。後續匯出已使用此已確認正式 API；原始資料庫快照保留作讀取失敗備援。
