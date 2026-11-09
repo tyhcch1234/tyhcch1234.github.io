@@ -1,0 +1,7 @@
+{
+  "title": "學校位置及資料（教育局）— CSV 資源：學校位置地理參考數據及其他相關資料",
+  "url": "https://data.gov.hk/tc-data/dataset/hk-edb-schinfo-school-location-and-information/resource/d5fa1532-4eb1-437f-85ef-7bbea1a8b84d",
+  "downloadUrl": "https://www.edb.gov.hk/attachment/en/student-parents/sch-info/sch-search/sch-location-info/SCH_LOC_EDB.csv",
+  "asOf": "2026-09-30",
+  "notes": "來源資料集頁：https://data.gov.hk/tc-data/dataset/hk-edb-schinfo-school-location-and-information。官方資源頁明示資料截至 2026-09-30；本次擷取日期為 2026-11-09，下載 CSV 的 HTTP Last-Modified 為 2026-11-04。篩選官方 CSV 欄位 SCHOOL LEVEL=SECONDARY（繁中欄位「學校類型」=「中學」），共 633 筆，保留每個 SCHOOL NO. 為字串 id，不合併同名但編號不同的校址／校部記錄。依中文類別統一映射至目標類型：官立中學→官立；資助中學及按位津貼中學→資助；直接資助計劃中學→直資；私立中學→私立；國際學校及英基學校協會中學→國際；資助特殊學校中學級記錄→特殊。82 筆特殊類別記錄以官方中學級欄位納入並標示為「特殊」，不以名稱是否含「中學部」作過濾條件。這是學校基本資料名單，不構成任何個別學校、學生或課程符合資助資格的證明。"
+}
