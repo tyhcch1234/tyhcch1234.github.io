@@ -1,1020 +1,205 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-HK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>學習與工具總覽 · tyhcch1234</title>
-<meta name="description" content="tyhcch1234 的 GitHub Pages 全站導覽：自動同步所有 repo，可搜尋 repo 與站內頁面——數學題解、中文識字、小學常識、身心記憶、設計導覽、每日日誌與工具。">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>需要密碼 · tyhcch1234</title>
 <meta name="theme-color" content="#4f6ef7">
 <style>
   :root{
-    --bg:#f4f6fb;
-    --card:#ffffff;
-    --card-2:#fbfcff;
-    --ink:#171c2b;
-    --ink-2:#3b4256;
-    --muted:#6e7688;
-    --line:#e6e9f2;
-    --line-strong:#d6dbea;
-    --brand:#4f6ef7;
-    --brand-2:#8b5cf6;
-    --ok:#16a34a;
-    --warn:#b45309;
-    --shadow:0 1px 2px rgba(16,24,40,.04), 0 10px 30px rgba(16,24,40,.06);
-    --shadow-hover:0 6px 16px rgba(16,24,40,.08), 0 20px 46px rgba(79,110,247,.16);
-    --radius:18px;
-    --wrap:1120px;
-  }
-  html[data-theme="dark"]{
-    --bg:#0d1017;
-    --card:#161b24;
-    --card-2:#1a202b;
-    --ink:#e9edf7;
-    --ink-2:#c4cbdb;
-    --muted:#8b93a7;
-    --line:#242c39;
-    --line-strong:#2f3847;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
-    --shadow-hover:0 8px 18px rgba(0,0,0,.45), 0 22px 50px rgba(79,110,247,.22);
+    --bg:#eef1f8;--ink:#161b2b;--ink-2:#3d4459;--muted:#7c8496;
+    --line:#dde2ee;--card:#ffffff;--accent:#4f6ef7;--accent-2:#6f88ff;
+    --err:#b8342c;--err-soft:#fceceb;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html,body{height:100%}
   body{
+    margin:0;display:grid;place-items:center;padding:24px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang HK","PingFang TC",
+      "Hiragino Sans TC","Microsoft JhengHei","Noto Sans TC",Arial,sans-serif;
+    color:var(--ink);line-height:1.6;
     background:
-      radial-gradient(1100px 520px at 8% -12%, rgba(79,110,247,.13), transparent 62%),
-      radial-gradient(900px 460px at 100% -6%, rgba(139,92,246,.12), transparent 58%),
+      radial-gradient(760px 420px at 18% 0%, #e3e9ff 0%, rgba(227,233,255,0) 62%),
+      radial-gradient(680px 400px at 96% 100%, #e9eefc 0%, rgba(233,238,252,0) 58%),
       var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    min-height:100vh;
   }
-  a{color:inherit}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px 90px}
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:sticky;top:0;z-index:20;
-    backdrop-filter:saturate(160%) blur(14px);
-    background:transparent;border-bottom:1px solid transparent;
-    transition:border-color .25s, background .25s;
-  }
-  .topbar.stuck{border-bottom-color:var(--line);background:color-mix(in srgb, var(--bg) 88%, transparent)}
-  .topbar .inner{max-width:var(--wrap);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:14.5px;text-decoration:none}
-  .brand .mark{
-    width:30px;height:30px;border-radius:9px;flex:0 0 auto;
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));
-    display:grid;place-items:center;color:#fff;font-size:13.5px;font-weight:800;
-    box-shadow:0 6px 16px rgba(79,110,247,.35);
-  }
-  .brand small{display:block;color:var(--muted);font-weight:500;font-size:11.5px;letter-spacing:.02em}
-  .top-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
-  .icon-btn{
-    width:36px;height:36px;border-radius:11px;border:1px solid var(--line);
-    background:var(--card);color:var(--ink-2);display:grid;place-items:center;
-    cursor:pointer;transition:transform .15s, border-color .15s, color .15s;
-  }
-  .icon-btn:hover{border-color:var(--line-strong);color:var(--brand);transform:translateY(-1px)}
-  .icon-btn svg{width:17px;height:17px}
-  .icon-btn .moon{display:none}
-  html[data-theme="dark"] .icon-btn .sun{display:none}
-  html[data-theme="dark"] .icon-btn .moon{display:block}
-  .icon-btn.spin svg{animation:spin .9s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-
-  /* ---------- hero ---------- */
-  header.hero{text-align:center;padding:64px 0 24px}
-  .avatar{
-    width:66px;height:66px;border-radius:21px;margin:0 auto 20px;
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));
-    display:grid;place-items:center;color:#fff;font-weight:800;font-size:27px;
-    box-shadow:0 14px 36px rgba(79,110,247,.38);
-  }
-  h1{font-size:clamp(25px,4.4vw,36px);margin:0 0 10px;letter-spacing:-.025em;font-weight:800}
-  .sub{color:var(--muted);margin:0;font-size:15px}
-  .stat{
-    display:inline-flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;
-    margin-top:20px;padding:9px 20px;
-    background:color-mix(in srgb, var(--card) 70%, transparent);
-    border:1px solid var(--line);border-radius:999px;
-    font-size:13px;color:var(--muted);box-shadow:var(--shadow);
-  }
-  .stat b{color:var(--ink);font-variant-numeric:tabular-nums}
-  .stat .live{display:inline-flex;align-items:center;gap:6px}
-  .stat .live i{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.16)}
-  .stat .live.warn i{background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.16)}
-
-  /* ---------- search ---------- */
-  .search-wrap{max-width:560px;margin:30px auto 10px}
-  .search{position:relative}
-  .search > svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
-  .search input{
-    width:100%;padding:14px 58px 14px 46px;border-radius:15px;
-    border:1px solid var(--line);background:var(--card);color:var(--ink);
-    font-size:15px;font-family:inherit;outline:none;box-shadow:var(--shadow);
-    transition:border-color .18s, box-shadow .18s;
-  }
-  .search input::placeholder{color:var(--muted)}
-  .search input:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(79,110,247,.15)}
-  .search kbd{
-    position:absolute;right:12px;top:50%;transform:translateY(-50%);
-    font-family:inherit;font-size:11.5px;color:var(--muted);
-    border:1px solid var(--line);border-radius:7px;padding:2px 7px;background:var(--card-2);
-  }
-  .hint{text-align:center;font-size:12.4px;color:var(--muted);margin:10px 0 0;min-height:20px}
-  .hint b{color:var(--ink)}
-  .hint .warn{color:var(--warn)}
-
-  /* ---------- filter chips ---------- */
-  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px auto 42px}
-  .chip{
-    font:inherit;font-size:13px;cursor:pointer;
-    padding:7px 14px;border-radius:999px;
-    border:1px solid var(--line);background:var(--card);color:var(--ink-2);
-    transition:all .16s ease;
-  }
-  .chip:hover{border-color:var(--line-strong);transform:translateY(-1px)}
-  .chip[aria-pressed="true"]{
-    background:linear-gradient(135deg,var(--brand),var(--brand-2));
-    border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(79,110,247,.32);
-  }
-  .chip span{opacity:.65;margin-left:5px;font-variant-numeric:tabular-nums}
-
-  /* ---------- sections ---------- */
-  section{margin-bottom:44px;--accent:#4f6ef7}
-  section[data-cat="math"]{--accent:#4f6ef7}
-  section[data-cat="lang"]{--accent:#e0672f}
-  section[data-cat="junior"]{--accent:#16a34a}
-  section[data-cat="mind"]{--accent:#8b5cf6}
-  section[data-cat="design"]{--accent:#0ea5e9}
-  section[data-cat="daily"]{--accent:#db2777}
-  section[data-cat="media"]{--accent:#7c3aed}
-  section[data-cat="play"]{--accent:#ea580c}
-  section[data-cat="tools"]{--accent:#0f766e}
-
-  .sec-head{display:flex;align-items:center;gap:10px;margin:0 0 16px}
-  .sec-head .glyph{
-    width:28px;height:28px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;
-    background:color-mix(in srgb, var(--accent) 12%, transparent);color:var(--accent);
-  }
-  .sec-head .glyph svg{width:15px;height:15px}
-  h2{font-size:15px;font-weight:700;letter-spacing:.03em;margin:0}
-  .count{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-  .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:14px;align-items:start}
-
-  /* ---------- card ---------- */
+  .wrap{width:100%;max-width:392px}
   .card{
-    position:relative;display:flex;flex-direction:column;
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:30px 26px 24px;box-shadow:0 1px 2px rgba(22,27,43,.04),0 26px 60px -38px rgba(22,27,43,.5);
   }
-  .card::before{
-    content:"";position:absolute;inset:0;border-radius:var(--radius);pointer-events:none;
-    background:linear-gradient(135deg,color-mix(in srgb, var(--accent) 9%, transparent),transparent 52%);
-    opacity:0;transition:opacity .18s ease;
-  }
-  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb, var(--accent) 34%, var(--line))}
-  .card:hover::before{opacity:1}
-  .card > .main{
-    display:flex;align-items:flex-start;gap:13px;padding:17px 16px 10px;
-    text-decoration:none;position:relative;z-index:1;
-  }
-  .card > .main:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:12px}
-  .tile{
-    width:34px;height:34px;border-radius:11px;flex:0 0 auto;display:grid;place-items:center;color:#fff;
-    background:linear-gradient(135deg,var(--accent),color-mix(in srgb, var(--accent) 55%, #ffffff));
-    box-shadow:0 6px 14px color-mix(in srgb, var(--accent) 30%, transparent);
-  }
-  .tile svg{width:17px;height:17px}
-  .body{min-width:0;flex:1;padding-right:10px}
-  .title{display:block;font-weight:650;font-size:14.5px;letter-spacing:-.005em;margin-bottom:3px}
-  .desc{display:block;font-size:12.6px;color:var(--muted);line-height:1.5}
-  .meta{display:block;margin-top:7px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
-  .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--line-strong)}
   .badge{
-    font-size:10.6px;font-weight:650;letter-spacing:.02em;padding:1.5px 7px;border-radius:999px;
-    background:color-mix(in srgb, var(--accent) 13%, transparent);color:var(--accent);
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--accent),var(--accent-2));margin-bottom:18px;
+    box-shadow:0 8px 18px -10px rgba(79,110,247,.9);
   }
-  .badge.new{background:rgba(22,163,74,.14);color:#15803d}
-  html[data-theme="dark"] .badge.new{color:#4ade80}
-  .arrow{
-    position:absolute;right:13px;top:16px;width:15px;height:15px;color:var(--muted);
-    opacity:0;transform:translate(-3px,3px);transition:opacity .18s, transform .18s;
+  h1{font-size:20px;font-weight:750;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{font-size:13.8px;color:var(--muted);margin:0 0 22px}
+  label{display:block;font-size:12.6px;font-weight:700;color:var(--ink-2);margin-bottom:7px;letter-spacing:.02em}
+  .field{position:relative}
+  input[type=password],input[type=text]{
+    width:100%;padding:13px 48px 13px 14px;font-size:16px;font-family:inherit;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:11px;background:#fcfdff;transition:.15s;
   }
-  .card:hover .arrow{opacity:.75;transform:translate(0,0)}
-
-  .pages-toggle{
-    align-self:flex-start;margin:0 0 12px 63px;
-    font:inherit;font-size:12.3px;color:var(--accent);background:transparent;border:0;
-    padding:3px 0;cursor:pointer;display:inline-flex;align-items:center;gap:5px;
-    position:relative;z-index:1;
+  input:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 3.5px rgba(79,110,247,.14)}
+  .eye{
+    position:absolute;right:6px;top:50%;transform:translateY(-50%);
+    width:36px;height:36px;border:0;background:transparent;border-radius:8px;cursor:pointer;
+    display:grid;place-items:center;color:var(--muted);
   }
-  .pages-toggle:hover{text-decoration:underline}
-  .pages-toggle svg{width:12px;height:12px;transition:transform .18s}
-  .card.open .pages-toggle svg{transform:rotate(180deg)}
-  .pages{list-style:none;margin:0 16px 14px;padding:10px 0 0;border-top:1px dashed var(--line);display:none;position:relative;z-index:1}
-  .card.open .pages{display:block}
-  .pages li{margin:0}
-  .pages a{
-    display:flex;gap:10px;justify-content:space-between;align-items:baseline;
-    padding:6px 8px;border-radius:9px;text-decoration:none;font-size:12.6px;color:var(--ink-2);
-    position:relative;z-index:1;
+  .eye:hover{background:#f2f4fa;color:var(--ink-2)}
+  button[type=submit]{
+    width:100%;margin-top:14px;padding:13px;font-size:15px;font-weight:700;font-family:inherit;
+    color:#fff;background:var(--accent);border:0;border-radius:11px;cursor:pointer;transition:.15s;
   }
-  .pages a:hover{background:color-mix(in srgb, var(--accent) 9%, transparent);color:var(--ink)}
-  .pages a .p{
-    color:var(--muted);font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-    flex:0 0 auto;max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  button[type=submit]:hover{background:#3f5df0}
+  button[type=submit]:disabled{opacity:.6;cursor:progress}
+  .msg{font-size:13.2px;margin:12px 0 0;min-height:20px}
+  .msg.err{color:var(--err);font-weight:600}
+  .msg.ok{color:#2f6f5e;font-weight:600}
+  .hint{
+    margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--muted);line-height:1.65;
   }
-  .pages .more-pages{display:flex;justify-content:center;padding-top:4px}
-  .pages .more-pages button{
-    font:inherit;font-size:12px;color:var(--muted);background:transparent;border:0;cursor:pointer;padding:4px 8px;
-  }
-  .pages .more-pages button:hover{color:var(--accent);text-decoration:underline}
-  mark{background:color-mix(in srgb, var(--brand) 24%, transparent);color:inherit;border-radius:3px;padding:0 1px}
-
-  /* ---------- empty / footer ---------- */
-  .empty{display:none;text-align:center;padding:64px 0;color:var(--muted);font-size:14px}
-  .empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
-  .empty button{
-    margin-top:16px;font:inherit;font-size:13px;cursor:pointer;
-    padding:8px 16px;border-radius:10px;border:1px solid var(--line);
-    background:var(--card);color:var(--ink-2);
-  }
-  .footer{
-    text-align:center;color:var(--muted);font-size:12.4px;
-    margin-top:66px;padding-top:26px;border-top:1px solid var(--line);line-height:2;
-  }
-  .footer code{
-    background:color-mix(in srgb, var(--brand) 10%, transparent);
-    color:var(--brand);padding:2px 7px;border-radius:6px;font-size:11.8px;
-  }
-  .footer a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-strong)}
-  .footer a:hover{color:var(--brand);border-color:var(--brand)}
-
-  @media (max-width:560px){
-    .wrap{padding:0 15px 70px}
-    header.hero{padding:44px 0 18px}
-    .grid{grid-template-columns:1fr}
-    .search kbd{display:none}
-    .search input{padding-right:16px}
-    .pages-toggle{margin-left:16px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    html{scroll-behavior:auto}
-  }
+  .hint b{color:var(--ink-2)}
+  .foot{text-align:center;font-size:11.6px;color:#9aa2b4;margin-top:18px}
+  .shake{animation:sh .34s}
+  @keyframes sh{0%,100%{transform:translateX(0)}22%{transform:translateX(-7px)}44%{transform:translateX(6px)}66%{transform:translateX(-4px)}88%{transform:translateX(3px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <form class="card" id="gate" autocomplete="off" novalidate>
+    <div class="badge" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="10.5" width="16" height="10.5" rx="2.4"/>
+        <path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/>
+        <circle cx="12" cy="15.6" r="1.3" fill="#fff" stroke="none"/>
+      </svg>
+    </div>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <symbol id="g-math" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 7h8M8 12h2M14 12h2M8 16.5h2M14 16.5h2"/>
-    </symbol>
-    <symbol id="g-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 19.5V6a2 2 0 0 1 2-2h6l3 3h5a2 2 0 0 1 2 2v10.5"/><path d="M8 12h8M8 16h5"/>
-    </symbol>
-    <symbol id="g-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M9 3h6M10 3v6.2L5.6 17a2.4 2.4 0 0 0 2.1 3.5h8.6a2.4 2.4 0 0 0 2.1-3.5L14 9.2V3"/><path d="M7.4 15h9.2"/>
-    </symbol>
-    <symbol id="g-mind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20.5 8.8c0 4.6-5.5 8.6-8.5 11-3-2.4-8.5-6.4-8.5-11A4.6 4.6 0 0 1 12 6.2a4.6 4.6 0 0 1 8.5 2.6z"/>
-    </symbol>
-    <symbol id="g-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2.8 21 7.6v8.8L12 21.2 3 16.4V7.6z"/><path d="M3 7.6 12 12.4l9-4.8M12 12.4v8.8"/>
-    </symbol>
-    <symbol id="g-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14 3H7.5A2.5 2.5 0 0 0 5 5.5v13A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>
-    </symbol>
-    <symbol id="g-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M7.5 13h3M13.5 13h3M7.5 17h3M13.5 17h3"/>
-    </symbol>
-    <symbol id="g-media" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M3.5 17l4.8-4.4a2 2 0 0 1 2.7 0l3 2.8 2.4-2.2a2 2 0 0 1 2.7 0l1.4 1.3"/>
-    </symbol>
-    <symbol id="g-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2.5" y="7" width="19" height="10.5" rx="4.5"/><path d="M7 10.5v3.5M5.2 12.2h3.6"/><circle cx="16.3" cy="11" r="1"/><circle cx="18.6" cy="13.6" r="1"/>
-    </symbol>
-    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.4-3.4"/>
-    </symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 17 17 7M17 7H9M17 7v8"/>
-    </symbol>
-    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6 9l6 6 6-6"/>
-    </symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
-      <circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/>
-    </symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/>
-    </symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 11a8 8 0 1 0-2.6 6.1"/><path d="M20 4.5V11h-6.2"/>
-    </symbol>
-    <symbol id="i-top" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 19V5M6 11l6-6 6 6"/>
-    </symbol>
-  </defs>
-</svg>
+    <h1>此頁受密碼保護</h1>
+    <p class="sub">請輸入密碼以查看「學習與工具總覽」。</p>
 
-<div class="topbar" id="topbar">
-  <div class="inner">
-    <a class="brand" href="#top">
-      <span class="mark">T</span>
-      <span>學習與工具總覽<small>tyhcch1234.github.io</small></span>
-    </a>
-    <div class="top-actions">
-      <button class="icon-btn" id="syncBtn" type="button" title="重新掃描 GitHub repo（自動更新）" aria-label="重新掃描 GitHub repo">
-        <svg><use href="#i-refresh"/></svg>
-      </button>
-      <button class="icon-btn" id="themeToggle" type="button" title="切換深色模式" aria-label="切換深色模式">
-        <svg class="sun"><use href="#i-sun"/></svg>
-        <svg class="moon"><use href="#i-moon"/></svg>
+    <label for="pw">密碼</label>
+    <div class="field">
+      <input id="pw" name="pw" type="password" inputmode="numeric" autocomplete="current-password"
+             placeholder="請輸入密碼" aria-describedby="msg" autofocus required>
+      <button class="eye" type="button" id="eye" aria-label="顯示密碼" aria-pressed="false">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <path d="M2.5 12S6 5.5 12 5.5S21.5 12 21.5 12S18 18.5 12 18.5S2.5 12 2.5 12Z"/>
+          <circle cx="12" cy="12" r="3.1"/>
+        </svg>
       </button>
     </div>
-  </div>
-</div>
 
-<div class="wrap" id="top">
+    <button type="submit" id="go">解鎖</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
 
-  <header class="hero">
-    <div class="avatar">T</div>
-    <h1>學習與工具總覽</h1>
-    <p class="sub">開頁即時核對 GitHub 上所有 repo，網站與站內頁面全部列出</p>
-    <div class="stat">
-      <span><b id="statSites">–</b> 個網站</span>
-      <span><b id="statPages">–</b> 個頁面</span>
-      <span class="live" id="statLive"><i></i><span id="statSync">讀取中…</span></span>
-    </div>
-  </header>
-
-  <div class="search-wrap">
-    <div class="search">
-      <svg><use href="#i-search"/></svg>
-      <input id="q" type="search" autocomplete="off" spellcheck="false"
-             placeholder="搜尋 repo 或站內頁面，例如「數學」「默書」「優惠」…"
-             aria-label="搜尋網站與頁面">
-      <kbd>/</kbd>
-    </div>
-    <p class="hint" id="hint">搜尋會同時比對 repo 名稱、說明與站內每個頁面。</p>
-  </div>
-
-  <div class="chips" id="chips"></div>
-
-  <main id="sections"></main>
-
-  <noscript>
-    <p style="text-align:center;color:#6e7688;font-size:14px">
-      此頁需要 JavaScript 才能自動列出所有網站；你也可以直接到
-      <a href="https://github.com/tyhcch1234?tab=repositories">GitHub repos</a> 瀏覽。
+    <p class="hint">
+      <b>說明：</b>頁面內容以 AES-GCM 加密儲存，只有輸入正確密碼才會在瀏覽器內解密，伺服器不儲存密碼。
     </p>
-  </noscript>
+  </form>
+  <p class="foot">tyhcch1234.github.io</p>
 </div>
 
-<div class="empty" id="empty">
-  <b>找不到符合的網站或頁面</b>
-  試試其他關鍵字，例如「數學」、「默書」、「靜心」、「優惠」。
-  <br><button type="button" id="reset">清除篩選</button>
-</div>
-
-<footer class="footer">
-  共 <b id="footSites">–</b> 個網站 · <b id="footPages">–</b> 個頁面 · 部署於 <code>tyhcch1234.github.io/&lt;repo&gt;/</code><br>
-  清單建立：<span id="footStamp">2026年11月9日 14:56</span> · 每次開頁即時向 GitHub 核對，新 repo 自動補上<br>
-  <a href="https://github.com/tyhcch1234?tab=repositories" target="_blank" rel="noopener">GitHub repos</a>
-</footer>
-
-<script id="seed" type="application/json">{"owner":"tyhcch1234","generated":"2026-11-09T14:56:39+08:00","generated_human":"2026年11月9日 14:56","sites":[{"name":"F3_maths","title":"F3 maths","desc":"F3 數學互動學習站 — 2B Ch08 整數指數律","cat":"math","tags":["F3","數學互動學習站","2B","Ch08","整數指數律"],"updated":"2026-11-03","url":"F3_maths/","pages":[],"branch":"master","dyn":false},{"name":"F3_Maths_UT1","title":"F3 數學 UT1 溫習","desc":"中三統一測驗一 · 闖關式溫習","cat":"math","tags":["中三","數學","ut1","溫習"],"updated":"2026-10-16","url":"F3_Maths_UT1/","pages":[{"t":"溫習測驗（互動）","u":"中三數學_UT1_溫習測驗.html"}],"branch":"main","dyn":false},{"name":"F4_Maths_UT1","title":"F4 數學 UT1 溫習","desc":"中四統一測驗一 · 重點整理與互動練習","cat":"math","tags":["中四","數學","ut1","溫習"],"updated":"2026-10-24","url":"F4_Maths_UT1/","pages":[{"t":"溫習練習（36 題）","u":"F4_UT1_Revision.html"}],"branch":"main","dyn":false},{"name":"HKDSE-Maths-Solutions","title":"HKDSE Maths Solutions","desc":"文憑試數學題解（英文版）· 可按年份或課題瀏覽","cat":"math","tags":["dse","數學","maths","題解","solution"],"updated":"2026-11-03","url":"HKDSE-Maths-Solutions/","pages":[{"t":"按課題瀏覽（17 課題 · 全 15 年）","u":"DSE_Maths_By_Topic.html"},{"t":"練習模式（逐題練習）","u":"DSE_Maths_Exercise.html"},{"t":"百分數 · 50 題精練","u":"DSE_Percentages_50_Questions.html"},{"t":"坐標幾何 · 50 題精練","u":"DSE_coordinate-geometry_50_Questions.html"},{"t":"方程 · 50 題精練","u":"DSE_equations_50_Questions.html"},{"t":"估算與誤差 · 50 題精練","u":"DSE_estimation-approximation-error_50_Questions.html"},{"t":"公式與數列 · 50 題精練","u":"DSE_formulas-sequences_50_Questions.html"},{"t":"函數與圖像 · 50 題精練","u":"DSE_functions-graphs_50_Questions.html"},{"t":"幾何 · 50 題精練","u":"DSE_geometry_50_Questions.html"},{"t":"指數與對數 · 50 題精練","u":"DSE_indices-exponential-logarithmic_50_Questions.html"},{"t":"不等式與線性規劃 · 50 題精練","u":"DSE_inequalities-linear-programming_50_Questions.html"},{"t":"度量 · 50 題精練","u":"DSE_mensuration_50_Questions.html"},{"t":"多項式 · 50 題精練","u":"DSE_polynomials_50_Questions.html"},{"t":"概率 · 50 題精練","u":"DSE_probability_50_Questions.html"},{"t":"率、比與變分 · 50 題精練","u":"DSE_rate-ratio-variations_50_Questions.html"},{"t":"統計 · 50 題精練","u":"DSE_statistics_50_Questions.html"},{"t":"三角學 · 50 題精練","u":"DSE_trigonometry_50_Questions.html"},{"t":"Short video","u":"short_video.html"}],"branch":"master","dyn":false},{"name":"HKDSE-Maths-Chi-Solutions","title":"HKDSE 數學題解","desc":"香港中學文憑試數學（必修部分）中文題解","cat":"math","tags":["dse","數學","中文","題解"],"updated":"2026-10-29","url":"HKDSE-Maths-Chi-Solutions/","pages":[{"t":"按課題瀏覽（17 課題 · 全 15 年）","u":"DSE_Maths_By_Topic.html"},{"t":"百分數 · 50 題精練","u":"DSE_Percentages_50_Questions.html"},{"t":"坐標幾何 · 50 題精練","u":"DSE_coordinate-geometry_50_Questions.html"},{"t":"方程 · 50 題精練","u":"DSE_equations_50_Questions.html"},{"t":"估算與誤差 · 50 題精練","u":"DSE_estimation-approximation-error_50_Questions.html"},{"t":"公式與數列 · 50 題精練","u":"DSE_formulas-sequences_50_Questions.html"},{"t":"函數與圖像 · 50 題精練","u":"DSE_functions-graphs_50_Questions.html"},{"t":"幾何 · 50 題精練","u":"DSE_geometry_50_Questions.html"},{"t":"指數與對數 · 50 題精練","u":"DSE_indices-exponential-logarithmic_50_Questions.html"},{"t":"不等式與線性規劃 · 50 題精練","u":"DSE_inequalities-linear-programming_50_Questions.html"},{"t":"度量 · 50 題精練","u":"DSE_mensuration_50_Questions.html"},{"t":"多項式 · 50 題精練","u":"DSE_polynomials_50_Questions.html"},{"t":"概率 · 50 題精練","u":"DSE_probability_50_Questions.html"},{"t":"率、比與變分 · 50 題精練","u":"DSE_rate-ratio-variations_50_Questions.html"},{"t":"統計 · 50 題精練","u":"DSE_statistics_50_Questions.html"},{"t":"三角學 · 50 題精練","u":"DSE_trigonometry_50_Questions.html"}],"branch":"main","dyn":false},{"name":"hk-math-stairs","title":"hk-math-stairs","desc":"香港數學階梯：幼稚園 K1 至中六（DSE 必修）數學課程、教學內容與三程度測驗","cat":"math","tags":["香港數學階梯：幼稚園","K1","至中六","DSE","必修","數學課程"],"updated":"2026-11-07","url":"hk-math-stairs/","pages":[],"branch":"main","dyn":false},{"name":"p3-maths-workbook","title":"p3-maths-workbook","desc":"小三數學學習站：3上A / 3上B / 3下A 共 30 課，每課教學重點＋互動測驗","cat":"math","tags":["小三數學學習站：3上A","3上B","3下A","30","每課教學重點＋互動測驗"],"updated":"2026-11-07","url":"p3-maths-workbook/","pages":[{"t":"Lesson","u":"lesson.html"}],"branch":"master","dyn":false},{"name":"quadrilaterals","title":"四邊形家族圖鑑","desc":"梯形・平行四邊形・長方形・菱形・正方形・箏形：包含關係、對邊平行／相等、對角線性質、判斷流程與小測驗","cat":"math","tags":["數學","四邊形","平行四邊形","梯形","正方形","幾何"],"updated":"","url":"quadrilaterals/","pages":[],"virtual":true},{"name":"fermat-last-theorem","title":"費馬最後定理","desc":"一句頁邊註記，數學家追了 358 年 · 命題・歷史・證明思路・互動反例搜尋器","cat":"math","tags":["數學","費馬","最後定理","fermat","證明","科普"],"updated":"2026-11-01","url":"fermat-last-theorem/","pages":[],"branch":"main","dyn":false},{"name":"bible-quiz","title":"bible-quiz","desc":"聖經問答練習 · 66 卷書 817 題，繁體中文，附和合本經文出處","cat":"lang","tags":["聖經問答練習","66","卷書","817","繁體中文","附和合本經文出處"],"updated":"2026-11-01","url":"bible-quiz/","pages":[],"branch":"main","dyn":false},{"name":"chinese-k1-s6","title":"chinese-k1-s6","desc":"香港中文課程 K1–S6：六大範疇教學內容與三級測驗","cat":"lang","tags":["香港中文課程","K1–S6：六大範疇教學內容與三級測驗"],"updated":"2026-11-07","url":"chinese-k1-s6/","pages":[{"t":"Bank","u":"bank.html"},{"t":"Grade","u":"grade.html"},{"t":"Quiz","u":"quiz.html"}],"branch":"main","dyn":false},{"name":"opensource-toolbox","title":"opensource-toolbox","desc":"開源工具箱：81 個 GitHub 開源專案分類導覽，附中文說明、星數與線上即用連結（單頁靜態網站）","cat":"lang","tags":["開源工具箱：81","GitHub","開源專案分類導覽","附中文說明","星數與線上即用連結","單頁靜態網站"],"updated":"2026-11-01","url":"opensource-toolbox/","pages":[{"t":"Template","u":"_build/template.html"}],"branch":"main","dyn":false},{"name":"hanzi","title":"中文字工作紙生成器","desc":"輸入默書字詞，一鍵產生六步寫字工作紙（Word／A4）","cat":"lang","tags":["中文","工作紙","寫字","worksheet"],"updated":"","url":"hanzi/","pages":[],"virtual":true},{"name":"chinese-tracing-app","title":"中文描紅練習 · 口訣版","desc":"筆順示範、口訣讀音、練寫與默書，累積分數抽卡","cat":"lang","tags":["中文","描紅","筆順","默書"],"updated":"2026-10-15","url":"chinese-tracing-app/","pages":[],"branch":"main","dyn":false},{"name":"Chinese_Character","title":"漢字部件拆解","desc":"以源流明體示範字形結構，按部首與部件分色","cat":"lang","tags":["中文","漢字","部首","部件"],"updated":"2026-10-26","url":"Chinese_Character/","pages":[],"branch":"main","dyn":false},{"name":"chinese_writing","title":"部件拆字練習冊","desc":"小三 200 基本字 · 繁體部件拆字，讀音可點聽粵音","cat":"lang","tags":["中文","部件","拆字","小三"],"updated":"2026-10-14","url":"chinese_writing/","pages":[],"branch":"main","dyn":false},{"name":"p3-dictation-unit2","title":"默書探險隊","desc":"小三第二單元默書 · 遊戲化溫習","cat":"lang","tags":["中文","默書","小三","dictation"],"updated":"2026-10-28","url":"p3-dictation-unit2/","pages":[],"branch":"main","dyn":false},{"name":"hk-stem-awards","title":"hk-stem-awards","desc":"香港學界科研現場：12 件中小學科學與 IT 比賽得獎作品，附理念、創新之處與資料來源","cat":"junior","tags":["香港學界科研現場：12","件中小學科學與","IT","比賽得獎作品","附理念","創新之處與資料來源"],"updated":"2026-11-01","url":"hk-stem-awards/","pages":[],"branch":"main","dyn":false},{"name":"music-exam","title":"music-exam","desc":"Music Exam 音樂考試溫習：P3 音樂兩個單元、每單元三課，每課有學習重點與測試（含課堂影片片段、樂譜、錄音）","cat":"junior","tags":["Music","Exam","音樂考試溫習：P3","音樂兩個單元","每單元三課","每課有學習重點與測試"],"updated":"2026-11-01","url":"music-exam/","pages":[],"branch":"main","dyn":false},{"name":"p3-english-book5","title":"p3-english-book5","desc":"小三上學期英文溫習網（Lighthouse Book 5）：五單元筆記 + 151 題測驗 + 閱讀理解","cat":"junior","tags":["小三上學期英文溫習網","Lighthouse","Book","：五單元筆記","151","題測驗"],"updated":"2026-11-03","url":"p3-english-book5/","pages":[],"branch":"main","dyn":false},{"name":"sai-kung-primary-schools","title":"sai-kung-primary-schools","desc":"西貢區（95 校網）小學全景分析：小六人數、班級結構、學校特色、社交平台與宣傳策略","cat":"junior","tags":["西貢區","95","校網","小學全景分析：小六人數","班級結構","學校特色"],"updated":"2026-11-01","url":"sai-kung-primary-schools/","pages":[],"branch":"main","dyn":false},{"name":"water-to-urine","title":"一杯水點樣變咗做尿？","desc":"小腸吸收 → 血液運送 → 腎臟過濾 → 排尿，互動教學","cat":"junior","tags":["科學","人體","腎臟","教學"],"updated":"2026-10-30","url":"water-to-urine/","pages":[],"branch":"main","dyn":false},{"name":"chem-adventure","title":"化學物質大冒險","desc":"小三科學探險隊 · 生活中的化學物質與安全保護","cat":"junior","tags":["科學","化學","小三"],"updated":"2026-10-30","url":"chem-adventure/","pages":[],"branch":"main","dyn":false},{"name":"p3-common-sense","title":"小三常識溫習樂園","desc":"我的好朋友、香港的植物、植物與生活 · 課文重點與多款題型","cat":"junior","tags":["常識","小三","溫習"],"updated":"2026-10-29","url":"p3-common-sense/","pages":[{"t":"課堂版 · 逐頁教學","u":"lesson.html"}],"branch":"main","dyn":false},{"name":"p3-trapezoid","title":"梯形大搜查 · 圖中有幾多個梯形？","desc":"小三互動教室：5 條橫線 + 2 條斜線，逐個亮起示範，一共 43 個梯形","cat":"junior","tags":["小三","數學","圖形","梯形","互動"],"updated":"","url":"p3-trapezoid/","pages":[],"virtual":true},{"name":"mindful-kids","title":"心晴小星球","desc":"小三正向思維與靜心練習：彩虹呼吸、身體掃描、感恩日記","cat":"mind","tags":["靜心","正向","情緒","小三"],"updated":"2026-10-26","url":"mindful-kids/","pages":[],"branch":"main","dyn":false},{"name":"bible-verses-memory","title":"聖經金句 200 句","desc":"金句背誦與記憶練習","cat":"mind","tags":["聖經","金句","記憶"],"updated":"2026-10-17","url":"bible-verses-memory/","pages":[{"t":"金句練習頁","u":"Bible_Verse.html"}],"branch":"main","dyn":false},{"name":"brain-training-seniors","title":"腦友記 · 每日動腦筋","desc":"長者健腦練習：大字、慢節奏、不計時、不計分","cat":"mind","tags":["長者","記憶","健腦"],"updated":"2026-10-26","url":"brain-training-seniors/","pages":[],"branch":"main","dyn":false},{"name":"hk-elderly-benefits","title":"香港長者福利・優惠一站通","desc":"可搜尋的長者福利及優惠目錄（2026）","cat":"mind","tags":["長者","福利","優惠","津貼"],"updated":"2026-10-31","url":"hk-elderly-benefits/","pages":[{"t":"Index standalone","u":"index-standalone.html"}],"branch":"main","dyn":false},{"name":"hk-values-education","title":"hk-values-education","desc":"香港教育局《價值觀教育課程架構》(2026) 12個首要價值觀：官方內涵、教學設計示例、全港學校活動例子","cat":"design","tags":["香港教育局《價值觀教育課程架構》","2026","12個首要價值觀：官方內涵","教學設計示例","全港學校活動例子"],"updated":"2026-11-01","url":"hk-values-education/","pages":[],"branch":"main","dyn":false},{"name":"tai-o-guide","title":"tai-o-guide","desc":"大澳 Tai O — 香港最後的水上漁村：景點、歷史、美食單頁導覽","cat":"design","tags":["大澳","Tai","香港最後的水上漁村：景點","歷史","美食單頁導覽"],"updated":"2026-11-07","url":"tai-o-guide/","pages":[],"branch":"main","dyn":false},{"name":"vr-video-studio","title":"vr-video-studio","desc":"Turn any video into a stereoscopic 3D video in the browser — SBS / top-bottom / anaglyph, with a WebGL depth pass and WebXR playback.","cat":"design","tags":["Turn","any","video","into","stereoscopic","3D"],"updated":"2026-11-01","url":"vr-video-studio/","pages":[],"branch":"main","dyn":false},{"name":"Fire_Truck_Book","title":"《香港消防車》閱讀挑戰","desc":"按章節分類 82 題，每題附書本頁碼提示","cat":"design","tags":["閱讀","消防車","quiz"],"updated":"2026-10-26","url":"Fire_Truck_Book/","pages":[],"branch":"main","dyn":false},{"name":"interior-design-vr-tour","title":"嘉雲臺室內設計 VR","desc":"4 房 1 套 1811 呎 · 360° 全景導覽","cat":"design","tags":["室內設計","vr","360","導覽"],"updated":"2026-10-26","url":"interior-design-vr-tour/","pages":[],"branch":"main","dyn":false},{"name":"shiba-inu-guide","title":"柴犬手帖","desc":"品種、性格、飲食與照顧指南","cat":"design","tags":["柴犬","寵物","guide"],"updated":"2026-10-31","url":"shiba-inu-guide/","pages":[],"branch":"main","dyn":false},{"name":"3d-model-library","title":"立體模型庫","desc":"可累積的 3D 模型收藏：STL 即時預覽、下載與打印資料","cat":"design","tags":["3d","stl","模型","打印"],"updated":"2026-10-31","url":"3d-model-library/","pages":[{"t":"Viewer","u":"viewer.html"}],"branch":"main","dyn":false},{"name":"AI_Company","title":"AI Company","desc":"AI 旗艦模型競賽 · 每日追蹤十大 AI 實驗室的旗艦模型","cat":"daily","tags":["ai","模型","比較","每日"],"updated":"2026-10-31","url":"AI_Company/","pages":[],"branch":"main","dyn":false},{"name":"Movie_editing","title":"Movie editing","desc":"剪片作品庫 · Movie_editing — 5 分鐘精華與章節時間碼，每次剪片結果累積於此","cat":"daily","tags":["剪片作品庫","Movie_editing","分鐘精華與章節時間碼","每次剪片結果累積於此"],"updated":"2026-11-02","url":"Movie_editing/","pages":[{"t":"Watch","u":"watch.html"}],"branch":"main","dyn":false},{"name":"shopping","title":"全港購物優惠日誌","desc":"每晚 20 項最抵：超市・網購・商場・餐飲・家電，逐日累積","cat":"daily","tags":["優惠","購物","超市","著數"],"updated":"2026-11-08","url":"shopping/","pages":[{"t":"2026/11/09","u":"deals/2026-11-09-shopping-deals.html","d":1},{"t":"2026/11/08","u":"deals/2026-11-08-shopping-deals.html","d":1},{"t":"2026/11/07","u":"deals/2026-11-07-shopping-deals.html","d":1},{"t":"2026/11/06","u":"deals/2026-11-06-shopping-deals.html","d":1},{"t":"2026/11/05","u":"deals/2026-11-05-shopping-deals.html","d":1},{"t":"2026/11/04","u":"deals/2026-11-04-shopping-deals.html","d":1},{"t":"2026/11/03","u":"deals/2026-11-03-shopping-deals.html","d":1},{"t":"2026/11/02","u":"deals/2026-11-02-shopping-deals.html","d":1},{"t":"2026/10/30","u":"deals/2026-10-30-shopping-deals.html","d":1}],"branch":"main","dyn":true},{"name":"ai","title":"每日 AI 應用","desc":"最新 AI 應用例子：自製工具、可試玩 demo、新上架產品","cat":"daily","tags":["ai","應用","每日","demo"],"updated":"2026-11-05","url":"ai/","pages":[{"t":"2026/11/05","u":"archive/2026-11-05.html","d":1},{"t":"2026/10/30","u":"archive/2026-10-30.html","d":1}],"branch":"main","dyn":true},{"name":"investment-daily","title":"每日投資晚報","desc":"港股・香港樓市・外圍，一晚一份逐日累積","cat":"daily","tags":["投資","港股","樓市","晚報"],"updated":"2026-10-30","url":"investment-daily/","pages":[{"t":"2026/10/30","u":"reports/2026-10-30-investment-brief.html","d":1},{"t":"2026/10/29","u":"reports/2026-10-29-investment-brief.html","d":1}],"branch":"main","dyn":true},{"name":"hot-internet-movie","title":"每日最興影片 / 熱話","desc":"Netflix Top 10・YouTube 熱片・香港熱搜，逐日累積","cat":"daily","tags":["影片","熱話","netflix","youtube","熱搜"],"updated":"2026-11-08","url":"hot-internet-movie/","pages":[{"t":"2026/10/30","u":"archive/2026-10-30.html","d":1}],"branch":"main","dyn":true},{"name":"movie","title":"AI 影片作品庫","desc":"生成的短片與動畫，持續累積","cat":"media","tags":["影片","video","動畫"],"updated":"2026-11-02","url":"movie/","pages":[],"branch":"main","dyn":false},{"name":"suancaiyu","title":"suancaiyu","desc":"酸菜魚：歷史與產地、六步做法（附影片）、9 題互動測驗","cat":"media","tags":["酸菜魚：歷史與產地","六步做法","附影片","題互動測驗"],"updated":"2026-11-02","url":"suancaiyu/","pages":[],"branch":"main","dyn":false},{"name":"video-downloader","title":"video-downloader","desc":"貼上連結即可下載 YouTube / Instagram / Facebook 影片的網頁工具（Node + yt-dlp）","cat":"media","tags":["貼上連結即可下載","YouTube","Instagram","Facebook","影片的網頁工具","Node"],"updated":"2026-11-01","url":"video-downloader/","pages":[{"t":"Readme","u":"README.html"}],"branch":"main","dyn":false},{"name":"image","title":"圖片作品庫","desc":"海報、圖解、教學插圖，持續累積","cat":"media","tags":["圖片","海報","插圖","image"],"updated":"2026-10-30","url":"image/","pages":[],"branch":"main","dyn":false},{"name":"song","title":"廣東話原創歌詞集","desc":"Cantonese original songs · 原創歌詞與試聽","cat":"media","tags":["廣東話","歌詞","音樂","song"],"updated":"2026-10-30","url":"song/","pages":[],"branch":"main","dyn":false},{"name":"P3_Music_Exam1","title":"P3 Music Exam1","desc":"小三上學期音樂溫習網站：五線譜、音樂與氣氛、世界音樂、木笛、聖誕合奏，每課互動教學＋小測","cat":"play","tags":["小三上學期音樂溫習網站：五線譜","音樂與氣氛","世界音樂","木笛","聖誕合奏","每課互動教學＋小測"],"updated":"2026-11-02","url":"P3_Music_Exam1/","pages":[],"branch":"main","dyn":false},{"name":"class-party-games","title":"class-party-games","desc":"班會好好玩 · 38 個中學生班會／派對遊戲，附篩選、計時器、隨機分組與班會流程範本","cat":"play","tags":["班會好好玩","38","個中學生班會／派對遊戲","附篩選","計時器","隨機分組與班會流程範本"],"updated":"2026-11-01","url":"class-party-games/","pages":[],"branch":"main","dyn":false},{"name":"livepoll","title":"livepoll","desc":"即時互動投票（Mentimeter 風格）：掃 QR code 作答，大螢幕即時顯示文字雲／選擇題／開放回答／評分","cat":"play","tags":["即時互動投票","Mentimeter","風格","：掃","QR","code"],"updated":"2026-11-01","url":"livepoll/","pages":[{"t":"Host","u":"host.html"},{"t":"Vote","u":"vote.html"}],"branch":"main","dyn":false},{"name":"photo-to-3d","title":"photo-to-3d","desc":"相片上載 → 平面圖形自動擠出成 3D 立體模型（Three.js，免安裝、可下載 STL）","cat":"play","tags":["相片上載","平面圖形自動擠出成","3D","立體模型","Three.js","免安裝"],"updated":"2026-11-01","url":"photo-to-3d/","pages":[],"branch":"main","dyn":false},{"name":"world-fires","title":"world-fires","desc":"世界重大火災紀錄：1666–2026 年五大洲 22 場重大火災的互動檔案（圖像、紀錄片、圖表）","cat":"play","tags":["世界重大火災紀錄：1666–2026","年五大洲","22","場重大火災的互動檔案","圖像","紀錄片"],"updated":"2026-11-01","url":"world-fires/","pages":[],"branch":"main","dyn":false},{"name":"game","title":"消防英雄 3D","desc":"Three.js 第一人稱滅火救援遊戲：6 處火頭、3 位居民、180 秒","cat":"play","tags":["遊戲","3d","消防","three.js"],"updated":"2026-10-30","url":"game/","pages":[],"branch":"main","dyn":false},{"name":"pdf-studio","title":"PDF Studio","desc":"PDF 轉 Word、合併、A3 分割","cat":"tools","tags":["pdf","word","工具","合併"],"updated":"2026-11-01","url":"pdf-studio/","pages":[],"branch":"main","dyn":false},{"name":"scanpro","title":"ScanPro","desc":"相片轉 PDF 掃描，自動校正與整理","cat":"tools","tags":["掃描","pdf","scan","工具"],"updated":"2026-10-30","url":"scanpro/","pages":[{"t":"單檔離線版","u":"single.html"}],"branch":"main","dyn":false},{"name":"smart-home","title":"Smart Home DIY","desc":"ESP32 智能家居網頁控制教學（粵語）","cat":"tools","tags":["esp32","smart home","教學","iot"],"updated":"2026-10-31","url":"smart-home/","pages":[],"branch":"main","dyn":false},{"name":"canto-firefighter-song","title":"canto-firefighter-song","desc":"原創粵語歌曲《煙裡有光》— 寫給消防員｜歌詞、五線譜、簡譜、純音樂與粵語人聲版","cat":"tools","tags":["原創粵語歌曲《煙裡有光》—","寫給消防員｜歌詞","五線譜","簡譜","純音樂與粵語人聲版"],"updated":"2026-11-01","url":"canto-firefighter-song/","pages":[],"branch":"main","dyn":false},{"name":"casio-fx-50fhii","title":"casio-fx-50fhii","desc":"CASIO fx-50FH II web emulation — faithful keypad, two-line dot-matrix display, and a real calculation engine in a single HTML file.","cat":"tools","tags":["CASIO","fx-50FH","II","web","emulation","faithful"],"updated":"2026-11-01","url":"casio-fx-50fhii/","pages":[],"branch":"main","dyn":false},{"name":"discussion-wall","title":"discussion-wall","desc":"Padlet 風格多人討論牆：貼上答案即時同步（純前端單檔，GitHub Pages）","cat":"tools","tags":["Padlet","風格多人討論牆：貼上答案即時同步","純前端單檔","GitHub","Pages"],"updated":"2026-11-01","url":"discussion-wall/","pages":[],"branch":"main","dyn":false},{"name":"fireman-sam-toys","title":"fireman-sam-toys","desc":"全球 Fireman Sam 玩具圖鑑 — Global Fireman Sam Toy Catalogue","cat":"tools","tags":["全球","Fireman","Sam","玩具圖鑑","Global","Fireman"],"updated":"2026-11-01","url":"fireman-sam-toys/","pages":[],"branch":"main","dyn":false},{"name":"food-calorie-ai","title":"food-calorie-ai","desc":"上載食物相片即計卡路里、蛋白質、碳水、脂肪、纖維、糖、鈉（CLIP 離線辨識 + 可選 Vision API）","cat":"tools","tags":["上載食物相片即計卡路里","蛋白質","碳水","脂肪","纖維","CLIP"],"updated":"2026-11-01","url":"food-calorie-ai/","pages":[],"branch":"main","dyn":false},{"name":"hand-in-smoke","title":"hand-in-smoke","desc":"濃煙裡的手。粵語聲調對準旋律的完整演唱，寫給香港消防員。","cat":"tools","tags":["濃煙裡的手。粵語聲調對準旋律的完整演唱","寫給香港消防員。"],"updated":"2026-11-02","url":"hand-in-smoke/","pages":[],"branch":"main","dyn":false},{"name":"hk-edu-policy-tracker","title":"hk-edu-policy-tracker","desc":"香港教育政策 2023–2026：30 項承諾的完成度追蹤與分析（靜態網頁）","cat":"tools","tags":["香港教育政策","2023–2026：30","項承諾的完成度追蹤與分析","靜態網頁"],"updated":"2026-11-05","url":"hk-edu-policy-tracker/","pages":[],"branch":"main","dyn":false},{"name":"hk-gov-guide","title":"hk-gov-guide","desc":"香港政府部門指南：15 個政策局、主要部門工作與市民必知服務","cat":"tools","tags":["香港政府部門指南：15","個政策局","主要部門工作與市民必知服務"],"updated":"2026-11-07","url":"hk-gov-guide/","pages":[],"branch":"main","dyn":false},{"name":"hk-secondary-schools","title":"hk-secondary-schools","desc":"全港 441 所中學一覽：校名、區域、學校類別、主題與關注項目（2025/26），資料源自家校會《中學概覽》","cat":"tools","tags":["全港","441","所中學一覽：校名","區域","學校類別","主題與關注項目"],"updated":"2026-11-05","url":"hk-secondary-schools/","pages":[],"branch":"main","dyn":false},{"name":"ocr","title":"ocr","desc":"Browser OCR for scanned PDFs","cat":"tools","tags":["Browser","OCR","for","scanned","PDFs"],"updated":"2026-11-02","url":"ocr/","pages":[],"branch":"main","dyn":false},{"name":"positive-education-permah","title":"positive-education-permah","desc":"PERMAH 正向教育：給中學生的六大元素、真實見證與自我檢視","cat":"tools","tags":["PERMAH","正向教育：給中學生的六大元素","真實見證與自我檢視"],"updated":"2026-11-01","url":"positive-education-permah/","pages":[],"branch":"main","dyn":false},{"name":"putonghua-psc","title":"putonghua-psc","desc":"普通話水平測試（PSC）由零開始自學網站：五部分教學、練習、測驗與模擬考試","cat":"tools","tags":["普通話水平測試","PSC","由零開始自學網站：五部分教學","練習","測驗與模擬考試"],"updated":"2026-11-07","url":"putonghua-psc/","pages":[],"branch":"main","dyn":false},{"name":"quizclash","title":"quizclash","desc":"Kahoot 式即時問答：四選一題目、房間碼／QR code 加入、速度計分與排行榜（純靜態，GitHub Pages）","cat":"tools","tags":["Kahoot","式即時問答：四選一題目","房間碼／QR","code","加入","速度計分與排行榜"],"updated":"2026-11-01","url":"quizclash/","pages":[{"t":"Host","u":"host.html"},{"t":"Play","u":"play.html"}],"branch":"master","dyn":false},{"name":"recorder-hot-cross-buns","title":"recorder-hot-cross-buns","desc":"GitHub Pages 網站","cat":"tools","tags":["GitHub","Pages","網站"],"updated":"2026-11-04","url":"recorder-hot-cross-buns/","pages":[],"branch":"master","dyn":false},{"name":"sai-kung-secondary-schools","title":"sai-kung-secondary-schools","desc":"西貢區 26 間中學的中一收生數字、班級結構、學校特色、社交平台與宣傳策略分析","cat":"tools","tags":["西貢區","26","間中學的中一收生數字","班級結構","學校特色","社交平台與宣傳策略分析"],"updated":"2026-11-01","url":"sai-kung-secondary-schools/","pages":[],"branch":"main","dyn":false},{"name":"scan-fix","title":"scan-fix","desc":"相片文件校正：紙邊、真實長寬比、拉直、展平、去陰影。瀏覽器內運算。","cat":"tools","tags":["相片文件校正：紙邊","真實長寬比","拉直","展平","去陰影。瀏覽器內運算。"],"updated":"2026-11-02","url":"scan-fix/","pages":[],"branch":"main","dyn":false},{"name":"two-agents-chat","title":"two-agents-chat","desc":"兩個 AI agent 互相傾偈 · 頭 200 句（廣東話）","cat":"tools","tags":["兩個","AI","agent","互相傾偈","200","廣東話"],"updated":"2026-11-04","url":"two-agents-chat/","pages":[],"branch":"main","dyn":false},{"name":"voice-to-text","title":"voice-to-text","desc":"iPhone 錄音轉文字：廣東話／English／普通話，100% 本機 Whisper 轉錄，可匯出 TXT / SRT","cat":"tools","tags":["iPhone","錄音轉文字：廣東話／English／普通話","100%","本機","Whisper","轉錄"],"updated":"2026-11-01","url":"voice-to-text/","pages":[],"branch":"main","dyn":false},{"name":"secondary-funding","title":"香港中學資助指南","desc":"政府及非政府資助分類目錄：資助目的、金額、學校資格及官方來源，可按校名與用途搜尋。","cat":"tools","tags":["中學","資助","津貼","政府","慈善基金","學校發展"],"updated":"2026-11-09","url":"secondary-funding/","pages":[],"virtual":true}]}</script>
+<script src="assets/payload.js"></script>
 <script>
-/* 學習與工具總覽 — 即時 repo 索引 + 站內頁面搜尋
- *
- * 資料來源（三層，全部以「實際存在的網站」為準）：
- *   1. sites.json     發佈時由 build_index.py 掃描 GitHub 產生，含每個網站的頁面清單
- *   2. index.html 內嵌的 seed（sites.json 讀不到時的離線備份）
- *   3. 開頁時向 GitHub API 核對 repo 清單，發佈後新開的 repo 會即時補上
- * 畫面上的「N 個網站」永遠等於下面真正列出的卡片數。
- */
 (function () {
-  'use strict';
+  "use strict";
 
-  var OWNER = 'tyhcch1234';
-  var ROOT_REPO = OWNER + '.github.io';
-  var REPO_TTL = 5 * 60 * 1000;          // repo 清單快取 5 分鐘
-  var TREE_TTL = 6 * 60 * 60 * 1000;     // 站內頁面清單快取 6 小時
-  var DYN_PER_LOAD = 2;                  // 每次開頁最多更新 2 個每日累積網站
+  var form = document.getElementById("gate");
+  var input = document.getElementById("pw");
+  var msg = document.getElementById("msg");
+  var go = document.getElementById("go");
+  var eye = document.getElementById("eye");
+  var card = form;
 
-  var CATS = {
-    math:   { label: '數學 · 文憑試與測驗', glyph: 'g-math' },
-    lang:   { label: '中文 · 識字與書寫',   glyph: 'g-lang' },
-    junior: { label: '小學 · 常識與科學',   glyph: 'g-flask' },
-    mind:   { label: '身心 · 益智 · 記憶',  glyph: 'g-mind' },
-    design: { label: '設計 · 繪本 · 導覽',  glyph: 'g-cube' },
-    daily:  { label: '每日日誌 · 自動累積', glyph: 'g-cal' },
-    media:  { label: '作品庫 · 圖文影音',   glyph: 'g-media' },
-    play:   { label: '遊戲 · 互動教學',     glyph: 'g-play' },
-    tools:  { label: '工具 · 應用',         glyph: 'g-file' }
-  };
-  var ORDER = ['math', 'lang', 'junior', 'mind', 'design', 'daily', 'media', 'play', 'tools'];
-
-  var seed = JSON.parse(document.getElementById('seed').textContent);
-
-  var state = {
-    sites: [],
-    meta: { generated: seed.generated || '', generated_human: seed.generated_human || '' },
-    quotaHit: false
-  };
-
-  var byName = Object.create(null);
-  var activeCat = 'all';
-  var expanded = Object.create(null);
-  var q = '';
-  var searchTimer = null;
-
-  var el = {
-    sections: document.getElementById('sections'),
-    chips: document.getElementById('chips'),
-    input: document.getElementById('q'),
-    hint: document.getElementById('hint'),
-    empty: document.getElementById('empty'),
-    statSites: document.getElementById('statSites'),
-    statPages: document.getElementById('statPages'),
-    statSync: document.getElementById('statSync'),
-    statLive: document.getElementById('statLive'),
-    footSites: document.getElementById('footSites'),
-    footPages: document.getElementById('footPages'),
-    footStamp: document.getElementById('footStamp'),
-    syncBtn: document.getElementById('syncBtn'),
-    topbar: document.getElementById('topbar')
-  };
-
-  /* ------------------------------------------------------------ helpers */
-  function esc(s) {
-    return String(s == null ? '' : s)
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+  function b64ToBytes(b64) {
+    var bin = atob(b64);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
   }
-  function siteHay(s) {
-    return [s.title, s.desc, (s.tags || []).join(' '), s.name, (CATS[s.cat] || {}).label]
-      .join(' ').toLowerCase();
+
+  function say(text, kind) {
+    msg.textContent = text || "";
+    msg.className = "msg" + (kind ? " " + kind : "");
   }
-  function pageHay(p) { return ((p.t || '') + ' ' + p.u).toLowerCase(); }
-  function siteUrl(s) { return 'https://' + OWNER + '.github.io/' + (s.url || (s.name + '/')); }
-  function pageUrl(s, p) { return siteUrl(s) + p.u; }
-  function link(s, p) {
-    return encodeURI(pageUrl(s, p).replace(/ /g, '%20'));
+
+  function fail(text) {
+    say(text, "err");
+    card.classList.remove("shake");
+    void card.offsetWidth;
+    card.classList.add("shake");
+    input.select();
   }
-  function store(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
-  function read(key, ttl) {
+
+  /* 顯示／隱藏密碼 */
+  eye.addEventListener("click", function () {
+    var show = input.type === "password";
+    input.type = show ? "text" : "password";
+    eye.setAttribute("aria-pressed", String(show));
+    eye.setAttribute("aria-label", show ? "隱藏密碼" : "顯示密碼");
+    input.focus();
+  });
+
+  async function unlock(pw) {
+    var G = window.__GATE__;
+    if (!G || !G.data) {
+      fail("找不到加密內容，請重新載入頁面。");
+      return;
+    }
+    if (!(window.crypto && window.crypto.subtle)) {
+      fail("此瀏覽器不支援解密，請改用較新的瀏覽器或以 https 開啟。");
+      return;
+    }
+
     try {
-      var raw = localStorage.getItem(key);
-      if (!raw) return null;
-      var o = JSON.parse(raw);
-      if (!ttl || Date.now() - o.at < ttl) return o;
-      return null;
-    } catch (e) { return null; }
-  }
-  function mark(text, needle) {
-    var t = esc(text);
-    if (!needle) return t;
-    var i = t.toLowerCase().indexOf(needle.toLowerCase());
-    if (i < 0) return t;
-    return t.slice(0, i) + '<mark>' + t.slice(i, i + needle.length) + '</mark>' + t.slice(i + needle.length);
-  }
-  function fmtDate(d) {
-    if (!d) return '';
-    var p = d.split('-');
-    return p.length === 3 ? (Number(p[1]) + '/' + Number(p[2])) : d;
-  }
-  function fmtStamp(human) { return human || '未提供'; }
+      var enc = new TextEncoder().encode(pw);
+      var baseKey = await crypto.subtle.importKey("raw", enc, "PBKDF2", false, ["deriveKey"]);
+      var key = await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(G.salt), iterations: G.iter, hash: "SHA-256" },
+        baseKey,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+      var plain = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: b64ToBytes(G.iv), tagLength: 128 },
+        key,
+        b64ToBytes(G.data)
+      );
 
-  /* ------------------------------------------------- 自動分類（新 repo 用） */
-  function autoCat(name, desc) {
-    var low = (name + ' ' + desc).toLowerCase();
-    if (/math|數學|dse/.test(low)) return 'math';
-    if (/中文|hanzi|chinese|dictation|默書|寫字/.test(low)) return 'lang';
-    if (/小學|常識|科學|\bp[1-6]\b/.test(low)) return 'junior';
-    if (/長者|記憶|靜心|mindful|bible|聖經|brain/.test(low)) return 'mind';
-    if (/設計|design|vr|導覽|繪本|tour/.test(low)) return 'design';
-    if (/優惠|投資|日誌|deals|daily|熱話|news|brief|netflix/.test(low)) return 'daily';
-    if (/圖片|image|影片|video|作品/.test(low)) return 'media';
-    if (/遊戲|game|3d|互動/.test(low)) return 'play';
-    return 'tools';
-  }
-
-  /* ------------------------------------- 由 repo 檔案清單抽出「站內頁面」 */
-  var SKIP_DIRS = ['node_modules/', 'vendor/', '_site/', 'assets/', 'images/', 'img/', 'cn/', 'docs/'];
-  var DATE_DIRS = ['archive/', 'deals/', 'reports/', 'posts/', 'daily/'];
-  var TOPIC = {
-    percentages: '百分數', 'coordinate-geometry': '坐標幾何', equations: '方程',
-    'estimation-approximation-error': '估算與誤差', 'formulas-sequences': '公式與數列',
-    'functions-graphs': '函數與圖像', geometry: '幾何',
-    'indices-exponential-logarithmic': '指數與對數',
-    'inequalities-linear-programming': '不等式與線性規劃', mensuration: '度量',
-    polynomials: '多項式', probability: '概率', 'rate-ratio-variations': '率、比與變分',
-    statistics: '統計', trigonometry: '三角學'
-  };
-
-  function massGenerated(base) {
-    return /^\d{4}_p\d_q\d+\.html$/i.test(base) ||
-      /^\d{4}_mc_\d+\.html$/i.test(base) ||
-      /^ex_t\d+_q\d+\.html$/i.test(base) ||
-      /^demo.*\.html$/i.test(base) ||
-      /_q\d+\.html$/i.test(base);
-  }
-  function prettyTitle(path) {
-    var base = path.split('/').pop().replace(/\.(html|md)$/i, '');
-    var m = base.match(/^dse_(.+)_50_questions$/i);
-    if (m) return (TOPIC[m[1].toLowerCase()] || m[1]) + ' · 50 題精練';
-    if (/^\d{4}-\d{2}-\d{2}/.test(base)) return base.slice(0, 10).replace(/-/g, '/');
-    base = base.replace(/^dse_/i, '').replace(/_/g, ' ');
-    return base;
-  }
-  function extractPages(paths) {
-    var named = [], dated = [];
-    paths.forEach(function (p) {
-      var low = p.toLowerCase();
-      for (var i = 0; i < SKIP_DIRS.length; i++) if (low.indexOf(SKIP_DIRS[i]) === 0) return;
-      var base = low.split('/').pop();
-      if (/\.html$/.test(low)) {
-        if (base === 'index.html' || base === '404.html') return;
-        if (massGenerated(base) || base.indexOf('.body.') !== -1) return;
-        named.push({ t: prettyTitle(p), u: p });
-      } else if (/\.md$/.test(low)) {
-        var ok = false;
-        for (var j = 0; j < DATE_DIRS.length; j++) if (low.indexOf(DATE_DIRS[j]) === 0) ok = true;
-        if (!ok) return;
-        dated.push({ t: prettyTitle(p), u: p.replace(/\.md$/i, '.html'), d: 1 });
-      }
-    });
-    named.sort(function (a, b) { return a.u < b.u ? -1 : 1; });
-    dated.sort(function (a, b) { return a.u < b.u ? 1 : -1; });
-    return named.concat(dated);
-  }
-
-  /* ------------------------------------------------------------ 統計 */
-  function totals() {
-    var pages = 0;
-    state.sites.forEach(function (s) { pages += s.pages.length; });
-    return { sites: state.sites.length, pages: pages };
-  }
-  function paintTotals() {
-    var t = totals();
-    el.statSites.textContent = t.sites;
-    el.statPages.textContent = t.pages;
-    el.footSites.textContent = t.sites;
-    el.footPages.textContent = t.pages;
-    if (el.footStamp) el.footStamp.textContent = fmtStamp(state.meta.generated_human);
-  }
-  function setSync(text, warn) {
-    el.statSync.textContent = text;
-    el.statLive.classList.toggle('warn', !!warn);
-  }
-
-  /* ------------------------------------------------------------ 篩選器 */
-  function renderChips() {
-    var counts = { all: state.sites.length };
-    state.sites.forEach(function (s) { counts[s.cat] = (counts[s.cat] || 0) + 1; });
-    var html = '<button class="chip" type="button" data-filter="all" aria-pressed="' +
-      (activeCat === 'all') + '">全部<span>' + state.sites.length + '</span></button>';
-    ORDER.forEach(function (c) {
-      if (!counts[c]) return;
-      html += '<button class="chip" type="button" data-filter="' + c + '" aria-pressed="' +
-        (activeCat === c) + '">' + esc(CATS[c].label.split(' · ')[0]) +
-        '<span>' + counts[c] + '</span></button>';
-    });
-    el.chips.innerHTML = html;
-  }
-
-  /* ------------------------------------------------------------ 卡片 */
-  function cardHTML(s) {
-    var n = s.pages.length;
-    var meta = [];
-    if (n) meta.push('<span class="badge">' + n + ' 頁</span>');
-    if (s._new) meta.push('<span class="badge new">新</span>');
-    if (s.updated) meta.push('<span>更新 ' + esc(fmtDate(s.updated)) + '</span>');
-    return '' +
-      '<article class="card' + (expanded[s.name] ? ' open' : '') + '" data-name="' + esc(s.name) + '">' +
-        '<a class="main" href="' + esc(siteUrl(s)) + '" target="_blank" rel="noopener">' +
-          '<span class="tile"><svg><use href="#' + (CATS[s.cat] || CATS.tools).glyph + '"/></svg></span>' +
-          '<span class="body">' +
-            '<span class="title">' + mark(s.title, q) + '</span>' +
-            '<span class="desc">' + mark(s.desc, q) + '</span>' +
-            (meta.length ? '<span class="meta">' + meta.join('<span class="dot"></span>') + '</span>' : '') +
-          '</span>' +
-          '<svg class="arrow"><use href="#i-arrow"/></svg>' +
-        '</a>' +
-        (n ? '<button class="pages-toggle" type="button">' +
-          '<span class="pt-label">站內 ' + n + ' 個頁面</span>' +
-          '<svg><use href="#i-chevron"/></svg></button>' : '') +
-        '<ul class="pages"></ul>' +
-      '</article>';
-  }
-
-  function renderAll() {
-    var html = '';
-    ORDER.forEach(function (cat) {
-      var list = state.sites.filter(function (s) { return s.cat === cat; });
-      if (!list.length) return;
-      html += '<section data-cat="' + cat + '">' +
-        '<div class="sec-head">' +
-          '<span class="glyph"><svg><use href="#' + CATS[cat].glyph + '"/></svg></span>' +
-          '<h2>' + esc(CATS[cat].label) + '</h2>' +
-          '<span class="count">' + list.length + '</span>' +
-          '<span class="rule"></span>' +
-        '</div>' +
-        '<div class="grid">' + list.map(cardHTML).join('') + '</div>' +
-      '</section>';
-    });
-    el.sections.innerHTML = html;
-    paintTotals();
-    applyFilter();
-  }
-
-  /* 顯示全部頁面（不設上限） */
-  function paintPages(card, s, matches) {
-    var ul = card.querySelector('.pages');
-    if (!ul) return 0;
-    var list = matches || s.pages;
-    ul.innerHTML = list.map(function (p) {
-      return '<li><a href="' + esc(link(s, p)) + '" target="_blank" rel="noopener">' +
-        '<span class="pt">' + mark(p.t, q) + '</span>' +
-        '<span class="p">' + esc(p.u) + '</span></a></li>';
-    }).join('');
-    return list.length;
-  }
-
-  /* ------------------------------------------------------------ 搜尋 */
-  function applyFilter() {
-    var needle = q;
-    var shownSites = 0, shownPages = 0;
-    var cards = el.sections.querySelectorAll('.card');
-    for (var i = 0; i < cards.length; i++) {
-      var card = cards[i];
-      var s = byName[card.getAttribute('data-name')];
-      if (!s) continue;
-      var catOk = activeCat === 'all' || s.cat === activeCat;
-      var siteMatch = !needle || s._hay.indexOf(needle) !== -1;
-      var hits = [];
-      if (needle) {
-        s.pages.forEach(function (p) { if (pageHay(p).indexOf(needle) !== -1) hits.push(p); });
-      }
-      var visible = catOk && (siteMatch || hits.length > 0);
-      card.style.display = visible ? '' : 'none';
-      if (!visible) continue;
-      shownSites++;
-      var open = needle ? hits.length > 0 : !!expanded[s.name];
-      card.classList.toggle('open', open);
-      if (open) shownPages += paintPages(card, s, needle && hits.length ? hits : null);
+      var html = new TextDecoder("utf-8").decode(plain);
+      say("密碼正確，正在載入…", "ok");
+      document.open();
+      document.write(html);
+      document.close();
+    } catch (e) {
+      fail("密碼不正確，請再試一次。");
     }
-    el.empty.style.display = shownSites ? 'none' : 'block';
-    paintHint(shownSites, shownPages);
   }
 
-  function paintHint(shownSites, shownPages) {
-    if (!q) {
-      el.hint.innerHTML = '搜尋會同時比對 repo 名稱、說明與站內每個頁面。';
-      return;
-    }
-    if (!shownSites) {
-      el.hint.innerHTML = '沒有符合「<b>' + esc(q) + '</b>」的網站或頁面。';
-      return;
-    }
-    el.hint.innerHTML = shownPages
-      ? '找到 <b>' + shownSites + '</b> 個網站 · <b>' + shownPages + '</b> 個頁面'
-      : '找到 <b>' + shownSites + '</b> 個網站';
-  }
+  form.addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    var pw = input.value;
+    if (!pw) { fail("請先輸入密碼。"); return; }
 
-  /* ------------------------------------------------- 事件：卡片展開 */
-  el.sections.addEventListener('click', function (e) {
-    var btn = e.target.closest('.pages-toggle');
-    if (!btn) return;
-    var card = btn.closest('.card');
-    var s = byName[card.getAttribute('data-name')];
-    if (!s) return;
-    expanded[s.name] = !expanded[s.name];
-    card.classList.toggle('open', expanded[s.name]);
-    if (expanded[s.name]) paintPages(card, s, null);
+    go.disabled = true;
+    say("驗證中…");
+    /* 輕微延遲，減慢自動化嘗試 */
+    await new Promise(function (r) { setTimeout(r, 350); });
+    await unlock(pw);
+    go.disabled = false;
   });
 
-  /* ------------------------------------------- 套用一份完整網站清單 */
-  function normalize(list) {
-    return list.map(function (s) {
-      s.pages = s.pages || [];
-      if (s._new === undefined) s._new = false;
-      s._hay = siteHay(s);
-      return s;
-    });
-  }
-  function setSites(list, meta) {
-    state.sites = normalize(list);
-    byName = Object.create(null);
-    state.sites.forEach(function (s) { byName[s.name] = s; });
-    if (meta) state.meta = meta;
-    renderChips();
-    renderAll();
-  }
-
-  function signature(s) {
-    return [s.name, s.cat, s.title, s.updated, (s.pages || []).length, s.dyn ? 1 : 0].join('|');
-  }
-
-  /* ------------------------------------------- 1. 發佈時的完整清單 */
-  function loadManifest(force) {
-    if (!window.fetch) return Promise.resolve(false);
-    if (!force && state.meta.generated && read('manifest:skip', 60 * 1000)) return Promise.resolve(false);
-    return fetch('sites.json?t=' + Date.now(), { cache: 'no-store' })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      // sites.json 已改為明文；若仍是舊版密文（有 lock.js）則交由其解密，解不開就沿用頁內 seed
-      .then(function (j) { return window.__hubDecryptJSON ? window.__hubDecryptJSON(j) : j; })
-      .then(function (j) {
-        if (!j || !Array.isArray(j.sites) || !j.sites.length) return false;
-        if (j.generated && state.meta.generated && j.generated < state.meta.generated) return false;
-        var before = state.sites.map(signature).join('\n');
-        var after = j.sites.map(signature).join('\n');
-        setSites(j.sites, { generated: j.generated || '', generated_human: j.generated_human || '' });
-        store('manifest:skip', { at: Date.now() });
-        return before !== after;
-      })
-      .catch(function () { return false; });
-  }
-
-  /* ------------------------------------------- 2. 即時核對 repo 清單 */
-  function repoList(force) {
-    var cached = force ? null : read('repos:list', REPO_TTL);
-    if (cached && Array.isArray(cached.list)) return Promise.resolve(cached.list);
-    return fetch('https://api.github.com/users/' + OWNER +
-      '/repos?per_page=100&sort=updated&type=owner',
-      { headers: { 'Accept': 'application/vnd.github+json' }, cache: 'no-store' })
-      .then(function (r) {
-        if (r.status === 403 || r.status === 429) { state.quotaHit = true; throw new Error('quota'); }
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function (list) {
-        if (!Array.isArray(list)) throw new Error('bad payload');
-        store('repos:list', { at: Date.now(), list: list });
-        return list;
-      });
-  }
-
-  /* 檢查一個 repo 是否真的有網站（有根目錄 index.html 或已啟用 Pages） */
-  function probeRepo(name, branch, hasPages) {
-    var url = 'https://api.github.com/repos/' + OWNER + '/' + encodeURIComponent(name) +
-      '/git/trees/' + encodeURIComponent(branch || 'main') + '?recursive=1';
-    return fetch(url, { headers: { 'Accept': 'application/vnd.github+json' }, cache: 'no-store' })
-      .then(function (r) {
-        if (r.status === 403 || r.status === 429) { state.quotaHit = true; return null; }
-        if (!r.ok) return null;
-        return r.json();
-      })
-      .then(function (j) {
-        if (!j) return null;
-        var paths = (j.tree || []).filter(function (t) { return t.type === 'blob'; })
-          .map(function (t) { return t.path; });
-        var hasRootIndex = paths.some(function (p) { return p.toLowerCase() === 'index.html'; });
-        if (!hasPages && !hasRootIndex) return null;
-        var pages = extractPages(paths);
-        store('tree:' + name, { at: Date.now(), pages: pages });
-        return pages;
-      })
-      .catch(function () { return null; });
-  }
-
-  function addSite(r, pages) {
-    if (byName[r.name]) return false;
-    var cat = autoCat(r.name, r.description || '');
-    var s = {
-      name: r.name,
-      title: r.name.replace(/_/g, ' '),
-      desc: r.description || (CATS[cat].label + ' 網站'),
-      cat: cat,
-      tags: [],
-      updated: (r.updated_at || '').slice(0, 10),
-      url: r.name + '/',
-      pages: pages || [],
-      virtual: false,
-      _new: true
-    };
-    s._hay = siteHay(s);
-    state.sites.push(s);
-    byName[s.name] = s;
-    return true;
-  }
-
-  function liveCheck(force) {
-    if (!window.fetch) { setSync('離線 · 本地清單', true); return Promise.resolve(0); }
-    return repoList(force).then(function (list) {
-      var repos = list.filter(function (r) {
-        return r.name !== ROOT_REPO && !r.fork && !r.archived && !r.private;
-      });
-      var alive = Object.create(null);
-      repos.forEach(function (r) { alive[r.name] = 1; });
-
-      /* 已刪除／改名的 repo 一併移除，令數字與 GitHub 一致 */
-      var gone = 0;
-      if (repos.length >= 5) {
-        state.sites = state.sites.filter(function (s) {
-          if (s.virtual || alive[s.name]) return true;
-          gone++;
-          return false;
-        });
-      }
-
-      var fresh = repos.filter(function (r) { return !byName[r.name]; })
-        .slice(0, 8);                       // 一次最多補 8 個，避免用盡 API 配額
-      var added = 0, touched = 0;
-      var chain = Promise.resolve();
-      fresh.forEach(function (r) {
-        chain = chain.then(function () {
-          if (state.quotaHit) return;
-          return probeRepo(r.name, r.default_branch, r.has_pages).then(function (pages) {
-            if (pages && addSite(r, pages)) added++;
-          });
-        });
-      });
-
-      /* 上次建清單後有 push 的網站：重掃一次頁面清單，令頁數跟得上 */
-      var dirty = repos.filter(function (r) {
-        var s = byName[r.name];
-        if (!s || s.virtual) return false;
-        var d = (r.updated_at || '').slice(0, 10);
-        if (!d || !s.updated || d <= s.updated) return false;
-        var raw = null;
-        try { raw = JSON.parse(localStorage.getItem('tree:' + r.name) || 'null'); } catch (e) {}
-        return !raw || Date.now() - (raw.at || 0) > 20 * 60 * 1000;
-      }).slice(0, 3);
-      dirty.forEach(function (r) {
-        chain = chain.then(function () {
-          if (state.quotaHit) return;
-          var s = byName[r.name];
-          return probeRepo(r.name, r.default_branch, true).then(function (pages) {
-            if (!pages) return;
-            s.updated = (r.updated_at || '').slice(0, 10);
-            if (JSON.stringify(pages) !== JSON.stringify(s.pages)) {
-              s.pages = pages;
-              s._hay = siteHay(s);
-              touched++;
-            }
-          });
-        });
-      });
-
-      return chain.then(function () {
-        if (added || gone || touched) setSites(state.sites, null);
-        else paintTotals();
-        var note = [];
-        if (added) note.push('新增 ' + added + ' 個');
-        if (gone) note.push('移除 ' + gone + ' 個');
-        if (touched) note.push('更新 ' + touched + ' 個頁面清單');
-        setSync('已即時檢查 GitHub' + (note.length ? ' · ' + note.join(' · ') : ''),
-          !!state.quotaHit);
-        return added + touched;
-      });
-    }).catch(function (err) {
-      var quota = err && err.message === 'quota';
-      setSync(quota ? 'GitHub 用量上限 · 顯示完整清單' : '未能連線 GitHub · 顯示完整清單', true);
-      return 0;
-    });
-  }
-
-  /* ------------------------------------ 3. 每日累積網站：補上新增頁面 */
-  function refreshDynamic(limit) {
-    if (state.quotaHit || !window.fetch) return Promise.resolve(0);
-    var queue = state.sites.filter(function (s) { return s.dyn && !s.virtual; })
-      .map(function (s) {
-        var raw = null;
-        try { raw = JSON.parse(localStorage.getItem('tree:' + s.name) || 'null'); } catch (e) {}
-        return { s: s, at: raw && raw.at ? raw.at : 0 };
-      })
-      .filter(function (o) { return Date.now() - o.at > TREE_TTL; })
-      .sort(function (a, b) { return a.at - b.at; })
-      .slice(0, limit);
-    if (!queue.length) return Promise.resolve(0);
-    var changed = 0, chain = Promise.resolve();
-    queue.forEach(function (o) {
-      chain = chain.then(function () {
-        if (state.quotaHit) return;
-        var url = 'https://api.github.com/repos/' + OWNER + '/' + encodeURIComponent(o.s.name) +
-          '/git/trees/' + encodeURIComponent(o.s.branch || 'main') + '?recursive=1';
-        return fetch(url, { headers: { 'Accept': 'application/vnd.github+json' }, cache: 'no-store' })
-          .then(function (r) {
-            if (r.status === 403 || r.status === 429) { state.quotaHit = true; return null; }
-            if (!r.ok) return null;
-            return r.json();
-          })
-          .then(function (j) {
-            if (!j) return;
-            var paths = (j.tree || []).filter(function (t) { return t.type === 'blob'; })
-              .map(function (t) { return t.path; });
-            var pages = extractPages(paths);
-            store('tree:' + o.s.name, { at: Date.now(), pages: pages });
-            if (JSON.stringify(pages) !== JSON.stringify(o.s.pages)) {
-              o.s.pages = pages;
-              o.s._hay = siteHay(o.s);
-              changed++;
-            }
-          })
-          .catch(function () {});
-      });
-    });
-    return chain.then(function () {
-      if (changed) setSites(state.sites, null);
-      return changed;
-    });
-  }
-
-  /* ------------------------------------------------- 其他 UI */
-  el.input.addEventListener('input', function () {
-    clearTimeout(searchTimer);
-    var v = el.input.value.trim().toLowerCase();
-    searchTimer = setTimeout(function () { q = v; applyFilter(); }, 90);
+  input.addEventListener("input", function () {
+    if (msg.classList.contains("err")) say("");
   });
-
-  el.chips.addEventListener('click', function (e) {
-    var chip = e.target.closest('.chip');
-    if (!chip) return;
-    activeCat = chip.getAttribute('data-filter');
-    Array.prototype.forEach.call(el.chips.children, function (c) {
-      c.setAttribute('aria-pressed', String(c === chip));
-    });
-    applyFilter();
-  });
-
-  document.getElementById('reset').addEventListener('click', function () {
-    el.input.value = '';
-    q = '';
-    activeCat = 'all';
-    Array.prototype.forEach.call(el.chips.children, function (c) {
-      c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === 'all'));
-    });
-    applyFilter();
-    el.input.focus();
-  });
-
-  document.addEventListener('keydown', function (e) {
-    var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
-    if (e.key === '/' && !typing) { e.preventDefault(); el.input.focus(); }
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault(); el.input.focus(); el.input.select();
-    }
-    if (e.key === 'Escape' && document.activeElement === el.input) {
-      el.input.value = ''; q = ''; applyFilter();
-    }
-  });
-
-  /* 深色模式 */
-  var root = document.documentElement;
-  var saved = null;
-  try { saved = localStorage.getItem('theme'); } catch (e) {}
-  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
-  document.getElementById('themeToggle').addEventListener('click', function () {
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-  });
-
-  /* 重新掃描：重讀 sites.json + 即時核對 GitHub + 更新累積頁面 */
-  el.syncBtn.addEventListener('click', function () {
-    if (el.syncBtn.classList.contains('spin')) return;
-    el.syncBtn.classList.add('spin');
-    setSync('重新掃描 GitHub…');
-    loadManifest(true)
-      .then(function () { return liveCheck(true); })
-      .then(function () { return refreshDynamic(6); })
-      .then(function () {
-        el.syncBtn.classList.remove('spin');
-        setSync('已重新掃描 · ' + state.sites.length + ' 個網站',
-          !!state.quotaHit);
-      })
-      .catch(function () {
-        el.syncBtn.classList.remove('spin');
-        setSync('未能完成掃描 · 請稍後再試', true);
-      });
-  });
-
-  window.addEventListener('scroll', function () {
-    el.topbar.classList.toggle('stuck', window.scrollY > 8);
-  }, { passive: true });
-
-  /* ------------------------------------------------- 啟動 */
-  setSites(seed.sites, { generated: seed.generated || '', generated_human: seed.generated_human || '' });
-  setSync('讀取中…');
-
-  loadManifest(false)
-    .then(function () { return liveCheck(false); })
-    .then(function () { return refreshDynamic(DYN_PER_LOAD); })
-    .catch(function () {});
 })();
-
 </script>
 </body>
 </html>

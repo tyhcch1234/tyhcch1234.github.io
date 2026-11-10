@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>需要密碼 · tyhcch1234</title>
+<meta name="theme-color" content="#4f6ef7">
+<style>
+  :root{
+    --bg:#eef1f8;--ink:#161b2b;--ink-2:#3d4459;--muted:#7c8496;
+    --line:#dde2ee;--card:#ffffff;--accent:#4f6ef7;--accent-2:#6f88ff;
+    --err:#b8342c;--err-soft:#fceceb;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;display:grid;place-items:center;padding:24px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang HK","PingFang TC",
+      "Hiragino Sans TC","Microsoft JhengHei","Noto Sans TC",Arial,sans-serif;
+    color:var(--ink);line-height:1.6;
+    background:
+      radial-gradient(760px 420px at 18% 0%, #e3e9ff 0%, rgba(227,233,255,0) 62%),
+      radial-gradient(680px 400px at 96% 100%, #e9eefc 0%, rgba(233,238,252,0) 58%),
+      var(--bg);
+  }
+  .wrap{width:100%;max-width:392px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:30px 26px 24px;box-shadow:0 1px 2px rgba(22,27,43,.04),0 26px 60px -38px rgba(22,27,43,.5);
+  }
+  .badge{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--accent),var(--accent-2));margin-bottom:18px;
+    box-shadow:0 8px 18px -10px rgba(79,110,247,.9);
+  }
+  h1{font-size:20px;font-weight:750;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{font-size:13.8px;color:var(--muted);margin:0 0 22px}
+  label{display:block;font-size:12.6px;font-weight:700;color:var(--ink-2);margin-bottom:7px;letter-spacing:.02em}
+  .field{position:relative}
+  input[type=password],input[type=text]{
+    width:100%;padding:13px 48px 13px 14px;font-size:16px;font-family:inherit;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:11px;background:#fcfdff;transition:.15s;
+  }
+  input:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 3.5px rgba(79,110,247,.14)}
+  .eye{
+    position:absolute;right:6px;top:50%;transform:translateY(-50%);
+    width:36px;height:36px;border:0;background:transparent;border-radius:8px;cursor:pointer;
+    display:grid;place-items:center;color:var(--muted);
+  }
+  .eye:hover{background:#f2f4fa;color:var(--ink-2)}
+  button[type=submit]{
+    width:100%;margin-top:14px;padding:13px;font-size:15px;font-weight:700;font-family:inherit;
+    color:#fff;background:var(--accent);border:0;border-radius:11px;cursor:pointer;transition:.15s;
+  }
+  button[type=submit]:hover{background:#3f5df0}
+  button[type=submit]:disabled{opacity:.6;cursor:progress}
+  .msg{font-size:13.2px;margin:12px 0 0;min-height:20px}
+  .msg.err{color:var(--err);font-weight:600}
+  .msg.ok{color:#2f6f5e;font-weight:600}
+  .hint{
+    margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--muted);line-height:1.65;
+  }
+  .hint b{color:var(--ink-2)}
+  .foot{text-align:center;font-size:11.6px;color:#9aa2b4;margin-top:18px}
+  .shake{animation:sh .34s}
+  @keyframes sh{0%,100%{transform:translateX(0)}22%{transform:translateX(-7px)}44%{transform:translateX(6px)}66%{transform:translateX(-4px)}88%{transform:translateX(3px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <form class="card" id="gate" autocomplete="off" novalidate>
+    <div class="badge" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="10.5" width="16" height="10.5" rx="2.4"/>
+        <path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/>
+        <circle cx="12" cy="15.6" r="1.3" fill="#fff" stroke="none"/>
+      </svg>
+    </div>
+
+    <h1>此頁受密碼保護</h1>
+    <p class="sub">請輸入密碼以查看「學習與工具總覽」。</p>
+
+    <label for="pw">密碼</label>
+    <div class="field">
+      <input id="pw" name="pw" type="password" inputmode="numeric" autocomplete="current-password"
+             placeholder="請輸入密碼" aria-describedby="msg" autofocus required>
+      <button class="eye" type="button" id="eye" aria-label="顯示密碼" aria-pressed="false">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <path d="M2.5 12S6 5.5 12 5.5S21.5 12 21.5 12S18 18.5 12 18.5S2.5 12 2.5 12Z"/>
+          <circle cx="12" cy="12" r="3.1"/>
+        </svg>
+      </button>
+    </div>
+
+    <button type="submit" id="go">解鎖</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+
+    <p class="hint">
+      <b>說明：</b>頁面內容以 AES-GCM 加密儲存，只有輸入正確密碼才會在瀏覽器內解密，伺服器不儲存密碼。
+    </p>
+  </form>
+  <p class="foot">tyhcch1234.github.io</p>
+</div>
+
+<script src="assets/payload.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var form = document.getElementById("gate");
+  var input = document.getElementById("pw");
+  var msg = document.getElementById("msg");
+  var go = document.getElementById("go");
+  var eye = document.getElementById("eye");
+  var card = form;
+
+  function b64ToBytes(b64) {
+    var bin = atob(b64);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  function say(text, kind) {
+    msg.textContent = text || "";
+    msg.className = "msg" + (kind ? " " + kind : "");
+  }
+
+  function fail(text) {
+    say(text, "err");
+    card.classList.remove("shake");
+    void card.offsetWidth;
+    card.classList.add("shake");
+    input.select();
+  }
+
+  /* 顯示／隱藏密碼 */
+  eye.addEventListener("click", function () {
+    var show = input.type === "password";
+    input.type = show ? "text" : "password";
+    eye.setAttribute("aria-pressed", String(show));
+    eye.setAttribute("aria-label", show ? "隱藏密碼" : "顯示密碼");
+    input.focus();
+  });
+
+  async function unlock(pw) {
+    var G = window.__GATE__;
+    if (!G || !G.data) {
+      fail("找不到加密內容，請重新載入頁面。");
+      return;
+    }
+    if (!(window.crypto && window.crypto.subtle)) {
+      fail("此瀏覽器不支援解密，請改用較新的瀏覽器或以 https 開啟。");
+      return;
+    }
+
+    try {
+      var enc = new TextEncoder().encode(pw);
+      var baseKey = await crypto.subtle.importKey("raw", enc, "PBKDF2", false, ["deriveKey"]);
+      var key = await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(G.salt), iterations: G.iter, hash: "SHA-256" },
+        baseKey,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+      var plain = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: b64ToBytes(G.iv), tagLength: 128 },
+        key,
+        b64ToBytes(G.data)
+      );
+
+      var html = new TextDecoder("utf-8").decode(plain);
+      say("密碼正確，正在載入…", "ok");
+      document.open();
+      document.write(html);
+      document.close();
+    } catch (e) {
+      fail("密碼不正確，請再試一次。");
+    }
+  }
+
+  form.addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    var pw = input.value;
+    if (!pw) { fail("請先輸入密碼。"); return; }
+
+    go.disabled = true;
+    say("驗證中…");
+    /* 輕微延遲，減慢自動化嘗試 */
+    await new Promise(function (r) { setTimeout(r, 350); });
+    await unlock(pw);
+    go.disabled = false;
+  });
+
+  input.addEventListener("input", function () {
+    if (msg.classList.contains("err")) say("");
+  });
+})();
+</script>
+</body>
+</html>
